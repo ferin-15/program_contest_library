@@ -70,7 +70,8 @@ struct RBST {
   node* insert(int pos, T val) { return root = insert(root, pos, val); }
   node* insert(node *t, int pos, T val) {
     pair<node*, node*> s = split(t, pos);
-    return merge(merge(s.first, new node(val)), s.second);
+    node *tmp = merge(s.first, new node(val));
+    return merge(tmp, s.second);
   }
   // pos番目のnodeを削除
   node* erase(int pos) { return root = sz_(root)==1 ? nullptr : erase(root, pos); }
@@ -110,7 +111,7 @@ struct RBST {
     if(t == nullptr) return;
     cout << "[";
     debug(t->lch);
-    cout << " " << q_(t) << " ";
+    cout << " " << t->val << " ";
     debug(t->rch);
     cout << "]";
   }

@@ -4,8 +4,8 @@ struct AhoCorasick {
   // trie木のnode
   struct node {
     node *fail;
-    vector<node*> next;
-    VI matched;
+    V<node*> next;
+    V<int> matched;
     node() : fail(nullptr), next(types, nullptr) {}
   };
 
@@ -14,8 +14,8 @@ struct AhoCorasick {
   // trie木の根
   node *root;
   // vectorを結合
-  VI unite(const VI &a, const VI &b) {
-    VI ret;
+  V<int> unite(const V<int> &a, const V<int> &b) {
+    V<int> ret;
     set_union(ALL(a), ALL(b), back_inserter(ret));
     return ret;
   }
@@ -23,12 +23,12 @@ struct AhoCorasick {
   function<int(char)> trans;
   // 初期化
   AhoCorasick() {}
-  AhoCorasick(vector<string> pattern, function<int(char)> f = [](char c){return c-'a';}) {
+  AhoCorasick(V<string> pattern, function<int(char)> f = [](char c){return c-'a';}) {
     trans = f;
     build(pattern);
   }
   // 文字列集合patternからtrie木っぽいオートマトンを作成
-  void build(vector<string> pattern) {
+  void build(V<string> pattern) {
     sz = pattern.size(), root = new node;
     node *now;
     root->fail = root;
@@ -71,8 +71,8 @@ struct AhoCorasick {
     return p->next[trans(c)];
   }
   // 文字列s中に辞書と一致する部分列がどれだけあるか
-  VI match(const string s) {
-    VI res(sz);
+  V<int> match(const string s) {
+    V<int> res(sz);
     node *now = root;
     for(auto c : s) {
       now = next(now, c);
