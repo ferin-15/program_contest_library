@@ -6,11 +6,13 @@ struct AhoCorasick {
     node *fail;
     V<node*> next;
     V<int> matched;
+    int idx;
     node() : fail(nullptr), next(types, nullptr) {}
+    node(int idx) : fail(nullptr), next(types, nullptr), idx(idx) {}
   };
 
-  // 辞書のサイズ
-  int sz;
+  // 辞書のサイズ, 頂点数
+  int sz, nodesize;
   // trie木の根
   node *root;
   // vectorを結合
@@ -24,19 +26,20 @@ struct AhoCorasick {
   // 初期化
   AhoCorasick() {}
   AhoCorasick(V<string> pattern, function<int(char)> f = [](char c){return c-'a';}) {
+    nodesize = 0;
     trans = f;
     build(pattern);
   }
   // 文字列集合patternからtrie木っぽいオートマトンを作成
   void build(V<string> pattern) {
-    sz = pattern.size(), root = new node;
+    sz = pattern.size(), root = new node(nodesize++);
     node *now;
     root->fail = root;
     REP(i, sz) {
       now = root;
       for(const auto &c: pattern[i]) {
         if(now->next[trans(c)] == nullptr) {
-          now->next[trans(c)] = new node;
+          now->next[trans(c)] = new node(nodesize++);
         }
         now = now->next[trans(c)];
       }
