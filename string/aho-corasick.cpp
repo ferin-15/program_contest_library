@@ -3,83 +3,87 @@ template <int types = 26>
 struct AhoCorasick {
   // trie木のnode
   struct node {
-    node *fail;
-    V<node*> next;
-    V<int> matched;
-    int idx;
-    node() : fail(nullptr), next(types, nullptr) {}
-    node(int idx) : fail(nullptr), next(types, nullptr), idx(idx) {}
+    int fail;
+    vector<int> next;
+    vector<int> matched;
+    node() : fail(-1), next(types, -1) {}
   };
-
-  // 辞書のサイズ, 頂点数
-  int sz, nodesize;
-  // trie木の根
-  node *root;
-  // vectorを結合
-  V<int> unite(const V<int> &a, const V<int> &b) {
-    V<int> ret;
-    set_union(ALL(a), ALL(b), back_inserter(ret));
-    return ret;
-  }
+ 
+  // node の集合
+  vector<node> nodes;
+  // 辞書の種類数, trie木の根
+  int sz, root;
   // 文字と数字の対応付けをする関数
-  function<int(char)> trans;
+  using F = function<int(char)>;
+  F trans;
+ 
   // 初期化
   AhoCorasick() {}
-  AhoCorasick(V<string> pattern, function<int(char)> f = [](char c){return c-'a';}) {
-    nodesize = 0;
+  AhoCorasick(vector<string> pattern, F f = [](char c){return c-'a';}) 
+    : sz(pattern.size()), root(0)
+  {
+    nodes.resize(1);
     trans = f;
     build(pattern);
   }
+  // vectorを結合
+  vector<int> unite(const vector<int> &a, const vector<int> &b) {
+    vector<int> ret;
+    set_union(ALL(a), ALL(b), back_inserter(ret));
+    return ret;
+  }
   // 文字列集合patternからtrie木っぽいオートマトンを作成
-  void build(V<string> pattern) {
-    sz = pattern.size(), root = new node(nodesize++);
-    node *now;
-    root->fail = root;
-    REP(i, sz) {
+  void build(vector<string> pattern) {
+    int now;
+    nodes[root].fail = root;
+    REP(i, pattern.size()) {
       now = root;
       for(const auto &c: pattern[i]) {
-        if(now->next[trans(c)] == nullptr) {
-          now->next[trans(c)] = new node(nodesize++);
+        if(nodes[now].next[trans(c)] == -1) {
+          nodes.push_back(node());
+          nodes[now].next[trans(c)] = nodes.size() - 1;
         }
-        now = now->next[trans(c)];
+        now = nodes[now].next[trans(c)];
       }
-      now->matched.PB(i);
+      nodes[now].matched.push_back(i);
     }
-
-    queue<node*> que;
+ 
+    queue<int> que;
     REP(i, types) {
-      if(root->next[i] == nullptr) {
-        root->next[i] = root;
+      if(nodes[root].next[i] == -1) {
+        nodes[root].next[i] = root;
       } else {
-        root->next[i]->fail = root;
-        que.push(root->next[i]);
+        nodes[nodes[root].next[i]].fail = root;
+        que.push(nodes[root].next[i]);
       }
     }
     while(que.size()) {
       now = que.front(); que.pop();
       REP(i, types) {
-        if(now->next[i] != nullptr) {
-          node *nxt = now->fail;
-          while(!nxt->next[i]) nxt = nxt->fail;
-          now->next[i]->fail = nxt->next[i];
-          now->next[i]->matched = unite(now->next[i]->matched, nxt->next[i]->matched);
-          que.push(now->next[i]);
+        if(nodes[now].next[i] != -1) {
+          int nxt = nodes[now].fail;
+          while(nodes[nxt].next[i] == -1) nxt = nodes[nxt].fail;
+          int nxt_tmp = nodes[now].next[i];
+          nodes[nxt_tmp].fail = nodes[nxt].next[i];
+          nodes[nxt_tmp].matched
+            = unite(nodes[nxt_tmp].matched, nodes[nodes[nxt].next[i]].matched);
+          que.push(nxt_tmp);
         }
       }
     }
   }
   // 一文字ずつ照合していく
-  node* next(node* p, const char c) {
-    while(p->next[trans(c)] == nullptr) p = p->fail;
-    return p->next[trans(c)];
+  int next(int p, const char c) {
+    while(nodes[p].next[trans(c)] == -1) p = nodes[p].fail;
+    return nodes[p].next[trans(c)];
   }
   // 文字列s中に辞書と一致する部分列がどれだけあるか
-  V<int> match(const string s) {
-    V<int> res(sz);
-    node *now = root;
+  vector<int> match(const string s) {
+    vector<int> res(sz);
+    int now = root;
     for(auto c : s) {
       now = next(now, c);
-      for(auto i : now->matched) res[i]++;
+      for(auto i : nodes[now].matched) res[i]++;
     }
     return res;
   }
