@@ -1,11 +1,10 @@
-// BEGIN CUT
-//二分累乗法 xのe乗
-ll binpow(ll x, ll e, ll mo=MOD) {
-  ll a = 1, p = x;
+// 二分累乗 O(funcの計算量*logE)
+template<typename T>
+T binpow(T x, int e, auto func=[](T a, T b){return a*b%MOD;}, T d=1) {
+  T ret = d, p = x;
   while(e > 0) {
-    if(e%2 == 0) {p = (p*p) % mo; e /= 2;}
-    else {a = (a*p) % mo; e--;}
+    if(e%2 == 0) {p = func(p, p); e /= 2;}
+    else {ret = func(ret, p); e--;}
   }
-  return a;
-}
-// END CUT
+  return ret;
+};
