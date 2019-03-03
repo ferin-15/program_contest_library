@@ -34,7 +34,7 @@ ostream &operator <<(ostream& out,const vector<T>& a){
 
 int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0};
 
-// BEGIN CUT
+// -----------------------------------------------------------------
 // Binary Indexed Tree
 // 0-indexed
 template <typename T>
@@ -102,14 +102,14 @@ struct LCA {
   struct edge { int id, to, cost; };
   const int n = 0;
   const int log2_n = 0;
-  VVI par;
+  vector<vector<int> par;
   vector<vector<edge>> g;
-  VI depth;     // 頂点iの深さ
-  VI vs;        // 頂点を訪問順に並べたもの
-  VI depth_seq; // depth_seq[i] = (頂点vs[i]の深さ)
-  VI id;        // 頂点が初めてvsに登場するインデックス
-  VI es;        // 辺のインデックス(i*2+(葉方向:0,根方向:1))
-  VI w;         // 辺の重み
+  vector<int> depth;     // 頂点iの深さ
+  vector<int> vs;        // 頂点を訪問順に並べたもの
+  vector<int> depth_seq; // depth_seq[i] = (頂点vs[i]の深さ)
+  vector<int> id;        // 頂点が初めてvsに登場するインデックス
+  vector<int> es;        // 辺のインデックス(i*2+(葉方向:0,根方向:1))
+  vector<int> w;         // 辺の重み
   BIT<int> bit;
   sparseTable<minimum> st;
 
@@ -165,7 +165,7 @@ struct LCA {
     w[x] = t;
   }
 };
-// END CUT
+// ---------------------------------------------------------------
 
 int c[100010];
 signed main(void)

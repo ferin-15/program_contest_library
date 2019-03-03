@@ -66,6 +66,13 @@ struct RBST {
       return make_pair(fix(t), s.second);
     }
   }
+  // x以上の最小の要素が何番目か
+  int lower_bound(T x) { return lower_bound(root, x); }
+  int lower_bound(node *t, T x) {
+    if(!t) return 0;
+    if(x <= t->val) return lower_bound(t->lch, x);
+    return lower_bound(t->rch, x) + sz_(t);
+  }
   // pos番目に値valのnodeを追加
   node* insert(int pos, T val) { return root = insert(root, pos, val); }
   node* insert(node *t, int pos, T val) {

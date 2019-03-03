@@ -1,21 +1,20 @@
-// BEGIN CUT
 class SCC {
 public:
   int V,K;    // 頂点数, scc後の頂点数
-  VVI G;      // グラフの隣接リストの表現
-  VVI rG;     // 辺の向きを逆にしたグラフ
-  VVI DAG;    // scc後のグラフの隣接リストの表現
-  VVI rDAG;   // scc後の辺の向きを逆にしたグラフ
-  VI vs;      // 帰りがけ順の並び
-  VI used;    // すでに調べたか
-  VI cmp;     // 属する強連結成分のトポロジカル順
-  VVI member; // scc後の同一ノードの集合
-  // vector<double> weight;  // i番目の連結成分が持つ情報
+  vector<vector<int>> G;      // グラフの隣接リストの表現
+  vector<vector<int>> rG;     // 辺の向きを逆にしたグラフ
+  vector<vector<int>> DAG;    // scc後のグラフの隣接リストの表現
+  vector<vector<int>> rDAG;   // scc後の辺の向きを逆にしたグラフ
+  vector<int> vs;             // 帰りがけ順の並び
+  vector<int> used;           // すでに調べたか
+  vector<int> cmp;            // 属する強連結成分のトポロジカル順
+  vector<vector<int>> member; // scc後の同一ノードの集合
+  // vector<double> weight;   // i番目の連結成分が持つ情報
   // 初期化
   SCC() { V=K=-1; }
   SCC(int V_): V(V_) {
-    G.assign(V_, VI());
-    rG.assign(V_, VI());
+    G.assign(V_, vector<int>());
+    rG.assign(V_, vector<int>());
     used.assign(V_, false);
     cmp.assign(V_, false);
     // weight.assign(V_, 1);
@@ -56,9 +55,9 @@ public:
     return K=k;
   }
   // O(ElogE)
-  VVI getDAG() {
+  vector<vector<int>> getDAG() {
     assert(K>=0);
-    VVI res(K);
+    vector<vector<int>> res(K);
     for(int from=0;from<V;from++) {
       for(int to:G[from]) if(cmp[from]!=cmp[to]) res[cmp[from]].push_back(cmp[to]);
     }
@@ -69,4 +68,3 @@ public:
     return res;
   }
 };
-// END CUT

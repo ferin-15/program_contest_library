@@ -1,22 +1,34 @@
-// x = a1 mod m1, x2 = a2 mod m2 を解く オーバーフローには注意
-// O(log(min(m1, m2)))
-pair<ll, ll> crt(ll a1, ll a2, ll m1, ll m2) {
-  auto normal = [](ll x, ll m) { return x>=-x ? x%m : m-(-x)%m; };
-  auto modmul = [&normal](ll a, ll b, ll m) { return normal(a, m)*normal(b, m)%m; };
-  ll k1, k2;
-  ll g = extgcd(m1, m2, k1, k2);
-  if(normal(a1, g) != normal(a2, g)) return {-1, -1};
-  ll l = m1 / g * m2;
-  ll x = a1 + modmul(modmul((a2-a1)/g, k1, l), m1, l);
-  return {x, l};
+// ax + by = gcd(a, b) となる {x, y, gcd(a, b)} を返す
+// O(log(min(a, b)))
+ll extgcd(ll a, ll b, ll &x, ll &y) {
+  ll g = a; x = 1, y = 0;
+  if(b != 0) g = extgcd(b, a%b, y, x), y -= (a/b) * x;
+  return g;
 }
 
-pair<ll, ll> crt(vector<ll> a, vector<ll> m) {
-  ll mod = 1, ans = 0;
-  int n = a.size();
-  REP(i, n) {
-    tie(ans, mod) = crt(ans, a[i], mod, m[i]);
-    if(ans == -1) return {-1, -1};
+// a^-1 mod n を返す　存在しなければ-1
+// O(log(n))
+ll inv(ll a, ll n) {
+  ll s, t;
+  extgcd(a, n, s, t);
+  return (n+s) % n;
+}
+
+// O(a.size*logM)
+// 連立線形合同式 a[i] * x ≡ b[i] (mod m[i]) を解く
+// オーバーフローには注意
+pair<ll, ll> crt(const vector<ll>& a, const vector<ll>& b, const vector<ll>& m) {
+  // (答えx, mod)
+  pair<ll, ll> ret(0, 1);
+  REP(i, a.size()) {
+    ll s = a[i] * ret.second;
+    ll t = b[i] - a[i] * ret.first;
+    ll d = __gcd(m[i], s);
+    if(t % d != 0) return make_pair(-1, -1);
+    ll u = t / d * inv(s / d, m[i] / d) % (m[i] / d);
+    ret.first += ret.second * u;
+    ret.second *= m[i] / d;
+    ret.first = (ret.first % ret.second + ret.second) % ret.second;
   }
-  return {ans, mod};
+  return ret;
 }

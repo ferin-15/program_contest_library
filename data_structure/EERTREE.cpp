@@ -5,7 +5,6 @@
 * @author ferin
 */
 
-// BEGIN CUT
 struct PalindromicTree{
   struct node{
     map<char,int> nxt;

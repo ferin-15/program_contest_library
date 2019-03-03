@@ -1,11 +1,3 @@
-/**
-* @file treap.cpp
-* @brief Treap
-* @detail verify: https://arc033.contest.atcoder.jp/tasks/arc033_3
-* @author ferin
-*/
-
-// BEGIN CUT
 using ull = unsigned long long;
 ull randxor(){
   static ull x=123456789,y=362436069,z=521288629,w=88675123;
@@ -114,4 +106,3 @@ signed main(void)
 
   return 0;
 }
-// END CUT

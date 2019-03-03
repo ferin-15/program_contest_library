@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 // #define int ll
-using PII = pair<int, int>;
+using PII = pair<ll, ll>;
  
 #define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
 #define REP(i, n) FOR(i, 0, n)
@@ -40,7 +40,7 @@ ostream &operator <<(ostream& out,const vector<T>& a){
 int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}; // DRUL
 const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
-const int MOD = 1000000007;
+const ll MOD = 1000000007;
 
 signed main(void)
 {

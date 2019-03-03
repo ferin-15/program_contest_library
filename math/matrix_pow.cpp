@@ -1,8 +1,5 @@
-typedef VI vec;
-typedef VVI mat;
-
-// mod
-int M;
+using vec = vector<ll>;
+using mat = vector<vec>;
 
 // A*Bを計算
 mat mul(mat &A, mat &B) {
@@ -10,7 +7,7 @@ mat mul(mat &A, mat &B) {
   for(int i=0; i<(int)A.size(); ++i) {
     for(int k=0; k<(int)B.size(); ++k) {
       for(int j=0; j<(int)B[0].size(); ++j) {
-        C[i][j] = (C[i][j] + A[i][k]*B[k][j]) % M;
+        C[i][j] = (C[i][j] + A[i][k]*B[k][j]) % MOD;
       }
     }
   }
@@ -22,7 +19,7 @@ vec mul(mat &A, vec &B) {
   vec C(A.size());
   for(int i=0; i<(int)A.size(); ++i) {
     for(int j=0; j<(int)B.size(); ++j) {
-      C[i] = (C[i] + A[i][j]*B[j]) % M;
+      C[i] = (C[i] + A[i][j]*B[j]) % MOD;
     }
   }
   return C;

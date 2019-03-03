@@ -1,19 +1,3 @@
-/**
-* @file lazy_segment.cpp
-* @brief 遅延セグメントツリー
-* @detail verify: 色々
-* @author ferin
-*/
-
-/**
-* @brief セグメント木
-* @details 抽象化した遅延セグメント木\n
-* 区間更新区間max d1=d0=INT_MAX f=max(a,b) g=h=(b==INT_MAX?a:b)\n
-* 区間加算区間和  d1=d0=0 f=g=h=a+b p=a*b\n
-* 区間加算区間min d1=d0=0 f=min(a,b) g=h=a+b\n
-* 区間更新区間和  d1=d0=0 f=a+b g=h=(b==0?a:b) p=a*b\n
-* 区間xor区間和   d1=d0=0 f=a+b g=(b>=1?b-a:a) h=a^b p=a*b
-*/
 template <typename T, typename E>
 struct lazySegTree {
   using F = function<T(T,T)>;
@@ -85,3 +69,10 @@ struct lazySegTree {
     cout << "---------------------" << endl;
   }
 };
+/**
+* 区間更新区間max d1=d0=INT_MAX f=max(a,b) g=h=(b==INT_MAX?a:b)\n
+* 区間加算区間和  d1=d0=0 f=g=h=a+b p=a*b\n
+* 区間加算区間min d1=d0=0 f=min(a,b) g=h=a+b\n
+* 区間更新区間和  d1=d0=0 f=a+b g=h=(b==0?a:b) p=a*b\n
+* 区間xor区間和   d1=d0=0 f=a+b g=(b>=1?b-a:a) h=a^b p=a*b
+*/
