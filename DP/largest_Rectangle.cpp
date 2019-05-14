@@ -1,9 +1,3 @@
-// BEGIN CUT
-/**
-* @brief h*w の0,1からなる行列の中で、0のみを使ってできる最大の長方形の面積 O(HW)
-* @return int 最大の長方形の面積
-* @details ToDo: verify
-*/
 int largeest_rectangle() {
   int n, h, w;
   VV<int> c(h, V<int>(w)), dp(h, V<int>(w));
@@ -42,4 +36,3 @@ int largeest_rectangle() {
   }
   return ret;
 };
-// END CUT

@@ -1,15 +1,6 @@
-/**
-* @file knuth_yao.cpp
-* @brief Knuth-Yao speedup
-* @detail verify: http://www.spoj.com/problems/BRKSTRNG/
-* @author ferin
-*/
-
 // BEGIN CUT
-/**
-* @brief Knuth-Yao speedup
-* @details X(i,j) = min_{i<=s<j} {X(i,s)+X(s,j)} + W(i,j) を O(N^2) で計算\n
-*/
+
+// X(i,j) = min_{i<=s<j} {X(i,s)+X(s,j)} + W(i,j) を O(N^2) で計算\n
 auto knuth_yao = [&]() {
   // K(i,j) = argmin_{i<=s<j} (X(i,s) + X(s,j))
   VV<int> W(n+5, V<int>(n+5, 0)), X(n+5, V<int>(n+5, 0)), K(n+5, V<int>(n+5, 0));

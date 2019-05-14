@@ -1,4 +1,3 @@
-// BEGIN CUT
 // n頂点m辺のグラフの最大独立集合を求める
 // O(n*1.466^n) n=40くらいまで大丈夫
 // CODE THANKS FESTIVAL 2017 G - Mixture Drug で verify
@@ -47,4 +46,3 @@ signed main(void)
 
   return 0;
 }
-// END CUT

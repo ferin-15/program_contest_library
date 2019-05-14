@@ -1,31 +1,27 @@
-template<bool type=true>
-ll combi(ll N_, ll K_, ll mo=MOD) {
-  const int NUM_=5e5;
-  static ll fact[NUM_+1]={},factr[NUM_+1]={},inv[NUM_+1]={};
-  auto binpow = [&](ll x, ll e) -> ll {
-    ll a = 1, p = x;
-    while(e > 0) {
-      if(e%2 == 0) {p = (p*p) % mo; e /= 2;}
-      else {a = (a*p) % mo; e--;}
+// 前計算O(N) クエリO(1)
+mint combi(ll N, ll K) {
+    const int maxN=5e5; // !!!
+    static mint fact[maxN+1]={},factr[maxN+1]={};
+    if (fact[0]==0) {
+        fact[0] = factr[0] = 1;
+        FOR(i, 1, maxN+1) fact[i] = fact[i-1] * i;
+        factr[maxN] = fact[maxN].inv();
+        for(ll i=maxN-1; i>=0; --i) factr[i] = factr[i+1] * (i+1);
     }
-    return a;
-  };
-  if (fact[0]==0) {
-    if(type) {
-      fact[0] = factr[0] = inv[0] = 1;
-      FOR(i, 1, NUM_+1) fact[i] = fact[i-1] * i % MOD;
-      factr[NUM_] = binpow(fact[NUM_], mo-2);
-      for(int i=NUM_-1; i>=0; --i) factr[i] = factr[i+1] * (i+1) % MOD;
-    } else {
-      FOR(i, 1, NUM_+1) fact[i] = fact[i-1] * i % MOD;
-      REP(i, NUM_+1) inv[i] = binpow(i, MOD-2);
+    if(K<0 || K>N) return 0; // !!!
+    return factr[K]*fact[N]*factr[N-K];
+}
+
+// 前計算O(Klog(mod)) クエリO(K)
+mint combi_bigN(ll N, ll K) {
+    const int maxN=5e5; // !!!
+    static mint inv[maxN+1] = {};
+    if(inv[0]==0) {
+        inv[0] = 1;
+        FOR(i, 1, maxN+1) inv[i] = mint(i).inv();
     }
-  }
-  if(K_<0 || K_>N_) return 0;
-  // 前計算 O(max(N,K)) クエリ O(1)
-  if(type) return factr[K_]*fact[N_]%MOD*factr[N_-K_]%MOD;
-  // Nが大きいけどKが小さい場合に使う 前計算 O(Klog(mod)) クエリ O(K)
-  ll ret = 1;
-  for(;K_>0;N_--,K_--) (ret *= N_%MOD) %= MOD, (ret *= inv[K_]) %= MOD;
-  return ret;
+    if(K<0 || K>N) return 0; // !!!
+    mint ret = 1;
+    for(;K>0;N--,K--) ret *= N, ret *= inv[K];
+    return ret;
 }

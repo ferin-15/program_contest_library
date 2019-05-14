@@ -20,5 +20,4 @@ auto articulation_point = [&]() {
     }
   }
 };
-articulation_point();
 // END CUT

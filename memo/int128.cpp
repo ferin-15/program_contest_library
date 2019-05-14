@@ -1,5 +1,5 @@
-std::ostream &operator<<(std::ostream &dest, __int128_t value) {
-  std::ostream::sentry s(dest);
+ostream &operator<<(ostream &dest, __int128_t value) {
+  ostream::sentry s(dest);
   if (s) {
     __uint128_t tmp = value < 0 ? -value : value;
     char buffer[128];
@@ -13,9 +13,9 @@ std::ostream &operator<<(std::ostream &dest, __int128_t value) {
       --d;
       *d = '-';
     }
-    int len = std::end(buffer) - d;
+    int len = end(buffer) - d;
     if (dest.rdbuf()->sputn(d, len) != len) {
-      dest.setstate(std::ios_base::badbit);
+      dest.setstate(ios_base::badbit);
     }
   }
   return dest;
@@ -23,7 +23,7 @@ std::ostream &operator<<(std::ostream &dest, __int128_t value) {
 
 __int128 parse(string &s) {
   __int128 ret = 0;
-  for (int i = 0; i < s.length(); i++)
+  for (int i = 0; i < (ll)s.size(); i++)
     if ('0' <= s[i] && s[i] <= '9')
       ret = 10 * ret + s[i] - '0';
   return ret;

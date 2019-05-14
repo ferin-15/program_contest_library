@@ -1,4 +1,3 @@
-// BEGIN CUT
 struct twoEdgeComponents {
     int n;
     vector<vector<int>> g;        // グラフの隣接リスト
@@ -8,14 +7,6 @@ struct twoEdgeComponents {
     vector<int> order;
     vector<bool> inS;
     stack<int> roots, S;
-
-    twoEdgeComponents() {}
-    twoEdgeComponents(vector<vector<int>> g_) : n(g_.size()), g(g_) {}
-
-    void add_edge(int p, int q) {
-        g[p].push_back(q);
-        g[q].push_back(p);
-    }
 
     void dfs(int cur, int prev, int &k) {
         order[cur] = ++k;
@@ -40,6 +31,14 @@ struct twoEdgeComponents {
             each_bcc.push_back(bcc);
             roots.pop();
         }
+    }
+
+    twoEdgeComponents() {}
+    twoEdgeComponents(int n) : n(n), g(n) {}
+
+    void add_edge(int p, int q) {
+        g[p].push_back(q);
+        g[q].push_back(p);
     }
     // 二重辺連結成分分解を行う
     void bcc() {
@@ -69,4 +68,3 @@ struct twoEdgeComponents {
         return h;
     }
 };
-// END CUT

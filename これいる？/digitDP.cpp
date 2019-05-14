@@ -1,4 +1,3 @@
-// BEGIN CUT
 // N以下の数を求める桁DP
 dp[0][0] = 1;
 REP(i, n) REP(j, 2) {
@@ -7,8 +6,3 @@ REP(i, n) REP(j, 2) {
     (dp[i+1][j || d<lim] += dp[i][j]) %= MOD;
   }
 }
-
-int ans = 0;
-REP(i, 2) (ans += dp[n][i]) %= MOD;
-cout << ans << endl;
-// END CUT

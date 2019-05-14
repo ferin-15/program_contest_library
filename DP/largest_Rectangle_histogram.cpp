@@ -1,12 +1,4 @@
 /**
-* @file largest_Rectangle_histogram.cpp
-* @brief ヒストグラム中の最大長方形
-* @detail verify: 未
-* @author ferin
-*/
-
-// BEGIN CUT
-/**
 * @brief i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 */
 auto largest_rectangle_histogram() {
@@ -29,4 +21,3 @@ auto largest_rectangle_histogram() {
   REP(i, n) ret = max(ret, (ll)h[i]*(r[i]-l[i]));
   return ret;
 };
-// END CUT

@@ -60,8 +60,15 @@ struct segtree {
         : dat_d(dd), lazy_d(ld), merge_dat(md) 
     {
         n = 1; while(n < n_) n *= 2;
-        dat.assign(n*2-1, dat_d);
-        lazy.assign(n*2-1, lazy_d);
+        dat.assign(n*2, dat_d);
+        lazy.assign(n*2, lazy_d);
+    }
+
+    void build(vector<dat_type> v) {
+        REP(i, v.size()) dat[i+n-1] = v[i];
+        for(int i=n-2; i>=0; --i) {
+            dat[i] = merge_dat(dat[i*2+1], dat[i*2+2]);
+        }
     }
 
     void eval(int k, int l, int r) {

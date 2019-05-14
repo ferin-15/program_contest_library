@@ -1,12 +1,9 @@
 struct dice {
-  mt19937 mt;
-  dice() {
-    random_device rd;
-    mt = mt19937(rd());
-  }
-  int operator()(int x) { return this->operator()(0, x - 1); }
-  int operator()(int x, int y) {
-    uniform_int_distribution<int> dist(x, y);
-    return dist(mt);
-  }
+    mt19937 mt;
+    dice() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
+    ll operator()(ll x) { return this->operator()(0, x - 1); }
+    ll operator()(ll x, ll y) {
+        uniform_int_distribution<ll> dist(x, y);
+        return dist(mt);
+    }
 } rnd;

@@ -1,11 +1,3 @@
-/**
-* @file monotone_minima.cpp
-* @brief monotone minima
-* @detail verify: https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-* @author ferin
-*/
-
-// BEGIN CUT
 const int MAX_N = 200010;
 int minima[MAX_N]; // minima[i] = argmin_j f(i, j)
 int a[MAX_N];
@@ -31,4 +23,3 @@ void monotoneMinima(int ib, int ie, int jb, int je) {
   monotoneMinima(ib, im-1, jb, minima[im]);
   monotoneMinima(im+1, ie, minima[im], je);
 }
-// END CUT
