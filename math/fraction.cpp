@@ -1,9 +1,13 @@
 // 分数ライブラリ
-// a/bは常に約分されているとする
+// 常に約分されているとする
 // 負のときは常にaを負にする
 struct fraction {
     ll a, b;
-    fraction(ll a=0, ll b=1) : a(a), b(b) {}
+    fraction(ll x=0, ll y=1) : a(x), b(y) {
+        ll g = __gcd(a, b);
+        a /= g, b /= g;
+        if(b < 0) a *= -1, b *= -1;
+    }
     // comparator
     bool operator<(fraction r) const { return a*r.b < b*r.a; }
     bool operator>(fraction r) const { return a*r.b > b*r.a; }

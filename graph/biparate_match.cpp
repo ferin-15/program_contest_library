@@ -1,38 +1,45 @@
-// BEGIN CUT
-struct b_match {
-  static const int MAX_V = 1000;
-  int V;
-  VI G[MAX_V], match;
-  vector<bool> used;
-
-  // V要素で初期化
-  b_match(int v_=MAX_V) : V(v_) { match.resize(v_); used.resize(v_); }
-  // 辺u-vを追加する
-  void add_edge(int u, int v) { G[u].PB(v); G[v].PB(u); }
-  // 増加パスの探索
-  bool dfs(int v) {
-    used[v] = true;
-    REP(i, G[v].size()) {
-      int u = G[v][i], w = match[u];
-      if(w < 0 || !used[w] && dfs(w)) {
-        match[v] = u;
-        match[u] = v;
-        return true;
-      }
+struct BipartiteMatching {
+    vector<int> pre, root;
+    vector<vector<int>> to;
+    vector<int> p, q;
+    int n, m;
+    BipartiteMatching(int n, int m) : pre(n,-1),root(n,-1),to(n),p(n,-1),q(m,-1),n(n),m(m){}
+    void add(int a, int b) { to[a].push_back(b);}
+    int solve() {
+        int res = 0;
+        bool upd = true;
+        while (upd) {
+            upd = false;
+            queue<int> s;
+            for (int i = 0; i < n; ++i) {
+                if (!~p[i]) {
+                    root[i] = i;
+                    s.push(i);
+                }
+            }
+            while (!s.empty()) {
+                int v = s.front(); s.pop();
+                if (~p[root[v]]) continue;
+                for (int i = 0; i < (int)to[v].size(); ++i) {
+                    int u = to[v][i];
+                    if (!~q[u]) {
+                        while (~u) {
+                            q[u] = v;
+                            swap(p[v],u);
+                            v = pre[v];
+                        }
+                        upd = true;
+                        ++res;
+                        break;
+                    }
+                    u = q[u];
+                    if (~pre[u]) continue;
+                    pre[u] = v; root[u] = root[v];
+                    s.push(u);
+                }
+            }
+            if (upd) fill(pre.begin(),pre.end(),-1), fill(root.begin(),root.end(),-1);
+        }
+        return res;
     }
-    return false;
-  }
-  // 二部マッチングを計算
-  int matching() {
-    int res = 0;
-    match.assign(V, -1);
-    REP(v, V) {
-      if(match[v] < 0) {
-        used.assign(V, false);
-        if(dfs(v)) res++;
-      }
-    }
-    return res;
-  }
 };
-// END CUT

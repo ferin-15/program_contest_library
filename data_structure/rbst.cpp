@@ -244,6 +244,12 @@ struct OrderedMultiSet : RBST<T> {
         if(x < t->val) return upper_bound(t->l, x);
         return upper_bound(t->r, x) + RBST<T>::size(t->l) + 1;
     }
+    // k番目の数
+    int level(node *t, int k) {
+        if(k < RBST<T>::size(t->l)) return level(t->l, k);
+        if(k == RBST<T>::size(t->l)) return t->val;
+        return level(t->r, k-RBST<T>::size(t->l)-1);
+    }
 };
 template<class T>
 struct OrderedSet : OrderedMultiSet<T>  {

@@ -43,7 +43,20 @@ struct modint {
         if((x -= r.x) < 0) x += MOD;
         return *this;
     }
-    modint &operator*=(modint r) { x = x * r.x % MOD; return *this; }
+    modint &operator*=(modint r) {
+    #if !defined(_WIN32) || defined(_WIN64)
+        x = x * r.x % MOD; return *this;
+    #endif
+        unsigned long long y = x * r.x;
+        unsigned xh = (unsigned) (y >> 32), xl = (unsigned) y, d, m;
+        asm(
+            "divl %4; \n\t"
+            : "=a" (d), "=d" (m)
+            : "d" (xh), "a" (xl), "r" (MOD)
+        );
+        x = m;
+        return *this;
+    }
     modint &operator/=(modint r) { return *this *= r.inv(); }
     // increment, decrement
     modint operator++() { x++; return *this; }
