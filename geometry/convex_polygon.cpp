@@ -21,7 +21,9 @@ G convex_cut(const G& pol, const L& l) {
     REP(i, pol.size()) {
         P a = pol[i], b = pol[(i + 1)%pol.size()];
         int da = sgn(det(l.first-a, l.second-a)), db = sgn(det(l.first-b, l.second-b));
+        // 点aが直線lの左側
         if (da >= 0) res.emplace_back(a);
+        // 辺(a,b)と直線lが交わる
         if (da * db < 0) res.emplace_back(crosspoint(L{a, b}, l));
     }
     return res;

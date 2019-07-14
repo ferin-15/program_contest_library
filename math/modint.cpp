@@ -24,10 +24,6 @@ struct modint {
         return z;
     }
     // Comparators
-    bool operator <(modint b) { return x < b.x; }
-    bool operator >(modint b) { return x > b.x; }
-    bool operator<=(modint b) { return x <= b.x; }
-    bool operator>=(modint b) { return x >= b.x; }
     bool operator!=(modint b) { return x != b.x; }
     bool operator==(modint b) { return x == b.x; }
     // Basic Operations
@@ -58,36 +54,42 @@ struct modint {
         return *this;
     }
     modint &operator/=(modint r) { return *this *= r.inv(); }
+    template<class T> friend
+    modint operator*(T l, modint r) { return modint(l) *= r; }
+    template<class T> friend
+    modint operator+(T l, modint r) { return modint(l) += r; }
+    template<class T> friend
+    modint operator-(T l, modint r) { return modint(l) -= r; }
+    template<class T> friend
+    modint operator/(T l, modint r) { return modint(l) /= r; }
+    template<class T> friend
+    bool operator==(T l, modint r) { return modint(l) == r; }
+    template<class T> friend
+    bool operator!=(T l, modint r) { return modint(l) != r; }
     // increment, decrement
     modint operator++() { x++; return *this; }
     modint operator++(signed) { modint t = *this; x++; return t; }
     modint operator--() { x--; return *this; }
     modint operator--(signed) { modint t = *this; x--; return t; }
+    // Input/Output
+    friend ostream &operator<<(ostream& os, modint a) { return os << a.x; }
+    friend istream &operator>>(istream& is, modint &a) { return is >> a.x; }
+    friend string to_frac(modint v) {
+        static map<ll, PII> mp;
+        if(mp.empty()) {
+            mp[0] = mp[modint::mod()] = {0, 1};
+            FOR(i, 2, 1001) FOR(j, 1, i) if(__gcd(i, j) == 1) {
+                mp[(modint(i) / j).x] = {i, j};
+            }
+        }
+        auto itr = mp.lower_bound(v.x);
+        if(itr != mp.begin() && v.x - prev(itr)->first < itr->first - v.x) --itr;
+        string ret = to_string(itr->second.first + itr->second.second * ((int)v.x - itr->first));
+        if(itr->second.second > 1) {
+            ret += '/';
+            ret += to_string(itr->second.second);
+        }
+        return ret;
+    }
 };
 using mint = modint<1000000007>;
-template<class T> mint operator*(T l, mint r) { return mint(l) *= r; }
-template<class T> mint operator+(T l, mint r) { return mint(l) += r; }
-template<class T> mint operator-(T l, mint r) { return mint(l) -= r; }
-template<class T> mint operator/(T l, mint r) { return mint(l) /= r; }
-template<class T> bool operator==(T l, mint r) { return mint(l) == r; }
-template<class T> bool operator!=(T l, mint r) { return mint(l) != r; }
-// Input/Output
-ostream &operator<<(ostream& os, mint a) { return os << a.x; }
-istream &operator>>(istream& is, mint &a) { return is >> a.x; }
-string to_frac(mint v) {
-    static map<ll, PII> mp;
-    if(mp.empty()) {
-        mp[0] = mp[mint::mod()] = {0, 1};
-        FOR(i, 2, 1001) FOR(j, 1, i) if(__gcd(i, j) == 1) {
-            mp[(mint(i) / j).x] = {i, j};
-        }
-    }
-    auto itr = mp.lower_bound(v.x);
-    if(itr != mp.begin() && v.x - prev(itr)->first < itr->first - v.x) --itr;
-    string ret = to_string(itr->second.first + itr->second.second * ((int)v.x - itr->first));
-    if(itr->second.second > 1) {
-        ret += '/';
-        ret += to_string(itr->second.second);
-    }
-    return ret;
-}

@@ -1,12 +1,13 @@
 // オイラーツアー
-int cnt = 0;
-vector<PII> idx(n);
-function<void(int,int)> dfs = [&](int x, int p) {
-  idx[x].first = cnt;
-  for(int i: g[x]) {
-    if(i == p) continue;
-    dfs(i, x);
-  }
-  idx[x].second = ++cnt;
+ll ptr = 1;
+vector<ll> tour(2*n-1), in(n);
+function<void(ll,ll)> euler_tour = [&](ll v, ll p) {
+    in[v] = ptr-1;
+    for(auto to: g[v]) {
+        if(to == p) continue;
+        tour[ptr++] = to;
+        euler_tour(to, v);
+    }
+    if(p != -1) tour[ptr++] = p;
 };
-dfs(0, -1);
+euler_tour(0, -1);

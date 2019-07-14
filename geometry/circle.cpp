@@ -27,13 +27,13 @@ vector<C> calcCircle(P p1, P p2, R r) {
 
 // 交差
 int intersect(const C& c, const L& l) {
-    R dist = dist(c.p, l);
-    if(sgn(r-dist) < 0) return 2; // 交差している
-    else if(sgn(r-dist) == 0) return 1; // 接している
+    R dist = dist(c.c, l);
+    if(sgn(c.r-dist) > 0) return 2; // 交差している
+    else if(sgn(c.r-dist) == 0) return 1; // 接している
     return 0; // 交差しない
 }
 int intersect(const C& a, const C& b) {
-	R dist = sqrt(norm(a.c-b.c)), r1 = a.r + b.r, r2 = abs(a.r - b.r);
+	R dist = norm(a.c-b.c), r1 = (a.r+b.r)*(a.r+b.r), r2 = (a.r-b.r)*(a.r-b.r);
 	if(sgn(r1-dist) < 0)  return 4;	// 円が離れている
 	if(sgn(r1-dist) == 0) return 3;	// 外接
 	if(sgn(r2-dist) < 0 && sgn(dist-r1) < 0) return 2; // 交差
@@ -51,16 +51,15 @@ vector<P> crosspoint(C c, L l) {
 	if(ret[1] < ret[0]) swap(ret[0], ret[1]);
 	return ret;
 }
+// intersect=2 を確認すること
 vector<P> crosspoint(C a, C b) {
-	R d = abs(a.c-b.c);
-	R t = (a.r*a.r-b.r*b.r+d*d)/2/d, h = sqrt(a.r*a.r-t*t);
-	P m = t/abs(b.c-a.c)*(b.c-a.c)+a.c;
-    auto n_vector = [&](P p) -> P { return P(-p.imag(), p.real())/abs(p); };
-	P n = n_vector(a.c-b.c);
-	vector<P> ret(2, m);
-	ret[0] -= h*n; ret[1] += h*n;
-	if(ret[1] < ret[0]) swap(ret[0], ret[1]);
-	return ret;
+    R d = abs(a.c-b.c);
+    R t = (a.r*a.r-b.r*b.r+d*d)/2/d, h = sqrt(a.r*a.r-t*t);
+    P m = t/abs(b.c-a.c)*(b.c-a.c)+a.c;
+    P n(-(a.c-b.c).imag()/abs(a.c-b.c), (a.c-b.c).real()/abs(a.c-b.c));
+    vector<P> ret(2, m);
+    ret[0] -= h*n; ret[1] += h*n;
+    return ret;
 }
 
 // 点aを通る接線を返す
@@ -126,38 +125,4 @@ vector<L> common_tangent(C c1, C c2) {
         vl.push_back(tangent(c1, pp1.first).first);
     }
     return vl;
-}
-
-// 円の接線
-namespace CGL7f {
-    void solve() {
-        P p;
-        C c;
-        cin >> p >> c.c >> c.r;
-        
-        auto ret = tangent(c, p);
-        P p1 = ret.first.second, p2 = ret.second.second;
-        if(p1 < p2) {
-            cout << p1.real() << " " << p1.imag() << endl;
-            cout << p2.real() << " " << p2.imag() << endl;
-        } else {
-            cout << p2.real() << " " << p2.imag() << endl;
-            cout << p1.real() << " " << p1.imag() << endl;
-        }
-    }
-}
-
-// 共通接線
-namespace CGL7G {
-    void solve() {
-        C c1, c2;
-        cin >> c1.c >> c1.r >> c2.c >> c2.r;
-
-        auto vl = common_tangent(c1, c2);
-        vector<P> ans;
-        for(auto l: vl) ans.push_back(l.first);
-        sort(ALL(ans));
-
-        for(auto p: ans) cout << p.real() << " " << p.imag() << endl;
-    }
 }

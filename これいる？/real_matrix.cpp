@@ -54,29 +54,30 @@ int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}; // DRUL
 const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 
-// GF(2)の行列
-template<int width=64>
+// 実数体の行列 ToDo: verify
 struct matrix {
     int h, w;
-    vector<bitset<width>> dat;
+    vector<double> dat;
     matrix() {}
-    matrix(int h) : h(h), w(width), dat(h) {}
+    matrix(int h, int w) : h(h), w(w), dat(h*w) {}
+    double& get(int y, int x) { return dat[y*w+x]; }
+    double get(int y, int x) const { return dat[y*w+x]; }
 
     matrix& operator+=(const matrix& r) {
         assert(h==r.h && w==r.w);
-        REP(i, h) dat[i] ^= r.dat[i];
+        REP(i, h*w) dat[i] += r.dat[i];
         return *this;
     }
     matrix& operator-=(const matrix& r) {
         assert(h==r.h && w==r.w);
-        REP(i, h) dat[i] ^= r.dat[i];
+        REP(i, h*w) dat[i] -= r.dat[i];
         return *this;
     }
     matrix& operator*=(const matrix& r) {
         assert(w==r.h);
         matrix ret(h, w);
         REP(i, h) REP(j, r.w) REP(k, w) {
-            ret.dat[i][j] ^= dat[i][k] & r.dat[k][j];
+            ret.dat[i*r.w+j] += dat[i*w+k] * r.dat[k*r.w+j];
         }
         return (*this) = ret;
     }
@@ -86,31 +87,6 @@ struct matrix {
     bool operator==(const matrix& a) { return dat==a.dat; }
     bool operator!=(const matrix& a) { return dat!=a.dat; }
 
-    friend matrix pow(matrix p, ll n) {
-        matrix ret(p.h, p.w);
-        REP(i, p.h) ret.dat[i][i] = 1;
-        while(n > 0) {
-            if(n&1) {ret *= p; n--;}
-            else {p *= p; n >>= 1;}
-        }
-        return ret;
-    }
-    // 階段行列を求める O(HW^2)
-    friend pair<matrix,int> gauss_jordan(matrix a) {
-        int rank = 0;
-        REP(i, a.w) {
-            int pivot = -1;
-            FOR(j, rank, a.h) if(a.dat[j][i] != 0) { pivot = j; break; }
-            if(pivot == -1) continue;
-            swap(a.dat[rank], a.dat[pivot]);
-            REP(j, a.h) if(j != rank && a.dat[j][i] != 0) {
-                a.dat[j] ^= a.dat[rank];
-            }
-            rank++;
-        }
-        return make_pair(a, rank);
-    }
-
     friend ostream &operator<<(ostream& os, matrix a) {
         REP(i, a.h) {
             REP(j, a.w) os << a.get(i,j) << " ";
@@ -119,54 +95,33 @@ struct matrix {
         return os;
     }
 };
-
-// mod 2 でgauss jordanをする
-namespace codeflyer_D {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> a(n), b(n);
-        REP(i, n) cin >> a[i];
-        REP(i, n) cin >> b[i];
-
-        matrix<64> mata(n), matb(n);
-        REP(i, n) {
-            REP(j, 61) {
-                mata.dat[i][j] = !!(a[i]&1LL<<j);
-                matb.dat[i][j] = !!(b[i]&1LL<<j);
-            }
-        }
-
-        auto A = gauss_jordan(mata).first, B = gauss_jordan(matb).first;
-        if(A == B) cout << "Yes" << endl;
-        else cout << "No" << endl;
+matrix pow(matrix p, ll n) {
+    matrix ret(p.h, p.w);
+    REP(i, p.h) ret.get(i, i) = 1;
+    while(n > 0) {
+        if(n&1) {ret *= p; n--;}
+        else {p *= p; n >>= 1;}
     }
+    return ret;
 }
-
-// mod 2 で行列式を求める
-namespace ARC054C {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<string> s(n);
-        REP(i, n) cin >> s[i];
-        matrix<200> mat(n);
-        REP(i, n) REP(j, n) mat.dat[i][j] = s[i][j]-'0';
-
-        mat = gauss_jordan(mat).first;
-        ll ret = 1;
-        REP(i, n) ret *= mat.dat[i][i];
-        cout << (ret==1 ? "Odd" : "Even") << endl;
+// 階段行列を求める O(H*W^2)
+matrix gauss_jordan(matrix a) {
+    REP(i, a.w) {
+        int pivot = i;
+        REP(j, a.h) if(abs(a.get(j,i)) > abs(a.get(pivot,i))) pivot = j;
+        REP(j, a.w) swap(a.get(i,j), a.get(pivot,j));
+        FOR(j, i+1, a.w) a[i][j] /= a[i][i];
+        REP(j, a.h) if(i != j) {
+            FOR(k, i+1, w) a[j][k] -= a[j][i] * a[i][k];
+        }
     }
+    return a;
 }
 
 signed main(void)
 {
     cin.tie(0);
     ios::sync_with_stdio(false);
-
-    // codeflyer_D::solve();
-    ARC054C::solve();
 
     return 0;
 }

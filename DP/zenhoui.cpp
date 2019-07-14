@@ -1,8 +1,8 @@
-vector<ll> dist(n);
+vector<ll> dp(n);
 function<void(ll,ll)> dfs1 = [&](ll v, ll p) {
     for(auto i: g[v]) if(i != p) {
         dfs1(i, v);
-        chmax(dist[v], dist[i] + 1);
+        chmax(dp[v], dp[i] + 1);
     }
 };
 dfs1(0, -1);

@@ -62,6 +62,7 @@ private:
     struct line {
         T a, b;
         line(T a_ = 0, T b_ = 0) : a(a_), b(b_) {}
+        // ll でも overflow するのに注意
         T get(T x) { return a * x + b; }
     };
     struct node {

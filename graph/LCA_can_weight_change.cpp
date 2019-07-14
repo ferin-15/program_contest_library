@@ -102,7 +102,7 @@ struct LCA {
   struct edge { int id, to, cost; };
   const int n = 0;
   const int log2_n = 0;
-  vector<vector<int> par;
+  vector<vector<int>> par;
   vector<vector<edge>> g;
   vector<int> depth;     // 頂点iの深さ
   vector<int> vs;        // 頂点を訪問順に並べたもの

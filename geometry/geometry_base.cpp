@@ -1,5 +1,3 @@
-const double EPS = 1e-8;
-
 using R = long double; // Rにmint渡せるようにする
 using P = complex<R>;
 using L = pair<P,P>;
@@ -14,12 +12,19 @@ struct S : public L {
     S(const P &a, const P &b) : L(a,b) {}
 };
 
+const R EPS = 1e-8;
+const R PI = atan(1)*4;
+
 inline int sgn(const R& r) { return (r>EPS) - (r<-EPS); }
 inline R dot(const P& a, const P& b) {
     return real(a)*real(b) + imag(a)*imag(b);
 }
 inline R det(const P& a, const P& b) {
     return real(a)*imag(b) - imag(a)*real(b);
+}
+inline P rotate(const P& p, const R& arg) {
+    return P(cos(arg)*p.real()-sin(arg)*p.imag(),
+             sin(arg)*p.real()+cos(arg)*p.imag());
 }
 inline P vec(const L& l) {return l.second - l.first;}
 namespace std {
