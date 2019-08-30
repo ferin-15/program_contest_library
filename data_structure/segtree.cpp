@@ -55,6 +55,7 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
+// 1-index !!!!!
 template<typename Monoid>
 struct segtree {
     using T = typename Monoid::T;
@@ -67,8 +68,8 @@ struct segtree {
         dat.assign(n*2, Monoid::id());
     }
     void build(vector<T> v) {
-        REP(i, v.size()) dat[i+n-1] = v[i];
-        for(int i=n-1; i>0; --i) dat[i] = Monoid::op(dat[i*2+1], dat[i*2+2]);
+        REP(i, v.size()) dat[i+n] = v[i];
+        for(int i=n-1; i>0; --i) dat[i] = Monoid::op(dat[i*2], dat[i*2+1]);
     }
 
     T query(int a, int b) {

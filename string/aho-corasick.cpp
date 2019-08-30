@@ -2,10 +2,10 @@
 template <int types = 26>
 struct AhoCorasick {
     struct node {
-    int fail;
-    vector<int> next;
-    vector<int> matched;
-    node() : fail(-1), next(types, -1) {}
+        int fail;
+        vector<int> next;
+        vector<int> matched;
+        node() : fail(-1), next(types, -1) {}
     };
 
     vector<node> nodes;

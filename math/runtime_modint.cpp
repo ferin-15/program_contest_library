@@ -1,16 +1,17 @@
 // 実行時にmodを決定するmodint
+ll MOD;
 struct mint {
-    ll x, MOD;
-    mint(): x(0), MOD(-1) {}
-    mint(ll y, ll m) : MOD(m), x(y>=0 ? y%MOD : y%MOD+MOD) {}
+    ll x;
+    mint(): x(0) {}
+    mint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     // e乗
-    mint pow(ll e) {
-        ll a = 1, p = x;
+    friend mint pow(mint p, ll e) {
+        mint a(1);
         while(e > 0) {
-            if(e%2 == 0) {p = (p*p) % MOD; e /= 2;}
-            else {a = (a*p) % MOD; e--;}
+            if(e%2 == 0) {p = (p*p); e /= 2;}
+            else {a = (a*p); e--;}
         }
-        return mint(a);
+        return a;
     }
     mint inv() const {
         ll a=x, b=MOD, u=1, y=1, v=0, z=0;

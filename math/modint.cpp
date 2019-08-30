@@ -24,6 +24,10 @@ struct modint {
         return z;
     }
     // Comparators
+    bool operator <(modint b) { return x < b.x; }
+    bool operator >(modint b) { return x > b.x; }
+    bool operator<=(modint b) { return x <= b.x; }
+    bool operator>=(modint b) { return x >= b.x; }
     bool operator!=(modint b) { return x != b.x; }
     bool operator==(modint b) { return x == b.x; }
     // Basic Operations
@@ -54,30 +58,31 @@ struct modint {
         return *this;
     }
     modint &operator/=(modint r) { return *this *= r.inv(); }
-    template<class T> friend
-    modint operator*(T l, modint r) { return modint(l) *= r; }
-    template<class T> friend
-    modint operator+(T l, modint r) { return modint(l) += r; }
-    template<class T> friend
-    modint operator-(T l, modint r) { return modint(l) -= r; }
-    template<class T> friend
-    modint operator/(T l, modint r) { return modint(l) /= r; }
-    template<class T> friend
-    bool operator==(T l, modint r) { return modint(l) == r; }
-    template<class T> friend
-    bool operator!=(T l, modint r) { return modint(l) != r; }
     // increment, decrement
     modint operator++() { x++; return *this; }
     modint operator++(signed) { modint t = *this; x++; return t; }
     modint operator--() { x--; return *this; }
     modint operator--(signed) { modint t = *this; x--; return t; }
+
+    template<class T>
+    friend modint operator*(T l, modint r) { return modint(l) *= r; }
+    template<class T>
+    friend modint operator+(T l, modint r) { return modint(l) += r; }
+    template<class T>
+    friend modint operator-(T l, modint r) { return modint(l) -= r; }
+    template<class T>
+    friend modint operator/(T l, modint r) { return modint(l) /= r; }
+    template<class T>
+    friend bool operator==(T l, modint r) { return modint(l) == r; }
+    template<class T>
+    friend bool operator!=(T l, modint r) { return modint(l) != r; }
     // Input/Output
     friend ostream &operator<<(ostream& os, modint a) { return os << a.x; }
     friend istream &operator>>(istream& is, modint &a) { return is >> a.x; }
     friend string to_frac(modint v) {
         static map<ll, PII> mp;
         if(mp.empty()) {
-            mp[0] = mp[modint::mod()] = {0, 1};
+            mp[0] = mp[MOD] = {0, 1};
             FOR(i, 2, 1001) FOR(j, 1, i) if(__gcd(i, j) == 1) {
                 mp[(modint(i) / j).x] = {i, j};
             }
