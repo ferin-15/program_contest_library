@@ -48,7 +48,7 @@ template<typename dat_type, typename lazy_type>
 struct segtree {
     ll n;
     vector<dat_type> dat;
-    dat_type dat_d; 
+    dat_type dat_d;
     vector<lazy_type> lazy;
     lazy_type lazy_d;
 
@@ -56,8 +56,8 @@ struct segtree {
     F merge_dat;
 
     segtree() {}
-    segtree(int n_, F md, dat_type dd, ll ld) 
-        : dat_d(dd), lazy_d(ld), merge_dat(md) 
+    segtree(int n_, F md, dat_type dd, ll ld)
+        : dat_d(dd), lazy_d(ld), merge_dat(md)
     {
         n = 1; while(n < n_) n *= 2;
         dat.assign(n*2, dat_d);
@@ -163,7 +163,7 @@ signed main(void)
         cin >> n >> m;
 
         segtree<node,ll> seg(n, merge_dat, node(), LLINF);
-        
+
         REP(i, n) {
             ll a;
             cin >> a;
@@ -176,17 +176,17 @@ signed main(void)
             ll t;
             cin >> t;
             if(t == 0) {
-                ll l, r, x; 
+                ll l, r, x;
                 cin >> l >> r >> x;
-                seg.update(l, r, x);
+                seg.update(l-1, r, x);
             } else if(t == 1) {
                 ll l, r;
                 cin >> l >> r;
-                cout << seg.query(l, r).max << endl;
+                cout << seg.query(l-1, r).max << endl;
             } else if(t == 2) {
                 ll l, r;
                 cin >> l >> r;
-                cout << seg.query(l, r).sum << endl;
+                cout << seg.query(l-1, r).sum << endl;
             }
         }
     }
