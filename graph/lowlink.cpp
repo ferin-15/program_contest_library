@@ -1,4 +1,3 @@
-// BEGIN CUT
 // hecさんの写経 自分ではverifyしてない
 // n頂点のグラフgについてlow_linkを求める
 VI ord(n, -1), low(n, -1), par(n, -1);
@@ -22,4 +21,3 @@ auto low_link = [&]() {
   REP(i, n) if(ord[i] == -1) dfs(i, -1, k), root[i] = true;
 };
 low_link();
-// END CUT

@@ -84,13 +84,13 @@ struct Mo_Tree_Vertex {
 
     int getlca(int u, int v) {
         if(dep[u] > dep[v]) swap(u, v);
-        for(int k = 0; k < parent.size(); k++) {
+        for(int k = 0; k < (int)parent.size(); k++) {
             if(((dep[v] - dep[u]) >> k) & 1) {
                 v = parent[k][v];
             }
         }
         if(u == v) return (u);
-        for(int k = (int) parent.size() - 1; k >= 0; k--) {
+        for(int k = (int)parent.size()-1; k >= 0; k--) {
             if(parent[k][u] != parent[k][v]) {
                 u = parent[k][u];
                 v = parent[k][v];
@@ -105,45 +105,42 @@ struct Mo_Tree_Vertex {
         else del(vertex);
     }
 
-    Mo_Tree_Vertex(int n, F a, F d) : width((int) sqrt(2 * n - 1)), nl(0), nr(0), ptr(0), g(n), in(n), dep(n), v(n), add(a), del(d) {
+    Mo_Tree_Vertex(int n, F a, F d) : g(n), in(n), dep(n), v(n), width((int)sqrt(2*n-1)), nl(0), nr(0), ptr(0), add(a), del(d) {
         const auto lg = (int) (log2(n) + 1);
-        parent.resize(lg, vector< int >(n));
-        vs.reserve(2 * n - 1);
+        parent.resize(lg, vector<int>(n));
+        vs.reserve(2*n-1);
     }
 
     void add_edge(int x, int y) {
         g[x].push_back(y);
         g[y].push_back(x);
     }
-
     void prepare() {
         dfs(0, 0, -1);
-        for(int k = 0; k + 1 < parent.size(); k++) {
-            for(int i = 0; i < parent[k].size(); i++) {
+        for(int k = 0; k+1 < (int)parent.size(); k++) {
+            for(int i = 0; i < (int)parent[k].size(); i++) {
                 if(parent[k][i] == -1) parent[k + 1][i] = -1;
                 else parent[k + 1][i] = parent[k][parent[k][i]];
             }
         }
     }
-
     void insert(int x, int y) {
         if(in[x] > in[y]) swap(x, y);
         left.push_back(in[x] + 1);
         right.push_back(in[y] + 1);
         lca.push_back(getlca(x, y));
     }
-
     void build() {
         order.resize(left.size());
         iota(begin(order), end(order), 0);
         sort(begin(order), end(order), [&](int a, int b) {
             if(left[a] / width != left[b] / width) return left[a] < left[b];
-            return right[a] < right[b];
+            return bool((right[a] < right[b]) ^ (left[a] / width % 2));
         });
     }
 
     int process() {
-        if(ptr == order.size()) return (-1);
+        if(ptr == (int)order.size()) return (-1);
         if(ptr > 0) distribute(lca[order[ptr - 1]]); // 前のクエリで追加したLCAを削除
         const auto id = order[ptr];
         while(nl > left[id]) distribute(vs[--nl]);
@@ -196,14 +193,4 @@ namespace spoj_cot2 {
         REP(i, m) ans[mo.process()] = sum;
         REP(i, m) cout << ans[i] << "\n";
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    spoj_cot2::solve();
-
-    return 0;
 }

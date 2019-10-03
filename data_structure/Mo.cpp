@@ -312,16 +312,3 @@ namespace ABC014D {
         REP(i, q) cout << ans[i]+1 << "\n";
     }
 };
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // spoj_dquery::solve();
-    // spoj_frequent::solve();
-    // cf221div1d::solve();
-    ABC014D::solve();
-
-    return 0;
-}

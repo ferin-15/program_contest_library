@@ -152,13 +152,3 @@ namespace ABC014D {
         REP(i, q) cout << dist[u[i]] + dist[v[i]] - 2*dist[lca[i]] + 1 << endl;
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    ABC014D::solve();
-
-    return 0;
-}

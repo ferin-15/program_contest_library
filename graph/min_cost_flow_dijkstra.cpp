@@ -118,27 +118,3 @@ struct primal_dual {
         return res;
     }
 };
-
-namespace GRL6B {
-    void solve() {
-        ll n, m, f;
-        cin >> n >> m >> f;
-        primal_dual mcf(n);
-        REP(i, m) {
-            ll u, v, c, d;
-            cin >> u >> v >> c >> d;
-            mcf.add_edge(u, v, c, d);
-        }
-        cout << mcf.min_cost_flow(0, n-1, f) << endl;
-    }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    GRL6B::solve();
-
-    return 0;
-}

@@ -129,28 +129,3 @@ struct dinic {
         return out;
     }
 };
-
-namespace GRL6A {
-    void solve() {
-        ll v, e;
-        cin >> v >> e;
-        dinic flow(v);
-        REP(i, e) {
-            ll u, v, c;
-            cin >> u >> v >> c;
-            flow.add_edge(u, v, c);
-        }
-
-        cout << flow.max_flow(0, v-1) << endl;
-    }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    GRL6A::solve();
-
-    return 0;
-}

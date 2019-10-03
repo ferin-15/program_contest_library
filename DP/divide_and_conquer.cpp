@@ -135,11 +135,3 @@ namespace cf438F {
         cout << dp[K-1][N-1] << endl;
     }
 }
-
-signed main(void)
-{
-    // cf190div1E::solve();
-    cf438F::solve();
-
-    return 0;
-}

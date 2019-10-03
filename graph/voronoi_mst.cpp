@@ -171,14 +171,3 @@ namespace codefestival2017finalJ {
         cout << voronoiMst<false>(g, init) << endl;
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // cf529div3F::solve();
-    codefestival2017finalJ::solve();
-
-    return 0;
-}

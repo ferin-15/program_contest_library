@@ -93,13 +93,3 @@ namespace colocon2018finalC {
         for(auto p: dp) cout << p.second << endl;
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    colocon2018finalC::solve();
-
-    return 0;
-}

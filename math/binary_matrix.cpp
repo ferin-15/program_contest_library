@@ -96,7 +96,7 @@ struct matrix {
         return ret;
     }
     // 階段行列を求める O(HW^2)
-    friend pair<matrix,int> gauss_jordan(matrix a) {
+    friend int gauss_jordan(matrix &a) {
         int rank = 0;
         REP(i, a.w) {
             int pivot = -1;
@@ -108,7 +108,7 @@ struct matrix {
             }
             rank++;
         }
-        return make_pair(a, rank);
+        return rank;
     }
 
     friend ostream &operator<<(ostream& os, matrix a) {
@@ -137,8 +137,8 @@ namespace codeflyer_D {
             }
         }
 
-        auto A = gauss_jordan(mata).first, B = gauss_jordan(matb).first;
-        if(A == B) cout << "Yes" << endl;
+        gauss_jordan(mata); gauss_jordan(matb);
+        if(mata == matb) cout << "Yes" << endl;
         else cout << "No" << endl;
     }
 }
@@ -153,20 +153,9 @@ namespace ARC054C {
         matrix<200> mat(n);
         REP(i, n) REP(j, n) mat.dat[i][j] = s[i][j]-'0';
 
-        mat = gauss_jordan(mat).first;
+        gauss_jordan(mat);
         ll ret = 1;
         REP(i, n) ret *= mat.dat[i][i];
         cout << (ret==1 ? "Odd" : "Even") << endl;
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // codeflyer_D::solve();
-    ARC054C::solve();
-
-    return 0;
 }

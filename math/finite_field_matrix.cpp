@@ -192,19 +192,22 @@ struct matrix {
         return ret;
     }
     // 階段行列を求める O(HW^2)
-    friend pair<matrix,int> gauss_jordan(matrix a) {
+    friend int gauss_jordan(matrix& a) {
         int rank = 0;
         REP(i, a.w) {
             int pivot = -1;
             FOR(j, rank, a.h) if(a.get(j,i) != 0) { pivot = j; break; }
             if(pivot == -1) continue;
             REP(j, a.w) swap(a.get(rank,j), a.get(pivot,j));
+            const mint inv = a.get(rank,i).inv();
+            REP(j, a.w) a.get(rank,j) *= inv;
             REP(j, a.h) if(j != rank && a.get(j,i) != 0) {
-                REP(k, a.w) a.get(j,k) += a.get(rank,k);
+                const mint num = a.get(j,i);
+                REP(k, a.w) a.get(j,k) -= a.get(rank,k) * num;
             }
             rank++;
         }
-        return make_pair(a, rank);
+        return rank;
     }
 
     friend ostream &operator<<(ostream& os, matrix a) {
@@ -258,8 +261,8 @@ namespace codeflyer_D {
             }
         }
 
-        auto A = gauss_jordan(mata).first, B = gauss_jordan(matb).first;
-        if(A == B) cout << "Yes" << endl;
+        gauss_jordan(mata), gauss_jordan(matb);
+        if(mata == matb) cout << "Yes" << endl;
         else cout << "No" << endl;
     }
 }
@@ -276,21 +279,9 @@ namespace ARC054C {
         matrix mat(n, n);
         REP(i, n) REP(j, n) mat.get(i,j) = s[i][j]-'0';
 
-        mat = gauss_jordan(mat).first;
+        gauss_jordan(mat);
         mint ret = 1;
         REP(i, n) ret *= mat.get(i,i);
         cout << (ret==1 ? "Odd" : "Even") << endl;
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    ARC050C::solve();
-    // codeflyer_D::solve();
-    // ARC054C::solve();
-
-    return 0;
 }

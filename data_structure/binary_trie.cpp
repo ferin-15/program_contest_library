@@ -38,7 +38,6 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
-// BEGIN
 template<typename T = int, int B = 32>
 class binaryTrie {
 private:
@@ -123,7 +122,6 @@ public:
         return t->cnt;
     }
 };
-// END
 
 // https://codeforces.com/contest/947/problem/C
 namespace cf947c {
@@ -186,16 +184,4 @@ namespace arc033c {
             }
         }
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // cf947c::solve();
-    // spoj_subxor::solve();
-    arc033c::solve();
-
-    return 0;
 }

@@ -105,36 +105,3 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
-
-namespace DPL3C {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> h(n);
-        REP(i, n) cin >> h[i];
-
-        cout << largest_rectangle_histogram(h) << endl;
-    }
-}
-
-namespace DPL3B {
-    void solve() {
-        ll h, w;
-        cin >> h >> w;
-        vector<vector<ll>> c(h, vector<ll>(w));
-        REP(i, h) REP(j, w) cin >> c[i][j];
-
-        cout << largeest_rectangle(c) << endl;
-    }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // DPL3C::solve();
-    DPL3B::solve();
-
-    return 0;
-}

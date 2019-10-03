@@ -68,6 +68,7 @@ struct partialPersistentUF {
         idx = 0;
         REP(i, n) par[i][0] = i, rank[i] = 1, fin[i] = 0;
     }
+    // t(1-indexed)回目までのuniteでのxの親
     int find(int x, int t) {
         if(t >= fin[x] && par[x][fin[x]] != x) return find(par[x][fin[x]], t);
         return x;
@@ -117,14 +118,4 @@ namespace codethanks2017H {
             cout << ub << endl;
         }
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    codethanks2017H::solve();
-
-    return 0;
 }

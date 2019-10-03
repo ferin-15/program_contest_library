@@ -105,43 +105,4 @@ struct SCC {
         }
         return res;
     }
-    // MLがやばいときに途中でいらないのを消す
-    void clear() {
-        vector<int>().swap(vs);
-        vector<int>().swap(used);
-        vector<vector<int>>().swap(G);
-        vector<vector<int>>().swap(rG);
-    }
 };
-
-namespace GRL3C {
-    void solve() {
-        ll n, m;
-        cin >> n >> m;
-        SCC scc(n);
-        REP(i, m) {
-            ll u, v;
-            cin >> u >> v;
-            scc.add_edge(u, v);
-        }
-        scc.scc();
-        ll q;
-        cin >> q;
-        REP(i, q) {
-            ll u, v;
-            cin >> u >> v;
-            if(scc.cmp[u] == scc.cmp[v]) cout << 1 << endl;
-            else cout << 0 << endl;
-        }
-    }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    GRL3C::solve();
-
-    return 0;
-}

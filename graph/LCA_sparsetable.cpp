@@ -166,13 +166,3 @@ namespace ABC014D {
         }
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    ABC014D::solve();
-
-    return 0;
-}

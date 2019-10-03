@@ -256,14 +256,3 @@ namespace nikkei2019qualA {
         cout << ans << endl;
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    Dynamic_connectivity_contest_A::solve();
-    // nikkei2019qualA::solve();
-
-    return 0;
-}

@@ -38,7 +38,6 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
-// BEGIN
 template <typename T>
 struct BIT {
     vector<T> bit;
@@ -52,7 +51,7 @@ struct BIT {
         bit.assign(n+1, neutral); 
     }
     void update(int i, T w) {
-        for(int x=i+1; x<bit.size(); x += x&-x) bit[x] += w;
+        for(int x=i+1; x<(int)bit.size(); x += x&-x) bit[x] += w;
     }
     // [0,i]
     T query(int i) {
@@ -72,25 +71,6 @@ struct BIT {
         return x;
     }
 };
-// END
-
-// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
-namespace aoj_dsl2b {
-    void solve() {
-        ll n, q;
-        cin >> n >> q;
-        BIT<ll> bit(100010);
-        while(q--) {
-            ll t, x, y;
-            cin >> t >> x >> y;
-            if(t == 0) {
-                bit.update(x, y);
-            } else {
-                cout << bit.query(y) - bit.query(x-1) << endl;
-            }
-        }
-    }
-}
 
 // https://atcoder.jp/contests/arc033/tasks/arc033_3
 namespace arc033c {
@@ -111,15 +91,4 @@ namespace arc033c {
             }
         }
     }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // aoj_dsl2b::solve();
-    arc033c::solve();
-
-    return 0;
 }

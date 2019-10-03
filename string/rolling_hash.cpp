@@ -1,51 +1,58 @@
-struct rollingHash {
-    ll mo[2] = {1000000007, 1000000009};
-    ll base[2] = {1009, 1007};
-    vector<ll> hash[2], power[2];
-    rollingHash() {}
-    rollingHash(string s) {
-        hash[0].resize(s.size()+1); hash[1].resize(s.size()+1);
-        power[0].resize(s.size()+1); power[1].resize(s.size()+1);
-        init(s);
-    }
-    inline ll mul(ll a, ll b, ll md) const {
-        return a * b % md;
-        // unsigned long long y = a*b;
-        // unsigned xh = (unsigned)(y>>32), xl = (unsigned)y, d, m;
-        // asm(
-        //     "divl %4; \n\t"
-        //     : "=a" (d), "=d" (m)
-        //     : "d" (xh), "a" (xl), "r" (md)
-        // );
-        // return a;
-    }
-    // O(|S|)
-    void init(string s) {
-        REP(i, 2) {
-            power[i][0] = 1;
-            FOR(j, 1, s.size()+1) power[i][j] = mul(power[i][j-1], base[i], mo[i]);
+#include <bits/stdc++.h>
+ 
+using namespace std;
+using ll = long long;
+// #define int ll
+using PII = pair<ll, ll>;
+ 
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+ 
+template<typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
+template<typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
+template<typename T> bool IN(T a, T b, T x) { return a<=x&&x<b; }
+template<typename T> T ceil(T a, T b) { return a/b + !!(a%b); }
+
+template<typename T> vector<T> make_v(size_t a) { return vector<T>(a); }
+template<typename T,typename... Ts>
+auto make_v(size_t a,Ts... ts) { 
+    return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));
+}
+template<typename T,typename V> typename enable_if<is_class<T>::value==0>::type
+fill_v(T &t, const V &v) { t=v; }
+template<typename T,typename V> typename enable_if<is_class<T>::value!=0>::type
+fill_v(T &t, const V &v ) { for(auto &e:t) fill_v(e,v); }
+
+template<class S,class T>
+ostream &operator <<(ostream& out,const pair<S,T>& a){
+    out<<'('<<a.first<<','<<a.second<<')'; return out;
+}
+template<class T>
+ostream &operator <<(ostream& out,const vector<T>& a){
+    out<<'['; for(T i: a) {out<<i<<',';} out<<']'; return out;
+}
+
+int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}; // DRUL
+const int INF = 1<<30;
+const ll LLINF = 1LL<<60;
+const ll MOD = 1000000007;
+
+template<ll MOD, ll B>
+struct rollingHash{
+    vector<ll> hash,p;
+    rollingHash(){}
+    rollingHash(const string &s){
+        const int n=s.size();
+        hash.assign(n+1,0); p.assign(n+1,1);
+        for(int i=0;i<n;i++){
+            hash[i+1]=(hash[i]*B+s[i])%MOD;
+            p[i+1]=p[i]*B%MOD;
         }
-        // 1-indexの累積和
-        REP(i, 2) REP(j, s.size()) {
-            hash[i][j+1] = (hash[i][j]+mul(power[i][j], s[j], mo[i]))%mo[i];
-        }
-    }
-    // [l1,r1) と [l2,r2) が一致するか
-    bool equal(int l1, int r1, int l2, int r2) {
-        REP(i, 2) {
-            ll a = (hash[i][r1]-hash[i][l1]+mo[i])%mo[i];
-            ll b = (hash[i][r2]-hash[i][l2]+mo[i])%mo[i];
-            if(mul(a,power[i][l2-l1],mo[i]) != b) return false;
-        }
-        return true;
     }
     // [l,r)
-    PII get(int l, int r) {
-        PII ret;
-        ret.first = (hash[0][r]-hash[0][l]+mo[0])%mo[0];
-        ret.first = mul(ret.first, power[0][hash[0].size()-1-l], mo[0]);
-        ret.second = (hash[1][r]-hash[1][l]+mo[1])%mo[1];
-        ret.second = mul(ret.second, power[1][hash[1].size()-1-l], mo[1]);
-        return ret;
+    ll get(int l,int r){
+        ll res=hash[r]+MOD-hash[l]*p[r-l]%MOD;
+        return res>=MOD?res-MOD:res;
     }
 };

@@ -76,29 +76,3 @@ vector<PII> tsort(vector<vector<ll>> g) {
 
     return ans;
 }
-
-namespace GRL4B {
-    void solve() {
-        ll n, m;
-        cin >> n >> m;
-        vector<vector<ll>> g(n);
-        REP(i, m) {
-            ll u, v;
-            cin >> u >> v;
-            g[u].push_back(v);
-        }
-
-        auto ans = tsort(g);
-        for(auto p: ans) cout << p.first << endl;
-    }
-}
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    GRL4B::solve();
-
-    return 0;
-}

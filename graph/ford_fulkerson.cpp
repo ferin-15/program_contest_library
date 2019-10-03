@@ -55,67 +55,61 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
-// dp(i,j) = min_{i<=s<j} {dp(i,s)+dp(s+1,j)} + W(i,j) を O(N^2) で計算
-template<typename F>
-ll knuth_yao(ll n, F W) {
-    vector<vector<ll>> dp(n+1, vector<ll>(n+1));
-    // K(i,j) = argmin_{i<=s<j} (X(i,s) + X(s+1,j))
-    vector<vector<int>> K(n+1, vector<int>(n+1));
-    REP(i, n+1) REP(j, n+1) {
-        dp[i][j] = (i==j ? 0 : LLINF);
-        K[i][j] = (i==j ? i : 0);
-    }
-    for(int w=1; w<=n; ++w) {
-        for(int i=0, j=i+w; (j=i+w) < n; ++i) {
-            // K(i,j)の単調性から範囲が限定できる
-            for(int r = K[i][j-1]; r <= K[i+1][j]; ++r) {
-                ll c = dp[i][r] + dp[r+1][j] + W(i, j);
-                if(dp[i][j] > c) dp[i][j] = c, K[i][j] = r;
+struct FordFulkerson {
+    struct edge {
+        int to;
+        ll cap;
+        int rev;
+        bool isrev;
+    };
+
+    vector<vector<edge>> g;
+    vector<int> used;
+    int timestamp;
+
+    ll dfs(int idx, const int t, ll flow) {
+        if(idx == t) return flow;
+        used[idx] = timestamp;
+        for(auto &e : g[idx]) {
+            if(e.cap > 0 && used[e.to] != timestamp) {
+                ll d = dfs(e.to, t, min(flow, e.cap));
+                if(d > 0) {
+                    e.cap -= d;
+                    g[e.to][e.rev].cap += d;
+                    return d;
+                }
             }
         }
+        return 0;
     }
-    return dp[0][n-1];
-}
 
-namespace KUPC2012J {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> a(n);
-        REP(i, n) cin >> a[i];
+    FordFulkerson() {}
+    FordFulkerson(int n) : timestamp(0), g(n), used(n, -1) {}
 
-        vector<ll> w(a);
-        FOR(i, 1, n) w[i] += w[i-1];
-        auto f = [&](ll i, ll j) { return w[j] - (i==0?0:w[i-1]); };
-
-        cout << knuth_yao<decltype(f)>(n, f) << endl;
+    void add_edge(int from, int to, ll cap) {
+        g[from].emplace_back((edge){to, cap, (int)g[to].size(), false});
+        g[to].emplace_back((edge){from, 0, (int)g[from].size()-1, true});
     }
-}
 
-namespace SPOJ_BRKSTRNG {
-    void solve() {
-        int n, m;
-        while(cin >> n >> m) {
-            vector<int> a(m+1);
-            REP(i, m) cin >> a[i];
-            a[m] = n;
-
-            auto f = [&](ll i, ll j) {
-                if(i >= j) return 0;
-                return a[j] - (i==0?0:a[i-1]);
-            };
-            cout << knuth_yao<decltype(f)>(m+1, f) << endl;
+    ll max_flow(int s, int t) {
+        ll flow = 0;
+        ++timestamp;
+        for(ll f; (f = dfs(s, t, INF)) > 0; timestamp++) {
+            flow += f;
         }
+        return flow;
     }
-}
 
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // KUPC2012J::solve();
-    SPOJ_BRKSTRNG::solve();
-
-    return 0;
-}
+    friend ostream &operator <<(ostream& out, const FordFulkerson& a){
+        out << "-----" << endl;
+        for(int i = 0; i < (int)a.g.size(); i++) {
+            for(auto &e : a.g[i]) {
+                if(e.isrev) continue;
+                auto &rev_e = a.g[e.to][e.rev];
+                out << i << "->" << e.to << " (flow: " << rev_e.cap << "/" << e.cap + rev_e.cap << ")" << endl;
+            }
+        }
+        out << "-----" << endl;
+        return out;
+    }
+};

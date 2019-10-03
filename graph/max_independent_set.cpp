@@ -111,13 +111,3 @@ namespace thanks2017G {
         cout << graph.get() << endl;
     }
 }
-
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    thanks2017G::solve();
-
-    return 0;
-}
