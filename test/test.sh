@@ -8,15 +8,18 @@ CXXFLAGS="${CXXFLAGS:--std=c++14 -O2 -Wall -g}"
 
 run() {
     file="$1"
+    echo "$ ./test.sh $file"
     url="$(grep -o '^# *define \+PROBLEM \+\(https\?://.*\)' < "$file" | sed 's/.* http/http/')"
     dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
     mkdir -p ${dir}
     $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
     if [[ -n ${url} ]] ; then
         if [[ ! -e ${dir}/test ]] ; then
+            echo "$ oj d -a $url"
             sleep 2
             oj download --system "$url" -d ${dir}/test
         fi
+        echo '$ oj t'
         oj test --tle 10 --c ${dir}/a.out -d ${dir}/test
     else
         ${dir}/a.out

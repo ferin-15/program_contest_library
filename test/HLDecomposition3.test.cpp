@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_D
+#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C
 #include "../graph/HLDecomposition.cpp"
 
 signed main(void) {
@@ -8,7 +8,6 @@ signed main(void) {
     ll n;
     cin >> n;
     HLDecomposition hld(n);
-    vector<ll> p(n, -1);
     REP(i, n) {
         ll k;
         cin >> k;
@@ -16,7 +15,6 @@ signed main(void) {
             ll c;
             cin >> c;
             hld.add_edge(i, c);
-            p[c] = i;
         }
     }
     hld.build();

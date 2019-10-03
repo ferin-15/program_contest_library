@@ -78,7 +78,11 @@ struct modint {
     friend bool operator!=(T l, modint r) { return modint(l) != r; }
     // Input/Output
     friend ostream &operator<<(ostream& os, modint a) { return os << a.x; }
-    friend istream &operator>>(istream& is, modint &a) { return is >> a.x; }
+    friend istream &operator>>(istream& is, modint &a) { 
+        is >> a.x;
+        a.x = ((a.x%MOD)+MOD)%MOD;
+        return is;
+    }
     friend string to_frac(modint v) {
         static map<ll, PII> mp;
         if(mp.empty()) {

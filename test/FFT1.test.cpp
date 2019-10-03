@@ -82,7 +82,11 @@ struct modint {
     friend bool operator!=(T l, modint r) { return modint(l) != r; }
     // Input/Output
     friend ostream &operator<<(ostream& os, modint a) { return os << a.x; }
-    friend istream &operator>>(istream& is, modint &a) { return is >> a.x; }
+    friend istream &operator>>(istream& is, modint &a) { 
+        is >> a.x;
+        a.x = ((a.x%MOD)+MOD)%MOD;
+        return is;
+    }
     friend string to_frac(modint v) {
         static map<ll, PII> mp;
         if(mp.empty()) {
@@ -125,7 +129,7 @@ signed main(void) {
         // b[i] = (-k)^i / i!
         vector<mint> b0(n);
         b0[0] = 1;
-        FOR(i, 1, n) b0[i] = b0[i-1] * (MOD-k) * mint(i).inv();
+        FOR(i, 1, n) b0[i] = b0[i-1] * (65537-k) * mint(i).inv();
 
         // a と b の畳み込みに i! を掛ける
         vector<int> a(n), b(n);
