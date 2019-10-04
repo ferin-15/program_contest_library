@@ -1,17 +1,55 @@
-// 実行時にmodを決定するmodint
+#include <bits/stdc++.h>
+ 
+using namespace std;
+using ll = long long;
+// #define int ll
+using PII = pair<ll, ll>;
+ 
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+ 
+template<typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
+template<typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
+template<typename T> bool IN(T a, T b, T x) { return a<=x&&x<b; }
+template<typename T> T ceil(T a, T b) { return a/b + !!(a%b); }
+
+template<typename T> vector<T> make_v(size_t a) { return vector<T>(a); }
+template<typename T,typename... Ts>
+auto make_v(size_t a,Ts... ts) { 
+    return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));
+}
+template<typename T,typename V> typename enable_if<is_class<T>::value==0>::type
+fill_v(T &t, const V &v) { t=v; }
+template<typename T,typename V> typename enable_if<is_class<T>::value!=0>::type
+fill_v(T &t, const V &v ) { for(auto &e:t) fill_v(e,v); }
+
+template<class S,class T>
+ostream &operator <<(ostream& out,const pair<S,T>& a){
+    out<<'('<<a.first<<','<<a.second<<')'; return out;
+}
+template<class T>
+ostream &operator <<(ostream& out,const vector<T>& a){
+    out<<'['; for(T i: a) {out<<i<<',';} out<<']'; return out;
+}
+
+int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}; // DRUL
+const int INF = 1<<30;
+const ll LLINF = 1LL<<60;
+
 ll MOD;
 struct mint {
     ll x;
     mint(): x(0) {}
     mint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     // e乗
-    friend mint pow(mint p, ll e) {
-        mint a(1);
+    mint pow(ll e) {
+        ll a = 1, p = x;
         while(e > 0) {
-            if(e%2 == 0) {p = (p*p); e /= 2;}
-            else {a = (a*p); e--;}
+            if(e%2 == 0) {p = (p*p) % MOD; e /= 2;}
+            else {a = (a*p) % MOD; e--;}
         }
-        return a;
+        return mint(a);
     }
     mint inv() const {
         ll a=x, b=MOD, u=1, y=1, v=0, z=0;
@@ -54,6 +92,32 @@ struct mint {
         return *this;
     }
     mint &operator/=(mint r) { return *this *= r.inv(); }
+    // 平方剰余のうち一つを返す なければ-1
+    friend ll sqrt(mint a) {
+        if(a == 0) return 0;
+        ll q = MOD-1, s = 0;
+        while((q&1)==0) q>>=1, s++;
+        mint z=2;
+        while(1) {
+            if(z.pow((MOD-1)/2) == MOD-1) break;
+            z++;
+        }
+        mint c = z.pow(q), r = a.pow((q+1)/2), t = a.pow(q);
+        ll m = s;
+        while(t.x>1) {
+            mint tp=t;
+            ll k=-1;
+            FOR(i, 1, m) {
+                tp *= tp;
+                if(tp == 1) { k=i; break; }
+            }
+            if(k==-1) return -1;
+            mint cp=c;
+            REP(i, m-k-1) cp *= cp;
+            c = cp*cp, t = c*t, r = cp*r, m = k;
+        }
+        return r.x;
+    }
     template<class T> friend
     mint operator*(T l, mint r) { return mint(l) *= r; }
     template<class T> friend
@@ -92,3 +156,15 @@ struct mint {
         return ret;
     }
 };
+
+namespace librarychecker_sqrtmod {
+    void solve() {
+        ll t;
+        cin >> t;
+        while(t--) {
+            ll a;
+            cin >> a >> MOD;
+            cout << sqrt(mint(a)) << endl;
+        }
+    }
+}
