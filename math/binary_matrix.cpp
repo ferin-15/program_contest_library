@@ -113,7 +113,7 @@ struct matrix {
 
     friend ostream &operator<<(ostream& os, matrix a) {
         REP(i, a.h) {
-            REP(j, a.w) os << a.get(i,j) << " ";
+            REP(j, a.w) os << a.dat[i][j] << " ";
             os << endl;
         }
         return os;

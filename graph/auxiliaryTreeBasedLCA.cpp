@@ -209,9 +209,3 @@ namespace yukicoder901 {
         }
     }
 }
-
-signed main() {
-    yukicoder901::solve();
-
-    return 0;
-}
