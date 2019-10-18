@@ -84,7 +84,8 @@ struct dinic {
 
     ll dfs(int v, const int t, ll f) {
         if(v == t) return f;
-        for(edge &e: G[v]) {
+        for(int &i = iter[v]; i<G[v].size(); ++i) {
+            edge &e = G[v][i];
             if(e.cap > 0 && level[v] < level[e.to]) {
                 ll d = dfs(e.to, t, min(f, e.cap));
                 if(d > 0) {
