@@ -83,4 +83,4 @@ void dump_func(Head &&head, Tail &&... tail) {
     dump_func(std::move(tail)...);
 }
 
-#define dump(...) cerr << string(#__VA_ARGS__) << ": " << __VA_ARGS__ << endl; 
+#define dump(...) cerr << string(#__VA_ARGS__) << ": ", dump_func(__VA_ARGS__); 
