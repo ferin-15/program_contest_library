@@ -7,13 +7,13 @@ signed main(void) {
 
     ll n, m, f;
     cin >> n >> m >> f;
-    primal_dual mcf(n);
+    min_cost_max_flow mcf(n);
     REP(i, m) {
         ll u, v, c, d;
         cin >> u >> v >> c >> d;
         mcf.add_edge(u, v, c, d);
     }
-    cout << mcf.min_cost_flow(0, n-1, f) << endl;
+    cout << mcf.flow(0, n-1, f) << endl;
 
     return 0;
 }
