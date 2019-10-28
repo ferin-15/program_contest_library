@@ -7,14 +7,14 @@ signed main(void) {
 
     ll v, e;
     cin >> v >> e;
-    dinic flow(v);
+    dinic<ll> flow(v);
     REP(i, e) {
         ll u, v, c;
         cin >> u >> v >> c;
         flow.add_edge(u, v, c);
     }
 
-    cout << flow.max_flow(0, v-1) << endl;
+    cout << flow.maxflow(0, v-1) << endl;
 
     return 0;
 }
