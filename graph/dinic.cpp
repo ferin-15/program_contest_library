@@ -173,3 +173,32 @@ struct dinic {
         return out;
     }
 };
+
+template<class F>
+struct dinic_with_lowerlimit {
+    int S, T;
+    F sum_lb;
+    dinic<F> flow;
+
+    dinic_with_lowerlimit() {}
+    dinic_with_lowerlimit(int n) : S(n), T(n+1), sum_lb(0), flow(n+2) {}
+
+    void add_edge(int from, int to, F ub) {
+        flow.add_edge(from, to, ub);
+    }
+    void add_edge(int from, int to, F lb, F ub) {
+        flow.add_edge(from, to, ub-lb);
+        flow.add_edge(S, to, lb);
+        flow.add_edge(from, T, lb);
+        sum_lb += lb;
+    }
+
+    // sからtへ最小流量を満たすフローが存在しなければ-1
+    F maxflow(int s, int t) {
+        F a = flow.maxflow(S, T);
+        F b = flow.maxflow(s, T);
+        F c = flow.maxflow(S, t);
+        F d = flow.maxflow(s, t);
+        return (a+b==sum_lb && a+c==sum_lb) ? b+d : -1;
+    }
+};
