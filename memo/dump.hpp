@@ -70,6 +70,17 @@ ostream &operator <<(ostream& out, const unordered_set<T>& a){
     out << '}'; 
     return out;
 }
+template<class T>
+ostream &operator <<(ostream& out, const queue<T>& a){
+    auto b(a);
+    out << "[";
+    while(b.size()) {
+        out << b.front(); b.pop();
+        if(b.size()) out << " ";
+    }
+    out << "]";
+    return out;
+}
 
 void dump_func() {
     cerr << endl;
