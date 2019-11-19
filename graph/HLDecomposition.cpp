@@ -55,111 +55,63 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
-struct HLDecomposition {
-    int n, pos;
-    vector<vector<ll>> g;
-    vector<ll> vid,   // HL分解後のグラフでのid
-        head,  // 頂点が属するheavy-pathのheadのid
-        sub,   // 部分木のサイズ
-        hvy,   // heavy-path上での次の頂点のid
-        par,   // 親のid
-        depth, // 深さ
-        inv,   // HL分解前のグラフのid（添え字が分解後のid）
-        type,  // 森をHL分解するときの属する木の番号
-        ps,    // 行きがけ順
-        pt;    // 帰りがけ順
+class HLDecomposition {
+    void dfs1(ll v, ll p) {
+        if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
+        for(auto &to: g[v]) {
+            if(to == p) continue;
+            dfs1(to, v);
+            sz[v] += sz[to];
+            if(sz[to] > sz[g[v][0]]) swap(to, g[v][0]);
+        }
+    }
+    void dfs2(ll v, ll p, ll &k) {
+        par[v] = p; vid[v] = k++;
+        for(auto to: g[v]) {
+            if(to == p) continue;
+            head[to] = (to == g[v][0] ? head[v] : to);
+            dfs2(to, v, k);
+        }
+    }
 
-    // 根rtからdfsして部分木の大きさ、heavy-edgeの判定などをする
-    void dfs1(ll rt) {
-        stack<PII> st;
-        par[rt] = -1;
-        depth[rt] = 0;
-        st.emplace(rt, 0);
-        while(st.size()) {
-            ll v = st.top().first;
-            ll &i = st.top().second;
-            if(i < (ll)g[v].size()) {
-                ll u = g[v][i++];
-                if(u == par[v]) continue;
-                par[u] = v;
-                depth[u] = depth[v]+1;
-                st.emplace(u, 0);
-            } else {
-                st.pop();
-                for(ll &u: g[v]){
-                    if(u == par[v]) swap(u, g[v].back());
-                    if(u == par[v]) continue;
-                    sub[v] += sub[u];
-                    if(sub[u]>sub[g[v].front()]) swap(u, g[v].front());
-                }
-            }
-        }
-    }
-    // 根r、c番目の木についてchainについての情報をまとめる
-    void dfs2(ll r, ll c) {
-        using T = tuple<ll, ll, ll>;
-        stack<T> st;
-        st.emplace(r,r,0);
-        while(!st.empty()) {
-            ll v,h;
-            tie(v,h,ignore)=st.top();
-            ll &i=get<2>(st.top());
-            if(!i) {
-                type[v]=c;
-                ps[v]=vid[v]=pos++;
-                inv[vid[v]]=v;
-                head[v]=h;
-                hvy[v]=(g[v].empty()?-1:g[v][0]);
-                if(hvy[v]==par[v]) hvy[v]=-1;
-            }
-            if(i<(ll)g[v].size()) {
-                ll u=g[v][i++];
-                if(u==par[v]) continue;
-                st.emplace(u,(hvy[v]==u?h:u),0);
-            } else {
-                st.pop();
-                pt[v]=pos;
-            }
-        }
-    }
+public:
+    int n;
+    vector<vector<ll>> g;
+    vector<ll> vid, head, sz, par;
 
     HLDecomposition(){}
-    HLDecomposition(ll sz):
-        n(sz), pos(0), g(n),
-        vid(n,-1), head(n), sub(n,1), hvy(n,-1),
-        par(n), depth(n), inv(n), type(n), ps(n), pt(n) {}
+    HLDecomposition(ll sz): n(sz), g(n), vid(n,-1), head(n), sz(n,1), par(n) {}
 
     void add_edge(ll u, ll v) {
         g[u].push_back(v);
         g[v].push_back(u);
     }
     void build(vector<ll> rs=vector<ll>(1,0)) {
-        ll c=0;
+        ll k = 0;
         for(ll r: rs) {
-            dfs1(r);
-            dfs2(r, c++);
+            dfs1(r, -1);
+            dfs2(r, -1, k);
         }
     }
 
-    // 頂点に対する処理 [u,v] 開区間なので注意!!!
+    // パスu-vの頂点属性クエリ
     void for_each(ll u, ll v, const function<void(ll,ll)>& f) {
         while(1){
             if(vid[u]>vid[v]) swap(u,v);
-            // [max(vid[head[v]],vid[u]), vid[v]] の区間についての操作を行う
-            f(max(vid[head[v]], vid[u]), vid[v]);
+            f(max(vid[head[v]], vid[u]), vid[v]); // 開区間!!!
             if(head[u]!=head[v]) v = par[head[v]];
             else break;
         }
     }
-    // 辺に対する処理 [u,v] 開区間なので注意!!!
+    // パスu-vの辺属性クエリ
     void for_each_edge(ll u, ll v, const function<void(ll,ll)>& f) {
         while(1) {
             if(vid[u]>vid[v]) swap(u,v);
             if(head[u]!=head[v]) {
-                f(vid[head[v]], vid[v]);
+                f(vid[head[v]], vid[v]); // 開区間!!!
                 v = par[head[v]];
             } else {
-                if(u!=v) f(vid[u]+1, vid[v]);
+                if(u!=v) f(vid[u]+1, vid[v]); // 開区間!!!
                 break;
             }
         }
@@ -171,15 +123,8 @@ struct HLDecomposition {
             v = par[head[v]];
         }
     }
-    ll distance(ll u, ll v) {
-        return depth[u] + depth[v] - 2*depth[lca(u,v)];
-    }
 };
-/*
-パスu-vの頂点属性クエリ → hld.for_each(u, v, f)
-パスu-vの辺属性クエリ → hld.for_each_edge(u, v, f)
-頂点vの部分木に対するクエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u]) に操作
-*/
+// 頂点vの部分木に対するクエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u]) に操作
 
 namespace abc014D {
     void solve() {
