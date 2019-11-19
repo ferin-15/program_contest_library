@@ -38,73 +38,51 @@ const int INF = 1<<30;
 const ll LLINF = 1LL<<60;
 const ll MOD = 1000000007;
 
-struct twoEdgeComponents {
-    int n;
-    vector<vector<int>> g;        // グラフの隣接リスト
-    vector<int> cmp;              // 頂点iがどの連結成分に属するか
-    vector<vector<int>> each_bcc; // i番目の連結成分の属する頂点
-    vector<pair<int,int>> bridge; // i番目の橋
-    vector<int> order;
-    vector<bool> inS;
-    stack<int> roots, S;
-
-    void dfs(int cur, int prev, int &k) {
-        order[cur] = ++k;
-        S.push(cur); inS[cur] = true;
-        roots.push(cur);
-
-        for(auto to: g[cur]) {
-            if(order[to]==0) dfs(to, cur, k);
-            else if(to!=prev && inS[to]) {
-                while(order[roots.top()] > order[to]) roots.pop();
-            }
-        }
-
-        if(cur == roots.top()) {
-            if(prev!=-1) bridge.push_back({prev, cur});
-            vector<int> bcc;
-            while(1) {
-                int node = S.top(); S.pop(); inS[node] = false;
-                bcc.push_back(node);
-                if(node==cur) break;
-            }
-            each_bcc.push_back(bcc);
-            roots.pop();
-        }
-    }
-
-    twoEdgeComponents() {}
-    twoEdgeComponents(int n) : n(n), g(n) {}
-
-    void add_edge(int p, int q) {
-        g[p].push_back(q);
-        g[q].push_back(p);
-    }
-    // 二重辺連結成分分解を行う
-    void bcc() {
-        order.assign(n, 0);
-        inS.assign(n, false);
-        cmp.assign(n, -1);
-        int k = 0;
-        for(int i=0; i<n; ++i) {
-            if(order[i] == 0) {
-                dfs(i, -1, k);
-            }
-        }
-        for(int i=0; i<(int)each_bcc.size(); ++i) {
-            for(auto j: each_bcc[i]) {
-                cmp[j] = i;
+class twoEdgeComponent {
+private:
+    void dfs(ll v, ll p, ll &k) {
+        used[v] = true;
+        ord[v] = k++;
+        low[v] = ord[v];
+        for(auto to: g[v]) {
+            if(!used[to]) {
+                dfs(to, v, k);
+                chmin(low[v], low[to]);
+                if(ord[v] < low[to]) bridge.emplace_back(v, to);
+            } else if(to != p) {
+                chmin(low[v], ord[to]);
             }
         }
     }
-    // 分解したあとの木を求める
-    vector<vector<int>> getbcc() {
-        vector<vector<int>> h(each_bcc.size(), vector<int>());
-        for(auto i: bridge) {
-            int a = cmp[i.first], b = cmp[i.second];
-            h[a].push_back(b);
-            h[b].push_back(a);
+    void dfs2(ll v, ll p, ll &k) {
+        if(~p && ord[p] >= low[v]) cmp[v] = cmp[p];
+        else cmp[v] = k++;
+        for(auto to: g[v]) if(cmp[to] == -1) dfs2(to, v, k);
+    }
+public:
+    vector<bool> used;
+    vector<vector<ll>> g;
+    vector<ll> ord, low, cmp;
+    vector<PII> bridge;
+
+    twoEdgeComponent() {}
+    twoEdgeComponent(ll n) : used(n), g(n), ord(n), low(n), cmp(n, -1) {}
+
+    void add_edge(ll u, ll v) {
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+    vector<vector<ll>> build() {
+        ll k = 0;
+        REP(i, g.size()) if(!used[i]) dfs(i, -1, k);
+        k = 0;
+        REP(i, g.size()) if(cmp[i]==-1) dfs2(i, -1, k);
+        vector<vector<ll>> ret(k);
+        for(auto e: bridge) {
+            ll x = cmp[e.first], y = cmp[e.second];
+            ret[x].push_back(y);
+            ret[y].push_back(x);
         }
-        return h;
+        return ret;
     }
 };

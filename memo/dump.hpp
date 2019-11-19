@@ -50,6 +50,16 @@ ostream &operator <<(ostream& out, const set<T>& a){
     out << '}'; 
     return out;
 }
+template<class T>
+ostream &operator <<(ostream& out, const multiset<T>& a){
+    out << '{'; 
+    for(auto itr=a.begin(); itr!=a.end(); ++itr) {
+        out << *itr;
+        if(next(itr) != a.end()) out << ",";
+    } 
+    out << '}'; 
+    return out;
+}
 template<class T, class S>
 ostream &operator <<(ostream& out, const unordered_map<T,S>& a){
     out << '{'; 
@@ -76,6 +86,39 @@ ostream &operator <<(ostream& out, const queue<T>& a){
     out << "[";
     while(b.size()) {
         out << b.front(); b.pop();
+        if(b.size()) out << " ";
+    }
+    out << "]";
+    return out;
+}
+template<class T>
+ostream &operator <<(ostream& out, const stack<T>& a){
+    auto b(a);
+    out << "[";
+    while(b.size()) {
+        out << b.top(); b.pop();
+        if(b.size()) out << " ";
+    }
+    out << "]";
+    return out;
+}
+template<class T>
+ostream &operator <<(ostream& out, const priority_queue<T>& a){
+    auto b(a);
+    out << "[";
+    while(b.size()) {
+        out << b.top(); b.pop();
+        if(b.size()) out << " ";
+    }
+    out << "]";
+    return out;
+}
+template<class T>
+ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>>& a){
+    auto b(a);
+    out << "[";
+    while(b.size()) {
+        out << b.top(); b.pop();
         if(b.size()) out << " ";
     }
     out << "]";

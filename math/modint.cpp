@@ -108,22 +108,22 @@ struct modint {
         if(a == 0) return 0;
         ll q = MOD-1, s = 0;
         while((q&1)==0) q>>=1, s++;
-        mint z=2;
+        modint z=2;
         while(1) {
             if(z.pow((MOD-1)/2) == MOD-1) break;
             z++;
         }
-        mint c = z.pow(q), r = a.pow((q+1)/2), t = a.pow(q);
+        modint c = z.pow(q), r = a.pow((q+1)/2), t = a.pow(q);
         ll m = s;
         while(t.x>1) {
-            mint tp=t;
+            modint tp=t;
             ll k=-1;
             FOR(i, 1, m) {
                 tp *= tp;
                 if(tp == 1) { k=i; break; }
             }
             if(k==-1) return -1;
-            mint cp=c;
+            modint cp=c;
             REP(i, m-k-1) cp *= cp;
             c = cp*cp, t = c*t, r = cp*r, m = k;
         }

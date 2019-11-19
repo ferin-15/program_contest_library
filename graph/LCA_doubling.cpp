@@ -80,8 +80,8 @@ struct LCA {
         g[v].push_back(u);
     }
 
-    void build() {
-        dfs(/*root=*/0, -1, 0);
+    void build(ll root=0) {
+        dfs(root, -1, 0);
         for(int i=0; i+1 < log2_n; ++i) {
             for(int j = 0; j < n; ++j) {
                 if(par[i][j] < 0) par[i+1][j] = -1;
