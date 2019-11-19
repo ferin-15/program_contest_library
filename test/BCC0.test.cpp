@@ -7,13 +7,13 @@ signed main(void) {
 
     ll n, m;
     cin >> n >> m;
-    twoEdgeComponents graph(n);
+    twoEdgeComponent graph(n);
     REP(i, m) {
         ll a, b;
         cin >> a >> b;
         graph.add_edge(a, b);
     }
-    graph.bcc();
+    graph.build();
 
     for(auto &e: graph.bridge) if(e.first > e.second) swap(e.first, e.second);
     sort(ALL(graph.bridge));

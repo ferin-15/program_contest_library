@@ -89,7 +89,7 @@ signed main(void) {
             cout << ans << endl;
         }
         else {
-            seg.update(hld.vid[u]+1, hld.vid[u] + hld.sub[u], v);
+            seg.update(hld.vid[u]+1, hld.vid[u] + hld.sz[u], v);
         }
     }
 
