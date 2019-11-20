@@ -41,11 +41,10 @@ const ll MOD = 1000000007;
 class twoEdgeComponent {
 private:
     void dfs(ll v, ll p, ll &k) {
-        used[v] = true;
         ord[v] = k++;
         low[v] = ord[v];
         for(auto to: g[v]) {
-            if(!used[to]) {
+            if(ord[to]==-1) {
                 dfs(to, v, k);
                 chmin(low[v], low[to]);
                 if(ord[v] < low[to]) bridge.emplace_back(v, to);
@@ -60,13 +59,12 @@ private:
         for(auto to: g[v]) if(cmp[to] == -1) dfs2(to, v, k);
     }
 public:
-    vector<bool> used;
     vector<vector<ll>> g;
     vector<ll> ord, low, cmp;
     vector<PII> bridge;
 
     twoEdgeComponent() {}
-    twoEdgeComponent(ll n) : used(n), g(n), ord(n), low(n), cmp(n, -1) {}
+    twoEdgeComponent(ll n) : g(n), ord(n, -1), low(n), cmp(n, -1) {}
 
     void add_edge(ll u, ll v) {
         g[u].push_back(v);
@@ -74,7 +72,7 @@ public:
     }
     vector<vector<ll>> build() {
         ll k = 0;
-        REP(i, g.size()) if(!used[i]) dfs(i, -1, k);
+        REP(i, g.size()) if(ord[i]==-1) dfs(i, -1, k);
         k = 0;
         REP(i, g.size()) if(cmp[i]==-1) dfs2(i, -1, k);
         vector<vector<ll>> ret(k);
