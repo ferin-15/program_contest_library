@@ -125,7 +125,8 @@ public:
         }
     }
 };
-// 頂点vの部分木に対するクエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u]) に操作
+// 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+// 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 
 namespace abc014D {
     void solve() {
