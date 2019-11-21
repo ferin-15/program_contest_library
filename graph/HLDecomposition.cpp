@@ -90,6 +90,7 @@ public:
         ll k = 0;
         for(ll r: rs) {
             dfs1(r, -1);
+            head[r] = r;
             dfs2(r, -1, k);
         }
     }
