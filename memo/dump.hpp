@@ -12,6 +12,16 @@ ostream &operator <<(ostream& out, const vector<T>& a){
     out << ']';
     return out;
 }
+template<class T>
+ostream &operator <<(ostream& out, const deque<T>& a){
+    out << '['; 
+    REP(i, a.size()) {
+        out << a[i];
+        if(i+1!=(ll)a.size()) out << ",";
+    }
+    out << ']';
+    return out;
+}
 template<>
 ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
     out << endl;
