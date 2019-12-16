@@ -66,7 +66,7 @@ struct lazysegtree {
     lazysegtree() {}
     lazysegtree(int n_) {
         n = 1, height = 0;
-        while(n < n_) { n *= 2; height++; }
+        while(n <= n_) { n *= 2; height++; }
         dat.assign(n*2, Monoid::dt());
         lazy.assign(n*2, Monoid::de());
     }

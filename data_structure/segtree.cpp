@@ -64,7 +64,7 @@ struct segtree {
 
     segtree(int n_) {
         n = 1;
-        while(n < n_) n <<= 1;
+        while(n <= n_) n <<= 1;
         dat.assign(n*2, Monoid::id());
     }
     void build(vector<T> v) {
