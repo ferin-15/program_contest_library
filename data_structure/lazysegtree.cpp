@@ -97,6 +97,7 @@ struct lazysegtree {
         recalc(b);
     }
     T query(int a, int b) {
+        if(a >= b) return Monoid::dt();
         thrust(a+=n);
         thrust(b+=n-1);
         T vl=Monoid::dt(), vr=Monoid::dt();

@@ -64,7 +64,7 @@ struct segtree {
 
     segtree(int n_) {
         n = 1;
-        while(n <= n_) n <<= 1;
+        while(n < n_) n <<= 1;
         dat.assign(n*2, Monoid::id());
     }
     void build(vector<T> v) {
@@ -73,6 +73,7 @@ struct segtree {
     }
 
     T query(int a, int b) {
+        if(a >= b) return Monoid::id();
         T l = Monoid::id(), r = Monoid::id();
         for(a+=n, b+=n; a<b; a>>=1, b>>=1) {
             if(a&1) l = Monoid::op(l, dat[a++]);
