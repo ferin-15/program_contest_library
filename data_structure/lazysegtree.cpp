@@ -87,6 +87,7 @@ struct lazysegtree {
     inline void recalc(int k) { while(k>>=1) dat[k] = Monoid::f(reflect(k*2), reflect(k*2+1)); }
 
     void update(int a, int b, E x) {
+        if(a >= b) return;
         thrust(a+=n);
         thrust(b+=n-1);
         for(int l=a, r=b+1; l<r; l>>=1,r>>=1) {
