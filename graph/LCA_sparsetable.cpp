@@ -33,8 +33,8 @@ public:
         dfs(root, -1, 0, k);
         vector<PII> v(2*n-1);
         REP(i, 2*n-1) v[i] = {depth_seq[i], i};
-        st.init(2*n-1);
-        st.build(v);
+        st.construct(2*n-1);
+        st.init(v);
     }
     // uとvのlcaを返す O(1)
     int get(int u, int v) {

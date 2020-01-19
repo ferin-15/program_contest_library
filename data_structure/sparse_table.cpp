@@ -5,7 +5,9 @@ struct sparseTable {
     vector<int> log2;
     vector<vector<T>> t;
 
-    sparseTable(int nn) {
+    sparseTable() {}
+    sparseTable(int nn) { construct(nn); }
+    void construct(int nn) {
         n = nn;
         log2.assign(n+1, 0);
         for(int i=2; i<=n; ++i) log2[i] = log2[i >> 1] + 1;
