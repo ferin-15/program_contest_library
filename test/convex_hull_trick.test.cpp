@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2580
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2580"
 #include "../DP/convex_hull_trick.cpp"
 
 ll dp[105][10010];

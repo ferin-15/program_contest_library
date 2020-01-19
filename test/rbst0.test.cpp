@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_I
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_I"
 #include "../data_structure/rbst.cpp"
 
 signed main(void) {

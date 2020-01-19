@@ -1,4 +1,4 @@
-#define PROBLEM https://judge.yosupo.jp/problem/sqrt_mod
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
 #include "../math/runtime_modint.cpp"
 
 signed main(void) {

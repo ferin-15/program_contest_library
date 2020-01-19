@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
 #include "../data_structure/segtree.cpp"
 
 signed main(void) {

@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #include "../graph/LCA_sparsetable.cpp"
 
 signed main(void) {

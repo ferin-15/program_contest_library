@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A"
 #include "../graph/dinic.cpp"
 
 signed main(void) {

@@ -1,4 +1,4 @@
-#define PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B"
 #include "../graph/min_cost_flow_dijkstra.cpp"
 
 signed main(void) {

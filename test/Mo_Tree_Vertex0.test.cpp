@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270"
 #include "../data_structure/Mo_Tree_Vertex.cpp"
 
 template <typename T>

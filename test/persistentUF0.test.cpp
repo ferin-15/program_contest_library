@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0575
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0575"
 #include "../data_structure/persistentUF.cpp"
 
 signed main(void) {

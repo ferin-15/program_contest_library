@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2996
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2996"
 #include "../math/FFT.cpp"
 
 
