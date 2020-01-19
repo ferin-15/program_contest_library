@@ -56,7 +56,7 @@ struct min_monoid {
 template<typename Tp>
 struct max_monoid {
     using T = Tp;
-    static constexpr Tp id() { return -LLINF; }
+    static constexpr Tp id() { return -INF; }
     static Tp op(const Tp &a, const Tp &b) { return max(a, b); }
 };
 template<typename Tp>
