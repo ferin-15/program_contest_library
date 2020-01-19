@@ -1,9 +1,10 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1501"
 #include "../memo/macro.hpp"
-#include "../math/modint.cpp"
+#include "../math/runtime_modint.cpp"
 #include "../math/combination.cpp"
 
 signed main(void) {
+    MOD = 100000007;
     ll h, w, ax, ay, bx, by;
     cin >> h >> w >> ay >> ax >> by >> bx;
 
