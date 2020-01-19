@@ -5,7 +5,7 @@ struct BIT {
     BIT(int n_ = 1e5) { init(n_); }
     void init(int sz) { 
         n=1; while(n < sz) n*=2;
-        bit.assign(n+1, neutral); 
+        bit.assign(n+1, 0); 
     }
     void update(int i, T w) {
         for(int x=i+1; x<(int)bit.size(); x += x&-x) bit[x] += w;
