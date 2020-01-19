@@ -83,7 +83,7 @@ namespace ARC050C {
         mint ans = ret.get(0,0) + ret.get(0,1);
 
         matrix Y(2, 2);
-        Y.get(0,0) = pow(mint(10), g), Y.get(0,1) = 1;
+        Y.get(0,0) = mint(10).pow(g), Y.get(0,1) = 1;
         Y.get(1,1) = 1;
         ret = pow(Y, b/g-1);
         ans *= ret.get(0,0) + ret.get(0,1);
