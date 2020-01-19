@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2873&lang=jp"
+#include "../memo/macro.hpp"
 #include "../string/aho-corasick.cpp"
 
 signed main(void) {

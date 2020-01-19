@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270"
+#include "../memo/macro.hpp"
 #include "../data_structure/BIT.cpp"
 
 // 頂点クエリのMo

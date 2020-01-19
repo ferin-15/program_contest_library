@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp"
+#include "../memo/macro.hpp"
 #include "../data_structure/BIT.cpp"
 
 signed main(void) {

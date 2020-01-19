@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=ja"
+#include "../memo/macro.hpp"
 #include "../graph/boruvka.cpp"
 
 signed main(void) {

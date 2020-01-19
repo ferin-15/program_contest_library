@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2580"
+#include "../memo/macro.hpp"
 #include "../DP/convex_hull_trick.cpp"
 
 ll dp[105][10010];
@@ -12,7 +13,7 @@ signed main(void) {
     REP(i, n) cin >> p[i];
     REP(i, m) cin >> a[i] >> b[i];
 
-    REP(i, d) REP(j, n) dp[i][j] = LLINF;
+    REP(i, d) REP(j, n) dp[i][j] = INF;
 
     {
         ll num = 0;
@@ -51,7 +52,7 @@ signed main(void) {
         }
     }
 
-    ll ret = LLINF;
+    ll ret = INF;
     REP(i, d) chmin(ret, dp[i][n-1]);
     cout << ret << endl;
 

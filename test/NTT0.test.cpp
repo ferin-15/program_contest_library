@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2996"
+#include "../memo/macro.hpp"
 #include "../math/NTT.cpp"
 
 using mint = modint<65537>;

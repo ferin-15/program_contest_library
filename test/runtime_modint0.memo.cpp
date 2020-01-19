@@ -1,4 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#include "../memo/macro.hpp"
 #include "../math/runtime_modint.cpp"
 
 signed main(void) {

@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2996"
+#include "../memo/macro.hpp"
 #include "../math/FFT.cpp"
-
 
 template<ll MOD>
 struct modint {

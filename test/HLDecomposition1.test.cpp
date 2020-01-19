@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_D"
+#include "../memo/macro.hpp"
 #include "../graph/HLDecomposition.cpp"
 
 template <typename Monoid>
@@ -70,7 +71,7 @@ struct lazysegtree {
 
 struct node {
     ll sum, max, min, len;
-    node() : sum(0), max(-LLINF), min(LLINF), len(0) {}
+    node() : sum(0), max(-INF), min(INF), len(0) {}
     node(ll a, ll b, ll c, ll d) : sum(a), max(b), min(c), len(d) {}
 };
 struct linear_exp {

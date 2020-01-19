@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja"
+#include "../memo/macro.hpp"
 #include "../data_structure/sparse_table.cpp"
 
 signed main(void) {

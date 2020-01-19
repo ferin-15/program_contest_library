@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A"
+#include "../memo/macro.hpp"
 #include "../graph/ford_fulkerson.cpp"
 
 signed main(void) {

@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308"
+#include "../memo/macro.hpp"
 #include "../math/binary_matrix.cpp"
 
 signed main(void) {

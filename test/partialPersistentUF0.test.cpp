@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0575"
+#include "../memo/macro.hpp"
 #include "../data_structure/partialPersistentUF.cpp"
 
 signed main(void) {
@@ -20,7 +21,7 @@ signed main(void) {
     vector<ll> s(q), t(q);
     REP(i, q) cin >> s[i] >> t[i], s[i]--, t[i]--;
 
-    vector<ll> dist(n, LLINF);
+    vector<ll> dist(n, INF);
     priority_queue<PII, vector<PII>, greater<PII>> que;
     for(auto i: f) {
         dist[i] = 0;

@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_H"
+#include "../memo/macro.hpp"
 #include "../data_structure/lazysegtree.cpp"
 
 signed main(void)
