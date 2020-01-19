@@ -127,4 +127,3 @@ struct modint {
         return ret;
     }
 };
-using mint = modint<1000000007>;
