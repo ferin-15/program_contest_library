@@ -3,9 +3,6 @@
 #include "../data_structure/unionfind.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, q;
     cin >> n >> q;
     UnionFind uf(n);

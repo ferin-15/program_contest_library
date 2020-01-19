@@ -1,11 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp"
 #include "../memo/macro.hpp"
+#include "../math/runtime_modint.cpp"
 #include "../math/finite_field_matrix.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     MOD = (1LL<<61)-1;
     ll n;
     cin >> n;

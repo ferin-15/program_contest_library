@@ -3,9 +3,6 @@
 #include "../graph/LCA_doubling.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n;
     cin >> n;
     LCA graph(n);

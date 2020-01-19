@@ -3,9 +3,6 @@
 #include "../graph/ford_fulkerson.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll v, e;
     cin >> v >> e;
     FordFulkerson flow(v);

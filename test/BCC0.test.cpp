@@ -3,9 +3,6 @@
 #include "../graph/BCC.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m;
     cin >> n >> m;
     twoEdgeComponent graph(n);

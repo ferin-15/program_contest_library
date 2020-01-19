@@ -4,9 +4,6 @@
 
 ll dp[105][10010];
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m, d, x;
     cin >> n >> m >> d >> x;
     vector<ll> p(n), a(m), b(m);

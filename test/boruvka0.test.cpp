@@ -3,9 +3,6 @@
 #include "../graph/boruvka.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m;
     cin >> n >> m;
     vector<vector<PII>> g(n);
@@ -22,7 +19,7 @@ signed main(void) {
     function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
         // ret[i] = (連結成分iからコスト最小の辺の(コスト, i以外の端点の連結成分))
         // iがufの親以外ならsecondは-1として連結成分ごとに管理
-        vector<PII> ret(sz, PII(LLINF, -1));
+        vector<PII> ret(sz, PII(INF, -1));
 
         REP(i, n) for(auto to: g[i]) {
             if(belong[i] == belong[to.first]) continue;

@@ -3,10 +3,7 @@
 #include "../math/binary_matrix.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    while(true) { 
+   while(true) { 
         ll h, w, d;
         cin >> w >> h >> d;
         if(!w) break;

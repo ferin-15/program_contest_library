@@ -3,9 +3,6 @@
 #include "../data_structure/sparse_table.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, l;
     cin >> n >> l;
     vector<ll> a(n);

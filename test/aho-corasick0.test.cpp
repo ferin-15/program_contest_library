@@ -3,9 +3,6 @@
 #include "../string/aho-corasick.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     int n;
     string s;
     cin >> s >> n;

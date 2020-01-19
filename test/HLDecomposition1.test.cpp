@@ -101,9 +101,6 @@ struct linear_exp {
 };
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n;
     cin >> n;
     HLDecomposition hld(n);

@@ -3,9 +3,6 @@
 #include "../math/CRT.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m, d;
     cin >> n >> m >> d;
     vector<ll> a(m);

@@ -3,9 +3,6 @@
 #include "../data_structure/partialPersistentUF.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m, k, q;
     cin >> n >> m >> k >> q;
     vector<ll> a(m), b(m), l(m);

@@ -3,9 +3,6 @@
 #include "../graph/dinic.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll v, e;
     cin >> v >> e;
     dinic<ll> flow(v);

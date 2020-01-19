@@ -1,5 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2983"
 #include "../memo/macro.hpp"
+#include "../math/runtime_modint.cpp"
 #include "../math/finite_field_matrix.cpp"
 
 ll max_matching(ll n, vector<PII> edges) {
@@ -16,9 +17,6 @@ ll max_matching(ll n, vector<PII> edges) {
 }
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     MOD = 1000000007;
     ll n, m;
     cin >> n >> m;

@@ -63,26 +63,3 @@ struct matrix {
         return os;
     }
 };
-
-// mod 2 でgauss jordanをする
-namespace codeflyer_D {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> a(n), b(n);
-        REP(i, n) cin >> a[i];
-        REP(i, n) cin >> b[i];
-
-        matrix<64> mata(n), matb(n);
-        REP(i, n) {
-            REP(j, 61) {
-                mata.dat[i][j] = !!(a[i]&1LL<<j);
-                matb.dat[i][j] = !!(b[i]&1LL<<j);
-            }
-        }
-
-        gauss_jordan(mata); gauss_jordan(matb);
-        if(mata == matb) cout << "Yes" << endl;
-        else cout << "No" << endl;
-    }
-}

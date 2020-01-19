@@ -3,9 +3,6 @@
 #include "../string/rolling_hash.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, q;
     string s;
     cin >> n >> q >> s;

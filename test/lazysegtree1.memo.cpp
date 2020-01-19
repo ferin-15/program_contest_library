@@ -2,16 +2,12 @@
 #include "../memo/macro.hpp"
 #include "../data_structure/lazysegtree.cpp"
 
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
+signed main(void) {
     int n, q;
     cin >> n >> q;
 
     lazysegtree<linear_exp> seg(n);
-    seg.build(vector<node>(n, node(INT_MAX,INT_MAX,INT_MAX,1)));
+    seg.build(vector<node>(n, node(INT_MAX)));
     while(q--) {
         int c, s, t;
         cin >> c >> s >> t;

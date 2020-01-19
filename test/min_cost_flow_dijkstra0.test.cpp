@@ -3,9 +3,6 @@
 #include "../graph/min_cost_flow_dijkstra.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m, f;
     cin >> n >> m >> f;
     min_cost_max_flow mcf(n);

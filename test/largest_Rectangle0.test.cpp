@@ -3,9 +3,6 @@
 #include "../DP/largest_Rectangle.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll h, w;
     cin >> h >> w;
     vector<vector<ll>> c(h, vector<ll>(w));

@@ -3,9 +3,6 @@
 #include "../graph/LCA_tarjan_offline.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n;
     cin >> n;
     vector<PII> edges;

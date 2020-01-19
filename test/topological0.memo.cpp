@@ -3,9 +3,6 @@
 #include "../graph/topological.cpp"
 
 signed main(void) {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
     ll n, m;
     cin >> n >> m;
     vector<vector<ll>> g(n);
