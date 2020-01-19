@@ -37,35 +37,3 @@ struct ConvexHullTrick {
         return f(que[ub], x);
     }
 };
-
-// https://codeforces.com/contest/311/problem/B
-namespace cf185div1B {
-    ll d[100010], t[100010], T[100010], dp[105][100010];
-    void solve() {
-        ll n, m, p;
-        cin >> n >> m >> p;
-        REP(i, n-1) cin >> d[i+1];
-        REP(i, n-1) d[i+1] += d[i];
-        REP(i, m) {
-            ll a, b;
-            cin >> a >> b;
-            t[i] = (b-d[a-1]);
-        }
-        sort(t, t+m);
-        T[0] = t[0];
-        REP(i, m-1) T[i+1] += T[i] + t[i+1];
-
-        REP(i, m) dp[0][i] = (i+1)*t[i] - T[i];
-        FOR(i, 1, p) {
-            ConvexHullTrick cht;
-            dp[i][0] = t[0] - T[0];
-            cht.insert(0, dp[i-1][0] + T[0]);
-            FOR(j, 1, m) {
-                dp[i][j] = cht.incl_query(t[j]) + t[j]*j - T[j];
-                cht.insert(-j, dp[i-1][j] + T[j]);
-            }
-        }
-
-        cout << dp[p-1][m-1] << endl;
-    }
-}

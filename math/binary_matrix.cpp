@@ -86,20 +86,3 @@ namespace codeflyer_D {
         else cout << "No" << endl;
     }
 }
-
-// mod 2 で行列式を求める
-namespace ARC054C {
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<string> s(n);
-        REP(i, n) cin >> s[i];
-        matrix<200> mat(n);
-        REP(i, n) REP(j, n) mat.dat[i][j] = s[i][j]-'0';
-
-        gauss_jordan(mat);
-        ll ret = 1;
-        REP(i, n) ret *= mat.dat[i][i];
-        cout << (ret==1 ? "Odd" : "Even") << endl;
-    }
-}

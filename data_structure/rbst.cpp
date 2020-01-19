@@ -224,24 +224,3 @@ struct OrderedSet : OrderedMultiSet<T>  {
         RBST::insert(t, SET::lower_bound(t, x), x);
     }
 };
-
-// k-th element
-namespace ARC033C {
-    void solve() {
-        ll q;
-        cin >> q;
-        OrderedMultiSet<ll> st;
-        OrderedMultiSet<ll>::RBST::node *root = nullptr;
-        while(q--) {
-            ll t, x;
-            cin >> t >> x;
-            if(t == 1) {
-                st.insert_key(root, x);
-            } else {
-                ll val = st.kth_element(root, x-1);
-                cout << val << endl;
-                st.erase_key(root, val);
-            }
-        }
-    }
-}

@@ -29,36 +29,3 @@ struct partialPersistentUF {
     }
     bool same(int x, int y, int t) { return find(x, t) == find(y, t); }
 };
-
-namespace codethanks2017H {
-    partialPersistentUF uf;
-    void solve() {
-        int n, m;
-        cin >> n >> m;
-        REP(i, m) {
-            int a, b;
-            cin >> a >> b;
-            a--, b--;
-            uf.unite(a, b);
-        }
-
-        int q;
-        cin >> q;
-        REP(i, q) {
-            int x, y;
-            cin >> x >> y;
-            x--, y--;
-            if(uf.find(x, m) != uf.find(y, m)) {
-                cout << -1 << endl;
-                continue;
-            }
-            int lb = -1, ub = m;
-            while(ub-lb > 1) {
-                int mid = (ub+lb)/2;
-                if(uf.find(x, mid) == uf.find(y, mid)) ub = mid;
-                else lb = mid;
-            }
-            cout << ub << endl;
-        }
-    }
-}

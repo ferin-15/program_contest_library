@@ -69,8 +69,8 @@ struct lazysegtree {
 
 struct node {
     ll sum, max, min, len;
-    node() : sum(0), max(-LLINF), min(LLINF), len(0) {}
-    node(ll a, ll b, ll c, ll d) : sum(a), max(b), min(c), len(d) {}
+    node() : sum(0), max(-INF), min(INF), len(0) {}
+    node(ll a) : sum(a), max(a), min(a), len(1) {}
 };
 struct linear_exp {
     using T = node;
@@ -97,101 +97,3 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
-struct xor_sum {
-    using T = PII;  // (頂点の値, 頂点の区間長)
-    using E = ll;
-    static constexpr T dt() { return PII(0,0); }
-    static constexpr E de() { return 0; }
-    static T f(const T &a, const T &b) { return PII(a.first+b.first, a.second+b.second); }
-    static T g(const T &a, const E &b) { return PII((b>=1?b-a.first:a.first)*a.second, a.second); }
-    static E h(const E &a, const E &b) { return a^b; }
-};
-
-// 区間更新区間最小
-namespace DSL2F {
-    void solve() {
-        int n, q;
-        cin >> n >> q;
-
-        lazysegtree<linear_exp> seg(n);
-        seg.build(vector<node>(n, node(INT_MAX,INT_MAX,INT_MAX,1)));
-        while(q--) {
-            int c, s, t;
-            cin >> c >> s >> t;
-            if(c == 0) {
-                int x;
-                cin >> x;
-                seg.update(s, t + 1, PII(0, x));
-            } else {
-                cout << seg.query(s, t + 1).min << endl;
-            }
-        }
-    }
-}
-
-// 区間加算区間和
-namespace DSL2G {
-    void solve() {
-        int n, q;
-        cin >> n >> q;
-
-        lazysegtree<linear_exp> seg(n);
-        seg.build(vector<node>(n, node(0,0,0,1)));
-        while(q--) {
-            int c, s, t;
-            cin >> c >> s >> t;
-            s--, t--;
-            if(c == 0) {
-                int x;
-                cin >> x;
-                seg.update(s, t + 1, PII(1, x));
-            } else {
-                cout << seg.query(s, t + 1).sum << endl;
-            }
-        }
-    }
-}
-
-// 区間加算区間最小
-namespace DSL2H {
-    void solve() {
-        int n, q;
-        cin >> n >> q;
-
-        lazysegtree<linear_exp> seg(n);
-        seg.build(vector<node>(n, node(0, 0, 0, 1)));
-        while(q--) {
-            int c, s, t;
-            cin >> c >> s >> t;
-            if(c == 0) {
-                int x;
-                cin >> x;
-                seg.update(s, t+1, PII(1, x));
-            } else {
-                cout << seg.query(s, t+1).min << endl;
-            }
-        }
-    }
-}
-
-// 区間更新区間和
-namespace DSL2I {
-    void solve() {
-        int n, q;
-        cin >> n >> q;
-
-        lazysegtree<linear_exp> seg(n);
-        seg.build(vector<node>(n, node(0, 0, 0, 1)));
-        while(q--) {
-            int c, s, t;
-            cin >> c >> s >> t;
-            if(c == 0) {
-                int x;
-                cin >> x;
-                seg.update(s, t+1, PII(0, x));
-            } else {
-                cout << seg.query(s, t+1).sum << endl;
-            }
-        }
-    }
-}

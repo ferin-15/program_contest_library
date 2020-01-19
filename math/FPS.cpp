@@ -272,17 +272,6 @@ struct NTT {
     }
 };
 
-signed main(void)
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    ll n, m;
-    cin >> n >> m;
-
-    NTT<mint, 3> ntt;
-    auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
-    formalPowerSeries<mint> fps(conv);
-
-    return 0;
-}
+// NTT<mint, 3> ntt;
+// auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
+// formalPowerSeries<mint> fps(conv);

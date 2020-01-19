@@ -1,10 +1,7 @@
 template <typename T>
 struct BIT {
-    vector<T> bit;
-    // 単位元
-    const T neutral = 0;
-    // 要素数
     int n;
+    vector<T> bit;
     BIT(int n_ = 1e5) { init(n_); }
     void init(int sz) { 
         n=1; while(n < sz) n*=2;
@@ -15,7 +12,7 @@ struct BIT {
     }
     // [0,i]
     T query(int i) {
-        T ret = neutral;
+        T ret = 0;
         for(int x=i+1; x>0; x -= x&-x) ret += bit[x];
         return ret;
     }
@@ -31,24 +28,3 @@ struct BIT {
         return x;
     }
 };
-
-// https://atcoder.jp/contests/arc033/tasks/arc033_3
-namespace arc033c {
-    void solve() {
-        ll q;
-        cin >> q;
-        BIT<ll> bit(200010);
-        // lower_boundのverify用に+2とか変なことやってる
-        while(q--) {
-            ll t, x;
-            cin >> t >> x;
-            if(t == 1) {
-                bit.update(x, 2);
-            } else {
-                ll val = bit.lower_bound(x*2-1);
-                cout << val << endl;
-                bit.update(val, -2);
-            }
-        }
-    }
-}

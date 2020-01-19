@@ -36,20 +36,3 @@ public:
         return ret;
     }
 };
-
-// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp
-namespace GRL3A {
-    void solve() {
-        ll n, m;
-        cin >> n >> m;
-        articulation graph(n);
-        REP(i, m) {
-            ll a, b;
-            cin >> a >> b;
-            graph.add_edge(a, b);
-        }
-        auto ret = graph.build();
-        sort(ALL(ret));
-        for(auto i: ret) cout << i << endl;
-    }
-}

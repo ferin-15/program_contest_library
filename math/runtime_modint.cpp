@@ -117,15 +117,3 @@ struct mint {
         return ret;
     }
 };
-
-namespace librarychecker_sqrtmod {
-    void solve() {
-        ll t;
-        cin >> t;
-        while(t--) {
-            ll a;
-            cin >> a >> MOD;
-            cout << sqrt(mint(a)) << endl;
-        }
-    }
-}

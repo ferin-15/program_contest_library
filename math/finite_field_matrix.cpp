@@ -210,22 +210,3 @@ namespace codeflyer_D {
         else cout << "No" << endl;
     }
 }
-
-// mod 2 で行列式を求める
-namespace ARC054C {
-    void solve() {
-        MOD = 2;
-
-        ll n;
-        cin >> n;
-        vector<string> s(n);
-        REP(i, n) cin >> s[i];
-        matrix mat(n, n);
-        REP(i, n) REP(j, n) mat.get(i,j) = s[i][j]-'0';
-
-        gauss_jordan(mat);
-        mint ret = 1;
-        REP(i, n) ret *= mat.get(i,i);
-        cout << (ret==1 ? "Odd" : "Even") << endl;
-    }
-}
