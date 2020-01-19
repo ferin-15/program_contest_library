@@ -146,19 +146,6 @@ struct RBST {
         debug(t->r);
         cout << "}";
     }
-    void dump(node *r, typename vector< T >::iterator &it) {
-        if(!r) return;
-        eval(r);
-        dump(r->l, it);
-        *it = r->val;
-        dump(r->r, ++it);
-    }
-    vector<T> dump(node *r) {
-        vector<T> v((size_t) size(r));
-        auto it = begin(v);
-        dump(r, it);
-        return v;
-    }
     // x以上の最小の位置
     int lower_bound(node *t, const T &x) {
         if(!t) return 0;
