@@ -25,15 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structure/wavelet_matrix.cpp
+# :heavy_check_mark: data_structure/wavelet_matrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/wavelet_matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-01-21 02:23:37+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
 
 
 ## Code
@@ -227,26 +233,7 @@ struct wavelet {
         return rank_lt(l,r,y) - rank_lt(l,r,x);
     }
 };
-// ToDo: [l,r)で出現頻度が高い要素
-// ToDo: [l,r)で大きい方からk個の和
-// ToDo: 動的
-// ToDo: verify select
-
-namespace spoj_no_yatu {
-    void solve() {
-        int n, m;
-        cin >> n >> m;
-        array<int,100010> a;
-        REP(i, n) cin >> a[i], a[i] += 1000000000;
-
-        wavelet<int,100010,32> wave(n, a);
-        REP(i, m) {
-            int l, r, k;
-            cin >> l >> r >> k; k--;
-            cout << wave.kthnumber(l-1, r, k) - 1000000000 << endl;
-        }
-    }
-}
+// ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
 ```
 {% endraw %}
 
@@ -440,26 +427,7 @@ struct wavelet {
         return rank_lt(l,r,y) - rank_lt(l,r,x);
     }
 };
-// ToDo: [l,r)で出現頻度が高い要素
-// ToDo: [l,r)で大きい方からk個の和
-// ToDo: 動的
-// ToDo: verify select
-
-namespace spoj_no_yatu {
-    void solve() {
-        int n, m;
-        cin >> n >> m;
-        array<int,100010> a;
-        REP(i, n) cin >> a[i], a[i] += 1000000000;
-
-        wavelet<int,100010,32> wave(n, a);
-        REP(i, m) {
-            int l, r, k;
-            cin >> l >> r >> k; k--;
-            cout << wave.kthnumber(l-1, r, k) - 1000000000 << endl;
-        }
-    }
-}
+// ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
 ```
 {% endraw %}
 
