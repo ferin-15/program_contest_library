@@ -16,6 +16,7 @@
 "test/DSL2I_0.test.cpp": "2020-01-20 06:20:03 +0900",
 "test/DSL2I_1.test.cpp": "2020-01-20 06:37:20 +0900",
 "test/DSL3D.test.cpp": "2020-01-20 07:11:31 +0900",
+"test/DSL3D_1.test.cpp": "2020-01-21 01:46:30 +0900",
 "test/GRL2A.test.cpp": "2020-01-20 07:11:31 +0900",
 "test/GRL3B.test.cpp": "2020-01-20 06:20:03 +0900",
 "test/GRL3C.test.cpp": "2020-01-20 06:20:03 +0900",
@@ -46,5 +47,6 @@
 "test/aoj2996.test.cpp": "2020-01-20 08:29:19 +0900",
 "test/aoj2996_0.test.cpp": "2020-01-20 08:29:19 +0900",
 "test/aoj2996_1.test.cpp": "2020-01-20 08:29:19 +0900",
+"test/yosupo-vertexaddsubtreesum.test.cpp": "2020-01-21 01:24:30 +0900",
 "~": "dummy"
 }
