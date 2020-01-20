@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: test/yosupo-vertexaddsubtreesum.cpp
+# :heavy_check_mark: test/yosupo-vertexaddsubtreesum.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-vertexaddsubtreesum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 01:18:47+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-vertexaddsubtreesum.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-21 01:24:30+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_subtree_sum">https://judge.yosupo.jp/problem/vertex_add_subtree_sum</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
-* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structure/linkcuttree_subtree.cpp
+# :heavy_check_mark: data_structure/linkcuttree_subtree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 
 ## Code

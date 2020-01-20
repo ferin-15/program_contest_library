@@ -58,14 +58,14 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
-* :warning: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/partialPersistentUF.cpp.html">data_structure/partialPersistentUF.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/persistentUF.cpp.html">data_structure/persistentUF.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/rbst.cpp.html">data_structure/rbst.cpp</a>
 * :warning: <a href="library/data_structure/segment_tree_beats.cpp.html">data_structure/segment_tree_beats.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/segtree.cpp.html">data_structure/segtree.cpp</a>
 * :warning: <a href="library/data_structure/segtree_range_freq.cpp.html">data_structure/segtree_range_freq.cpp</a>
-* :warning: <a href="library/data_structure/sliding_window_aggregation.cpp.html">data_structure/sliding_window_aggregation.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/sliding_window_aggregation.cpp.html">data_structure/sliding_window_aggregation.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/sparse_table.cpp.html">data_structure/sparse_table.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/unionfind.cpp.html">data_structure/unionfind.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/unionfindundo.cpp.html">data_structure/unionfindundo.cpp</a>
@@ -211,7 +211,6 @@ layout: default
 * :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/GRL5C_3.memo.cpp.html">test/GRL5C_3.memo.cpp</a>
 * :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-* :warning: <a href="library/test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
 
 
 ## Verify Files
@@ -233,6 +232,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/DSL2I_0.test.cpp.html">test/DSL2I_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL2I_1.test.cpp.html">test/DSL2I_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL3D.test.cpp.html">test/DSL3D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/DSL3D_1.test.cpp.html">test/DSL3D_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL2A.test.cpp.html">test/GRL2A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL3B.test.cpp.html">test/GRL3B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>
@@ -263,5 +263,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 

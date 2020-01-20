@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structure/sliding_window_aggregation.cpp
+# :heavy_check_mark: data_structure/sliding_window_aggregation.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2019-12-17 15:38:10+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/DSL3D_1.test.cpp.html">test/DSL3D_1.test.cpp</a>
 
 
 ## Code

@@ -42,7 +42,6 @@ layout: default
 * :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="../test/GRL5C_3.memo.cpp.html">test/GRL5C_3.memo.cpp</a>
 * :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-* :warning: <a href="../test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
 
 
 ## Verified with
@@ -64,6 +63,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DSL2I_0.test.cpp.html">test/DSL2I_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2I_1.test.cpp.html">test/DSL2I_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL3D.test.cpp.html">test/DSL3D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DSL3D_1.test.cpp.html">test/DSL3D_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL2A.test.cpp.html">test/GRL2A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL3B.test.cpp.html">test/GRL3B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>
@@ -94,6 +94,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 
 ## Code
