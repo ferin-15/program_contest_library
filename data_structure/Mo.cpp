@@ -88,6 +88,7 @@ namespace cf221div1d {
     }
 }
 
+// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
