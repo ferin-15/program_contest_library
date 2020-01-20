@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: DP/monotone_minima.cpp
+# :x: DP/monotone_minima.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-01-20 04:35:05+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
 
 
 ## Code
