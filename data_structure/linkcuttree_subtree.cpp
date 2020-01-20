@@ -164,6 +164,7 @@ public:
     }
 };
 
+/*
 struct SUM {
     ll dat, sum, laz;
     SUM() : dat(0), sum(0), laz(0) {}
@@ -175,3 +176,4 @@ struct SUM {
     void add(const SUM &ch) { laz += ch.sum; }
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
+*/
