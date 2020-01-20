@@ -184,23 +184,4 @@ struct wavelet {
         return rank_lt(l,r,y) - rank_lt(l,r,x);
     }
 };
-// ToDo: [l,r)で出現頻度が高い要素
-// ToDo: [l,r)で大きい方からk個の和
-// ToDo: 動的
-// ToDo: verify select
-
-namespace spoj_no_yatu {
-    void solve() {
-        int n, m;
-        cin >> n >> m;
-        array<int,100010> a;
-        REP(i, n) cin >> a[i], a[i] += 1000000000;
-
-        wavelet<int,100010,32> wave(n, a);
-        REP(i, m) {
-            int l, r, k;
-            cin >> l >> r >> k; k--;
-            cout << wave.kthnumber(l-1, r, k) - 1000000000 << endl;
-        }
-    }
-}
+// ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
