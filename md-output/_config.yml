@@ -1,8 +1,0 @@
-docs:
-  categorize_library: true
-  categorize_verify: false
-  html: false
-  toc: false
-plugins:
-- jemoji
-theme: jekyll-theme-dinky
