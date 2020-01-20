@@ -42,7 +42,7 @@ layout: default
 * :warning: <a href="library/DP/divide_and_conquer.cpp.html">DP/divide_and_conquer.cpp</a>
 * :heavy_check_mark: <a href="library/DP/largest_Rectangle.cpp.html">DP/largest_Rectangle.cpp</a>
 * :heavy_check_mark: <a href="library/DP/li_chao_segment_tree.cpp.html">DP/li_chao_segment_tree.cpp</a>
-* :x: <a href="library/DP/monotone_minima.cpp.html">DP/monotone_minima.cpp</a>
+* :heavy_check_mark: <a href="library/DP/monotone_minima.cpp.html">DP/monotone_minima.cpp</a>
 * :warning: <a href="library/DP/reroot.cpp.html">DP/reroot.cpp</a>
 * :warning: <a href="library/DP/zenhoui.cpp.html">DP/zenhoui.cpp</a>
 
@@ -252,7 +252,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
-* :x: <a href="verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
