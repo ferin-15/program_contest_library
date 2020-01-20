@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/linkcuttree_subtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-11 01:46:28+09:00
+    - Last commit date: 2020-01-21 01:18:47+09:00
 
 
+
+
+## Required by
+
+* :warning: <a href="../test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
 
 
 ## Code
@@ -207,6 +212,7 @@ public:
     }
 };
 
+/*
 struct SUM {
     ll dat, sum, laz;
     SUM() : dat(0), sum(0), laz(0) {}
@@ -218,6 +224,7 @@ struct SUM {
     void add(const SUM &ch) { laz += ch.sum; }
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
+*/
 ```
 {% endraw %}
 
@@ -391,6 +398,7 @@ public:
     }
 };
 
+/*
 struct SUM {
     ll dat, sum, laz;
     SUM() : dat(0), sum(0), laz(0) {}
@@ -402,6 +410,7 @@ struct SUM {
     void add(const SUM &ch) { laz += ch.sum; }
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
+*/
 ```
 {% endraw %}
 

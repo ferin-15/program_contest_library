@@ -42,6 +42,7 @@ layout: default
 * :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="../test/GRL5C_3.memo.cpp.html">test/GRL5C_3.memo.cpp</a>
 * :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
+* :warning: <a href="../test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
 
 
 ## Verified with
@@ -82,6 +83,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>

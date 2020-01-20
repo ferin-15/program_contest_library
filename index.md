@@ -57,7 +57,7 @@ layout: default
 * :warning: <a href="library/data_structure/binary_trie.cpp.html">data_structure/binary_trie.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
-* :warning: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
 * :warning: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/partialPersistentUF.cpp.html">data_structure/partialPersistentUF.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/persistentUF.cpp.html">data_structure/persistentUF.cpp</a>
@@ -211,6 +211,7 @@ layout: default
 * :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/GRL5C_3.memo.cpp.html">test/GRL5C_3.memo.cpp</a>
 * :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
+* :warning: <a href="library/test/yosupo-vertexaddsubtreesum.cpp.html">test/yosupo-vertexaddsubtreesum.cpp</a>
 
 
 ## Verify Files
@@ -251,6 +252,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
