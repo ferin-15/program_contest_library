@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structure/Mo.cpp
+# :x: data_structure/Mo.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-01-21 01:03:23+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
 
 
 ## Code
@@ -41,22 +46,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-// insertしてbuildしたあとprocessでクエリを進めていく
 struct Mo {
     int width;
     int nl, nr, ptr;
     vector<bool> used;
     vector<int> left, right, order;
     using F = function<void(int)>;
-    F add, del;
+    F expandL, expandR, shrinkL, shrinkR;
 
-    inline void distribute(int idx) {
-        used[idx].flip();
-        if(used[idx]) add(idx);
-        else del(idx);
-    }
-
-    Mo(int n, F a, F d) : width((int)sqrt(n)), nl(0), nr(0), ptr(0), used(n), add(a), del(d) {}
+    // クエリの区間 \subseteq [0,n) 
+    Mo(int n, F el, F er, F sl, F sr) : width((int)sqrt(n)), nl(0), nr(0), ptr(0), used(n), expandL(el), expandR(er), shrinkL(sl), shrinkR(sr) {}
 
     // [l, r)
     void insert(int l, int r) {
@@ -75,89 +74,15 @@ struct Mo {
     int process() {
         if(ptr == (ll)order.size()) return -1;
         const auto id = order[ptr];
-        while(nl > left[id]) distribute(--nl);
-        while(nr < right[id]) distribute(nr++);
-        while(nl < left[id]) distribute(nl++);
-        while(nr > right[id]) distribute(--nr);
+        while(nl > left[id]) expandL(--nl);
+        while(nr < right[id]) expandR(nr++);
+        while(nl < left[id]) shrinkL(nl++);
+        while(nr > right[id]) shrinkR(--nr);
         return order[ptr++];
     }
 };
 
-namespace spoj_dquery {
-    // n要素の数列A
-    // [l,r]の要素の種類を求めるQ個のクエリ
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> a(n);
-        REP(i, n) cin >> a[i], a[i]--;
-
-        ll sum = 0;
-        vector<ll> cnt(1000001);
-        auto add = [&](int idx) {
-            if(cnt[a[idx]] == 0) ++sum;
-            cnt[a[idx]]++;
-        };
-        auto del = [&](int idx) {
-            cnt[a[idx]]--;
-            if(cnt[a[idx]] == 0) --sum;
-        };
-        Mo mo(n, add, del);
-
-        ll q;
-        cin >> q;
-        REP(i, q) {
-            ll x, y;
-            cin >> x >> y;
-            mo.insert(x-1, y);  // 半開区間[x,y)
-        }
-        mo.build();
-
-        vector<ll> ans(q);
-        REP(i, q) ans[mo.process()] = sum;
-        for(auto i: ans) cout << i << '\n';
-    }
-}
-
-namespace spoj_frequent {
-    void solve() {
-        while(1) {
-            ll n, q;
-            cin >> n;
-            if(!n) break;
-            cin >> q;
-            vector<ll> a(n);
-            REP(i, n) cin >> a[i], a[i] += 100000;
-
-            ll mode = 0;
-            vector<ll> cnt(200001), num(100001);
-            auto add = [&](int idx) {
-                num[cnt[a[idx]]]--;
-                cnt[a[idx]]++;
-                num[cnt[a[idx]]]++;
-                if(cnt[a[idx]] > mode) mode++;
-            };
-            auto del = [&](int idx) {
-                num[cnt[a[idx]]]--;
-                if(cnt[a[idx]] == mode && num[cnt[a[idx]]] == 0) --mode;
-                cnt[a[idx]]--;
-                num[cnt[a[idx]]]++;
-            };
-            Mo mo(n, add, del);
-
-            REP(i, q) {
-                ll l, r;
-                cin >> l >> r;
-                mo.insert(l-1, r);
-            }
-            mo.build();
-            vector<ll> ans(q);
-            REP(i, q) ans[mo.process()] = mode;
-            REP(i, q) cout << ans[i] << "\n";
-        }
-    }
-}
-
+// ToDo: expand, shrink に対応させる
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
     void solve() {
@@ -211,6 +136,7 @@ namespace cf221div1d {
     }
 }
 
+// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
@@ -305,22 +231,16 @@ namespace ABC014D {
 {% raw %}
 ```cpp
 #line 1 "data_structure/Mo.cpp"
-// insertしてbuildしたあとprocessでクエリを進めていく
 struct Mo {
     int width;
     int nl, nr, ptr;
     vector<bool> used;
     vector<int> left, right, order;
     using F = function<void(int)>;
-    F add, del;
+    F expandL, expandR, shrinkL, shrinkR;
 
-    inline void distribute(int idx) {
-        used[idx].flip();
-        if(used[idx]) add(idx);
-        else del(idx);
-    }
-
-    Mo(int n, F a, F d) : width((int)sqrt(n)), nl(0), nr(0), ptr(0), used(n), add(a), del(d) {}
+    // クエリの区間 \subseteq [0,n) 
+    Mo(int n, F el, F er, F sl, F sr) : width((int)sqrt(n)), nl(0), nr(0), ptr(0), used(n), expandL(el), expandR(er), shrinkL(sl), shrinkR(sr) {}
 
     // [l, r)
     void insert(int l, int r) {
@@ -339,89 +259,15 @@ struct Mo {
     int process() {
         if(ptr == (ll)order.size()) return -1;
         const auto id = order[ptr];
-        while(nl > left[id]) distribute(--nl);
-        while(nr < right[id]) distribute(nr++);
-        while(nl < left[id]) distribute(nl++);
-        while(nr > right[id]) distribute(--nr);
+        while(nl > left[id]) expandL(--nl);
+        while(nr < right[id]) expandR(nr++);
+        while(nl < left[id]) shrinkL(nl++);
+        while(nr > right[id]) shrinkR(--nr);
         return order[ptr++];
     }
 };
 
-namespace spoj_dquery {
-    // n要素の数列A
-    // [l,r]の要素の種類を求めるQ個のクエリ
-    void solve() {
-        ll n;
-        cin >> n;
-        vector<ll> a(n);
-        REP(i, n) cin >> a[i], a[i]--;
-
-        ll sum = 0;
-        vector<ll> cnt(1000001);
-        auto add = [&](int idx) {
-            if(cnt[a[idx]] == 0) ++sum;
-            cnt[a[idx]]++;
-        };
-        auto del = [&](int idx) {
-            cnt[a[idx]]--;
-            if(cnt[a[idx]] == 0) --sum;
-        };
-        Mo mo(n, add, del);
-
-        ll q;
-        cin >> q;
-        REP(i, q) {
-            ll x, y;
-            cin >> x >> y;
-            mo.insert(x-1, y);  // 半開区間[x,y)
-        }
-        mo.build();
-
-        vector<ll> ans(q);
-        REP(i, q) ans[mo.process()] = sum;
-        for(auto i: ans) cout << i << '\n';
-    }
-}
-
-namespace spoj_frequent {
-    void solve() {
-        while(1) {
-            ll n, q;
-            cin >> n;
-            if(!n) break;
-            cin >> q;
-            vector<ll> a(n);
-            REP(i, n) cin >> a[i], a[i] += 100000;
-
-            ll mode = 0;
-            vector<ll> cnt(200001), num(100001);
-            auto add = [&](int idx) {
-                num[cnt[a[idx]]]--;
-                cnt[a[idx]]++;
-                num[cnt[a[idx]]]++;
-                if(cnt[a[idx]] > mode) mode++;
-            };
-            auto del = [&](int idx) {
-                num[cnt[a[idx]]]--;
-                if(cnt[a[idx]] == mode && num[cnt[a[idx]]] == 0) --mode;
-                cnt[a[idx]]--;
-                num[cnt[a[idx]]]++;
-            };
-            Mo mo(n, add, del);
-
-            REP(i, q) {
-                ll l, r;
-                cin >> l >> r;
-                mo.insert(l-1, r);
-            }
-            mo.build();
-            vector<ll> ans(q);
-            REP(i, q) ans[mo.process()] = mode;
-            REP(i, q) cout << ans[i] << "\n";
-        }
-    }
-}
-
+// ToDo: expand, shrink に対応させる
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
     void solve() {
@@ -475,6 +321,7 @@ namespace cf221div1d {
     }
 }
 
+// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
