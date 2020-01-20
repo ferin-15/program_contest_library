@@ -18,10 +18,7 @@ int main() {
         cin >> l >> r >> e;
         l--, r--;
         ll a = min(x[l], x[r]), b = max(x[l], x[r]);
-        // cerr << l << " " << r << " " << a-e << " " << b+e << endl;
         cout << r-l+1 - wm.rangefreq(l, r+1, a-e, b+e+1) << "\n";
-        // ans[i] = r-l+1 - wm.rangefreq(l, r+1, a-e, b+e+1);
     }
-    // for(auto i: ans) cout << i << "\n";
     cout << flush;
 }
