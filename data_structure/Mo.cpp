@@ -34,7 +34,6 @@ struct Mo {
     }
 };
 
-// ToDo: expand, shrink に対応させる
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
     void solve() {
@@ -70,7 +69,7 @@ namespace cf221div1d {
             --sum[color[c[rev[idx]]]];
             --color[c[rev[idx]]];
         };
-        Mo mo(n, add, del);
+        Mo mo(n, add, add, del, del);
         vector<ll> v(m), k(m);
         REP(i, m) {
             cin >> v[i] >> k[i];
@@ -88,7 +87,6 @@ namespace cf221div1d {
     }
 }
 
-// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
@@ -154,7 +152,7 @@ namespace ABC014D {
                 sum--;
             }
         };
-        Mo mo(2*n-1, add, del);
+        Mo mo(2*n-1, add, add, del, del);
 
         ll q;
         cin >> q;
