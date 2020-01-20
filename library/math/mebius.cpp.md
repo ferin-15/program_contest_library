@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+
+
+# :warning: math/mebius.cpp
+
+<a href="../../index.html">Back to top page</a>
+
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/mebius.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-20 03:56:54+09:00
+
+
+
+
+## Code
+
+<a id="unbundled"></a>
+{% raw %}
+```cpp
+const ll m = 100000;
+vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
+min_factor[0] = 0, min_factor[1] = 1;
+FOR(i, 2, m+1) {
+    if(min_factor[i] != -1) continue;
+    mebius[i] = -1;
+    min_factor[i] = i;
+    for(ll j=i*2; j<=m; j+=i) {
+        if(min_factor[j] == -1) min_factor[j] = i;
+        if((j/i)%i == 0) mebius[j] = 0;
+        else mebius[j] *= -1;
+    } 
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "math/mebius.cpp"
+const ll m = 100000;
+vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
+min_factor[0] = 0, min_factor[1] = 1;
+FOR(i, 2, m+1) {
+    if(min_factor[i] != -1) continue;
+    mebius[i] = -1;
+    min_factor[i] = i;
+    for(ll j=i*2; j<=m; j+=i) {
+        if(min_factor[j] == -1) min_factor[j] = i;
+        if((j/i)%i == 0) mebius[j] = 0;
+        else mebius[j] *= -1;
+    } 
+}
+```
+{% endraw %}
+
+<a href="../../index.html">Back to top page</a>
+
