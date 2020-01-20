@@ -171,6 +171,7 @@ public:
     }
 };
 
+/*
 struct monoid {
     using T = ll;
     using E = ll;
@@ -181,3 +182,4 @@ struct monoid {
     static E h(const E &x, const E &y) { return x+y; }
     static T s(const T &x) { return x; }
 };
+*/
