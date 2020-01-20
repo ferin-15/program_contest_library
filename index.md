@@ -52,7 +52,7 @@ layout: default
 ### data_structure
 
 * :heavy_check_mark: <a href="library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
-* :x: <a href="library/data_structure/Mo.cpp.html">data_structure/Mo.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/Mo.cpp.html">data_structure/Mo.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/Mo_Tree_Vertex.cpp.html">data_structure/Mo_Tree_Vertex.cpp</a>
 * :warning: <a href="library/data_structure/binary_trie.cpp.html">data_structure/binary_trie.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
@@ -243,7 +243,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/GRL6A_0.test.cpp.html">test/GRL6A_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL6A_1.test.cpp.html">test/GRL6A_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
-* :x: <a href="verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>

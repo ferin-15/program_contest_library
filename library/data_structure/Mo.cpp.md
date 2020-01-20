@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: data_structure/Mo.cpp
+# :heavy_check_mark: data_structure/Mo.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 01:03:23+09:00
+    - Last commit date: 2020-01-21 01:08:58+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
 
 
 ## Code
@@ -82,7 +82,6 @@ struct Mo {
     }
 };
 
-// ToDo: expand, shrink に対応させる
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
     void solve() {
@@ -118,7 +117,7 @@ namespace cf221div1d {
             --sum[color[c[rev[idx]]]];
             --color[c[rev[idx]]];
         };
-        Mo mo(n, add, del);
+        Mo mo(n, add, add, del, del);
         vector<ll> v(m), k(m);
         REP(i, m) {
             cin >> v[i] >> k[i];
@@ -136,7 +135,6 @@ namespace cf221div1d {
     }
 }
 
-// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
@@ -202,7 +200,7 @@ namespace ABC014D {
                 sum--;
             }
         };
-        Mo mo(2*n-1, add, del);
+        Mo mo(2*n-1, add, add, del, del);
 
         ll q;
         cin >> q;
@@ -267,7 +265,6 @@ struct Mo {
     }
 };
 
-// ToDo: expand, shrink に対応させる
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
     void solve() {
@@ -303,7 +300,7 @@ namespace cf221div1d {
             --sum[color[c[rev[idx]]]];
             --color[c[rev[idx]]];
         };
-        Mo mo(n, add, del);
+        Mo mo(n, add, add, del, del);
         vector<ll> v(m), k(m);
         REP(i, m) {
             cin >> v[i] >> k[i];
@@ -321,7 +318,6 @@ namespace cf221div1d {
     }
 }
 
-// ToDo: expand, shrink に対応させる
 namespace ABC014D {
     // 辺属性のパスクエリはオイラーツアーして数列に置き換える
     // 辺を奇数回目に訪れるときに追加，偶数回目で削除をする
@@ -387,7 +383,7 @@ namespace ABC014D {
                 sum--;
             }
         };
-        Mo mo(2*n-1, add, del);
+        Mo mo(2*n-1, add, add, del, del);
 
         ll q;
         cin >> q;

@@ -74,7 +74,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL6A_0.test.cpp.html">test/GRL6A_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL6A_1.test.cpp.html">test/GRL6A_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
-* :x: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
@@ -121,21 +121,6 @@ const ll INF = 1LL<<60;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 66, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 98, in main
-    exec_command([cxx, *shlex.split(utils.CXXFLAGS), '-I', '.', '-o', shlex.quote(str(directory / 'a.out')), shlex.quote(str(path))])
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
-    subprocess.check_call(command)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/subprocess.py", line 364, in check_call
-    raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['g++', '--std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/296c97ae1890759db5ff458d400e3695/a.out', 'test/aoj0425.test.cpp']' returned non-zero exit status 1.
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundler.update(self.file_class.file_path)
