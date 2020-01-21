@@ -2,6 +2,7 @@
 #include "../memo/macro.hpp"
 #include "../graph/topological.cpp"
 
+// スペシャルジャッジだからだめ
 signed main(void) {
     ll n, m;
     cin >> n >> m;

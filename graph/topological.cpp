@@ -1,7 +1,7 @@
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
-    vector<ll> h(n, 0);
+    vector<ll> h(n);
     REP(i, n) for(int j: g[i]) h[j]++;
 
     stack<PII> st;
