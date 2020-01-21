@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL5C_3.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 18:56:53+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
@@ -85,15 +85,108 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/GRL5C_3.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../graph/LCA_tarjan_offline.cpp"
+struct UnionFind {
+    vector<int> par, s;
+    UnionFind(int n=2e5) { init(n); }
+    void init(int n) {
+        s.assign(n, 1); par.resize(n);
+        iota(par.begin(), par.end(), 0);
+    }
+    int find(int x) {
+        if(par[x] == x) return x;
+        return par[x] = find(par[x]);
+    }
+    void unite(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if(x == y) return;
+        if(s[x] < s[y]) par[x] = y, s[y] = s[x] + s[y];
+        else par[y] = x, s[x] = s[x] + s[y];
+    }
+    bool same(int x, int y) { return find(x) == find(y); }
+    int size(int x) { return s[find(x)]; }
+};
 
+class tarjan_offline_lca {
+private:
+    ll n;
+    UnionFind uf;
+    vector<ll> anc, lca, visit, used;
+    vector<vector<ll>> g;
+    vector<vector<PII>> query;
+    void dfs(ll v=0, ll p=-1) {
+        anc[v] = v;
+        for(auto to: g[v]) if(to != p) {
+            dfs(to, v);
+            uf.unite(to, v);
+            anc[uf.find(v)] = v;
+        }
+        visit[v] = 1;
+        for(auto i: query[v]) {
+            if(visit[i.first] == 1 && used[i.second]++ == 0) {
+                lca[i.second] = anc[uf.find(i.first)];
+            }
+        }
+    }
+public:
+    tarjan_offline_lca() {}
+    tarjan_offline_lca(ll n, ll q) : n(n), uf(n), anc(n), lca(q), visit(n), used(q), g(n), query(n) {}
+    // 辺とクエリの追加
+    void add_edge(ll a, ll b) {
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+    // i番目のクエリは頂点aと頂点bのLCA
+    void add_query(ll a, ll b, ll i) {
+        query[a].push_back({b, i});
+        query[b].push_back({a, i});
+    }
+    // lcaを求める
+    vector<ll> build() { dfs(); return lca; }
+};#line 4 "test/GRL5C_3.test.cpp"
+
+signed main(void) {
+    ll n;
+    cin >> n;
+    vector<PII> edges;
+    REP(i, n) {
+        ll k;
+        cin >> k;
+        REP(j, k) {
+            ll c;
+            cin >> c;
+            edges.emplace_back(i, c);
+        }
+    }
+    ll q;
+    cin >> q;
+
+    tarjan_offline_lca graph(n, q);
+    for(auto e: edges) graph.add_edge(e.first, e.second);
+    REP(i, q) {
+        ll u, v;
+        cin >> u >> v;
+        graph.add_query(u, v, i);
+    }
+    auto ret = graph.build();
+    for(auto i: ret) cout << i << endl;
+
+    return 0;
+}
 ```
 {% endraw %}
 

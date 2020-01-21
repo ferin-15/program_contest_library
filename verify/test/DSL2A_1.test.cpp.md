@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2A_1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:40:12+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
@@ -74,15 +74,106 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/DSL2A_1.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../data_structure/segtree.cpp"
+// 根が1
+template<typename Monoid>
+struct segtree {
+    using T = typename Monoid::T;
+    int n;
+    vector<T> dat;
 
+    segtree(int n_) {
+        n = 1;
+        while(n < n_) n <<= 1;
+        dat.assign(n*2, Monoid::id());
+    }
+    void build(vector<T> v) {
+        REP(i, v.size()) dat[i+n] = v[i];
+        for(int i=n-1; i>0; --i) dat[i] = Monoid::op(dat[i*2], dat[i*2+1]);
+    }
+
+    T query(int a, int b) {
+        if(a >= b) return Monoid::id();
+        T l = Monoid::id(), r = Monoid::id();
+        for(a+=n, b+=n; a<b; a>>=1, b>>=1) {
+            if(a&1) l = Monoid::op(l, dat[a++]);
+            if(b&1) r = Monoid::op(dat[--b], r);
+        }
+        return Monoid::op(l, r);
+    }
+    void update(int i, T v) {
+        i += n;
+        dat[i] = v;
+        while(i >>= 1) {
+            dat[i] = Monoid::op(dat[i*2], dat[i*2+1]);
+        }
+    }
+
+    friend ostream &operator <<(ostream& out,const segtree<Monoid>& seg){
+        out << "---------------------" << endl;
+        int cnt = 1;
+        for(int i=1; i<=seg.n; i*=2) {
+            REP(j, i) {
+                out << seg.dat[cnt] << " ";
+                cnt++;
+            }
+            out << endl;
+        }
+        out << "---------------------" << endl;
+        return out;
+    }
+};
+
+template<typename Tp>
+struct min_monoid {
+    using T = Tp;
+    static constexpr Tp id() { return INT_MAX; }
+    static Tp op(const Tp &a, const Tp &b) { return min(a, b); }
+};
+template<typename Tp>
+struct max_monoid {
+    using T = Tp;
+    static constexpr Tp id() { return -INF; }
+    static Tp op(const Tp &a, const Tp &b) { return max(a, b); }
+};
+template<typename Tp>
+struct sum_monoid {
+    using T = Tp;
+    static constexpr Tp id() { return 0; }
+    static Tp op(const Tp &a, const Tp &b) { return a+b; }
+};
+#line 4 "test/DSL2A_1.test.cpp"
+
+signed main(void) {
+    int n, q;
+    cin >> n >> q;
+
+    segtree<min_monoid<ll>> seg(n);
+    while(q--) {
+        int c, x, y;
+        cin >> c >> x >> y;
+        if(c == 0) {
+            seg.update(x, y);
+        } else {
+            cout << seg.query(x, y+1) << endl;
+        }
+    }
+
+    return 0;
+}
 ```
 {% endraw %}
 

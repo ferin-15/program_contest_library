@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL3C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C</a>
@@ -67,15 +67,81 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/DPL3C.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../DP/largest_Rectangle.cpp"
+// i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
+ll largest_rectangle_histogram(vector<ll> h) {
+    const ll n = h.size();
 
+    // iを固定して高さがh[i]となる長方形を考えるとl,rは一意に定まる
+    // l[i], r[i] をstackを使って求める
+
+    // l[i] = (j<=iかつh[j-1]<h[i]となる最大のj)
+    vector<ll> l(n);
+    stack<ll> st1;
+    REP(i, n) {
+        while(st1.size() && h[st1.top()] >= h[i]) st1.pop();
+        l[i] = st1.empty() ? 0 : (st1.top()+1);
+        st1.push(i);
+    }
+    // r[i] = (j>iかつh[j]<h[i]となる最小のj)
+    vector<ll> r(n);
+    stack<ll> st2;
+    for(ll i=n-1; i>=0; --i) {
+        while(st2.size() && h[st2.top()] >= h[i]) st2.pop();
+        r[i] = st2.empty() ? n : st2.top();
+        st2.push(i);
+    }
+    ll ret = 0;
+    REP(i, n) ret = max(ret, h[i]*(r[i]-l[i]));
+    return ret;
+}
+
+// c[i][j] = 0 のマスだけを使って構成できる最大の長方形の面積を返す
+ll largeest_rectangle(vector<vector<ll>> c) {
+    const int h = c.size(), w = c[0].size();
+    vector<vector<ll>> con(h, vector<ll>(w));
+
+    REP(i, w) {
+        int cnt = 1;
+        REP(j, h) {
+            if(!c[j][i]) {
+                con[j][i] = cnt;
+                cnt++;
+            } else {
+                con[j][i] = 0;
+                cnt = 1;
+            }
+        }
+    }
+
+    ll ret = 0;
+    REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
+    return ret;
+}#line 4 "test/DPL3C.test.cpp"
+
+signed main(void) {
+    ll n;
+    cin >> n;
+    vector<ll> h(n);
+    REP(i, n) cin >> h[i];
+
+    cout << largest_rectangle_histogram(h) << endl;
+
+    return 0;
+}
 ```
 {% endraw %}
 

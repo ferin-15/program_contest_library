@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/memo/macro.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 03:56:54+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 
@@ -78,31 +78,31 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL6A_1.test.cpp.html">test/GRL6A_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL6A_2.test.cpp.html">test/GRL6A_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
+* :x: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
+* :x: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
+* :x: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 
 ## Code
@@ -120,11 +120,6 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-#ifdef DEBUG_ 
-#include "../program_contest_library/memo/dump.hpp"
-#else
-#define dump(...)
-#endif
 const ll INF = 1LL<<60;
 ```
 {% endraw %}
@@ -132,13 +127,18 @@ const ll INF = 1LL<<60;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
-
+#line 1 "memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;
 ```
 {% endraw %}
 

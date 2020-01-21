@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-2SAT.test.cpp
+# :x: test/yosupo-2SAT.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-2SAT.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:37:40+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/SCC.cpp.html">graph/SCC.cpp</a>
-* :heavy_check_mark: <a href="../../library/graph/twosat.cpp.html">graph/twosat.cpp</a>
+* :x: <a href="../../library/graph/twosat.cpp.html">graph/twosat.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -85,15 +85,120 @@ int main () {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/yosupo-2SAT.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_sat"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../graph/SCC.cpp"
+struct SCC {
+    int V, K;
+    vector<vector<int>> G;
+    vector<vector<int>> rG;
+    vector<int> vs;
+    vector<int> used;
+    vector<int> cmp;
 
+    void dfs(int v) {
+        used[v]=true;
+        for(int nx: G[v]) if(!used[nx]) dfs(nx);
+        vs.push_back(v);
+    }
+    void rdfs(int v,int k) {
+        used[v]=true; cmp[v]=k;
+        for(int nx: rG[v]) if(!used[nx]) rdfs(nx,k);
+    }
+
+    SCC() { V=K=-1; }
+    SCC(int V_): V(V_), G(V_), rG(V_), used(V_), cmp(V_) {}
+
+    void add_edge(int from,int to) {
+        G[from].push_back(to);
+        rG[to].push_back(from);
+    }
+    int scc() {
+        used.assign(V,0); vs.clear();
+        for(int v=0;v<V;v++) if(!used[v]) dfs(v);
+        used.assign(V,0);
+        int k=0;
+        for(int i=(int)vs.size()-1;i>=0;i--) if(!used[vs[i]]) {
+            rdfs(vs[i],k++);
+        }
+        return K=k;
+    }
+    // O(ElogE)
+    // SCCしたあとのグラフはトポロジカル順になってる
+    vector<vector<int>> getDAG() {
+        vector<vector<int>> res(K);
+        for(int from=0;from<V;from++) {
+            for(int to:G[from]) if(cmp[from]!=cmp[to]) {
+                res[cmp[from]].push_back(cmp[to]);
+            }
+        }
+        for(int i=0;i<K;i++){
+            sort(ALL(res[i]));
+            res[i].erase(unique(ALL(res[i])),res[i].end());
+        }
+        return res;
+    }
+};#line 1 "test/../graph/twosat.cpp"
+struct twoSAT {
+    ll n;
+    SCC graph;
+    vector<bool> ans;
+    twoSAT(ll n) : n(n), graph(n*2), ans(n) {}
+    // not なら false
+    void add(pair<ll,bool> a0, pair<ll,bool> b0) {
+        ll a = a0.first, ar = (a0.first+n)%(2*n);
+        ll b = b0.first, br = (b0.first+n)%(2*n);
+        if(!a0.second) swap(a, ar);
+        if(!b0.second) swap(b, br);
+        graph.add_edge(ar, b);
+        graph.add_edge(br, a);
+    }
+    bool solve() {
+        graph.scc();
+        REP(i, n) if(graph.cmp[i] == graph.cmp[n+i]) return false;
+        REP(i, n) ans[i] = graph.cmp[i] > graph.cmp[n+i];
+        return true;
+    }
+};
+#line 5 "test/yosupo-2SAT.test.cpp"
+
+int main () {
+    ll n, m;
+    string ss;
+    cin >> ss >> ss >> n >> m;
+    twoSAT graph(n);
+    REP(i, m) {
+        ll a, b, c;
+        cin >> a >> b >> c;
+        pair<ll, bool> p1, p2;
+        if(a < 0) p1 = {-a-1, false};
+        else p1 = {a-1, true};
+        if(b < 0) p2 = {-b-1, false};
+        else p2 = {b-1, true};
+        graph.add(p1, p2);
+    }
+
+    if(!graph.solve()) {
+        cout << "s UNSATISFIABLE" << endl;
+        return 0;
+    }
+
+    cout << "s SATISFIABLE" << endl;
+    cout << "v ";
+    REP(i, n) cout << (graph.ans[i] ? 1 : -1) * (i+1) << " ";
+    cout << "0" << endl;
+}
 ```
 {% endraw %}
 

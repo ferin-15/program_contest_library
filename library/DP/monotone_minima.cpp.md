@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: DP/monotone_minima.cpp
+# :x: DP/monotone_minima.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/rolling_hash.cpp
+# :x: string/rolling_hash.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 
 
 ## Code

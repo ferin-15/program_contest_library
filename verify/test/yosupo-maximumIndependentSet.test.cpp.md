@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-maximumIndependentSet.test.cpp
+# :x: test/yosupo-maximumIndependentSet.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-maximumIndependentSet.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 23:36:36+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/maximum_independent_set">https://judge.yosupo.jp/problem/maximum_independent_set</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
+* :x: <a href="../../library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -71,15 +71,115 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/yosupo-maximumIndependentSet.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/maximum_independent_set"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../graph/max_independent_set.cpp"
+// O(n*1.466^n) n<=40で16ms
+class maxIndependentSet {
+public:
+    int n;
+    vector<int> deg, used, dead, ans;
+    vector<vector<int>> g;
 
+private:
+    int ret, cnt, alive;
+    void dfs() {
+        if(cnt+alive <= ret) return;
+
+        int v = -1;
+        REP(i, n) if(!used[i] && !dead[i]) {
+            if(deg[i] <= 1) { v = i; break; }
+            if(v<0 || deg[v]<deg[i]) v=i;
+        }
+        if(v<0) return;
+
+        if(deg[v] != 1) {
+            dead[v] = 1;
+            alive--;
+            for(auto i: g[v]) deg[i]--;
+            dfs();
+            dead[v] = 0;
+            alive++;
+            for(auto i: g[v]) deg[i]++;
+        }
+        {
+            used[v] = 1;
+            alive--;
+            for(auto i: g[v]) {
+                if(dead[i] == 0) alive -= !used[i];
+                dead[i]++;
+            }
+            cnt++;
+            if(ret < cnt) ans = used, ret = cnt;
+            dfs();
+            used[v] = 0;
+            alive++;
+            for(auto i: g[v]) {
+                dead[i]--;
+                if(dead[i] == 0) alive += !used[i];
+            }
+            cnt--;
+        }
+    }
+
+public:
+    maxIndependentSet() {}
+    maxIndependentSet(ll n) : n(n), deg(n), used(n), dead(n), ans(n), g(n) {}
+
+    void add_edge(ll a, ll b) {
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+
+    vector<ll> get() {
+        REP(i, n) deg[i] = g[i].size();
+        ret = cnt = 0, alive = n;
+        dfs();
+        vector<ll> ans_set;
+        REP(i, n) if(ans[i]) ans_set.push_back(i);
+        return ans_set;
+    }
+};
+
+namespace thanks2017G {
+    void solve() {
+        ll n, m;
+        cin >> n >> m;
+        maxIndependentSet graph(n);
+        REP(i, m) {
+            int a, b;
+            cin >> a >> b;
+            graph.add_edge(a-1, b-1);
+        }
+        cout << graph.get().size() << endl;
+    }
+}#line 4 "test/yosupo-maximumIndependentSet.test.cpp"
+
+int main() {
+    ll n, m;
+    cin >> n >> m;
+    maxIndependentSet graph(n);
+    REP(i, m) {
+        ll u, v;
+        cin >> u >> v;
+        graph.add_edge(u, v);
+    }
+    auto ans = graph.get();
+    cout << ans.size() << "\n";
+    REP(i, ans.size()) cout << ans[i] << (i+1==ans.size() ? "\n" : " ");
+    cout << flush;
+}
 ```
 {% endraw %}
 

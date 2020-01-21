@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2I_0.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_I">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_I</a>
@@ -78,14 +78,140 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/DSL2I_0.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_I"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../data_structure/lazysegtree.cpp"
+template <typename Monoid>
+struct lazysegtree {
+    using T = typename Monoid::T;
+    using E = typename Monoid::E;
+    int n, height;
+    vector<T> dat;
+    vector<E> lazy;
+
+    lazysegtree() {}
+    lazysegtree(int n_) {
+        n = 1, height = 0;
+        while(n <= n_) { n *= 2; height++; }
+        dat.assign(n*2, Monoid::dt());
+        lazy.assign(n*2, Monoid::de());
+    }
+    void build(vector<T> v) {
+        REP(i, v.size()) dat[i+n] = v[i];
+        for(int i=n-1; i>0; --i) dat[i] = Monoid::f(dat[i*2], dat[i*2+1]);
+    }
+
+    inline T reflect(int k) { return lazy[k]==Monoid::de()?dat[k]:Monoid::g(dat[k], lazy[k]); }
+    inline void eval(int k) {
+        if(lazy[k] == Monoid::de()) return;
+        lazy[2*k]   = Monoid::h(lazy[k*2],   lazy[k]);
+        lazy[2*k+1] = Monoid::h(lazy[k*2+1], lazy[k]);
+        dat[k] = reflect(k);
+        lazy[k] = Monoid::de();
+    }
+    inline void thrust(int k) { for(int i=height;i;--i) eval(k>>i); }
+    inline void recalc(int k) { while(k>>=1) dat[k] = Monoid::f(reflect(k*2), reflect(k*2+1)); }
+
+    void update(int a, int b, E x) {
+        if(a >= b) return;
+        thrust(a+=n);
+        thrust(b+=n-1);
+        for(int l=a, r=b+1; l<r; l>>=1,r>>=1) {
+            if(l&1) lazy[l] = Monoid::h(lazy[l], x), ++l;
+            if(r&1) --r, lazy[r] = Monoid::h(lazy[r], x);
+        }
+        recalc(a);
+        recalc(b);
+    }
+    T query(int a, int b) {
+        if(a >= b) return Monoid::dt();
+        thrust(a+=n);
+        thrust(b+=n-1);
+        T vl=Monoid::dt(), vr=Monoid::dt();
+        for(int l=a, r=b+1; l<r; l>>=1,r>>=1) {
+            if(l&1) vl=Monoid::f(vl, reflect(l++));
+            if(r&1) vr=Monoid::f(reflect(--r), vr);
+        }
+        return Monoid::f(vl, vr);
+    }
+
+    friend ostream &operator <<(ostream& out,const lazysegtree<Monoid>& seg) {
+        out << "---------------------" << endl;
+        int cnt = 1;
+        for(int i=1; i<=seg.n; i*=2) {
+            REP(j, i) {
+                out << "(" << seg.dat[cnt] << "," << seg.lazy[cnt] << ") ";
+                cnt++;
+            }
+            out << endl;
+        }
+        out << "---------------------" << endl;
+        return out;
+    }
+};
+
+struct node {
+    ll sum, max, min, len;
+    node() : sum(0), max(-INF), min(INF), len(0) {}
+    node(ll a) : sum(a), max(a), min(a), len(1) {}
+};
+struct linear_exp {
+    using T = node;
+    using E = PII;
+    static T dt() { return node(); }
+    static constexpr E de() { return PII(1, 0); }
+    static T f(const T &a, const T &b) {
+        node ret;
+        ret.sum = a.sum + b.sum;
+        ret.min = min(a.min, b.min);
+        ret.max = max(a.max, b.max);
+        ret.len = a.len + b.len;
+        return ret;
+    }
+    static T g(const T &a, const E &b) {
+        node ret;
+        ret.sum = b.first*a.sum+b.second*a.len;
+        ret.min = b.first*a.min+b.second;
+        ret.max = b.first*a.max+b.second;
+        ret.len = a.len;
+        return ret;
+    }
+    static E h(const E &a, const E &b) {
+        return PII(b.first*a.first, b.first*a.second+b.second);
+    }
+};#line 4 "test/DSL2I_0.test.cpp"
+
+signed main(void) {
+    int n, q;
+    cin >> n >> q;
+
+    lazysegtree<linear_exp> seg(n);
+    seg.build(vector<node>(n, node(0)));
+    while(q--) {
+        int c, s, t;
+        cin >> c >> s >> t;
+        if(c == 0) {
+            int x;
+            cin >> x;
+            seg.update(s, t+1, PII(0, x));
+        } else {
+            cout << seg.query(s, t+1).sum << endl;
+        }
+    }
+
+    return 0;
+}
 
 ```
 {% endraw %}

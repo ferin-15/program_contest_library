@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/segtree_range_freq.cpp
+# :x: data_structure/segtree_range_freq.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
 
 
 ## Code

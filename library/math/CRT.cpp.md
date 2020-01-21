@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/CRT.cpp
+# :x: math/CRT.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
 
 
 ## Code

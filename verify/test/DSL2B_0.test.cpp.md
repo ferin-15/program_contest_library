@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2B_0.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp</a>
@@ -73,15 +73,67 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/DSL2B_0.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../data_structure/BIT.cpp"
+template <typename T>
+struct BIT {
+    int n;
+    vector<T> bit;
+    BIT(int n_ = 1e5) { init(n_); }
+    void init(int sz) { 
+        n=1; while(n < sz) n*=2;
+        bit.assign(n+1, 0); 
+    }
+    void update(int i, T w) {
+        for(int x=i+1; x<(int)bit.size(); x += x&-x) bit[x] += w;
+    }
+    // [0,i]
+    T query(int i) {
+        T ret = 0;
+        for(int x=i+1; x>0; x -= x&-x) ret += bit[x];
+        return ret;
+    }
+    // 合計がw以上の最小の位置
+    int lower_bound(T w) {
+        int x = 0;
+        for(int k=n; k>0; k>>=1) {
+            if(x+k <= n && bit[x+k] < w) {
+                w -= bit[x+k];
+                x += k;
+            }
+        }
+        return x;
+    }
+};#line 4 "test/DSL2B_0.test.cpp"
 
+signed main(void) {
+    ll n, q;
+    cin >> n >> q;
+    BIT<ll> bit(100010);
+    while(q--) {
+        ll t, x, y;
+        cin >> t >> x >> y;
+        if(t == 0) {
+            bit.update(x, y);
+        } else {
+            cout << bit.query(y) - bit.query(x-1) << endl;
+        }
+    }
+
+    return 0;
+}
 ```
 {% endraw %}
 

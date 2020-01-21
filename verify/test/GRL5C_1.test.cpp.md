@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL5C_1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
@@ -82,15 +82,99 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/GRL5C_1.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../graph/LCA_doubling.cpp"
+struct LCA {
+    const int n = 0;
+    const int log2_n = 0;
+    vector<vector<int>> g;
+    vector<vector<int>> par;  // par[2^i上][頂点v]
+    vector<int> dep;
 
+    void dfs(int v, int p, int d) {
+        par[0][v] = p;
+        dep[v] = d;
+        for(auto to: g[v]) {
+            if(to == p) continue;
+            dfs(to, v, d+1);
+        }
+    }
+
+    LCA() {}
+    LCA(int n) : n(n), log2_n(log2(n)+1), g(n),
+        par(log2_n, vector<int>(n)), dep(n) {}
+
+    void add_edge(int u, int v) {
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+
+    void build(ll root=0) {
+        dfs(root, -1, 0);
+        for(int i=0; i+1 < log2_n; ++i) {
+            for(int j = 0; j < n; ++j) {
+                if(par[i][j] < 0) par[i+1][j] = -1;
+                else par[i+1][j] = par[i][par[i][j]];
+            }
+        }
+    }
+
+    int get(int u, int v) {
+        if(dep[u] > dep[v]) swap(u, v);
+        REP(i, log2_n) {
+            if((dep[v] - dep[u]) >> i & 1) {
+                v = par[i][v];
+            }
+        }
+        if(u == v) return u;
+        for(int i=log2_n-1; i>=0; --i) {
+            if(par[i][u] != par[i][v]) {
+                u = par[i][u];
+                v = par[i][v];
+            }
+        }
+        return par[0][u];
+    }
+};
+#line 4 "test/GRL5C_1.test.cpp"
+
+signed main(void) {
+    ll n;
+    cin >> n;
+    LCA graph(n);
+    REP(i, n) {
+        ll k;
+        cin >> k;
+        REP(j, k) {
+            ll c;
+            cin >> c;
+            graph.add_edge(i, c);
+        }
+    }
+    graph.build();
+
+    ll q;
+    cin >> q;
+    while(q--) {
+        ll u, v;
+        cin >> u >> v;
+        cout << graph.get(u, v) << endl;
+    }
+
+    return 0;
+}
 ```
 {% endraw %}
 

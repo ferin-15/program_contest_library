@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/sqrt_mod.memo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sqrt_mod">https://judge.yosupo.jp/problem/sqrt_mod</a>
@@ -69,15 +69,151 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/sqrt_mod.memo.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../math/runtime_modint.cpp"
+ll MOD;
+struct mint {
+    ll x;
+    mint(): x(0) {}
+    mint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
+    // e乗
+    mint pow(ll e) {
+        ll a = 1, p = x;
+        while(e > 0) {
+            if(e%2 == 0) {p = (p*p) % MOD; e /= 2;}
+            else {a = (a*p) % MOD; e--;}
+        }
+        return mint(a);
+    }
+    mint inv() const {
+        ll a=x, b=MOD, u=1, y=1, v=0, z=0;
+        while(a) {
+            ll q = b/a;
+            swap(z -= q*u, u);
+            swap(y -= q*v, v);
+            swap(b -= q*a, a);
+        }
+        return z;
+    }
+    // Comparators
+    bool operator!=(mint b) { return x != b.x; }
+    bool operator==(mint b) { return x == b.x; }
+    // Basic Operations
+    mint operator+(mint r) const { return mint(*this) += r; }
+    mint operator-(mint r) const { return mint(*this) -= r; }
+    mint operator*(mint r) const { return mint(*this) *= r; }
+    mint operator/(mint r) const { return mint(*this) /= r; }
+    mint &operator+=(mint r) {
+        if((x += r.x) >= MOD) x -= MOD;
+        return *this;
+    }
+    mint &operator-=(mint r) {
+        if((x -= r.x) < 0) x += MOD;
+        return *this;
+    }
+    mint &operator*=(mint r) {
+    #if !defined(_WIN32) || defined(_WIN64)
+        x = x * r.x % MOD; return *this;
+    #endif
+        unsigned long long y = x * r.x;
+        unsigned xh = (unsigned) (y >> 32), xl = (unsigned) y, d, m;
+        asm(
+            "divl %4; \n\t"
+            : "=a" (d), "=d" (m)
+            : "d" (xh), "a" (xl), "r" (MOD)
+        );
+        x = m;
+        return *this;
+    }
+    mint &operator/=(mint r) { return *this *= r.inv(); }
+    // 平方剰余のうち一つを返す なければ-1
+    friend ll sqrt(mint a) {
+        if(a == 0) return 0;
+        ll q = MOD-1, s = 0;
+        while((q&1)==0) q>>=1, s++;
+        mint z=2;
+        while(1) {
+            if(z.pow((MOD-1)/2) == MOD-1) break;
+            z++;
+        }
+        mint c = z.pow(q), r = a.pow((q+1)/2), t = a.pow(q);
+        ll m = s;
+        while(t.x>1) {
+            mint tp=t;
+            ll k=-1;
+            FOR(i, 1, m) {
+                tp *= tp;
+                if(tp == 1) { k=i; break; }
+            }
+            if(k==-1) return -1;
+            mint cp=c;
+            REP(i, m-k-1) cp *= cp;
+            c = cp*cp, t = c*t, r = cp*r, m = k;
+        }
+        return r.x;
+    }
+    template<class T> friend
+    mint operator*(T l, mint r) { return mint(l) *= r; }
+    template<class T> friend
+    mint operator+(T l, mint r) { return mint(l) += r; }
+    template<class T> friend
+    mint operator-(T l, mint r) { return mint(l) -= r; }
+    template<class T> friend
+    mint operator/(T l, mint r) { return mint(l) /= r; }
+    template<class T> friend
+    bool operator==(T l, mint r) { return mint(l) == r; }
+    template<class T> friend
+    bool operator!=(T l, mint r) { return mint(l) != r; }
+    // increment, decrement
+    mint operator++() { x++; return *this; }
+    mint operator++(signed) { mint t = *this; x++; return t; }
+    mint operator--() { x--; return *this; }
+    mint operator--(signed) { mint t = *this; x--; return t; }
+    // Input/Output
+    friend ostream &operator<<(ostream& os, mint a) { return os << a.x; }
+    friend istream &operator>>(istream& is, mint &a) { return is >> a.x; }
+    friend string to_frac(mint v) {
+        static map<ll, PII> mp;
+        if(mp.empty()) {
+            mp[0] = mp[MOD] = {0, 1};
+            FOR(i, 2, 1001) FOR(j, 1, i) if(__gcd(i, j) == 1) {
+                mp[(mint(i) / j).x] = {i, j};
+            }
+        }
+        auto itr = mp.lower_bound(v.x);
+        if(itr != mp.begin() && v.x - prev(itr)->first < itr->first - v.x) --itr;
+        string ret = to_string(itr->second.first + itr->second.second * ((int)v.x - itr->first));
+        if(itr->second.second > 1) {
+            ret += '/';
+            ret += to_string(itr->second.second);
+        }
+        return ret;
+    }
+};#line 4 "test/sqrt_mod.memo.cpp"
 
+signed main(void) {
+    ll t;
+    cin >> t;
+    while(t--) {
+        ll a;
+        cin >> a >> MOD;
+        cout << sqrt(mint(a)) << endl;
+    }
+
+    return 0;
+}
 ```
 {% endraw %}
 

@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL3D_1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 01:46:30+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja</a>
@@ -76,15 +76,68 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/DSL3D_1.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../data_structure/sliding_window_aggregation.cpp"
+template<class T, class S, class F>
+struct SWAG {
+    // using F = function<S(S,T)>;
+    F f; S id;
+    stack<T> lt, rt;
+    stack<S> ls, rs;
+    SWAG(F f, S d) : f(f), id(d) {
+        ls.push(id);
+        rs.push(id);
+    }
+    void push_back(T x) { 
+        rt.push(x);
+        rs.push(f(rs.top(), x));
+    }
+    void pop_front() {
+        if(lt.empty()) {
+            while(rt.size()) {
+                T x = rt.top(); rt.pop(); rs.pop();
+                lt.push(x);
+                ls.push(f(ls.top(), x));
+            }
+        }
+        lt.pop();
+        ls.pop();
+    }
+    template<class Q>
+    void fold(Q q) { q(ls.top(), rs.top()); }
+};#line 4 "test/DSL3D_1.test.cpp"
 
+int main() {
+    ll n, l;
+    cin >> n >> l;
+    vector<ll> a(n);
+    REP(i, n) cin >> a[i];
+
+    auto f = [&](ll x, ll y) { return min(x, y); };
+    SWAG<ll,ll,decltype(f)> swag(f, INF);
+
+    REP(i, l-1) swag.push_back(a[i]);
+    FOR(i, l-1, n) {
+        swag.push_back(a[i]);
+        ll ret;
+        auto ask = [&](ll x, ll y) { ret = min(x, y); };
+        swag.fold(ask);
+        cout << ret << (i==n-1?'\n':' ');
+        swag.pop_front();
+    }
+}
 ```
 {% endraw %}
 

@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL6A_1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+    - Last commit date: 2020-01-22 00:44:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A</a>
@@ -71,15 +71,93 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 153, in update
-    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.bundle.BundleError: memo/macro.hpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "test/GRL6A_1.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A"
+#line 1 "test/../memo/macro.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using PII = pair<ll, ll>;
+#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
+#define REP(i, n) FOR(i, 0, n)
+#define ALL(x) x.begin(), x.end()
+template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
+template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
+struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
+const ll INF = 1LL<<60;#line 1 "test/../graph/ford_fulkerson.cpp"
+struct FordFulkerson {
+    struct edge {
+        int to;
+        ll cap;
+        int rev;
+        bool isrev;
+    };
 
+    vector<vector<edge>> g;
+    vector<int> used;
+    int timestamp;
+
+    ll dfs(int idx, const int t, ll flow) {
+        if(idx == t) return flow;
+        used[idx] = timestamp;
+        for(auto &e : g[idx]) {
+            if(e.cap > 0 && used[e.to] != timestamp) {
+                ll d = dfs(e.to, t, min(flow, e.cap));
+                if(d > 0) {
+                    e.cap -= d;
+                    g[e.to][e.rev].cap += d;
+                    return d;
+                }
+            }
+        }
+        return 0;
+    }
+
+    FordFulkerson() {}
+    FordFulkerson(int n) : timestamp(0), g(n), used(n, -1) {}
+
+    void add_edge(int from, int to, ll cap) {
+        g[from].emplace_back((edge){to, cap, (int)g[to].size(), false});
+        g[to].emplace_back((edge){from, 0, (int)g[from].size()-1, true});
+    }
+
+    ll max_flow(int s, int t) {
+        ll flow = 0;
+        ++timestamp;
+        for(ll f; (f = dfs(s, t, INF)) > 0; timestamp++) {
+            flow += f;
+        }
+        return flow;
+    }
+
+    friend ostream &operator <<(ostream& out, const FordFulkerson& a){
+        out << "-----" << endl;
+        for(int i = 0; i < (int)a.g.size(); i++) {
+            for(auto &e : a.g[i]) {
+                if(e.isrev) continue;
+                auto &rev_e = a.g[e.to][e.rev];
+                out << i << "->" << e.to << " (flow: " << rev_e.cap << "/" << e.cap + rev_e.cap << ")" << endl;
+            }
+        }
+        out << "-----" << endl;
+        return out;
+    }
+};#line 4 "test/GRL6A_1.test.cpp"
+
+signed main(void) {
+    ll v, e;
+    cin >> v >> e;
+    FordFulkerson flow(v);
+    REP(i, e) {
+        ll u, v, c;
+        cin >> u >> v >> c;
+        flow.add_edge(u, v, c);
+    }
+
+    cout << flow.max_flow(0, v-1) << endl;
+
+    return 0;
+}
 ```
 {% endraw %}
 
