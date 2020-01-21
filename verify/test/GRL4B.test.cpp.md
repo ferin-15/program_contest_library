@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: test/GRL5C_3.memo.cpp
+# :x: test/GRL4B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/GRL5C_3.memo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL4B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-21 23:41:11+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B</a>
 
 
 ## Depends on
 
-* :warning: <a href="../graph/LCA_tarjan_offline.cpp.html">graph/LCA_tarjan_offline.cpp</a>
-* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
+* :x: <a href="../../library/graph/topological.cpp.html">graph/topological.cpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
@@ -48,35 +47,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B"
 #include "../memo/macro.hpp"
-#include "../graph/LCA_tarjan_offline.cpp"
+#include "../graph/topological.cpp"
 
 signed main(void) {
-    ll n;
-    cin >> n;
-    vector<PII> edges;
-    REP(i, n) {
-        ll k;
-        cin >> k;
-        REP(j, k) {
-            ll c;
-            cin >> c;
-            edges.emplace_back(i, c);
-        }
-    }
-    ll q;
-    cin >> q;
-
-    tarjan_offline_lca graph(n, q);
-    for(auto e: edges) graph.add_edge(e.first, e.second);
-    REP(i, q) {
+    ll n, m;
+    cin >> n >> m;
+    vector<vector<ll>> g(n);
+    REP(i, m) {
         ll u, v;
         cin >> u >> v;
-        graph.add_query(u, v, i);
+        g[u].push_back(v);
     }
-    auto ret = graph.build();
-    for(auto i: ret) cout << i << endl;
+
+    auto ans = tsort(g);
+    for(auto p: ans) cout << p.first << endl;
 
     return 0;
 }
@@ -86,6 +72,17 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
+    subcommand_run(paths=[], jobs=parsed.jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 66, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 129, in main
+    raise Exception('{} test failed'.format(len(failed_test_paths)))
+Exception: 1 test failed
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundler.update(self.file_class.file_path)

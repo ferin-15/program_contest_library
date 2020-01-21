@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj2444.test.cpp
+# :heavy_check_mark: test/GRL3A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj2444.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL3A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-21 19:03:36+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../library/graph/articulation.cpp.html">graph/articulation.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
-* :heavy_check_mark: <a href="../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 
 
 ## Code
@@ -47,34 +47,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp"
 #include "../memo/macro.hpp"
-#include "../string/rolling_hash.cpp"
+#include "../graph/articulation.cpp"
 
-signed main(void) {
-    ll n, q;
-    string s;
-    cin >> n >> q >> s;
-
-    const ll mod1 = 1000000007, base1 = 1007;
-    const ll mod2 = 1000000009, base2 = 1009;
-    rollingHash<mod1, base1> hash1(s);
-    rollingHash<mod2, base2> hash2(s);
-
-    ll l = 0, r = 0;
-    set<PII> st;
-    while(q--) {
-        string t;
-        cin >> t;
-        if(t == "R++") r++;
-        else if(t == "R--") r--;
-        else if(t == "L++") l++;
-        else if(t == "L--") l--;
-        st.insert(PII(hash1.get(l, r+1), hash2.get(l, r+1)));
+int main() {
+    ll n, m;
+    cin >> n >> m;
+    articulation graph(n);
+    REP(i, m) {
+        ll s, t;
+        cin >> s >> t;
+        graph.add_edge(s, t);
     }
-    cout << st.size() << endl;
-
-    return 0;
+    auto ret = graph.build();
+    sort(ALL(ret));
+    for(auto i: ret) cout << i << "\n";
+    cout << flush;
 }
 ```
 {% endraw %}

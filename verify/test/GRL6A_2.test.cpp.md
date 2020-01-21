@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj2444.test.cpp
+# :heavy_check_mark: test/GRL6A_2.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj2444.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL6A_2.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-21 21:34:27+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../library/graph/dinic_with_cost_scalling.cpp.html">graph/dinic_with_cost_scalling.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
-* :heavy_check_mark: <a href="../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 
 
 ## Code
@@ -47,32 +47,21 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A"
 #include "../memo/macro.hpp"
-#include "../string/rolling_hash.cpp"
+#include "../graph/dinic_with_cost_scalling.cpp"
 
 signed main(void) {
-    ll n, q;
-    string s;
-    cin >> n >> q >> s;
-
-    const ll mod1 = 1000000007, base1 = 1007;
-    const ll mod2 = 1000000009, base2 = 1009;
-    rollingHash<mod1, base1> hash1(s);
-    rollingHash<mod2, base2> hash2(s);
-
-    ll l = 0, r = 0;
-    set<PII> st;
-    while(q--) {
-        string t;
-        cin >> t;
-        if(t == "R++") r++;
-        else if(t == "R--") r--;
-        else if(t == "L++") l++;
-        else if(t == "L--") l--;
-        st.insert(PII(hash1.get(l, r+1), hash2.get(l, r+1)));
+    ll v, e;
+    cin >> v >> e;
+    dinicWithCostScalling<ll> flow(v);
+    REP(i, e) {
+        ll u, v, c;
+        cin >> u >> v >> c;
+        flow.add_edge(u, v, c);
     }
-    cout << st.size() << endl;
+
+    cout << flow.maxflow(0, v-1) << endl;
 
     return 0;
 }

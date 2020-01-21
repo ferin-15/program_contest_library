@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structure/segtree_range_freq.cpp
+# :heavy_check_mark: data_structure/segtree_range_freq.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-01-20 04:35:05+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
 
 
 ## Code

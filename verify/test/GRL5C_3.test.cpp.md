@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj2444.test.cpp
+# :heavy_check_mark: test/GRL5C_3.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj2444.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:20:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL5C_3.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-21 18:56:53+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../library/graph/LCA_tarjan_offline.cpp.html">graph/LCA_tarjan_offline.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
-* :heavy_check_mark: <a href="../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 
 
 ## Code
@@ -47,32 +47,35 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #include "../memo/macro.hpp"
-#include "../string/rolling_hash.cpp"
+#include "../graph/LCA_tarjan_offline.cpp"
 
 signed main(void) {
-    ll n, q;
-    string s;
-    cin >> n >> q >> s;
-
-    const ll mod1 = 1000000007, base1 = 1007;
-    const ll mod2 = 1000000009, base2 = 1009;
-    rollingHash<mod1, base1> hash1(s);
-    rollingHash<mod2, base2> hash2(s);
-
-    ll l = 0, r = 0;
-    set<PII> st;
-    while(q--) {
-        string t;
-        cin >> t;
-        if(t == "R++") r++;
-        else if(t == "R--") r--;
-        else if(t == "L++") l++;
-        else if(t == "L--") l--;
-        st.insert(PII(hash1.get(l, r+1), hash2.get(l, r+1)));
+    ll n;
+    cin >> n;
+    vector<PII> edges;
+    REP(i, n) {
+        ll k;
+        cin >> k;
+        REP(j, k) {
+            ll c;
+            cin >> c;
+            edges.emplace_back(i, c);
+        }
     }
-    cout << st.size() << endl;
+    ll q;
+    cin >> q;
+
+    tarjan_offline_lca graph(n, q);
+    for(auto e: edges) graph.add_edge(e.first, e.second);
+    REP(i, q) {
+        ll u, v;
+        cin >> u >> v;
+        graph.add_query(u, v, i);
+    }
+    auto ret = graph.build();
+    for(auto i: ret) cout << i << endl;
 
     return 0;
 }

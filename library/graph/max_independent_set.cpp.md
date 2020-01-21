@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/max_independent_set.cpp
+# :heavy_check_mark: graph/max_independent_set.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/max_independent_set.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-01-21 23:36:36+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 
 
 ## Code
@@ -42,45 +47,69 @@ layout: default
 {% raw %}
 ```cpp
 // O(n*1.466^n) n<=40で16ms
-struct maxIndependentSet {
-    ll n;
-    vector<vector<ll>> g;
+class maxIndependentSet {
+public:
+    int n;
+    vector<int> deg, used, dead, ans;
+    vector<vector<int>> g;
 
-    ll dfs(ll v, vector<ll>& used) {
-        if(v == n) return 0;
-        ll ret = 0;
-        if(!used[v]) {
-            vector<ll> nv(1, v);
-            for(ll i: g[v]) if(!used[i]) nv.push_back(i);
-            for(ll i: nv) used[i] = 1;
-            chmax(ret, dfs(v+1, used) + 1);
-            for(ll i: nv) used[i] = 0;
+private:
+    int ret, cnt, alive;
+    void dfs() {
+        if(cnt+alive <= ret) return;
+
+        int v = -1;
+        REP(i, n) if(!used[i] && !dead[i]) {
+            if(deg[i] <= 1) { v = i; break; }
+            if(v<0 || deg[v]<deg[i]) v=i;
         }
-        ll d = 0;
-        for(ll i: g[v]) if(!used[i]) d++;
-        if(d > 1 || used[v]) {
-            if(!used[v]) {
-                used[v] = 1;
-                chmax(ret, dfs(v+1, used));
-                used[v] = 0;
-            } else {
-                chmax(ret, dfs(v+1, used));
+        if(v<0) return;
+
+        if(deg[v] != 1) {
+            dead[v] = 1;
+            alive--;
+            for(auto i: g[v]) deg[i]--;
+            dfs();
+            dead[v] = 0;
+            alive++;
+            for(auto i: g[v]) deg[i]++;
+        }
+        {
+            used[v] = 1;
+            alive--;
+            for(auto i: g[v]) {
+                if(dead[i] == 0) alive -= !used[i];
+                dead[i]++;
             }
+            cnt++;
+            if(ret < cnt) ans = used, ret = cnt;
+            dfs();
+            used[v] = 0;
+            alive++;
+            for(auto i: g[v]) {
+                dead[i]--;
+                if(dead[i] == 0) alive += !used[i];
+            }
+            cnt--;
         }
-        return ret;
     }
 
+public:
     maxIndependentSet() {}
-    maxIndependentSet(ll n) : n(n), g(n) {}
+    maxIndependentSet(ll n) : n(n), deg(n), used(n), dead(n), ans(n), g(n) {}
 
     void add_edge(ll a, ll b) {
         g[a].push_back(b);
         g[b].push_back(a);
     }
 
-    int get() {
-        vector<ll> used(n);
-        return dfs(0, used);
+    vector<ll> get() {
+        REP(i, n) deg[i] = g[i].size();
+        ret = cnt = 0, alive = n;
+        dfs();
+        vector<ll> ans_set;
+        REP(i, n) if(ans[i]) ans_set.push_back(i);
+        return ans_set;
     }
 };
 
@@ -94,7 +123,7 @@ namespace thanks2017G {
             cin >> a >> b;
             graph.add_edge(a-1, b-1);
         }
-        cout << graph.get() << endl;
+        cout << graph.get().size() << endl;
     }
 }
 ```
@@ -105,45 +134,69 @@ namespace thanks2017G {
 ```cpp
 #line 1 "graph/max_independent_set.cpp"
 // O(n*1.466^n) n<=40で16ms
-struct maxIndependentSet {
-    ll n;
-    vector<vector<ll>> g;
+class maxIndependentSet {
+public:
+    int n;
+    vector<int> deg, used, dead, ans;
+    vector<vector<int>> g;
 
-    ll dfs(ll v, vector<ll>& used) {
-        if(v == n) return 0;
-        ll ret = 0;
-        if(!used[v]) {
-            vector<ll> nv(1, v);
-            for(ll i: g[v]) if(!used[i]) nv.push_back(i);
-            for(ll i: nv) used[i] = 1;
-            chmax(ret, dfs(v+1, used) + 1);
-            for(ll i: nv) used[i] = 0;
+private:
+    int ret, cnt, alive;
+    void dfs() {
+        if(cnt+alive <= ret) return;
+
+        int v = -1;
+        REP(i, n) if(!used[i] && !dead[i]) {
+            if(deg[i] <= 1) { v = i; break; }
+            if(v<0 || deg[v]<deg[i]) v=i;
         }
-        ll d = 0;
-        for(ll i: g[v]) if(!used[i]) d++;
-        if(d > 1 || used[v]) {
-            if(!used[v]) {
-                used[v] = 1;
-                chmax(ret, dfs(v+1, used));
-                used[v] = 0;
-            } else {
-                chmax(ret, dfs(v+1, used));
+        if(v<0) return;
+
+        if(deg[v] != 1) {
+            dead[v] = 1;
+            alive--;
+            for(auto i: g[v]) deg[i]--;
+            dfs();
+            dead[v] = 0;
+            alive++;
+            for(auto i: g[v]) deg[i]++;
+        }
+        {
+            used[v] = 1;
+            alive--;
+            for(auto i: g[v]) {
+                if(dead[i] == 0) alive -= !used[i];
+                dead[i]++;
             }
+            cnt++;
+            if(ret < cnt) ans = used, ret = cnt;
+            dfs();
+            used[v] = 0;
+            alive++;
+            for(auto i: g[v]) {
+                dead[i]--;
+                if(dead[i] == 0) alive += !used[i];
+            }
+            cnt--;
         }
-        return ret;
     }
 
+public:
     maxIndependentSet() {}
-    maxIndependentSet(ll n) : n(n), g(n) {}
+    maxIndependentSet(ll n) : n(n), deg(n), used(n), dead(n), ans(n), g(n) {}
 
     void add_edge(ll a, ll b) {
         g[a].push_back(b);
         g[b].push_back(a);
     }
 
-    int get() {
-        vector<ll> used(n);
-        return dfs(0, used);
+    vector<ll> get() {
+        REP(i, n) deg[i] = g[i].size();
+        ret = cnt = 0, alive = n;
+        dfs();
+        vector<ll> ans_set;
+        REP(i, n) if(ans[i]) ans_set.push_back(i);
+        return ans_set;
     }
 };
 
@@ -157,7 +210,7 @@ namespace thanks2017G {
             cin >> a >> b;
             graph.add_edge(a-1, b-1);
         }
-        cout << graph.get() << endl;
+        cout << graph.get().size() << endl;
     }
 }
 ```

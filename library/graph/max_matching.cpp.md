@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/max_matching.cpp
+# :heavy_check_mark: graph/max_matching.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2019-10-03 22:20:29+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 
 
 ## Code
