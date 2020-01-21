@@ -28,4 +28,6 @@ int main () {
     cout << "v ";
     REP(i, n) cout << (graph.ans[i] ? 1 : -1) * (i+1) << " ";
     cout << "0" << endl;
+
+    return 0;
 }
