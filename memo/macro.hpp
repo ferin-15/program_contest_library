@@ -8,9 +8,4 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-#ifdef DEBUG_ 
-#include "../program_contest_library/memo/dump.hpp"
-#else
-#define dump(...)
-#endif
 const ll INF = 1LL<<60;
