@@ -1,47 +1,54 @@
 // O(n*1.466^n) n<=40で16ms
-struct maxIndependentSet {
-    ll n, ans;
-    vector<ll> used_for_ans;
-    vector<vector<ll>> g;
+class maxIndependentSet {
+public:
+    int n;
+    vector<int> deg, used, dead, ans;
+    vector<vector<int>> g;
 
-    ll dfs(ll v, vector<ll>& used) {
-        if(v == n) return 0;
-        ll ret = 0;
-        if(!used[v]) {
-            vector<ll> nv(1, v);
-            for(ll i: g[v]) if(!used[i]) nv.push_back(i);
-            for(ll i: nv) used[i] = 1;
-            ll tmp = dfs(v+1, used)+1;
-            if(ans < tmp) {
-                ans = tmp;
-                used_for_ans = used;
-            }
-            for(ll i: nv) used[i] = 0;
+private:
+    int ret, cnt, alive;
+    void dfs() {
+        if(cnt+alive <= ret) return;
+
+        int v = -1;
+        REP(i, n) if(!used[i] && !dead[i]) {
+            if(deg[i] <= 1) { v = i; break; }
+            if(v<0 || deg[v]<deg[i]) v=i;
         }
-        ll d = 0;
-        for(ll i: g[v]) if(!used[i]) d++;
-        if(d > 1 || used[v]) {
-            if(!used[v]) {
-                used[v] = 1;
-                ll tmp = dfs(v+1, used);
-                if(ans < tmp) {
-                    ans = tmp;
-                    used_for_ans = used;
-                }
-                used[v] = 0;
-            } else {
-                ll tmp = dfs(v+1, used);
-                if(ans < tmp) {
-                    ans = tmp;
-                    used_for_ans = used;
-                }
-            }
+        if(v<0) return;
+
+        if(deg[v] != 1) {
+            dead[v] = 1;
+            alive--;
+            for(auto i: g[v]) deg[i]--;
+            dfs();
+            dead[v] = 0;
+            alive++;
+            for(auto i: g[v]) deg[i]++;
         }
-        return ret;
+        {
+            used[v] = 1;
+            alive--;
+            for(auto i: g[v]) {
+                if(dead[i] == 0) alive -= !used[i];
+                dead[i]++;
+            }
+            cnt++;
+            if(ret < cnt) ans = used, ret = cnt;
+            dfs();
+            used[v] = 0;
+            alive++;
+            for(auto i: g[v]) {
+                dead[i]--;
+                if(dead[i] == 0) alive += !used[i];
+            }
+            cnt--;
+        }
     }
 
+public:
     maxIndependentSet() {}
-    maxIndependentSet(ll n) : n(n), g(n) {}
+    maxIndependentSet(ll n) : n(n), deg(n), used(n), dead(n), ans(n), g(n) {}
 
     void add_edge(ll a, ll b) {
         g[a].push_back(b);
@@ -49,10 +56,11 @@ struct maxIndependentSet {
     }
 
     vector<ll> get() {
-        vector<ll> used(n);
-        dfs(0, used);
+        REP(i, n) deg[i] = g[i].size();
+        ret = cnt = 0, alive = n;
+        dfs();
         vector<ll> ans_set;
-        REP(i, n) if(used_for_ans[i]) ans_set.push_back(i);
+        REP(i, n) if(ans[i]) ans_set.push_back(i);
         return ans_set;
     }
 };
