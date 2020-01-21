@@ -1,6 +1,7 @@
 // O(n*1.466^n) n<=40で16ms
 struct maxIndependentSet {
     ll n;
+    vector<ll> used_for_ans;
     vector<vector<ll>> g;
 
     ll dfs(ll v, vector<ll>& used) {
@@ -10,7 +11,11 @@ struct maxIndependentSet {
             vector<ll> nv(1, v);
             for(ll i: g[v]) if(!used[i]) nv.push_back(i);
             for(ll i: nv) used[i] = 1;
-            chmax(ret, dfs(v+1, used) + 1);
+            ll tmp = dfs(v+1, used)+1;
+            if(ret < tmp) {
+                ret = tmp;
+                used_for_ans = used;
+            }
             for(ll i: nv) used[i] = 0;
         }
         ll d = 0;
@@ -18,10 +23,18 @@ struct maxIndependentSet {
         if(d > 1 || used[v]) {
             if(!used[v]) {
                 used[v] = 1;
-                chmax(ret, dfs(v+1, used));
+                ll tmp = dfs(v+1, used);
+                if(ret < tmp) {
+                    ret = tmp;
+                    used_for_ans = used;
+                }
                 used[v] = 0;
             } else {
-                chmax(ret, dfs(v+1, used));
+                ll tmp = dfs(v+1, used);
+                if(ret < tmp) {
+                    ret = tmp;
+                    used_for_ans = used;
+                }
             }
         }
         return ret;
@@ -35,9 +48,12 @@ struct maxIndependentSet {
         g[b].push_back(a);
     }
 
-    int get() {
+    vector<ll> get() {
         vector<ll> used(n);
-        return dfs(0, used);
+        dfs(0, used);
+        vector<ll> ans;
+        REP(i, n) if(used_for_ans[i]) ans.push_back(i);
+        return ans;
     }
 };
 
@@ -51,6 +67,6 @@ namespace thanks2017G {
             cin >> a >> b;
             graph.add_edge(a-1, b-1);
         }
-        cout << graph.get() << endl;
+        cout << graph.get().size() << endl;
     }
 }
