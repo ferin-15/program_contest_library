@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: data_structure/wavelet_matrix.cpp
+# :heavy_check_mark: data_structure/wavelet_matrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
 * :x: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
 
 

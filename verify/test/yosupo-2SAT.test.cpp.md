@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-2SAT.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-01-22 00:47:22+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
@@ -78,6 +78,8 @@ int main () {
     cout << "v ";
     REP(i, n) cout << (graph.ans[i] ? 1 : -1) * (i+1) << " ";
     cout << "0" << endl;
+
+    return 0;
 }
 ```
 {% endraw %}
@@ -198,6 +200,8 @@ int main () {
     cout << "v ";
     REP(i, n) cout << (graph.ans[i] ? 1 : -1) * (i+1) << " ";
     cout << "0" << endl;
+
+    return 0;
 }
 ```
 {% endraw %}

@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_10_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-01-22 01:08:39+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp</a>
@@ -61,7 +61,7 @@ signed main(void) {
     matrix mat(2, 2);
     mat.get(0, 0) = 1, mat.get(0, 1) = 1;
     mat.get(1, 0) = 1, mat.get(1, 1) = 0;
-    mat = pow(mat, n);
+    mat = pow(mat, n); 
 
     cout << mat.get(0, 0) << endl;
 
@@ -333,7 +333,7 @@ signed main(void) {
     matrix mat(2, 2);
     mat.get(0, 0) = 1, mat.get(0, 1) = 1;
     mat.get(1, 0) = 1, mat.get(1, 1) = 0;
-    mat = pow(mat, n);
+    mat = pow(mat, n); 
 
     cout << mat.get(0, 0) << endl;
 

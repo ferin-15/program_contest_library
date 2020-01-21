@@ -205,13 +205,15 @@ int main(void) {
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
     subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 70, in subcommand_run
-    push_timestamp_to_branch()
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 88, in push_timestamp_to_branch
-    subprocess.check_call(['git', 'push', url, 'HEAD'])
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 66, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 98, in main
+    exec_command([cxx, *shlex.split(utils.CXXFLAGS), '-I', '.', '-o', shlex.quote(str(directory / 'a.out')), shlex.quote(str(path))])
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
+    subprocess.check_call(command)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/subprocess.py", line 364, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['git', 'push', 'https://ferin-15:v1.c68c9184e30bdd812fa5d3fb8c6cc417380ba8f9@github.com/ferin-15/program_contest_library.git', 'HEAD']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['g++', '--std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/fd2ccfd4f17fb49d60d793abc42e2c6c/a.out', 'test/aoj2603.test.cpp']' returned non-zero exit status 1.
 
 During handling of the above exception, another exception occurred:
 
