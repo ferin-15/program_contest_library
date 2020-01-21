@@ -25,12 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/GRL4B.test.cpp
+# :warning: test/GRL4B.memo.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/GRL4B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 23:41:11+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL4B.memo.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-22 00:02:13+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B</a>
@@ -38,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../library/graph/topological.cpp.html">graph/topological.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :warning: <a href="../graph/topological.cpp.html">graph/topological.cpp</a>
+* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
@@ -51,6 +52,7 @@ layout: default
 #include "../memo/macro.hpp"
 #include "../graph/topological.cpp"
 
+// スペシャルジャッジだからだめ
 signed main(void) {
     ll n, m;
     cin >> n >> m;
@@ -72,17 +74,6 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 66, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 129, in main
-    raise Exception('{} test failed'.format(len(failed_test_paths)))
-Exception: 1 test failed
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundler.update(self.file_class.file_path)

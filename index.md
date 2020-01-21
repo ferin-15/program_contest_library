@@ -108,7 +108,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
 * :heavy_check_mark: <a href="library/graph/max_matching.cpp.html">graph/max_matching.cpp</a>
 * :heavy_check_mark: <a href="library/graph/min_cost_flow_dijkstra.cpp.html">graph/min_cost_flow_dijkstra.cpp</a>
-* :x: <a href="library/graph/topological.cpp.html">graph/topological.cpp</a>
+* :warning: <a href="library/graph/topological.cpp.html">graph/topological.cpp</a>
 * :warning: <a href="library/graph/twosat.cpp.html">graph/twosat.cpp</a>
 * :warning: <a href="library/graph/voronoi_mst.cpp.html">graph/voronoi_mst.cpp</a>
 
@@ -172,6 +172,7 @@ layout: default
 ### test
 
 * :warning: <a href="library/test/DSL2F.memo.cpp.html">test/DSL2F.memo.cpp</a>
+* :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
 
 
@@ -199,7 +200,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/GRL3A.test.cpp.html">test/GRL3A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL3B.test.cpp.html">test/GRL3B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>
-* :x: <a href="verify/test/GRL4B.test.cpp.html">test/GRL4B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL5C_0.test.cpp.html">test/GRL5C_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL5C_1.test.cpp.html">test/GRL5C_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL5C_2.test.cpp.html">test/GRL5C_2.test.cpp</a>

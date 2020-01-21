@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :warning: <a href="../test/DSL2F.memo.cpp.html">test/DSL2F.memo.cpp</a>
+* :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
 
 
@@ -66,7 +67,6 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL3A.test.cpp.html">test/GRL3A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL3B.test.cpp.html">test/GRL3B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>
-* :x: <a href="../../verify/test/GRL4B.test.cpp.html">test/GRL4B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5C_0.test.cpp.html">test/GRL5C_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5C_1.test.cpp.html">test/GRL5C_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5C_2.test.cpp.html">test/GRL5C_2.test.cpp</a>
@@ -130,17 +130,6 @@ const ll INF = 1LL<<60;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 66, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 129, in main
-    raise Exception('{} test failed'.format(len(failed_test_paths)))
-Exception: 1 test failed
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundler.update(self.file_class.file_path)

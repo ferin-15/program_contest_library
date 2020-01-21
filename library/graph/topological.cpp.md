@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graph/topological.cpp
+# :warning: graph/topological.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/topological.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-01-22 00:02:13+09:00
 
 
 
 
-## Verified with
+## Required by
 
-* :x: <a href="../../verify/test/GRL4B.test.cpp.html">test/GRL4B.test.cpp</a>
+* :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 
 
 ## Code
@@ -49,7 +49,7 @@ layout: default
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
-    vector<ll> h(n, 0);
+    vector<ll> h(n);
     REP(i, n) for(int j: g[i]) h[j]++;
 
     stack<PII> st;
@@ -77,7 +77,7 @@ vector<PII> tsort(vector<vector<ll>> g) {
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
-    vector<ll> h(n, 0);
+    vector<ll> h(n);
     REP(i, n) for(int j: g[i]) h[j]++;
 
     stack<PII> st;
