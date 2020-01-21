@@ -23,7 +23,6 @@ int main(void) {
         };
         auto ndp = monotone_minima<ll>(n+1, n+1, f); 
         REP(i, n+1) dp[i] = ndp[i].second;
-        dump(k, dp);
     }
     cout << dp[n] << endl;
 
