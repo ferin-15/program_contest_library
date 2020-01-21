@@ -11,7 +11,7 @@ signed main(void) {
     matrix mat(2, 2);
     mat.get(0, 0) = 1, mat.get(0, 1) = 1;
     mat.get(1, 0) = 1, mat.get(1, 1) = 0;
-    mat = pow(mat, n);
+    mat = pow(mat, n); 
 
     cout << mat.get(0, 0) << endl;
 
