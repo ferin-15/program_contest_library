@@ -36,6 +36,12 @@ layout: default
 
 
 
+## Required by
+
+* :warning: <a href="../test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
+* :warning: <a href="../test/yosupo-2SAT.cpp.html">test/yosupo-2SAT.cpp</a>
+
+
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>

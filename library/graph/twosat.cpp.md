@@ -36,6 +36,12 @@ layout: default
 
 
 
+## Required by
+
+* :warning: <a href="../test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
+* :warning: <a href="../test/yosupo-2SAT.cpp.html">test/yosupo-2SAT.cpp</a>
+
+
 ## Code
 
 <a id="unbundled"></a>
