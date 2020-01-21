@@ -42,7 +42,6 @@ layout: default
 * :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="../test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
 * :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-* :warning: <a href="../test/yosupo-2SAT.cpp.html">test/yosupo-2SAT.cpp</a>
 
 
 ## Verified with
@@ -101,6 +100,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 

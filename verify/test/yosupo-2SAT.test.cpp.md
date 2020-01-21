@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: test/yosupo-2SAT.cpp
+# :heavy_check_mark: test/yosupo-2SAT.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-2SAT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:35:15+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-2SAT.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-22 00:37:40+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
@@ -39,9 +38,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../graph/SCC.cpp.html">graph/SCC.cpp</a>
-* :warning: <a href="../graph/twosat.cpp.html">graph/twosat.cpp</a>
-* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/graph/SCC.cpp.html">graph/SCC.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/twosat.cpp.html">graph/twosat.cpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

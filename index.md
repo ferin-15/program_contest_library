@@ -109,7 +109,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/max_matching.cpp.html">graph/max_matching.cpp</a>
 * :heavy_check_mark: <a href="library/graph/min_cost_flow_dijkstra.cpp.html">graph/min_cost_flow_dijkstra.cpp</a>
 * :warning: <a href="library/graph/topological.cpp.html">graph/topological.cpp</a>
-* :warning: <a href="library/graph/twosat.cpp.html">graph/twosat.cpp</a>
+* :heavy_check_mark: <a href="library/graph/twosat.cpp.html">graph/twosat.cpp</a>
 * :warning: <a href="library/graph/voronoi_mst.cpp.html">graph/voronoi_mst.cpp</a>
 
 
@@ -175,7 +175,6 @@ layout: default
 * :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
 * :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-* :warning: <a href="library/test/yosupo-2SAT.cpp.html">test/yosupo-2SAT.cpp</a>
 
 
 ## Verify Files
@@ -234,6 +233,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 

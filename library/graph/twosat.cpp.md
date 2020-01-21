@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/twosat.cpp
+# :heavy_check_mark: graph/twosat.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,11 @@ layout: default
 ## Required by
 
 * :warning: <a href="../test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
-* :warning: <a href="../test/yosupo-2SAT.cpp.html">test/yosupo-2SAT.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 
 
 ## Code
