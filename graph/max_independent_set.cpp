@@ -1,6 +1,6 @@
 // O(n*1.466^n) n<=40で16ms
 struct maxIndependentSet {
-    ll n;
+    ll n, ans;
     vector<ll> used_for_ans;
     vector<vector<ll>> g;
 
@@ -12,8 +12,8 @@ struct maxIndependentSet {
             for(ll i: g[v]) if(!used[i]) nv.push_back(i);
             for(ll i: nv) used[i] = 1;
             ll tmp = dfs(v+1, used)+1;
-            if(ret < tmp) {
-                ret = tmp;
+            if(ans < tmp) {
+                ans = tmp;
                 used_for_ans = used;
             }
             for(ll i: nv) used[i] = 0;
@@ -24,15 +24,15 @@ struct maxIndependentSet {
             if(!used[v]) {
                 used[v] = 1;
                 ll tmp = dfs(v+1, used);
-                if(ret < tmp) {
-                    ret = tmp;
+                if(ans < tmp) {
+                    ans = tmp;
                     used_for_ans = used;
                 }
                 used[v] = 0;
             } else {
                 ll tmp = dfs(v+1, used);
-                if(ret < tmp) {
-                    ret = tmp;
+                if(ans < tmp) {
+                    ans = tmp;
                     used_for_ans = used;
                 }
             }
@@ -51,9 +51,9 @@ struct maxIndependentSet {
     vector<ll> get() {
         vector<ll> used(n);
         dfs(0, used);
-        vector<ll> ans;
-        REP(i, n) if(used_for_ans[i]) ans.push_back(i);
-        return ans;
+        vector<ll> ans_set;
+        REP(i, n) if(used_for_ans[i]) ans_set.push_back(i);
+        return ans_set;
     }
 };
 
