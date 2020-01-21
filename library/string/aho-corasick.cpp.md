@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: string/aho-corasick.cpp
+# :heavy_check_mark: string/aho-corasick.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
 
 
 ## Code

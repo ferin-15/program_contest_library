@@ -90,19 +90,19 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 
 ## Code
