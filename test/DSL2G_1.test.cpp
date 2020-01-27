@@ -6,11 +6,27 @@ signed main(void) {
     int n, q;
     cin >> n >> q;
 
-    auto f = [](ll l, ll r) { return l+r; };
-    auto p = [](ll l, int r) { return l*r; };
-    RBST<ll,ll> tree(f, f, f, p, 0, 0);
+    struct add_sum {
+        using T = ll;
+        using E = ll;
+        static T dt() { return 0; }
+        static constexpr E de() { return 0; }
+        static T f(const T &a, const T &b) {
+            return a + b;
+        }
+        static T g(const T &a, const E &b) {
+            return a + b;
+        }
+        static E h(const E &a, const E &b) {
+            return a + b;
+        }
+        static E p(const E &a, const int &b) {
+            return a * b;
+        } 
+    };
+    RBST<add_sum> tree;
 
-    RBST<ll,ll>::node* root = nullptr;
+    RBST<add_sum>::node* root = nullptr;
     for(int i = 0; i < n; i++) tree.insert(root, i, 0);
     while(q--) {
         int c, s, t;

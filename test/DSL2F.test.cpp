@@ -6,12 +6,27 @@ signed main(void) {
     int n, q;
     cin >> n >> q;
 
-    auto f = [](ll l, ll r) { return min(l, r); };
-    auto g = [](ll l, ll r) { return r; };
-    auto p = [](ll l, int r) { return l; };
-    RBST<ll,ll> tree(f, g, g, p, INT_MAX, INT_MAX);
+    struct update_min {
+        using T = ll;
+        using E = ll;
+        static T dt() { return INT_MAX; }
+        static constexpr E de() { return INT_MAX; }
+        static T f(const T &a, const T &b) {
+            return min(a, b);
+        }
+        static T g(const T &a, const E &b) {
+            return b == de() ? a : b;
+        }
+        static E h(const E &a, const E &b) {
+            return b == de() ? a : b;
+        }
+        static E p(const E &a, const int &b) {
+            return a;
+        } 
+    };
+    RBST<update_min> tree;
 
-    RBST<ll,ll>::node* root = nullptr;
+    RBST<update_min>::node* root = nullptr;
     for(int i = 0; i < n; i++) tree.insert(root, i, INT_MAX);
     while(q--) {
         int c, s, t;
