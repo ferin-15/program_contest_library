@@ -4,7 +4,7 @@ struct RBST {
     using E = typename M::E;
 
     struct node {
-        node *l, *r;
+        node *l, *r, *p;
         T val, sum;
         E lazy;
         bool rev;
@@ -51,9 +51,11 @@ struct RBST {
         eval(a); eval(b);
         if(xor128() % (size(a) + size(b)) < size(a)) {
             a->r = merge(a->r, b);
+            if(a->r) a->r->p = a;
             return fix(a);
         } else {
             b->l = merge(a, b->l);
+            if(b->l) b->l->p = b;
             return fix(b);
         }
     }
@@ -65,10 +67,14 @@ struct RBST {
         if(k <= size(a->l)) {
             tie(sl, sr) = split(a->l, k);
             a->l = sr;
+            if(a->l) a->l->p = a;
+            if(sl) sl->p = nullptr;
             return pair<node*, node*>(sl, fix(a));
         }
         tie(sl, sr) = split(a->r, k - size(a->l) - 1);
         a->r = sl;
+        if(a->r) a->r->p = a;
+        if(sr) sr->p = nullptr;
         return pair<node*, node*>(fix(a), sr);
     }
     // 要素の挿入/削除
@@ -125,6 +131,11 @@ struct RBST {
         tie(tl, tr) = split(sl, l);
         if(tr) tr->rev ^= 1;
         a = merge(merge(tl, tr), sr);
+    }
+    // 頂点aが属する木の根を求める
+    node* getroot(node *a) {
+        if(!a->p) return a;
+        return getroot(a->p);
     }
     // デバッグ用
     void debug(node* t) {
