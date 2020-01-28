@@ -7,34 +7,31 @@ signed main(void) {
     cin >> n >> q;
 
     struct update_min {
-        using T = ll;
+        using T = PII;
         using E = ll;
-        static T dt() { return INT_MAX; }
+        static T dt() { return PII(INT_MAX, INT_MAX); }
         static constexpr E de() { return INT_MAX; }
-        static T f(const T &a, const T &b) {
-            return min(a, b);
+        static T f(const T &l, const T &self, const T &r) {
+            return PII(self.first, min({l.second, self.first, r.second}));
         }
-        static T g(const T &a, const E &b) {
-            return b == de() ? a : b;
+        static T g(const T &a, const E &b, const int &sz) {
+            return b == de() ? a : PII(b, b);
         }
         static E h(const E &a, const E &b) {
             return b == de() ? a : b;
         }
-        static E p(const E &a, const int &b) {
-            return a;
-        } 
     };
     RBST<update_min> tree;
 
     RBST<update_min>::node* root = nullptr;
-    for(int i = 0; i < n; i++) tree.insert(root, i, INT_MAX);
+    for(int i = 0; i < n; i++) tree.insert(root, i, PII(INT_MAX, INT_MAX));
     while(q--) {
         int c, x, y;
         cin >> c >> x >> y;
         if(c == 0) {
-            tree.set_element(root, x, y);
+            tree.update(root, x, y);
         } else {
-            cout << tree.query(root, x, y+1) << endl;
+            cout << tree.query(root, x, y+1).second << endl;
         }
     }
 

@@ -5,27 +5,24 @@ struct RBST {
 
     struct node {
         node *l, *r, *p;
-        T val, sum;
+        T val;
         E lazy;
         bool rev;
         int sz;
 
-        node(T v, E p) : l(nullptr),r(nullptr),val(v),sum(v),lazy(p),rev(false),sz(1) {}
+        node(T v, E p) : l(nullptr),r(nullptr),val(v),lazy(p),rev(false),sz(1) {}
     };
 
-    RBST() {}
-
     int size(node* a) { return !a ? 0 : a->sz; }
-    T sum(node* a) { return !a ? M::dt() : (eval(a), a->sum); }
+    T val(node* a) { return !a ? M::dt() : (eval(a), a->val); }
     node* fix(node* a) {
         a->sz = size(a->l) + 1 + size(a->r);
-        a->sum = M::f(M::f(sum(a->l), a->val), sum(a->r));
+        a->val = M::f(val(a->l), a->val, val(a->r));
         return a;
     }
     void eval(node* a) {
         if(a->lazy != M::de()) {
-            a->val = M::g(a->val, a->lazy);
-            a->sum = M::g(a->sum, M::p(a->lazy, a->sz));
+            a->val = M::g(a->val, a->lazy, size(a));
             if(a->l) a->l->lazy = M::h(a->l->lazy, a->lazy);
             if(a->r) a->r->lazy = M::h(a->r->lazy, a->lazy);
             a->lazy = M::de();
@@ -66,15 +63,15 @@ struct RBST {
         node *sl, *sr;
         if(k <= size(a->l)) {
             tie(sl, sr) = split(a->l, k);
+            if(a->l) a->l->p = nullptr;
             a->l = sr;
             if(a->l) a->l->p = a;
-            if(sl) sl->p = nullptr;
             return pair<node*, node*>(sl, fix(a));
         }
         tie(sl, sr) = split(a->r, k - size(a->l) - 1);
+        if(a->r) a->r->p = nullptr;
         a->r = sl;
         if(a->r) a->r->p = a;
-        if(sr) sr->p = nullptr;
         return pair<node*, node*>(fix(a), sr);
     }
     // 要素の挿入/削除
@@ -88,14 +85,14 @@ struct RBST {
         tie(sl, sr) = split(a, k + 1);
         tie(tl, tr) = split(sl, k);
         a = merge(tl, sr);
-        return tr->val;
+        return val(tr);
     }
-    // 点代入
-    void set_element(node*& a, int k, const T& x) {
+    // 点更新
+    void update(node*& a, int k, const E& x) {
         node *sl, *sr, *tl, *tr;
         tie(sl, sr) = split(a, k + 1);
         tie(tl, tr) = split(sl, k);
-        if(tr) tr->val = tr->sum = x;
+        if(tr) tr->val = M::g(tr->val, x, size(tr));
         a = merge(merge(tl, tr), sr);
     }
     // 区間更新
@@ -120,7 +117,7 @@ struct RBST {
         node *sl, *sr, *tl, *tr;
         tie(sl, sr) = split(a, r);
         tie(tl, tr) = split(sl, l);
-        T res = !tr ? M::dt() : tr->sum;
+        T res = !tr ? M::dt() : tr->val;
         a = merge(merge(tl, tr), sr);
         return res;
     }
@@ -137,25 +134,16 @@ struct RBST {
         if(!a->p) return a;
         return getroot(a->p);
     }
-    // デバッグ用
-    void debug(node* t) {
-        if(t == nullptr) return;
-        cout << "{";
-        debug(t->l);
-        cout << " " << t->val << " ";
-        debug(t->r);
-        cout << "}";
-    }
     // x以上の最小の位置
     int lower_bound(node *t, const T &x) {
         if(!t) return 0;
-        if(x <= t->val) return lower_bound(t->l, x);
+        if(x <= val(t)) return lower_bound(t->l, x);
         return lower_bound(t->r, x) + size(t->l) + 1;
     }
     // xより大きい最小の位置
     int upper_bound(node *t, const T &x) {
         if(!t) return 0;
-        if(x < t->val) return upper_bound(t->l, x);
+        if(x < val(t)) return upper_bound(t->l, x);
         return upper_bound(t->r, x) + RBST<T>::size(t->l) + 1;
     }
     // xの個数
@@ -165,7 +153,7 @@ struct RBST {
     // k番目の要素を求める
     T kth_element(node *t, int k) {
         if(k < RBST<T>::size(t->l)) return kth_element(t->l, k);
-        if(k == RBST<T>::size(t->l)) return t->val;
+        if(k == RBST<T>::size(t->l)) return val(t);
         return kth_element(t->r, k - RBST<T>::size(t->l) - 1);
     }
     // 要素xを追加する
@@ -176,6 +164,15 @@ struct RBST {
     void erase_key(node *&t, const T &x) {
         if(!count(t, x)) return;
         RBST<T>::erase(t, lower_bound(t, x));
+    }
+    // デバッグ用
+    void debug(node* t) {
+        if(t == nullptr) return;
+        cerr << "{";
+        debug(t->l);
+        cerr << " " << t->val << " ";
+        debug(t->r);
+        cerr << "}";
     }
 };
 

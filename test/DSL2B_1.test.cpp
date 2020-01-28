@@ -7,36 +7,33 @@ signed main(void) {
     cin >> n >> q;
 
     struct add_sum {
-        using T = ll;
+        using T = PII;
         using E = ll;
-        static T dt() { return 0; }
+        static T dt() { return PII(0, 0); }
         static constexpr E de() { return 0; }
-        static T f(const T &a, const T &b) {
-            return a + b;
+        static T f(const T &l, const T &self, const T &r) {
+            return PII(self.first, l.second + self.first + r.second);
         }
-        static T g(const T &a, const E &b) {
-            return a + b;
+        static T g(const T &a, const E &b, const int &sz) {
+            return PII(a.first + b, a.second + b * sz);
         }
         static E h(const E &a, const E &b) {
             return a + b;
         }
-        static E p(const E &a, const int &b) {
-            return a * b;
-        } 
     };
     RBST<add_sum> tree;
 
     RBST<add_sum>::node* root = nullptr;
-    for(int i = 0; i < n; i++) tree.insert(root, i, 0);
+    for(int i = 0; i < n; i++) tree.insert(root, i, PII(0, 0));
     while(q--) {
         int c, x, y;
         cin >> c >> x >> y;
         if(c == 0) {
             x--;
-            tree.set_element(root, x, tree.get(root, x) + y);
+            tree.update(root, x, y);
         } else {
             x--, y--;
-            cout << tree.query(root, x, y+1) << endl;
+            cout << tree.query(root, x, y+1).second << endl;
         }
     }
 

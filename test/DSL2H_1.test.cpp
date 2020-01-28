@@ -7,27 +7,24 @@ signed main(void) {
     cin >> n >> q;
 
     struct add_min {
-        using T = ll;
+        using T = PII;
         using E = ll;
-        static T dt() { return INT_MAX; }
+        static T dt() { return PII(INT_MAX, INT_MAX); }
         static constexpr E de() { return 0; }
-        static T f(const T &a, const T &b) {
-            return min(a, b);
+        static T f(const T &l, const T &self, const T &r) {
+            return PII(self.first, min({l.second, self.first, r.second}));
         }
-        static T g(const T &a, const E &b) {
-            return a + b;
+        static T g(const T &a, const E &b, const int &sz) {
+            return PII(a.first + b, a.second + b);
         }
         static E h(const E &a, const E &b) {
             return a + b;
-        }
-        static E p(const E &a, const int &b) {
-            return a;
         } 
     };
     RBST<add_min> tree;
 
     RBST<add_min>::node* root = nullptr;
-    for(int i = 0; i < n; i++) tree.insert(root, i, 0);
+    for(int i = 0; i < n; i++) tree.insert(root, i, PII(0, 0));
     while(q--) {
         int c, s, t;
         cin >> c >> s >> t;
@@ -36,7 +33,7 @@ signed main(void) {
             cin >> x;
             tree.update(root, s, t+1, x);
         } else {
-            cout << tree.query(root, s, t+1) << endl;
+            cout << tree.query(root, s, t+1).second << endl;
         }
     }
 
