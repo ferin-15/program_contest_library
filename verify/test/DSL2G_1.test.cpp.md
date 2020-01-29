@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2G_1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-28 14:20:58+09:00
+    - Last commit date: 2020-01-29 15:51:51+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
@@ -288,23 +288,20 @@ struct RBST {
 };
 
 /*
-struct add_sum {
-    using T = ll;
+struct update_min {
+    using T = PII;
     using E = ll;
-    static T dt() { return 0; }
-    static constexpr E de() { return 0; }
-    static T f(const T &a, const T &b) {
-        return a+b;
+    static T dt() { return PII(INT_MAX, INT_MAX); }
+    static constexpr E de() { return INT_MAX; }
+    static T f(const T &l, const T &self, const T &r) {
+        return PII(self.first, min({l.second, self.first, r.second}));
     }
-    static T g(const T &a, const E &b) {
-        return a+b;
+    static T g(const T &a, const E &b, const int &sz) {
+        return b == de() ? a : PII(b, b);
     }
     static E h(const E &a, const E &b) {
-        return a+b;
+        return b == de() ? a : b;
     }
-    static E p(const E &a, const int &b) {
-        return a*b;
-    } 
 };
 */#line 4 "test/DSL2G_1.test.cpp"
 

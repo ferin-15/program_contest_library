@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/rbst.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-28 14:20:58+09:00
+    - Last commit date: 2020-01-29 15:51:51+09:00
 
 
 
@@ -231,23 +231,20 @@ struct RBST {
 };
 
 /*
-struct add_sum {
-    using T = ll;
+struct update_min {
+    using T = PII;
     using E = ll;
-    static T dt() { return 0; }
-    static constexpr E de() { return 0; }
-    static T f(const T &a, const T &b) {
-        return a+b;
+    static T dt() { return PII(INT_MAX, INT_MAX); }
+    static constexpr E de() { return INT_MAX; }
+    static T f(const T &l, const T &self, const T &r) {
+        return PII(self.first, min({l.second, self.first, r.second}));
     }
-    static T g(const T &a, const E &b) {
-        return a+b;
+    static T g(const T &a, const E &b, const int &sz) {
+        return b == de() ? a : PII(b, b);
     }
     static E h(const E &a, const E &b) {
-        return a+b;
+        return b == de() ? a : b;
     }
-    static E p(const E &a, const int &b) {
-        return a*b;
-    } 
 };
 */
 ```
@@ -436,23 +433,20 @@ struct RBST {
 };
 
 /*
-struct add_sum {
-    using T = ll;
+struct update_min {
+    using T = PII;
     using E = ll;
-    static T dt() { return 0; }
-    static constexpr E de() { return 0; }
-    static T f(const T &a, const T &b) {
-        return a+b;
+    static T dt() { return PII(INT_MAX, INT_MAX); }
+    static constexpr E de() { return INT_MAX; }
+    static T f(const T &l, const T &self, const T &r) {
+        return PII(self.first, min({l.second, self.first, r.second}));
     }
-    static T g(const T &a, const E &b) {
-        return a+b;
+    static T g(const T &a, const E &b, const int &sz) {
+        return b == de() ? a : PII(b, b);
     }
     static E h(const E &a, const E &b) {
-        return a+b;
+        return b == de() ? a : b;
     }
-    static E p(const E &a, const int &b) {
-        return a*b;
-    } 
 };
 */
 ```
