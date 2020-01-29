@@ -177,22 +177,19 @@ struct RBST {
 };
 
 /*
-struct add_sum {
-    using T = ll;
+struct update_min {
+    using T = PII;
     using E = ll;
-    static T dt() { return 0; }
-    static constexpr E de() { return 0; }
-    static T f(const T &a, const T &b) {
-        return a+b;
+    static T dt() { return PII(INT_MAX, INT_MAX); }
+    static constexpr E de() { return INT_MAX; }
+    static T f(const T &l, const T &self, const T &r) {
+        return PII(self.first, min({l.second, self.first, r.second}));
     }
-    static T g(const T &a, const E &b) {
-        return a+b;
+    static T g(const T &a, const E &b, const int &sz) {
+        return b == de() ? a : PII(b, b);
     }
     static E h(const E &a, const E &b) {
-        return a+b;
+        return b == de() ? a : b;
     }
-    static E p(const E &a, const int &b) {
-        return a*b;
-    } 
 };
 */
