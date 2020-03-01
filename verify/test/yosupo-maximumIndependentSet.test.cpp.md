@@ -84,7 +84,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/max_independent_set.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/max_independent_set.cpp"
 // O(n*1.466^n) n<=40で16ms
 class maxIndependentSet {
 public:
@@ -164,7 +165,8 @@ namespace thanks2017G {
         }
         cout << graph.get().size() << endl;
     }
-}#line 4 "test/yosupo-maximumIndependentSet.test.cpp"
+}
+#line 4 "test/yosupo-maximumIndependentSet.test.cpp"
 
 int main() {
     ll n, m;
@@ -180,6 +182,7 @@ int main() {
     REP(i, ans.size()) cout << ans[i] << (i+1==ans.size() ? "\n" : " ");
     cout << flush;
 }
+
 ```
 {% endraw %}
 

@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/max_matching.cpp
+# :warning: math/mebius_function.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/max_matching.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-03 22:20:29+09:00
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/mebius_function.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 10:06:25+09:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 
 
 ## Code
@@ -46,17 +41,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-ll max_matching(ll n, vector<PII> edges) {
-    mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());
-    uniform_int_distribution<ll> dist(1, MOD-1);
-
-    matrix mat(n, n);
-    for(auto e: edges) {
-        ll r = dist(mt);
-        mat.get(e.first, e.second) = r;
-        mat.get(e.second, e.first) = MOD-r;
-    }
-    return (gauss_jordan(mat)+1)/2;
+const ll m = 100000;
+vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
+min_factor[0] = 0, min_factor[1] = 1;
+FOR(i, 2, m+1) {
+    if(min_factor[i] != -1) continue;
+    mebius[i] = -1;
+    min_factor[i] = i;
+    for(ll j=i*2; j<=m; j+=i) {
+        if(min_factor[j] == -1) min_factor[j] = i;
+        if((j/i)%i == 0) mebius[j] = 0;
+        else mebius[j] *= -1;
+    } 
 }
 ```
 {% endraw %}
@@ -64,18 +60,19 @@ ll max_matching(ll n, vector<PII> edges) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/max_matching.cpp"
-ll max_matching(ll n, vector<PII> edges) {
-    mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());
-    uniform_int_distribution<ll> dist(1, MOD-1);
-
-    matrix mat(n, n);
-    for(auto e: edges) {
-        ll r = dist(mt);
-        mat.get(e.first, e.second) = r;
-        mat.get(e.second, e.first) = MOD-r;
-    }
-    return (gauss_jordan(mat)+1)/2;
+#line 1 "math/mebius_function.cpp"
+const ll m = 100000;
+vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
+min_factor[0] = 0, min_factor[1] = 1;
+FOR(i, 2, m+1) {
+    if(min_factor[i] != -1) continue;
+    mebius[i] = -1;
+    min_factor[i] = i;
+    for(ll j=i*2; j<=m; j+=i) {
+        if(min_factor[j] == -1) min_factor[j] = i;
+        if((j/i)%i == 0) mebius[j] = 0;
+        else mebius[j] *= -1;
+    } 
 }
 
 ```

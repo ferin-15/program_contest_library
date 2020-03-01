@@ -405,6 +405,7 @@ namespace ABC014D {
         REP(i, q) cout << ans[i]+1 << "\n";
     }
 };
+
 ```
 {% endraw %}
 

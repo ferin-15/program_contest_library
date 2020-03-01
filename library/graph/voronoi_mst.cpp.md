@@ -236,6 +236,7 @@ namespace codefestival2017finalJ {
         cout << voronoiMst<false>(g, init) << endl;
     }
 }
+
 ```
 {% endraw %}
 

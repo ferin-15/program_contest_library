@@ -89,7 +89,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/sliding_window_aggregation.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/sliding_window_aggregation.cpp"
 template<class T, class S, class F>
 struct SWAG {
     // using F = function<S(S,T)>;
@@ -117,7 +118,8 @@ struct SWAG {
     }
     template<class Q>
     void fold(Q q) { q(ls.top(), rs.top()); }
-};#line 4 "test/DSL3D_1.test.cpp"
+};
+#line 4 "test/DSL3D_1.test.cpp"
 
 int main() {
     ll n, l;
@@ -138,6 +140,7 @@ int main() {
         swag.pop_front();
     }
 }
+
 ```
 {% endraw %}
 

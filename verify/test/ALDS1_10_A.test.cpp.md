@@ -86,7 +86,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../math/runtime_modint.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../math/runtime_modint.cpp"
 ll MOD;
 struct mint {
     ll x;
@@ -205,7 +206,8 @@ struct mint {
         }
         return ret;
     }
-};#line 1 "test/../math/finite_field_matrix.cpp"
+};
+#line 1 "test/../math/finite_field_matrix.cpp"
 // 有限体の行列
 struct matrix {
     int h, w;
@@ -339,6 +341,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

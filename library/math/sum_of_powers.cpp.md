@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/mebius.cpp
+# :warning: math/sum_of_powers.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mebius.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 03:56:54+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/sum_of_powers.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 10:06:25+09:00
 
 
 
@@ -41,39 +41,46 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-const ll m = 100000;
-vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
-min_factor[0] = 0, min_factor[1] = 1;
-FOR(i, 2, m+1) {
-    if(min_factor[i] != -1) continue;
-    mebius[i] = -1;
-    min_factor[i] = i;
-    for(ll j=i*2; j<=m; j+=i) {
-        if(min_factor[j] == -1) min_factor[j] = i;
-        if((j/i)%i == 0) mebius[j] = 0;
-        else mebius[j] *= -1;
-    } 
+// \sum_{i=0}^{n-1} i^k O(k^2)
+// kが固定でクエリがいっぱいならベルヌーイ数を前計算で高速化
+mint sum_of_powers(ll n, ll k) {
+    vector<mint> b(k+1), po(k+2);
+    b[0] = po[0] = 1;
+    FOR(i, 1, k+2) po[i] = po[i-1] * n;
+    FOR(i, 1, k+1) {
+        REP(j, i) b[i] += combi(i+1, j) * b[j];
+        b[i] /= -(i+1);
+    }
+    mint sum = 0;
+    REP(i, k+1) sum += combi(k+1, i) * b[i] * po[k+1-i];
+    return sum / (k+1);
 }
+
+// FPSとかでベルヌーイ数をklogkとかあるっぽい…？
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/mebius.cpp"
-const ll m = 100000;
-vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
-min_factor[0] = 0, min_factor[1] = 1;
-FOR(i, 2, m+1) {
-    if(min_factor[i] != -1) continue;
-    mebius[i] = -1;
-    min_factor[i] = i;
-    for(ll j=i*2; j<=m; j+=i) {
-        if(min_factor[j] == -1) min_factor[j] = i;
-        if((j/i)%i == 0) mebius[j] = 0;
-        else mebius[j] *= -1;
-    } 
+#line 1 "math/sum_of_powers.cpp"
+// \sum_{i=0}^{n-1} i^k O(k^2)
+// kが固定でクエリがいっぱいならベルヌーイ数を前計算で高速化
+mint sum_of_powers(ll n, ll k) {
+    vector<mint> b(k+1), po(k+2);
+    b[0] = po[0] = 1;
+    FOR(i, 1, k+2) po[i] = po[i-1] * n;
+    FOR(i, 1, k+1) {
+        REP(j, i) b[i] += combi(i+1, j) * b[j];
+        b[i] /= -(i+1);
+    }
+    mint sum = 0;
+    REP(i, k+1) sum += combi(k+1, i) * b[i] * po[k+1-i];
+    return sum / (k+1);
 }
+
+// FPSとかでベルヌーイ数をklogkとかあるっぽい…？
+
 ```
 {% endraw %}
 

@@ -82,7 +82,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../math/runtime_modint.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../math/runtime_modint.cpp"
 ll MOD;
 struct mint {
     ll x;
@@ -201,7 +202,8 @@ struct mint {
         }
         return ret;
     }
-};#line 4 "test/sqrt_mod.memo.cpp"
+};
+#line 4 "test/sqrt_mod.memo.cpp"
 
 signed main(void) {
     ll t;
@@ -214,6 +216,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

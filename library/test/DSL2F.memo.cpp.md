@@ -92,7 +92,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/lazysegtree.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/lazysegtree.cpp"
 template <typename Monoid>
 struct lazysegtree {
     using T = typename Monoid::T;
@@ -191,7 +192,8 @@ struct linear_exp {
     static E h(const E &a, const E &b) {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
-};#line 4 "test/DSL2F.memo.cpp"
+};
+#line 4 "test/DSL2F.memo.cpp"
 
 signed main(void) {
     int n, q;

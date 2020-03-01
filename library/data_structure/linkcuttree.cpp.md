@@ -423,6 +423,7 @@ struct monoid {
     static T s(const T &x) { return x; }
 };
 */
+
 ```
 {% endraw %}
 

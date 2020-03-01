@@ -87,7 +87,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/BCC.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/BCC.cpp"
 class twoEdgeComponent {
 private:
     void dfs(ll v, ll p, ll &k) {
@@ -153,6 +154,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

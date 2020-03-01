@@ -109,6 +109,7 @@ struct UnionFindUndo {
     bool same(int x, int y) { return find(x) == find(y); }
     int size(int k) { return (-data[find(k)]); }
 };
+
 ```
 {% endraw %}
 

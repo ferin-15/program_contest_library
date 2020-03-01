@@ -131,6 +131,7 @@ function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
 };
 cout << boruvka<ll, decltype(f)>(n, f) << endl;
 */
+
 ```
 {% endraw %}
 

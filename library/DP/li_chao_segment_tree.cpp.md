@@ -157,6 +157,7 @@ public:
     // ax+b のうち最大のものを返す
     T get(T x) const { return query(root, minx, maxx, x); }
 };
+
 ```
 {% endraw %}
 

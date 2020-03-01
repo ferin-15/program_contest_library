@@ -107,7 +107,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/rbst.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/rbst.cpp"
 template<class M>
 struct RBST {
     using T = typename M::T;
@@ -302,7 +303,8 @@ struct update_min {
         return b == de() ? a : b;
     }
 };
-*/#line 4 "test/DSL2H_1.test.cpp"
+*/
+#line 4 "test/DSL2H_1.test.cpp"
 
 signed main(void) {
     int n, q;
@@ -341,6 +343,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

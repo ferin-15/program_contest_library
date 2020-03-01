@@ -84,7 +84,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/articulation.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/articulation.cpp"
 class articulation {
 private:
     void dfs(ll v, ll p, ll &k, vector<ll> &ret) {
@@ -122,7 +123,8 @@ public:
         REP(i, g.size()) if(ord[i]==-1) dfs(i, -1, k, ret);
         return ret;
     }
-};#line 4 "test/GRL3A.test.cpp"
+};
+#line 4 "test/GRL3A.test.cpp"
 
 int main() {
     ll n, m;
@@ -138,6 +140,7 @@ int main() {
     for(auto i: ret) cout << i << "\n";
     cout << flush;
 }
+
 ```
 {% endraw %}
 

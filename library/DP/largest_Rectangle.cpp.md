@@ -154,6 +154,7 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
+
 ```
 {% endraw %}
 

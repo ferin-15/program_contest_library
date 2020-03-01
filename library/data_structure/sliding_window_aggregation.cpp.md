@@ -109,6 +109,7 @@ struct SWAG {
     template<class Q>
     void fold(Q q) { q(ls.top(), rs.top()); }
 };
+
 ```
 {% endraw %}
 

@@ -131,6 +131,7 @@ struct ConvexHullTrick {
         return f(que[ub], x);
     }
 };
+
 ```
 {% endraw %}
 

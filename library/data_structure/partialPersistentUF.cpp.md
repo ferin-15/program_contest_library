@@ -115,6 +115,7 @@ struct partialPersistentUF {
     }
     bool same(int x, int y, int t) { return find(x, t) == find(y, t); }
 };
+
 ```
 {% endraw %}
 

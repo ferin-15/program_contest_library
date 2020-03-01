@@ -186,6 +186,7 @@ struct matrix {
         return os;
     }
 };
+
 ```
 {% endraw %}
 

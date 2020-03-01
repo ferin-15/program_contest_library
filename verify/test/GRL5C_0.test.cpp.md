@@ -95,7 +95,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/HLDecomposition.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/HLDecomposition.cpp"
 class HLDecomposition {
     void dfs1(ll v, ll p) {
         if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
@@ -167,7 +168,8 @@ public:
     }
 };
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
-// 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])#line 4 "test/GRL5C_0.test.cpp"
+// 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+#line 4 "test/GRL5C_0.test.cpp"
 
 signed main(void) {
     ll n;
@@ -194,6 +196,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

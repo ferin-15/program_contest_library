@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL2A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 10:06:25+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=ja</a>
@@ -101,28 +101,25 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/unionfind.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/unionfind.cpp"
 struct UnionFind {
-    vector<int> par, s;
-    UnionFind(int n=2e5) { init(n); }
-    void init(int n) { 
-        s.assign(n, 1); par.resize(n); 
-        iota(par.begin(), par.end(), 0);
-    }
-    int find(int x) {
+    vector<ll> par, s;
+    UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
+    ll find(ll x) {
         if(par[x] == x) return x;
         return par[x] = find(par[x]);
     }
-    void unite(int x, int y) {
-        x = find(x);
-        y = find(y);
+    void unite(ll x, ll y) {
+        x = find(x), y = find(y);
         if(x == y) return;
-        if(s[x] < s[y]) par[x] = y, s[y] = s[x] + s[y];
-        else par[y] = x, s[x] = s[x] + s[y];
+        if(s[x] < s[y]) par[x] = y, s[y] += s[x];
+        else par[y] = x, s[x] += s[y];
     }
     bool same(int x, int y) { return find(x) == find(y); }
-    int size(int x) { return s[find(x)]; }
-};#line 1 "test/../graph/boruvka.cpp"
+    ll size(int x) { return s[find(x)]; }
+};
+#line 1 "test/../graph/boruvka.cpp"
 template< typename T, typename F >
 T boruvka(ll n, F f) {
     vector<ll> rev(n), belong(n);
@@ -161,7 +158,8 @@ function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
     return ret;
 };
 cout << boruvka<ll, decltype(f)>(n, f) << endl;
-*/#line 5 "test/GRL2A.test.cpp"
+*/
+#line 5 "test/GRL2A.test.cpp"
 
 signed main(void) {
     ll n, m;
@@ -192,6 +190,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

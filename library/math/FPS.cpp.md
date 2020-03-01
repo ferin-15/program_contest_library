@@ -340,6 +340,7 @@ struct NTT {
 // NTT<mint, 3> ntt;
 // auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
 // formalPowerSeries<mint> fps(conv);
+
 ```
 {% endraw %}
 

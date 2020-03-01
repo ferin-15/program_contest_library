@@ -82,7 +82,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/sparse_table.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/sparse_table.cpp"
 template <typename S>
 struct sparseTable {
     using T = typename S::T;
@@ -141,6 +142,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

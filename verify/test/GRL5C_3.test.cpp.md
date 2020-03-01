@@ -98,7 +98,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/LCA_tarjan_offline.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/LCA_tarjan_offline.cpp"
 struct UnionFind {
     vector<int> par, s;
     UnionFind(int n=2e5) { init(n); }
@@ -157,7 +158,8 @@ public:
     }
     // lcaを求める
     vector<ll> build() { dfs(); return lca; }
-};#line 4 "test/GRL5C_3.test.cpp"
+};
+#line 4 "test/GRL5C_3.test.cpp"
 
 signed main(void) {
     ll n;
@@ -187,6 +189,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

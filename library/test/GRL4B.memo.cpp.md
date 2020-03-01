@@ -87,7 +87,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/topological.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/topological.cpp"
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
@@ -108,7 +109,8 @@ vector<PII> tsort(vector<vector<ll>> g) {
     }
 
     return ans;
-}#line 4 "test/GRL4B.memo.cpp"
+}
+#line 4 "test/GRL4B.memo.cpp"
 
 // スペシャルジャッジだからだめ
 signed main(void) {
@@ -126,6 +128,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

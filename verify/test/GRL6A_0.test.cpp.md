@@ -84,7 +84,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../graph/dinic.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../graph/dinic.cpp"
 template<class T>
 struct dinic {
     struct edge{
@@ -231,7 +232,8 @@ struct dinic_with_lowerlimit {
         F d = flow.maxflow(s, t);
         return (a+b==sum_lb && a+c==sum_lb) ? b+d : -1;
     }
-};#line 4 "test/GRL6A_0.test.cpp"
+};
+#line 4 "test/GRL6A_0.test.cpp"
 
 signed main(void) {
     ll v, e;
@@ -247,6 +249,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

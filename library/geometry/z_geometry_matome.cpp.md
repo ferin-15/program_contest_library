@@ -728,6 +728,7 @@ vector<L> common_tangent(C c1, C c2) {
     }
     return vl;
 }
+
 ```
 {% endraw %}
 

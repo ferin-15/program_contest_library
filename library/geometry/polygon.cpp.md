@@ -110,6 +110,7 @@ int inPolygon(const G& pol, const P& p) {
     }
     return in ? 2 : 0;
 }
+
 ```
 {% endraw %}
 

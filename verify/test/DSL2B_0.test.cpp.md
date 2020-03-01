@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DSL2B_0.test.cpp
+# :x: test/DSL2B_0.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2B_0.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 10:06:25+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
+* :x: <a href="../../library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -86,27 +86,26 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../data_structure/BIT.cpp"
-template <typename T>
+const ll INF = 1LL<<60;
+#line 1 "test/../data_structure/BIT.cpp"
 struct BIT {
     int n;
-    vector<T> bit;
-    BIT(int n_ = 1e5) { init(n_); }
-    void init(int sz) { 
+    vector<ll> bit;
+    BIT(int sz) { 
         n=1; while(n < sz) n*=2;
         bit.assign(n+1, 0); 
     }
-    void update(int i, T w) {
+    void update(int i, ll w) {
         for(int x=i+1; x<(int)bit.size(); x += x&-x) bit[x] += w;
     }
     // [0,i]
-    T query(int i) {
-        T ret = 0;
+    ll query(int i) {
+        ll ret = 0;
         for(int x=i+1; x>0; x -= x&-x) ret += bit[x];
         return ret;
     }
     // 合計がw以上の最小の位置
-    int lower_bound(T w) {
+    int lower_bound(ll w) {
         int x = 0;
         for(int k=n; k>0; k>>=1) {
             if(x+k <= n && bit[x+k] < w) {
@@ -116,7 +115,8 @@ struct BIT {
         }
         return x;
     }
-};#line 4 "test/DSL2B_0.test.cpp"
+};
+#line 4 "test/DSL2B_0.test.cpp"
 
 signed main(void) {
     ll n, q;
@@ -134,6 +134,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

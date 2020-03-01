@@ -80,7 +80,8 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;#line 1 "test/../DP/largest_Rectangle.cpp"
+const ll INF = 1LL<<60;
+#line 1 "test/../DP/largest_Rectangle.cpp"
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
     const ll n = h.size();
@@ -130,7 +131,8 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     ll ret = 0;
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
-}#line 4 "test/DPL3B.test.cpp"
+}
+#line 4 "test/DPL3B.test.cpp"
 
 signed main(void) {
     ll h, w;
@@ -142,6 +144,7 @@ signed main(void) {
 
     return 0;
 }
+
 ```
 {% endraw %}
 

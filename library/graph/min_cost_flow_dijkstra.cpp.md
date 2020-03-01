@@ -237,6 +237,7 @@ struct min_cost_max_flow {
         return out;
     }
 };
+
 ```
 {% endraw %}
 

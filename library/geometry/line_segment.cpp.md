@@ -166,6 +166,7 @@ inline P crosspoint(const L& l1, const L& l2) {
     R ratio = det(vec(l2), l2.first-l1.first)/det(vec(l2),vec(l1));
     return l1.first + vec(l1)*ratio;
 }
+
 ```
 {% endraw %}
 

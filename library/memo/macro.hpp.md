@@ -52,7 +52,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DSL1A.test.cpp.html">test/DSL1A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2A_0.test.cpp.html">test/DSL2A_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2A_1.test.cpp.html">test/DSL2A_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/DSL2B_0.test.cpp.html">test/DSL2B_0.test.cpp</a>
+* :x: <a href="../../verify/test/DSL2B_0.test.cpp.html">test/DSL2B_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2B_1.test.cpp.html">test/DSL2B_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2B_2.test.cpp.html">test/DSL2B_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2F.test.cpp.html">test/DSL2F.test.cpp</a>
@@ -86,7 +86,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
@@ -140,6 +140,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
+
 ```
 {% endraw %}
 

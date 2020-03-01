@@ -261,6 +261,7 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
+
 ```
 {% endraw %}
 
