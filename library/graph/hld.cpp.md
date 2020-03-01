@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL5C_0.test.cpp.html">test/GRL5C_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5D.test.cpp.html">test/GRL5D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5E.test.cpp.html">test/GRL5E.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
 
 
 ## Code

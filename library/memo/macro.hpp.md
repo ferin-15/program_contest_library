@@ -42,6 +42,7 @@ layout: default
 * :warning: <a href="../test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="../test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
 * :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
+* :warning: <a href="../test/yosupo-staticrmq.cpp.html">test/yosupo-staticrmq.cpp</a>
 
 
 ## Verified with
@@ -80,25 +81,25 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
-* :x: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
-* :x: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
-* :x: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
-* :x: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2659.test.cpp.html">test/aoj2659.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :x: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :x: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
 * :x: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>

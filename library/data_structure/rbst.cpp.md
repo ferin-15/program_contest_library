@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DSL2G_1.test.cpp.html">test/DSL2G_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2H_1.test.cpp.html">test/DSL2H_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2I_1.test.cpp.html">test/DSL2I_1.test.cpp</a>
-* :x: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
 
 
 ## Code
