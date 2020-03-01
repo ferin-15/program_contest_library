@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/finite_field_matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 06:28:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -39,7 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_10_A.test.cpp.html">test/ALDS1_10_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 
 
 ## Code
@@ -47,6 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 有限体の行列
 struct matrix {
     int h, w;
@@ -116,6 +117,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 
 // 任意mod(<=1e9)で行列累乗
 namespace ARC050C {
@@ -172,6 +174,7 @@ namespace codeflyer_D {
 {% raw %}
 ```cpp
 #line 1 "math/finite_field_matrix.cpp"
+// BEGIN CUT
 // 有限体の行列
 struct matrix {
     int h, w;
@@ -241,6 +244,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 
 // 任意mod(<=1e9)で行列累乗
 namespace ARC050C {

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/twosat.cpp
+# :x: graph/twosat.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/twosat.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -43,7 +43,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 
 
 ## Code
@@ -51,6 +51,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct twoSAT {
     ll n;
     SCC graph;
@@ -72,7 +73,7 @@ struct twoSAT {
         return true;
     }
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -80,6 +81,7 @@ struct twoSAT {
 {% raw %}
 ```cpp
 #line 1 "graph/twosat.cpp"
+// BEGIN CUT
 struct twoSAT {
     ll n;
     SCC graph;
@@ -101,6 +103,7 @@ struct twoSAT {
         return true;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

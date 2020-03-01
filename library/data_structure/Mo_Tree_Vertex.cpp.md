@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: data_structure/Mo_Tree_Vertex.cpp
+# :warning: data_structure/Mo_Tree_Vertex.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo_Tree_Vertex.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
-
-
-## Verified with
-
-* :x: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
 
 
 ## Code
@@ -46,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 頂点クエリのMo
 // HL分解で頂点クエリするときに下の辺に下ろすみたいなのをする
 // add_edgeとinsertをした後buildをしてprocessを進めていく
@@ -142,6 +138,7 @@ struct Mo_Tree_Vertex {
         return (order[ptr++]);
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -149,6 +146,7 @@ struct Mo_Tree_Vertex {
 {% raw %}
 ```cpp
 #line 1 "data_structure/Mo_Tree_Vertex.cpp"
+// BEGIN CUT
 // 頂点クエリのMo
 // HL分解で頂点クエリするときに下の辺に下ろすみたいなのをする
 // add_edgeとinsertをした後buildをしてprocessを進めていく
@@ -245,6 +243,7 @@ struct Mo_Tree_Vertex {
         return (order[ptr++]);
     }
 };
+// END CUT
 
 ```
 {% endraw %}

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/persistentUF.cpp
+# :x: data_structure/persistent_uf.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structure/persistentUF.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/data_structure/persistent_uf.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<typename T, int B = 3>
 class persistentArray {
 private:
@@ -126,13 +127,15 @@ struct persistentUnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     int size(int x) { return -data[find(x)]; }
 };
+// END CUT
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "data_structure/persistentUF.cpp"
+#line 1 "data_structure/persistent_uf.cpp"
+// BEGIN CUT
 template<typename T, int B = 3>
 class persistentArray {
 private:
@@ -213,6 +216,7 @@ struct persistentUnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     int size(int x) { return -data[find(x)]; }
 };
+// END CUT
 
 ```
 {% endraw %}

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/max_independent_set.cpp
+# :x: graph/max_independent_set.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/max_independent_set.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 23:36:36+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // O(n*1.466^n) n<=40で16ms
 class maxIndependentSet {
 public:
@@ -112,6 +113,7 @@ public:
         return ans_set;
     }
 };
+// END CUT
 
 namespace thanks2017G {
     void solve() {
@@ -133,6 +135,7 @@ namespace thanks2017G {
 {% raw %}
 ```cpp
 #line 1 "graph/max_independent_set.cpp"
+// BEGIN CUT
 // O(n*1.466^n) n<=40で16ms
 class maxIndependentSet {
 public:
@@ -199,6 +202,7 @@ public:
         return ans_set;
     }
 };
+// END CUT
 
 namespace thanks2017G {
     void solve() {

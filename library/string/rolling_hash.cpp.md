@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/rolling_hash.cpp
+# :x: string/rolling_hash.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/rolling_hash.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<ll MOD, ll B>
 struct rollingHash{
     vector<ll> hash,p;
@@ -64,6 +65,7 @@ struct rollingHash{
         return res>=MOD?res-MOD:res;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -71,6 +73,7 @@ struct rollingHash{
 {% raw %}
 ```cpp
 #line 1 "string/rolling_hash.cpp"
+// BEGIN CUT
 template<ll MOD, ll B>
 struct rollingHash{
     vector<ll> hash,p;
@@ -89,6 +92,7 @@ struct rollingHash{
         return res>=MOD?res-MOD:res;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

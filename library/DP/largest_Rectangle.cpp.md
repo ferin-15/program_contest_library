@@ -25,21 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: DP/largest_Rectangle.cpp
+# :warning: DP/largest_Rectangle.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/largest_Rectangle.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/DPL3B.test.cpp.html">test/DPL3B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL3C.test.cpp.html">test/DPL3C.test.cpp</a>
 
 
 ## Code
@@ -47,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
     const ll n = h.size();
@@ -97,6 +92,7 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -104,6 +100,7 @@ ll largeest_rectangle(vector<vector<ll>> c) {
 {% raw %}
 ```cpp
 #line 1 "DP/largest_Rectangle.cpp"
+// BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
     const ll n = h.size();
@@ -154,6 +151,7 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
+// END CUT
 
 ```
 {% endraw %}

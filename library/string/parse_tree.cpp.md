@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/parse_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-08-31 05:50:04+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 四則演算と括弧の文字列を構文解析して構文木をつくる
 template<class T>
 class parser {
@@ -119,7 +120,7 @@ public:
         return nodes[root].val;
     }
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -127,6 +128,7 @@ public:
 {% raw %}
 ```cpp
 #line 1 "string/parse_tree.cpp"
+// BEGIN CUT
 // 四則演算と括弧の文字列を構文解析して構文木をつくる
 template<class T>
 class parser {
@@ -205,6 +207,7 @@ public:
         return nodes[root].val;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/HLDecomposition.cpp
+# :heavy_check_mark: graph/hld.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/HLDecomposition.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/graph/hld.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL5C_0.test.cpp.html">test/GRL5C_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5D.test.cpp.html">test/GRL5D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5E.test.cpp.html">test/GRL5E.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
 
 
 ## Code
@@ -49,6 +49,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 class HLDecomposition {
     void dfs1(ll v, ll p) {
         if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
@@ -121,13 +122,15 @@ public:
 };
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+// END CUT
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/HLDecomposition.cpp"
+#line 1 "graph/hld.cpp"
+// BEGIN CUT
 class HLDecomposition {
     void dfs1(ll v, ll p) {
         if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
@@ -200,6 +203,7 @@ public:
 };
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+// END CUT
 
 ```
 {% endraw %}

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/combination.cpp
+# :x: math/combination.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/combination.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-05-14 17:50:56+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 前計算O(N) クエリO(1)
 mint combi(ll N, ll K) {
     const int maxN=5e5; // !!!
@@ -73,7 +74,7 @@ mint combi_bigN(ll N, ll K) {
     for(;K>0;N--,K--) ret *= N, ret *= inv[K];
     return ret;
 }
-
+// END CUT
 ```
 {% endraw %}
 
@@ -81,6 +82,7 @@ mint combi_bigN(ll N, ll K) {
 {% raw %}
 ```cpp
 #line 1 "math/combination.cpp"
+// BEGIN CUT
 // 前計算O(N) クエリO(1)
 mint combi(ll N, ll K) {
     const int maxN=5e5; // !!!
@@ -108,6 +110,7 @@ mint combi_bigN(ll N, ll K) {
     for(;K>0;N--,K--) ret *= N, ret *= inv[K];
     return ret;
 }
+// END CUT
 
 ```
 {% endraw %}

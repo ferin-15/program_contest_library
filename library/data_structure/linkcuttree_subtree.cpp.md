@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/linkcuttree_subtree.cpp
+# :x: data_structure/linkcuttree_subtree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/linkcuttree_subtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 01:18:47+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<typename KEY, typename SUM>
 class LinkCutTreeForSubTree {
 public:
@@ -225,6 +226,7 @@ struct SUM {
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
 */
+// END CUT
 ```
 {% endraw %}
 
@@ -232,6 +234,7 @@ struct SUM {
 {% raw %}
 ```cpp
 #line 1 "data_structure/linkcuttree_subtree.cpp"
+// BEGIN CUT
 template<typename KEY, typename SUM>
 class LinkCutTreeForSubTree {
 public:
@@ -411,6 +414,7 @@ struct SUM {
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
 */
+// END CUT
 
 ```
 {% endraw %}

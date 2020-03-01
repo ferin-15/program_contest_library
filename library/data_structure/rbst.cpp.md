@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/rbst.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-29 15:51:51+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DSL2G_1.test.cpp.html">test/DSL2G_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2H_1.test.cpp.html">test/DSL2H_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL2I_1.test.cpp.html">test/DSL2I_1.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
 
 
 ## Code
@@ -52,6 +52,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<class M>
 struct RBST {
     using T = typename M::T;
@@ -247,6 +248,7 @@ struct update_min {
     }
 };
 */
+// END CUT
 ```
 {% endraw %}
 
@@ -254,6 +256,7 @@ struct update_min {
 {% raw %}
 ```cpp
 #line 1 "data_structure/rbst.cpp"
+// BEGIN CUT
 template<class M>
 struct RBST {
     using T = typename M::T;
@@ -449,6 +452,7 @@ struct update_min {
     }
 };
 */
+// END CUT
 
 ```
 {% endraw %}

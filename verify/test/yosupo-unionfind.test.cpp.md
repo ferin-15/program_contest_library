@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-unionfind.test.cpp
+# :x: test/yosupo-unionfind.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-unionfind.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:25:01+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -86,6 +86,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/unionfind.cpp"
+// BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;
     UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
@@ -102,6 +103,7 @@ struct UnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     ll size(int x) { return s[find(x)]; }
 };
+// END CUT
 #line 4 "test/yosupo-unionfind.test.cpp"
 
 int main() {

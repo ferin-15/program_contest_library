@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/DSL2B_0.test.cpp
+# :heavy_check_mark: test/DSL2B_0.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2B_0.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -54,7 +54,7 @@ layout: default
 signed main(void) {
     ll n, q;
     cin >> n >> q;
-    BIT<ll> bit(100010);
+    BIT bit(100010);
     while(q--) {
         ll t, x, y;
         cin >> t >> x >> y;
@@ -88,6 +88,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/BIT.cpp"
+// BEGIN CUT
 struct BIT {
     int n;
     vector<ll> bit;
@@ -116,12 +117,13 @@ struct BIT {
         return x;
     }
 };
+// END CUT
 #line 4 "test/DSL2B_0.test.cpp"
 
 signed main(void) {
     ll n, q;
     cin >> n >> q;
-    BIT<ll> bit(100010);
+    BIT bit(100010);
     while(q--) {
         ll t, x, y;
         cin >> t >> x >> y;

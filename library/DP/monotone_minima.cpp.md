@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: DP/monotone_minima.cpp
+# :x: DP/monotone_minima.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/monotone_minima.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2603.test.cpp.html">test/aoj2603.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 各iについてf(i,*)のargminとminをペアで返す
 template<typename T, typename Compare = less<T>>
 vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, const Compare &comp = Compare()) {
@@ -69,6 +70,7 @@ vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, cons
     dfs(0, h-1, 0, w-1);
     return dp;
 }
+// END CUT
 
 // https://atcoder.jp/contests/colopl2018-final/tasks/colopl2018_final_c
 namespace colocon2018finalC {
@@ -92,6 +94,7 @@ namespace colocon2018finalC {
 {% raw %}
 ```cpp
 #line 1 "DP/monotone_minima.cpp"
+// BEGIN CUT
 // 各iについてf(i,*)のargminとminをペアで返す
 template<typename T, typename Compare = less<T>>
 vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, const Compare &comp = Compare()) {
@@ -115,6 +118,7 @@ vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, cons
     dfs(0, h-1, 0, w-1);
     return dp;
 }
+// END CUT
 
 // https://atcoder.jp/contests/colopl2018-final/tasks/colopl2018_final_c
 namespace colocon2018finalC {

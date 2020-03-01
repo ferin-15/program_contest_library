@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/segtree_range_freq.cpp
+# :x: data_structure/segtree_range_freq.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segtree_range_freq.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct segTreeRangeFreq {
     int n;
     vector<vector<ll>> dat;
@@ -74,7 +75,7 @@ struct segTreeRangeFreq {
 // 2次元平面上の点集合 矩形中に何個点があるかのクエリに答えることが可能
 // (x[i], y[i]) をxでソートしてyをセグ木に乗せるとrangefreqになる
 // wavelet matrixじゃなくてセグ木でO(log^2N)でok
-
+// END CUT
 ```
 {% endraw %}
 
@@ -82,6 +83,7 @@ struct segTreeRangeFreq {
 {% raw %}
 ```cpp
 #line 1 "data_structure/segtree_range_freq.cpp"
+// BEGIN CUT
 struct segTreeRangeFreq {
     int n;
     vector<vector<ll>> dat;
@@ -110,6 +112,7 @@ struct segTreeRangeFreq {
 // 2次元平面上の点集合 矩形中に何個点があるかのクエリに答えることが可能
 // (x[i], y[i]) をxでソートしてyをセグ木に乗せるとrangefreqになる
 // wavelet matrixじゃなくてセグ木でO(log^2N)でok
+// END CUT
 
 ```
 {% endraw %}

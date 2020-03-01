@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/topological.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:02:13+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
@@ -67,6 +68,7 @@ vector<PII> tsort(vector<vector<ll>> g) {
 
     return ans;
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -74,6 +76,7 @@ vector<PII> tsort(vector<vector<ll>> g) {
 {% raw %}
 ```cpp
 #line 1 "graph/topological.cpp"
+// BEGIN CUT
 // ans[i] = (i番目の頂点v, swapできる頂点をまとめたときにvが何番目か)
 vector<PII> tsort(vector<vector<ll>> g) {
     const int n = g.size();
@@ -95,6 +98,7 @@ vector<PII> tsort(vector<vector<ll>> g) {
 
     return ans;
 }
+// END CUT
 
 ```
 {% endraw %}

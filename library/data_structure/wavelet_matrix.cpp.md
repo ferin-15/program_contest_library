@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/wavelet_matrix.cpp
+# :x: data_structure/wavelet_matrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/wavelet_matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 02:23:37+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2674.test.cpp.html">test/aoj2674.test.cpp</a>
 
 
 ## Code
@@ -47,6 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<int N>
 struct FID {
     static const int bucket = 512, block = 16;
@@ -234,6 +235,7 @@ struct wavelet {
     }
 };
 // ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
+// END CUT
 ```
 {% endraw %}
 
@@ -241,6 +243,7 @@ struct wavelet {
 {% raw %}
 ```cpp
 #line 1 "data_structure/wavelet_matrix.cpp"
+// BEGIN CUT
 template<int N>
 struct FID {
     static const int bucket = 512, block = 16;
@@ -428,6 +431,7 @@ struct wavelet {
     }
 };
 // ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
+// END CUT
 
 ```
 {% endraw %}

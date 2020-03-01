@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL3D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja</a>
@@ -84,6 +84,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/sparse_table.cpp"
+// BEGIN CUT
 template <typename S>
 struct sparseTable {
     using T = typename S::T;
@@ -128,6 +129,7 @@ struct gcd_op {
     using T = ll;
     static T op(const T& a, const T& b) { return __gcd(a, b); }
 };
+// END CUT
 #line 4 "test/DSL3D.test.cpp"
 
 signed main(void) {

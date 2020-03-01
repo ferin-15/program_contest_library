@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/max_matching.cpp
+# :x: graph/max_matching.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/max_matching.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-03 22:20:29+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 ll max_matching(ll n, vector<PII> edges) {
     mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());
     uniform_int_distribution<ll> dist(1, MOD-1);
@@ -58,6 +59,7 @@ ll max_matching(ll n, vector<PII> edges) {
     }
     return (gauss_jordan(mat)+1)/2;
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -65,6 +67,7 @@ ll max_matching(ll n, vector<PII> edges) {
 {% raw %}
 ```cpp
 #line 1 "graph/max_matching.cpp"
+// BEGIN CUT
 ll max_matching(ll n, vector<PII> edges) {
     mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());
     uniform_int_distribution<ll> dist(1, MOD-1);
@@ -77,6 +80,7 @@ ll max_matching(ll n, vector<PII> edges) {
     }
     return (gauss_jordan(mat)+1)/2;
 }
+// END CUT
 
 ```
 {% endraw %}

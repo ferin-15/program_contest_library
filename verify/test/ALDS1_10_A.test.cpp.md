@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_10_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 01:08:39+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp</a>
@@ -88,6 +88,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../math/runtime_modint.cpp"
+// BEGIN CUT
 ll MOD;
 struct mint {
     ll x;
@@ -207,7 +208,9 @@ struct mint {
         return ret;
     }
 };
+// END CUT
 #line 1 "test/../math/finite_field_matrix.cpp"
+// BEGIN CUT
 // 有限体の行列
 struct matrix {
     int h, w;
@@ -277,6 +280,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 
 // 任意mod(<=1e9)で行列累乗
 namespace ARC050C {

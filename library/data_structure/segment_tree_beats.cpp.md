@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment_tree_beats.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 更新が区間chmin クエリが区間和と区間max
 template<typename dat_type, typename lazy_type>
 struct segtree {
@@ -128,6 +129,7 @@ struct segtree {
         cout << "---------------------" << endl;
     }
 };
+// END CUT
 
 signed main(void)
 {
@@ -199,6 +201,7 @@ signed main(void)
 {% raw %}
 ```cpp
 #line 1 "data_structure/segment_tree_beats.cpp"
+// BEGIN CUT
 // 更新が区間chmin クエリが区間和と区間max
 template<typename dat_type, typename lazy_type>
 struct segtree {
@@ -286,6 +289,7 @@ struct segtree {
         cout << "---------------------" << endl;
     }
 };
+// END CUT
 
 signed main(void)
 {

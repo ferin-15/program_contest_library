@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/NTT.cpp
+# :x: math/NTT.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/NTT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<class T, int primitive_root>
 struct NTT {
     void ntt(vector<T>& a, int sign) {
@@ -122,6 +123,7 @@ vector<T> any_mod_convolution(vector<T> a, vector<T> b) {
     }
     return ret;
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -129,6 +131,7 @@ vector<T> any_mod_convolution(vector<T> a, vector<T> b) {
 {% raw %}
 ```cpp
 #line 1 "math/NTT.cpp"
+// BEGIN CUT
 template<class T, int primitive_root>
 struct NTT {
     void ntt(vector<T>& a, int sign) {
@@ -205,6 +208,7 @@ vector<T> any_mod_convolution(vector<T> a, vector<T> b) {
     }
     return ret;
 }
+// END CUT
 
 ```
 {% endraw %}

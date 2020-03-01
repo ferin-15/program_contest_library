@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/lagrange_interpolation.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // verify: https://atcoder.jp/contests/arc033/submissions/6839946
 // x座標が相異なるn+1点(x_i,y_i)を通るn次以下の多項式f(T)の値を返す
 // x_i = a + i*d 0<=i<=n (等差数列)
@@ -118,6 +119,7 @@ vector<mint> lagrange_interpolation(vector<mint> x, vector<mint> y) {
     }
     return ret;
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -125,6 +127,7 @@ vector<mint> lagrange_interpolation(vector<mint> x, vector<mint> y) {
 {% raw %}
 ```cpp
 #line 1 "math/lagrange_interpolation.cpp"
+// BEGIN CUT
 // verify: https://atcoder.jp/contests/arc033/submissions/6839946
 // x座標が相異なるn+1点(x_i,y_i)を通るn次以下の多項式f(T)の値を返す
 // x_i = a + i*d 0<=i<=n (等差数列)
@@ -202,6 +205,7 @@ vector<mint> lagrange_interpolation(vector<mint> x, vector<mint> y) {
     }
     return ret;
 }
+// END CUT
 
 ```
 {% endraw %}

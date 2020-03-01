@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/fzt_fmt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // a.size() は2べき
 // upper: g(S) = \sum_{S \subseteq T} f(T)
 // lower: g(S) = \sum_{T \subseteq S} f(T)
@@ -82,6 +83,7 @@ vector<ll> convOR(vector<ll> a, vector<ll> b) {
     REP(i, a.size()) a[i] *= b[i];
     return fmt<false>(a);
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -89,6 +91,7 @@ vector<ll> convOR(vector<ll> a, vector<ll> b) {
 {% raw %}
 ```cpp
 #line 1 "math/fzt_fmt.cpp"
+// BEGIN CUT
 // a.size() は2べき
 // upper: g(S) = \sum_{S \subseteq T} f(T)
 // lower: g(S) = \sum_{T \subseteq S} f(T)
@@ -130,6 +133,7 @@ vector<ll> convOR(vector<ll> a, vector<ll> b) {
     REP(i, a.size()) a[i] *= b[i];
     return fmt<false>(a);
 }
+// END CUT
 
 ```
 {% endraw %}

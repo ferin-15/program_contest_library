@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-vertexaddsubtreesum.test.cpp
+# :x: test/yosupo-vertexaddsubtreesum.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-vertexaddsubtreesum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_subtree_sum">https://judge.yosupo.jp/problem/vertex_add_subtree_sum</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
+* :x: <a href="../../library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -113,6 +113,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/linkcuttree_subtree.cpp"
+// BEGIN CUT
 template<typename KEY, typename SUM>
 class LinkCutTreeForSubTree {
 public:
@@ -292,6 +293,7 @@ struct SUM {
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
 */
+// END CUT
 #line 4 "test/yosupo-vertexaddsubtreesum.test.cpp"
 
 int main(void) {

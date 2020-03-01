@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL1A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
@@ -92,6 +92,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/unionfind.cpp"
+// BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;
     UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
@@ -108,6 +109,7 @@ struct UnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     ll size(int x) { return s[find(x)]; }
 };
+// END CUT
 #line 4 "test/DSL1A.test.cpp"
 
 signed main(void) {

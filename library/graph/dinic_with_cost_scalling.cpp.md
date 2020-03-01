@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dinic_with_cost_scalling.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:02:55+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<class T>
 class dinicWithCostScalling {
     struct edge{
@@ -126,6 +127,7 @@ public:
         return out;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -133,6 +135,7 @@ public:
 {% raw %}
 ```cpp
 #line 1 "graph/dinic_with_cost_scalling.cpp"
+// BEGIN CUT
 template<class T>
 class dinicWithCostScalling {
     struct edge{
@@ -213,6 +216,7 @@ public:
         return out;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

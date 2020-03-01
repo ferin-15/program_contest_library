@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DPL3B.test.cpp
+# :heavy_check_mark: DP/largest_rectangle.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/DPL3B.test.cpp">View this file on GitHub</a>
+* category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
+* <a href="{{ site.github.repository_url }}/blob/master/DP/largest_rectangle.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-01 12:39:31+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_B">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_B</a>
 
 
-## Depends on
+## Verified with
 
-* :heavy_check_mark: <a href="../../library/DP/largest_rectangle.cpp.html">DP/largest_rectangle.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL3B.test.cpp.html">test/DPL3B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL3C.test.cpp.html">test/DPL3C.test.cpp</a>
 
 
 ## Code
@@ -47,41 +47,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_B"
-#include "../memo/macro.hpp"
-#include "../DP/largest_rectangle.cpp"
-
-signed main(void) {
-    ll h, w;
-    cin >> h >> w;
-    vector<vector<ll>> c(h, vector<ll>(w));
-    REP(i, h) REP(j, w) cin >> c[i][j];
-
-    cout << largeest_rectangle(c) << endl;
-
-    return 0;
-}
-```
-{% endraw %}
-
-<a id="bundled"></a>
-{% raw %}
-```cpp
-#line 1 "test/DPL3B.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_B"
-#line 1 "test/../memo/macro.hpp"
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
-using PII = pair<ll, ll>;
-#define FOR(i, a, n) for (ll i = (ll)a; i < (ll)n; ++i)
-#define REP(i, n) FOR(i, 0, n)
-#define ALL(x) x.begin(), x.end()
-template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
-template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
-struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-const ll INF = 1LL<<60;
-#line 1 "test/../DP/largest_rectangle.cpp"
 // BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
@@ -134,18 +99,65 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     return ret;
 }
 // END CUT
-#line 4 "test/DPL3B.test.cpp"
+```
+{% endraw %}
 
-signed main(void) {
-    ll h, w;
-    cin >> h >> w;
-    vector<vector<ll>> c(h, vector<ll>(w));
-    REP(i, h) REP(j, w) cin >> c[i][j];
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "DP/largest_rectangle.cpp"
+// BEGIN CUT
+// i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
+ll largest_rectangle_histogram(vector<ll> h) {
+    const ll n = h.size();
 
-    cout << largeest_rectangle(c) << endl;
+    // iを固定して高さがh[i]となる長方形を考えるとl,rは一意に定まる
+    // l[i], r[i] をstackを使って求める
 
-    return 0;
+    // l[i] = (j<=iかつh[j-1]<h[i]となる最大のj)
+    vector<ll> l(n);
+    stack<ll> st1;
+    REP(i, n) {
+        while(st1.size() && h[st1.top()] >= h[i]) st1.pop();
+        l[i] = st1.empty() ? 0 : (st1.top()+1);
+        st1.push(i);
+    }
+    // r[i] = (j>iかつh[j]<h[i]となる最小のj)
+    vector<ll> r(n);
+    stack<ll> st2;
+    for(ll i=n-1; i>=0; --i) {
+        while(st2.size() && h[st2.top()] >= h[i]) st2.pop();
+        r[i] = st2.empty() ? n : st2.top();
+        st2.push(i);
+    }
+    ll ret = 0;
+    REP(i, n) ret = max(ret, h[i]*(r[i]-l[i]));
+    return ret;
 }
+
+// c[i][j] = 0 のマスだけを使って構成できる最大の長方形の面積を返す
+ll largeest_rectangle(vector<vector<ll>> c) {
+    const int h = c.size(), w = c[0].size();
+    vector<vector<ll>> con(h, vector<ll>(w));
+
+    REP(i, w) {
+        int cnt = 1;
+        REP(j, h) {
+            if(!c[j][i]) {
+                con[j][i] = cnt;
+                cnt++;
+            } else {
+                con[j][i] = 0;
+                cnt = 1;
+            }
+        }
+    }
+
+    ll ret = 0;
+    REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
+    return ret;
+}
+// END CUT
 
 ```
 {% endraw %}

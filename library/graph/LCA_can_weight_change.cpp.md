@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/LCA_can_weight_change.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 18:53:39+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct LCA {
     struct edge { int id, to, cost; };
     const int n = 0;
@@ -108,6 +109,7 @@ struct LCA {
         w[x] = t;
     }
 };
+// END CUT
 
 // https://atcoder.jp/contests/njpc2017/tasks/njpc2017_h
 namespace njpc2017h {
@@ -154,6 +156,7 @@ namespace njpc2017h {
 {% raw %}
 ```cpp
 #line 1 "graph/LCA_can_weight_change.cpp"
+// BEGIN CUT
 struct LCA {
     struct edge { int id, to, cost; };
     const int n = 0;
@@ -221,6 +224,7 @@ struct LCA {
         w[x] = t;
     }
 };
+// END CUT
 
 // https://atcoder.jp/contests/njpc2017/tasks/njpc2017_h
 namespace njpc2017h {

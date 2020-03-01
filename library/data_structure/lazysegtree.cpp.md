@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/lazysegtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -48,7 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DSL2I_0.test.cpp.html">test/DSL2I_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5D.test.cpp.html">test/GRL5D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5E.test.cpp.html">test/GRL5E.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
 
 
 ## Code
@@ -56,6 +56,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template <typename Monoid>
 struct lazysegtree {
     using T = typename Monoid::T;
@@ -155,6 +156,7 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -162,6 +164,7 @@ struct linear_exp {
 {% raw %}
 ```cpp
 #line 1 "data_structure/lazysegtree.cpp"
+// BEGIN CUT
 template <typename Monoid>
 struct lazysegtree {
     using T = typename Monoid::T;
@@ -261,6 +264,7 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
+// END CUT
 
 ```
 {% endraw %}

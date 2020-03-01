@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: data_structure/BIT.cpp
+# :heavy_check_mark: data_structure/BIT.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/BIT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/DSL2B_0.test.cpp.html">test/DSL2B_0.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DSL2B_0.test.cpp.html">test/DSL2B_0.test.cpp</a>
 * :x: <a href="../../verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
 
 
@@ -47,6 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct BIT {
     int n;
     vector<ll> bit;
@@ -75,6 +76,7 @@ struct BIT {
         return x;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -82,6 +84,7 @@ struct BIT {
 {% raw %}
 ```cpp
 #line 1 "data_structure/BIT.cpp"
+// BEGIN CUT
 struct BIT {
     int n;
     vector<ll> bit;
@@ -110,6 +113,7 @@ struct BIT {
         return x;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

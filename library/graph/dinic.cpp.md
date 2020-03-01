@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<class T>
 struct dinic {
     struct edge{
@@ -193,6 +194,7 @@ struct dinic_with_lowerlimit {
         return (a+b==sum_lb && a+c==sum_lb) ? b+d : -1;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -200,6 +202,7 @@ struct dinic_with_lowerlimit {
 {% raw %}
 ```cpp
 #line 1 "graph/dinic.cpp"
+// BEGIN CUT
 template<class T>
 struct dinic {
     struct edge{
@@ -347,6 +350,7 @@ struct dinic_with_lowerlimit {
         return (a+b==sum_lb && a+c==sum_lb) ? b+d : -1;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

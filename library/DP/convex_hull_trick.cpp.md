@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: DP/convex_hull_trick.cpp
+# :x: DP/convex_hull_trick.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/convex_hull_trick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 最小を求めてるので最大ならinsert(-a,-b), -get(x)
 struct ConvexHullTrick {
     deque<PII> que;
@@ -85,6 +86,7 @@ struct ConvexHullTrick {
         return f(que[ub], x);
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -92,6 +94,7 @@ struct ConvexHullTrick {
 {% raw %}
 ```cpp
 #line 1 "DP/convex_hull_trick.cpp"
+// BEGIN CUT
 // 最小を求めてるので最大ならinsert(-a,-b), -get(x)
 struct ConvexHullTrick {
     deque<PII> que;
@@ -131,6 +134,7 @@ struct ConvexHullTrick {
         return f(que[ub], x);
     }
 };
+// END CUT
 
 ```
 {% endraw %}

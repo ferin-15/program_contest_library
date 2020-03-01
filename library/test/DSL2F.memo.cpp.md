@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL2F.memo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F</a>
@@ -94,6 +94,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../data_structure/lazysegtree.cpp"
+// BEGIN CUT
 template <typename Monoid>
 struct lazysegtree {
     using T = typename Monoid::T;
@@ -193,6 +194,7 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
+// END CUT
 #line 4 "test/DSL2F.memo.cpp"
 
 signed main(void) {

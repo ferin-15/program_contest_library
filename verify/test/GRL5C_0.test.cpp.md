@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL5C_0.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/HLDecomposition.cpp.html">graph/HLDecomposition.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/hld.cpp.html">graph/hld.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -49,7 +49,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #include "../memo/macro.hpp"
-#include "../graph/HLDecomposition.cpp"
+#include "../graph/hld.cpp"
 
 signed main(void) {
     ll n;
@@ -96,7 +96,8 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../graph/HLDecomposition.cpp"
+#line 1 "test/../graph/hld.cpp"
+// BEGIN CUT
 class HLDecomposition {
     void dfs1(ll v, ll p) {
         if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
@@ -169,6 +170,7 @@ public:
 };
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+// END CUT
 #line 4 "test/GRL5C_0.test.cpp"
 
 signed main(void) {

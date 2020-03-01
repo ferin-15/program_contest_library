@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/runtime_modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -44,8 +44,8 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_10_A.test.cpp.html">test/ALDS1_10_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 
 
 ## Code
@@ -53,6 +53,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 ll MOD;
 struct mint {
     ll x;
@@ -172,6 +173,7 @@ struct mint {
         return ret;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -179,6 +181,7 @@ struct mint {
 {% raw %}
 ```cpp
 #line 1 "math/runtime_modint.cpp"
+// BEGIN CUT
 ll MOD;
 struct mint {
     ll x;
@@ -298,6 +301,7 @@ struct mint {
         return ret;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

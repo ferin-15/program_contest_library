@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/aho-corasick.cpp
+# :x: string/aho_corasick.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
-* <a href="{{ site.github.repository_url }}/blob/master/string/aho-corasick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/string/aho_corasick.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 文字の種類数をtemplate引数で渡す
 template <int types = 26>
 struct AhoCorasick {
@@ -130,14 +131,15 @@ struct AhoCorasick {
         return res;
     }
 };
-
+// END CUT
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "string/aho-corasick.cpp"
+#line 1 "string/aho_corasick.cpp"
+// BEGIN CUT
 // 文字の種類数をtemplate引数で渡す
 template <int types = 26>
 struct AhoCorasick {
@@ -222,6 +224,7 @@ struct AhoCorasick {
         return res;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

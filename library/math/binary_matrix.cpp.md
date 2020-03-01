@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/binary_matrix.cpp
+# :x: math/binary_matrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/binary_matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
+* :x: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
 
 
 ## Code
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // GF(2)の行列
 template<int width=64>
 struct matrix {
@@ -111,6 +112,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -118,6 +120,7 @@ struct matrix {
 {% raw %}
 ```cpp
 #line 1 "math/binary_matrix.cpp"
+// BEGIN CUT
 // GF(2)の行列
 template<int width=64>
 struct matrix {
@@ -183,6 +186,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

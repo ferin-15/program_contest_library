@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/unionfind.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/DSL1A.test.cpp.html">test/DSL1A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL2A.test.cpp.html">test/GRL2A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 
 
 ## Code
@@ -48,6 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;
     UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
@@ -64,6 +65,7 @@ struct UnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     ll size(int x) { return s[find(x)]; }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -71,6 +73,7 @@ struct UnionFind {
 {% raw %}
 ```cpp
 #line 1 "data_structure/unionfind.cpp"
+// BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;
     UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
@@ -87,6 +90,7 @@ struct UnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     ll size(int x) { return s[find(x)]; }
 };
+// END CUT
 
 ```
 {% endraw %}

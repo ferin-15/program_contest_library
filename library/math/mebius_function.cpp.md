@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mebius_function.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 const ll m = 100000;
 vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
 min_factor[0] = 0, min_factor[1] = 1;
@@ -54,6 +55,7 @@ FOR(i, 2, m+1) {
         else mebius[j] *= -1;
     } 
 }
+// END CUT
 ```
 {% endraw %}
 
@@ -61,6 +63,7 @@ FOR(i, 2, m+1) {
 {% raw %}
 ```cpp
 #line 1 "math/mebius_function.cpp"
+// BEGIN CUT
 const ll m = 100000;
 vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
 min_factor[0] = 0, min_factor[1] = 1;
@@ -74,6 +77,7 @@ FOR(i, 2, m+1) {
         else mebius[j] *= -1;
     } 
 }
+// END CUT
 
 ```
 {% endraw %}

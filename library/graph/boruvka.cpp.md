@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/boruvka.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template< typename T, typename F >
 T boruvka(ll n, F f) {
     vector<ll> rev(n), belong(n);
@@ -85,6 +86,7 @@ function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
 };
 cout << boruvka<ll, decltype(f)>(n, f) << endl;
 */
+// END CUT
 ```
 {% endraw %}
 
@@ -92,6 +94,7 @@ cout << boruvka<ll, decltype(f)>(n, f) << endl;
 {% raw %}
 ```cpp
 #line 1 "graph/boruvka.cpp"
+// BEGIN CUT
 template< typename T, typename F >
 T boruvka(ll n, F f) {
     vector<ll> rev(n), belong(n);
@@ -131,6 +134,7 @@ function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
 };
 cout << boruvka<ll, decltype(f)>(n, f) << endl;
 */
+// END CUT
 
 ```
 {% endraw %}

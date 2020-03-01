@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/z_algorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 「SとS[i:|S|-1]の最長共通接頭辞の長さ」を記録した配列AをO(|S|)で構築する
 // aaabaaaab
 // 921034210
@@ -58,7 +59,7 @@ vector<ll> Zalgo(string s) {
     }
 	return v;
 }
-
+// END CUT
 ```
 {% endraw %}
 
@@ -66,6 +67,7 @@ vector<ll> Zalgo(string s) {
 {% raw %}
 ```cpp
 #line 1 "string/z_algorithm.cpp"
+// BEGIN CUT
 // 「SとS[i:|S|-1]の最長共通接頭辞の長さ」を記録した配列AをO(|S|)で構築する
 // aaabaaaab
 // 921034210
@@ -83,6 +85,7 @@ vector<ll> Zalgo(string s) {
     }
 	return v;
 }
+// END CUT
 
 ```
 {% endraw %}

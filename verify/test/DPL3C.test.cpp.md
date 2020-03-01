@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL3C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/DP/largest_Rectangle.cpp.html">DP/largest_Rectangle.cpp</a>
+* :heavy_check_mark: <a href="../../library/DP/largest_rectangle.cpp.html">DP/largest_rectangle.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -49,7 +49,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C"
 #include "../memo/macro.hpp"
-#include "../DP/largest_Rectangle.cpp"
+#include "../DP/largest_rectangle.cpp"
 
 signed main(void) {
     ll n;
@@ -81,7 +81,8 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../DP/largest_Rectangle.cpp"
+#line 1 "test/../DP/largest_rectangle.cpp"
+// BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
     const ll n = h.size();
@@ -132,6 +133,7 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
+// END CUT
 #line 4 "test/DPL3C.test.cpp"
 
 signed main(void) {

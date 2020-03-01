@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/suffix_array.cpp
+# :warning: memo/suffix_array.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
-* <a href="{{ site.github.repository_url }}/blob/master/string/suffix_array.cpp">View this file on GitHub</a>
-    - Last commit date: 2018-09-27 01:44:20+09:00
+* category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/memo/suffix_array.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -88,7 +88,7 @@ struct SuffixArray {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "string/suffix_array.cpp"
+#line 1 "memo/suffix_array.cpp"
 struct SuffixArray {
   VI SA, rank, tmp;
   string s;

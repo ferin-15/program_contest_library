@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/min_cost_flow_dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct min_cost_max_flow {
     struct edge {
         int to;
@@ -138,6 +139,7 @@ struct min_cost_max_flow {
         return out;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -145,6 +147,7 @@ struct min_cost_max_flow {
 {% raw %}
 ```cpp
 #line 1 "graph/min_cost_flow_dijkstra.cpp"
+// BEGIN CUT
 struct min_cost_max_flow {
     struct edge {
         int to;
@@ -237,6 +240,7 @@ struct min_cost_max_flow {
         return out;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

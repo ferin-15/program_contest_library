@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/sparse_table.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 07:11:31+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -47,6 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template <typename S>
 struct sparseTable {
     using T = typename S::T;
@@ -91,7 +92,7 @@ struct gcd_op {
     using T = ll;
     static T op(const T& a, const T& b) { return __gcd(a, b); }
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -99,6 +100,7 @@ struct gcd_op {
 {% raw %}
 ```cpp
 #line 1 "data_structure/sparse_table.cpp"
+// BEGIN CUT
 template <typename S>
 struct sparseTable {
     using T = typename S::T;
@@ -143,6 +145,7 @@ struct gcd_op {
     using T = ll;
     static T op(const T& a, const T& b) { return __gcd(a, b); }
 };
+// END CUT
 
 ```
 {% endraw %}

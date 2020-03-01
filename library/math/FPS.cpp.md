@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/FPS.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template<typename T>
 struct formalPowerSeries {
     using Poly = vector<T>;
@@ -187,6 +188,7 @@ struct NTT {
 // NTT<mint, 3> ntt;
 // auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
 // formalPowerSeries<mint> fps(conv);
+// END CUT
 ```
 {% endraw %}
 
@@ -194,6 +196,7 @@ struct NTT {
 {% raw %}
 ```cpp
 #line 1 "math/FPS.cpp"
+// BEGIN CUT
 template<typename T>
 struct formalPowerSeries {
     using Poly = vector<T>;
@@ -340,6 +343,7 @@ struct NTT {
 // NTT<mint, 3> ntt;
 // auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
 // formalPowerSeries<mint> fps(conv);
+// END CUT
 
 ```
 {% endraw %}

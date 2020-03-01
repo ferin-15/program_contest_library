@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/FFT.cpp
+# :x: math/FFT.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/FFT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
+* :x: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
 
 
 ## Code
@@ -47,6 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 namespace fft {
     using dbl = double;
     struct num {
@@ -193,7 +194,7 @@ namespace fft {
     // fft::multiply_mod might work for res.size() up to 2^21
     // typedef long double dbl; => up to 2^25 (but takes a lot of memory)
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -201,6 +202,7 @@ namespace fft {
 {% raw %}
 ```cpp
 #line 1 "math/FFT.cpp"
+// BEGIN CUT
 namespace fft {
     using dbl = double;
     struct num {
@@ -347,6 +349,7 @@ namespace fft {
     // fft::multiply_mod might work for res.size() up to 2^21
     // typedef long double dbl; => up to 2^25 (but takes a lot of memory)
 };
+// END CUT
 
 ```
 {% endraw %}

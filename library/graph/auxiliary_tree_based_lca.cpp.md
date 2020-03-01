@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/auxiliaryTreeBasedLCA.cpp
+# :warning: graph/auxiliary_tree_based_lca.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/auxiliaryTreeBasedLCA.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 21:34:27+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/graph/auxiliary_tree_based_lca.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // require LCA_sparsetable
 struct auxiliaryTreeBasedLCA {
     ll cur;
@@ -90,6 +91,7 @@ struct auxiliaryTreeBasedLCA {
         return edges;
     }
 };
+// END CUT
 
 // verify 2019/10/5
 // https://yukicoder.me/problems/no/901
@@ -145,7 +147,8 @@ namespace yukicoder901 {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/auxiliaryTreeBasedLCA.cpp"
+#line 1 "graph/auxiliary_tree_based_lca.cpp"
+// BEGIN CUT
 // require LCA_sparsetable
 struct auxiliaryTreeBasedLCA {
     ll cur;
@@ -195,6 +198,7 @@ struct auxiliaryTreeBasedLCA {
         return edges;
     }
 };
+// END CUT
 
 // verify 2019/10/5
 // https://yukicoder.me/problems/no/901

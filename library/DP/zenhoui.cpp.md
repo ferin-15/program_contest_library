@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/zenhoui.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-07-14 12:12:28+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 vector<ll> dp(n);
 function<void(ll,ll)> dfs1 = [&](ll v, ll p) {
     for(auto i: g[v]) if(i != p) {
@@ -65,7 +66,7 @@ function<void(ll,ll,ll)> dfs2 = [&](ll v, ll d_par, ll p) {
     }
 };
 dfs2(0, 0, -1);
-
+// END CUT
 ```
 {% endraw %}
 
@@ -73,6 +74,7 @@ dfs2(0, 0, -1);
 {% raw %}
 ```cpp
 #line 1 "DP/zenhoui.cpp"
+// BEGIN CUT
 vector<ll> dp(n);
 function<void(ll,ll)> dfs1 = [&](ll v, ll p) {
     for(auto i: g[v]) if(i != p) {
@@ -97,6 +99,7 @@ function<void(ll,ll,ll)> dfs2 = [&](ll v, ll d_par, ll p) {
     }
 };
 dfs2(0, 0, -1);
+// END CUT
 
 ```
 {% endraw %}

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/voronoi_mst.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:59:59+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // http://tokoharuland.hateblo.jp/entry/2018/04/01/155743
 // 距離行列を仮想頂点とか使ってグラフで表してこれに渡すと最小全域木になる
 // initで渡すのは元のグラフの頂点集合
@@ -83,6 +84,7 @@ ll voronoiMst(vector<vector<PII>> g, vector<ll> init) {
     }
     return ret;
 }
+// END CUT
 
 // https://codeforces.com/problemset/problem/1095/F
 namespace cf529div3F {
@@ -142,6 +144,7 @@ namespace codefestival2017finalJ {
 {% raw %}
 ```cpp
 #line 1 "graph/voronoi_mst.cpp"
+// BEGIN CUT
 // http://tokoharuland.hateblo.jp/entry/2018/04/01/155743
 // 距離行列を仮想頂点とか使ってグラフで表してこれに渡すと最小全域木になる
 // initで渡すのは元のグラフの頂点集合
@@ -184,6 +187,7 @@ ll voronoiMst(vector<vector<PII>> g, vector<ll> init) {
     }
     return ret;
 }
+// END CUT
 
 // https://codeforces.com/problemset/problem/1095/F
 namespace cf529div3F {

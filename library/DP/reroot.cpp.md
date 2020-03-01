@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/reroot.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-09-13 21:29:38+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 template< typename Data, typename T >
 class ReRooting {
 private:
@@ -99,7 +100,7 @@ public:
         return ret;
     }
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -107,6 +108,7 @@ public:
 {% raw %}
 ```cpp
 #line 1 "DP/reroot.cpp"
+// BEGIN CUT
 template< typename Data, typename T >
 class ReRooting {
 private:
@@ -165,6 +167,7 @@ public:
         return ret;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

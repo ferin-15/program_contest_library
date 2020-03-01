@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/sum_of_powers.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 10:06:25+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // \sum_{i=0}^{n-1} i^k O(k^2)
 // kが固定でクエリがいっぱいならベルヌーイ数を前計算で高速化
 mint sum_of_powers(ll n, ll k) {
@@ -55,6 +56,7 @@ mint sum_of_powers(ll n, ll k) {
     REP(i, k+1) sum += combi(k+1, i) * b[i] * po[k+1-i];
     return sum / (k+1);
 }
+// END CUT
 
 // FPSとかでベルヌーイ数をklogkとかあるっぽい…？
 ```
@@ -64,6 +66,7 @@ mint sum_of_powers(ll n, ll k) {
 {% raw %}
 ```cpp
 #line 1 "math/sum_of_powers.cpp"
+// BEGIN CUT
 // \sum_{i=0}^{n-1} i^k O(k^2)
 // kが固定でクエリがいっぱいならベルヌーイ数を前計算で高速化
 mint sum_of_powers(ll n, ll k) {
@@ -78,6 +81,7 @@ mint sum_of_powers(ll n, ll k) {
     REP(i, k+1) sum += combi(k+1, i) * b[i] * po[k+1-i];
     return sum / (k+1);
 }
+// END CUT
 
 // FPSとかでベルヌーイ数をklogkとかあるっぽい…？
 

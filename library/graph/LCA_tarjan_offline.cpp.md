@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/LCA_tarjan_offline.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct UnionFind {
     vector<int> par, s;
     UnionFind(int n=2e5) { init(n); }
@@ -105,6 +106,7 @@ public:
     // lcaを求める
     vector<ll> build() { dfs(); return lca; }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -112,6 +114,7 @@ public:
 {% raw %}
 ```cpp
 #line 1 "graph/LCA_tarjan_offline.cpp"
+// BEGIN CUT
 struct UnionFind {
     vector<int> par, s;
     UnionFind(int n=2e5) { init(n); }
@@ -171,6 +174,7 @@ public:
     // lcaを求める
     vector<ll> build() { dfs(); return lca; }
 };
+// END CUT
 
 ```
 {% endraw %}

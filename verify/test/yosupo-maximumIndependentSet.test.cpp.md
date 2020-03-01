@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-maximumIndependentSet.test.cpp
+# :x: test/yosupo-maximumIndependentSet.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-maximumIndependentSet.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:44:24+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/maximum_independent_set">https://judge.yosupo.jp/problem/maximum_independent_set</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
+* :x: <a href="../../library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -86,6 +86,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../graph/max_independent_set.cpp"
+// BEGIN CUT
 // O(n*1.466^n) n<=40で16ms
 class maxIndependentSet {
 public:
@@ -152,6 +153,7 @@ public:
         return ans_set;
     }
 };
+// END CUT
 
 namespace thanks2017G {
     void solve() {

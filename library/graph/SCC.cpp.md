@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/SCC.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/GRL3C.test.cpp.html">test/GRL3C.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 
 
 ## Code
@@ -52,6 +52,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct SCC {
     int V, K;
     vector<vector<int>> G;
@@ -103,6 +104,7 @@ struct SCC {
         return res;
     }
 };
+// END CUT
 ```
 {% endraw %}
 
@@ -110,6 +112,7 @@ struct SCC {
 {% raw %}
 ```cpp
 #line 1 "graph/SCC.cpp"
+// BEGIN CUT
 struct SCC {
     int V, K;
     vector<vector<int>> G;
@@ -161,6 +164,7 @@ struct SCC {
         return res;
     }
 };
+// END CUT
 
 ```
 {% endraw %}

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/kitamasa.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 04:35:05+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -41,6 +41,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 // 数列の初項k項aと漸化式の係数dが与えられる
 // a_nをO(K^2logN)で求める
 vector<ll> dfs(vector<ll> a, vector<ll> d, ll n) {
@@ -69,7 +70,7 @@ ll kitamasa(vector<ll> a, vector<ll> d, ll n) {
     REP(i, d.size()) (ans += d[i] * ret[i]) %= MOD;
     return ans;
 }
-
+// END CUT
 ```
 {% endraw %}
 
@@ -77,6 +78,7 @@ ll kitamasa(vector<ll> a, vector<ll> d, ll n) {
 {% raw %}
 ```cpp
 #line 1 "math/kitamasa.cpp"
+// BEGIN CUT
 // 数列の初項k項aと漸化式の係数dが与えられる
 // a_nをO(K^2logN)で求める
 vector<ll> dfs(vector<ll> a, vector<ll> d, ll n) {
@@ -105,6 +107,7 @@ ll kitamasa(vector<ll> a, vector<ll> d, ll n) {
     REP(i, d.size()) (ans += d[i] * ret[i]) %= MOD;
     return ans;
 }
+// END CUT
 
 ```
 {% endraw %}

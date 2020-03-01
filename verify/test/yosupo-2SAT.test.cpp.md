@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo-2SAT.test.cpp
+# :x: test/yosupo-2SAT.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo-2SAT.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-22 00:47:22+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/SCC.cpp.html">graph/SCC.cpp</a>
-* :heavy_check_mark: <a href="../../library/graph/twosat.cpp.html">graph/twosat.cpp</a>
+* :x: <a href="../../library/graph/twosat.cpp.html">graph/twosat.cpp</a>
 * :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -102,6 +102,7 @@ template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "test/../graph/SCC.cpp"
+// BEGIN CUT
 struct SCC {
     int V, K;
     vector<vector<int>> G;
@@ -153,7 +154,9 @@ struct SCC {
         return res;
     }
 };
+// END CUT
 #line 1 "test/../graph/twosat.cpp"
+// BEGIN CUT
 struct twoSAT {
     ll n;
     SCC graph;
@@ -175,6 +178,7 @@ struct twoSAT {
         return true;
     }
 };
+// END CUT
 #line 5 "test/yosupo-2SAT.test.cpp"
 
 int main () {

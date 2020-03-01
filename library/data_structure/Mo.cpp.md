@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 01:08:58+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct Mo {
     int width;
     int nl, nr, ptr;
@@ -81,6 +82,7 @@ struct Mo {
         return order[ptr++];
     }
 };
+// END CUT
 
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo
@@ -229,6 +231,7 @@ namespace ABC014D {
 {% raw %}
 ```cpp
 #line 1 "data_structure/Mo.cpp"
+// BEGIN CUT
 struct Mo {
     int width;
     int nl, nr, ptr;
@@ -264,6 +267,7 @@ struct Mo {
         return order[ptr++];
     }
 };
+// END CUT
 
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo

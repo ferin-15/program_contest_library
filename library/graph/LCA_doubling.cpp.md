@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/LCA_doubling.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-20 05:17:03+09:00
+    - Last commit date: 2020-03-01 12:39:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct LCA {
     const int n = 0;
     const int log2_n = 0;
@@ -98,7 +99,7 @@ struct LCA {
         return par[0][u];
     }
 };
-
+// END CUT
 ```
 {% endraw %}
 
@@ -106,6 +107,7 @@ struct LCA {
 {% raw %}
 ```cpp
 #line 1 "graph/LCA_doubling.cpp"
+// BEGIN CUT
 struct LCA {
     const int n = 0;
     const int log2_n = 0;
@@ -158,6 +160,7 @@ struct LCA {
         return par[0][u];
     }
 };
+// END CUT
 
 ```
 {% endraw %}
