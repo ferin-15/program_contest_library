@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 「SとS[i:|S|-1]の最長共通接頭辞の長さ」を記録した配列AをO(|S|)で構築する
 // aaabaaaab
 // 921034210
@@ -15,3 +16,4 @@ vector<ll> Zalgo(string s) {
     }
 	return v;
 }
+// END CUT

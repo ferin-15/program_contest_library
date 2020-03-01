@@ -1,3 +1,4 @@
+// BEGIN CUT
 using edge = PII;
 struct dynamicConnectivity {
     int n, sz;
@@ -53,6 +54,7 @@ struct dynamicConnectivity {
         REP(i, edges[k].size()) undo();
     }
 };
+// END CUT
 
 namespace Dynamic_connectivity_contest_A {
     struct UnionFind {

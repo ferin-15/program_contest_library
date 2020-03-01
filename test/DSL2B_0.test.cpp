@@ -5,7 +5,7 @@
 signed main(void) {
     ll n, q;
     cin >> n >> q;
-    BIT<ll> bit(100010);
+    BIT bit(100010);
     while(q--) {
         ll t, x, y;
         cin >> t >> x >> y;

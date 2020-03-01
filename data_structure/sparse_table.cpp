@@ -1,3 +1,4 @@
+// BEGIN CUT
 template <typename S>
 struct sparseTable {
     using T = typename S::T;
@@ -42,3 +43,4 @@ struct gcd_op {
     using T = ll;
     static T op(const T& a, const T& b) { return __gcd(a, b); }
 };
+// END CUT

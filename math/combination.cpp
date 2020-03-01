@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 前計算O(N) クエリO(1)
 mint combi(ll N, ll K) {
     const int maxN=5e5; // !!!
@@ -25,3 +26,4 @@ mint combi_bigN(ll N, ll K) {
     for(;K>0;N--,K--) ret *= N, ret *= inv[K];
     return ret;
 }
+// END CUT

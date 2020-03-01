@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct min_cost_max_flow {
     struct edge {
         int to;
@@ -90,3 +91,4 @@ struct min_cost_max_flow {
         return out;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct UnionFind {
     vector<int> par, s;
     UnionFind(int n=2e5) { init(n); }
@@ -57,3 +58,4 @@ public:
     // lcaを求める
     vector<ll> build() { dfs(); return lca; }
 };
+// END CUT

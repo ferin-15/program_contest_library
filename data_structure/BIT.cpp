@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct BIT {
     int n;
     vector<ll> bit;
@@ -26,3 +27,4 @@ struct BIT {
         return x;
     }
 };
+// END CUT

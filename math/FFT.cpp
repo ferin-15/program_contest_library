@@ -1,3 +1,4 @@
+// BEGIN CUT
 namespace fft {
     using dbl = double;
     struct num {
@@ -144,3 +145,4 @@ namespace fft {
     // fft::multiply_mod might work for res.size() up to 2^21
     // typedef long double dbl; => up to 2^25 (but takes a lot of memory)
 };
+// END CUT

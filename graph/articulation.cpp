@@ -1,3 +1,4 @@
+// BEGIN CUT
 class articulation {
 private:
     void dfs(ll v, ll p, ll &k, vector<ll> &ret) {
@@ -36,3 +37,4 @@ public:
         return ret;
     }
 };
+// END CUT

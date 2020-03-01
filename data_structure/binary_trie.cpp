@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<typename T = int, int B = 32>
 class binaryTrie {
 private:
@@ -82,6 +83,7 @@ public:
         return t->cnt;
     }
 };
+// END CUT
 
 // https://codeforces.com/contest/947/problem/C
 namespace cf947c {

@@ -1,3 +1,4 @@
+// BEGIN CUT
 template <int types = 26>
 struct Trie {
     struct node {
@@ -77,3 +78,4 @@ struct Trie {
         return ret;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct LCA {
     const int n = 0;
     const int log2_n = 0;
@@ -50,3 +51,4 @@ struct LCA {
         return par[0][u];
     }
 };
+// END CUT

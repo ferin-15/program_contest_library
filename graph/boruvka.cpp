@@ -1,3 +1,4 @@
+// BEGIN CUT
 template< typename T, typename F >
 T boruvka(ll n, F f) {
     vector<ll> rev(n), belong(n);
@@ -37,3 +38,4 @@ function<vector<PII>(ll,vector<ll>)> f = [&](ll sz, vector<ll> belong) {
 };
 cout << boruvka<ll, decltype(f)>(n, f) << endl;
 */
+// END CUT

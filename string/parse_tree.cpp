@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 四則演算と括弧の文字列を構文解析して構文木をつくる
 template<class T>
 class parser {
@@ -76,3 +77,4 @@ public:
         return nodes[root].val;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 有限体の行列
 struct matrix {
     int h, w;
@@ -67,6 +68,7 @@ struct matrix {
         return os;
     }
 };
+// END CUT
 
 // 任意mod(<=1e9)で行列累乗
 namespace ARC050C {

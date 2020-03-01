@@ -1,3 +1,4 @@
+// BEGIN CUT
 // ax + by = gcd(a, b) となる {x, y, gcd(a, b)} を返す
 // O(log(min(a, b)))
 ll extgcd(ll a, ll b, ll &x, ll &y) {
@@ -32,3 +33,4 @@ pair<ll, ll> crt(const vector<ll>& a, const vector<ll>& b, const vector<ll>& m) 
     }
     return ret;
 }
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct FordFulkerson {
     struct edge {
         int to;
@@ -56,3 +57,4 @@ struct FordFulkerson {
         return out;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 // O(hwlogw)
 // dp[i][j] = min_{0<=k<j} (dp[i-1][k]+f(k,j))
 template<typename T, typename Compare = less<T>>
@@ -23,6 +24,7 @@ vector<vector<T>> divide_and_conquer(ll h, ll w, const function<T(ll,ll)> &f, co
     REP(i, h-1) dfs(i, 0, w-1, 0, w-1);
     return dp;
 }
+// END CUT
 
 namespace cf190div1E {
     int u[4010][4010], W[4010][4010];

@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<int N>
 struct FID {
     static const int bucket = 512, block = 16;
@@ -185,3 +186,4 @@ struct wavelet {
     }
 };
 // ToDo: [l,r)で出現頻度が高い要素, [l,r)で大きい方からk個の和, 動的
+// END CUT

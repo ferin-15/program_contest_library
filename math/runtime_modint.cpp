@@ -1,3 +1,4 @@
+// BEGIN CUT
 ll MOD;
 struct mint {
     ll x;
@@ -117,3 +118,4 @@ struct mint {
         return ret;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 更新が区間chmin クエリが区間和と区間max
 template<typename dat_type, typename lazy_type>
 struct segtree {
@@ -85,6 +86,7 @@ struct segtree {
         cout << "---------------------" << endl;
     }
 };
+// END CUT
 
 signed main(void)
 {

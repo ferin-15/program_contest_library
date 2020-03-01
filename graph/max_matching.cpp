@@ -1,3 +1,4 @@
+// BEGIN CUT
 ll max_matching(ll n, vector<PII> edges) {
     mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());
     uniform_int_distribution<ll> dist(1, MOD-1);
@@ -10,3 +11,4 @@ ll max_matching(ll n, vector<PII> edges) {
     }
     return (gauss_jordan(mat)+1)/2;
 }
+// END CUT

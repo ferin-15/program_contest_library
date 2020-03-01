@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct SCC {
     int V, K;
     vector<vector<int>> G;
@@ -49,3 +50,4 @@ struct SCC {
         return res;
     }
 };
+// END CUT

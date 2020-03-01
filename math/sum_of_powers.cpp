@@ -1,3 +1,4 @@
+// BEGIN CUT
 // \sum_{i=0}^{n-1} i^k O(k^2)
 // kが固定でクエリがいっぱいならベルヌーイ数を前計算で高速化
 mint sum_of_powers(ll n, ll k) {
@@ -12,5 +13,6 @@ mint sum_of_powers(ll n, ll k) {
     REP(i, k+1) sum += combi(k+1, i) * b[i] * po[k+1-i];
     return sum / (k+1);
 }
+// END CUT
 
 // FPSとかでベルヌーイ数をklogkとかあるっぽい…？

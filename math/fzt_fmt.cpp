@@ -1,3 +1,4 @@
+// BEGIN CUT
 // a.size() は2べき
 // upper: g(S) = \sum_{S \subseteq T} f(T)
 // lower: g(S) = \sum_{T \subseteq S} f(T)
@@ -39,3 +40,4 @@ vector<ll> convOR(vector<ll> a, vector<ll> b) {
     REP(i, a.size()) a[i] *= b[i];
     return fmt<false>(a);
 }
+// END CUT

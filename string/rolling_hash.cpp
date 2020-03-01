@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<ll MOD, ll B>
 struct rollingHash{
     vector<ll> hash,p;
@@ -16,3 +17,4 @@ struct rollingHash{
         return res>=MOD?res-MOD:res;
     }
 };
+// END CUT

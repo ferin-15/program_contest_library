@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<class T, class S, class F>
 struct SWAG {
     // using F = function<S(S,T)>;
@@ -26,3 +27,4 @@ struct SWAG {
     template<class Q>
     void fold(Q q) { q(ls.top(), rs.top()); }
 };
+// END CUT

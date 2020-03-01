@@ -1,3 +1,4 @@
+// BEGIN CUT
 class LCA {
 private:
     const int n = 0;
@@ -42,3 +43,4 @@ public:
         return vs[st.query(id[u], id[v]).second];
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 数列の初項k項aと漸化式の係数dが与えられる
 // a_nをO(K^2logN)で求める
 vector<ll> dfs(vector<ll> a, vector<ll> d, ll n) {
@@ -26,3 +27,4 @@ ll kitamasa(vector<ll> a, vector<ll> d, ll n) {
     REP(i, d.size()) (ans += d[i] * ret[i]) %= MOD;
     return ans;
 }
+// END CUT

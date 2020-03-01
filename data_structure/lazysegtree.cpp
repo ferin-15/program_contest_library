@@ -1,3 +1,4 @@
+// BEGIN CUT
 template <typename Monoid>
 struct lazysegtree {
     using T = typename Monoid::T;
@@ -97,3 +98,4 @@ struct linear_exp {
         return PII(b.first*a.first, b.first*a.second+b.second);
     }
 };
+// END CUT

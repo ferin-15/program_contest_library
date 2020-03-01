@@ -1,3 +1,4 @@
+// BEGIN CUT
 template< typename Data, typename T >
 class ReRooting {
 private:
@@ -56,3 +57,4 @@ public:
         return ret;
     }
 };
+// END CUT

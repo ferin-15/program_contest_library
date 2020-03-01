@@ -1,3 +1,4 @@
+// BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {
     const ll n = h.size();
@@ -48,3 +49,4 @@ ll largeest_rectangle(vector<vector<ll>> c) {
     REP(i, h) chmax(ret, largest_rectangle_histogram(con[i]));
     return ret;
 }
+// END CUT

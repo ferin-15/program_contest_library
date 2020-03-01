@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct twoSAT {
     ll n;
     SCC graph;
@@ -19,3 +20,4 @@ struct twoSAT {
         return true;
     }
 };
+// END CUT

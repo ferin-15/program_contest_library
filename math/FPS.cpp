@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<typename T>
 struct formalPowerSeries {
     using Poly = vector<T>;
@@ -144,3 +145,4 @@ struct NTT {
 // NTT<mint, 3> ntt;
 // auto conv = [&](auto a, auto b) { return ntt.convolution(a, b); };
 // formalPowerSeries<mint> fps(conv);
+// END CUT

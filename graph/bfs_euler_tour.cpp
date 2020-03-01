@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct bfsEulerTour {
     ll n, maxd;
     vector<ll> idx, tour;
@@ -55,6 +56,7 @@ struct bfsEulerTour {
         }
     }
 };
+// END CUT
 
 // verify: 2019/10/05
 // https://yukicoder.me/problems/no/899

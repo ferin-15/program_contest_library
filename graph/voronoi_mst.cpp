@@ -1,3 +1,4 @@
+// BEGIN CUT
 // http://tokoharuland.hateblo.jp/entry/2018/04/01/155743
 // 距離行列を仮想頂点とか使ってグラフで表してこれに渡すと最小全域木になる
 // initで渡すのは元のグラフの頂点集合
@@ -40,6 +41,7 @@ ll voronoiMst(vector<vector<PII>> g, vector<ll> init) {
     }
     return ret;
 }
+// END CUT
 
 // https://codeforces.com/problemset/problem/1095/F
 namespace cf529div3F {

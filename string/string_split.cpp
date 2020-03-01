@@ -1,3 +1,4 @@
+// BEGIN CUT
 // sepで区切る
 vector<string> split(const string &str, char sep) {
     vector<string> v;
@@ -11,3 +12,4 @@ vector<string> split(const string &str, char sep) {
     }
     return v;
 }
+// END CUT

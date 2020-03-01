@@ -1,3 +1,4 @@
+// BEGIN CUT
 class HLDecomposition {
     void dfs1(ll v, ll p) {
         if(g[v].size() && g[v][0]==p) swap(g[v][0], g[v].back());
@@ -70,3 +71,4 @@ public:
 };
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
+// END CUT

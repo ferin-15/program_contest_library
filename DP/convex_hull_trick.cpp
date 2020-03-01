@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 最小を求めてるので最大ならinsert(-a,-b), -get(x)
 struct ConvexHullTrick {
     deque<PII> que;
@@ -37,3 +38,4 @@ struct ConvexHullTrick {
         return f(que[ub], x);
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<class T, int primitive_root>
 struct NTT {
     void ntt(vector<T>& a, int sign) {
@@ -74,3 +75,4 @@ vector<T> any_mod_convolution(vector<T> a, vector<T> b) {
     }
     return ret;
 }
+// END CUT

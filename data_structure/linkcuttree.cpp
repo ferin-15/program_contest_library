@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<typename M>
 class LinkCutTree {
 public:
@@ -183,3 +184,4 @@ struct monoid {
     static T s(const T &x) { return x; }
 };
 */
+// END CUT

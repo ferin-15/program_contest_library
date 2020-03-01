@@ -1,3 +1,4 @@
+// BEGIN CUT
 // require LCA_sparsetable
 struct auxiliaryTreeBasedLCA {
     ll cur;
@@ -47,6 +48,7 @@ struct auxiliaryTreeBasedLCA {
         return edges;
     }
 };
+// END CUT
 
 // verify 2019/10/5
 // https://yukicoder.me/problems/no/901

@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 頂点クエリのMo
 // HL分解で頂点クエリするときに下の辺に下ろすみたいなのをする
 // add_edgeとinsertをした後buildをしてprocessを進めていく
@@ -94,3 +95,4 @@ struct Mo_Tree_Vertex {
         return (order[ptr++]);
     }
 };
+// END CUT

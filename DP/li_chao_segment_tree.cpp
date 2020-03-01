@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 単調性なしok 動的CHT 各操作O(logN)
 template <typename T, const T id = numeric_limits<T>::min()>
 class ConvexHullTrick {
@@ -50,3 +51,4 @@ public:
     // ax+b のうち最大のものを返す
     T get(T x) const { return query(root, minx, maxx, x); }
 };
+// END CUT

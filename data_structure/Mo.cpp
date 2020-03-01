@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct Mo {
     int width;
     int nl, nr, ptr;
@@ -33,6 +34,7 @@ struct Mo {
         return order[ptr++];
     }
 };
+// END CUT
 
 namespace cf221div1d {
     // 部分木クエリを行きがけ順に並べることで数列に置き換えてMo

@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<class M>
 struct RBST {
     using T = typename M::T;
@@ -193,3 +194,4 @@ struct update_min {
     }
 };
 */
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<typename KEY, typename SUM>
 class LinkCutTreeForSubTree {
 public:
@@ -177,3 +178,4 @@ struct SUM {
     void erase(const SUM &ch) { laz -= ch.sum; }
 };
 */
+// END CUT

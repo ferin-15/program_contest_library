@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 根が1
 template<typename Monoid>
 struct segtree {
@@ -65,3 +66,4 @@ struct sum_monoid {
     static constexpr Tp id() { return 0; }
     static Tp op(const Tp &a, const Tp &b) { return a+b; }
 };
+// END CUT

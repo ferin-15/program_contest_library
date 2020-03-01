@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<class T>
 class dinicWithCostScalling {
     struct edge{
@@ -78,3 +79,4 @@ public:
         return out;
     }
 };
+// END CUT

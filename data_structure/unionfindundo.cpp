@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct UnionFindUndo {
     vector<int> data;
     stack<PII> st;
@@ -26,3 +27,4 @@ struct UnionFindUndo {
     bool same(int x, int y) { return find(x) == find(y); }
     int size(int k) { return (-data[find(k)]); }
 };
+// END CUT

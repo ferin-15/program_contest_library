@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 実数体の行列 ToDo: verify
 struct matrix {
     int h, w;
@@ -67,3 +68,4 @@ struct matrix {
         return os;
     }
 };
+// END CUT

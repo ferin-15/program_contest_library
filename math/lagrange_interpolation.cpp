@@ -1,3 +1,4 @@
+// BEGIN CUT
 // verify: https://atcoder.jp/contests/arc033/submissions/6839946
 // x座標が相異なるn+1点(x_i,y_i)を通るn次以下の多項式f(T)の値を返す
 // x_i = a + i*d 0<=i<=n (等差数列)
@@ -75,3 +76,4 @@ vector<mint> lagrange_interpolation(vector<mint> x, vector<mint> y) {
     }
     return ret;
 }
+// END CUT

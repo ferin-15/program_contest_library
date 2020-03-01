@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 各iについてf(i,*)のargminとminをペアで返す
 template<typename T, typename Compare = less<T>>
 vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, const Compare &comp = Compare()) {
@@ -21,6 +22,7 @@ vector<pair<ll,T>> monotone_minima(ll h, ll w, const function<T(ll,ll)> &f, cons
     dfs(0, h-1, 0, w-1);
     return dp;
 }
+// END CUT
 
 // https://atcoder.jp/contests/colopl2018-final/tasks/colopl2018_final_c
 namespace colocon2018finalC {

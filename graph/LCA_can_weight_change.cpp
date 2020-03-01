@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct LCA {
     struct edge { int id, to, cost; };
     const int n = 0;
@@ -65,6 +66,7 @@ struct LCA {
         w[x] = t;
     }
 };
+// END CUT
 
 // https://atcoder.jp/contests/njpc2017/tasks/njpc2017_h
 namespace njpc2017h {

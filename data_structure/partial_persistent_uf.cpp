@@ -1,3 +1,4 @@
+// BEGIN CUT
 // find:O(logN) unite:O(logN)
 struct partialPersistentUF {
     const static int MAX_N = 100010;
@@ -29,3 +30,4 @@ struct partialPersistentUF {
     }
     bool same(int x, int y, int t) { return find(x, t) == find(y, t); }
 };
+// END CUT

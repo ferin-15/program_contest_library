@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<ll MOD>
 struct modint {
     ll x;
@@ -127,3 +128,4 @@ struct modint {
         return ret;
     }
 };
+// END CUT

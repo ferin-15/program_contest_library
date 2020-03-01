@@ -1,3 +1,4 @@
+// BEGIN CUT
 class twoEdgeComponent {
 private:
     void dfs(ll v, ll p, ll &k) {
@@ -44,3 +45,4 @@ public:
         return ret;
     }
 };
+// END CUT

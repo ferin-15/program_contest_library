@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 文字の種類数をtemplate引数で渡す
 template <int types = 26>
 struct AhoCorasick {
@@ -82,3 +83,4 @@ struct AhoCorasick {
         return res;
     }
 };
+// END CUT

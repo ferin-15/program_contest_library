@@ -1,3 +1,4 @@
+// BEGIN CUT
 // O(n*1.466^n) n<=40で16ms
 class maxIndependentSet {
 public:
@@ -64,6 +65,7 @@ public:
         return ans_set;
     }
 };
+// END CUT
 
 namespace thanks2017G {
     void solve() {

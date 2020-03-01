@@ -1,3 +1,4 @@
+// BEGIN CUT
 // GF(2)の行列
 template<int width=64>
 struct matrix {
@@ -63,3 +64,4 @@ struct matrix {
         return os;
     }
 };
+// END CUT

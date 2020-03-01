@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct segTreeRangeFreq {
     int n;
     vector<vector<ll>> dat;
@@ -26,3 +27,4 @@ struct segTreeRangeFreq {
 // 2次元平面上の点集合 矩形中に何個点があるかのクエリに答えることが可能
 // (x[i], y[i]) をxでソートしてyをセグ木に乗せるとrangefreqになる
 // wavelet matrixじゃなくてセグ木でO(log^2N)でok
+// END CUT

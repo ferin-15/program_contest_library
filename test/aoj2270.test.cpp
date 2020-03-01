@@ -14,7 +14,7 @@ signed main(void) {
     vs.erase(unique(ALL(vs)), vs.end());
     REP(i, n) x[i] = lower_bound(ALL(vs), x[i]) - vs.begin();
 
-    BIT<ll> bit(vs.size());
+    BIT bit(vs.size());
     auto add = [&](ll idx) { bit.update(x[idx], 1); };
     auto del = [&](ll idx) { bit.update(x[idx], -1); };
     Mo_Tree_Vertex mo(n, add, del);

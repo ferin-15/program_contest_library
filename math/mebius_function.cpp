@@ -1,3 +1,4 @@
+// BEGIN CUT
 const ll m = 100000;
 vector<ll> min_factor(m+1, -1), mebius(m+1, 1);
 min_factor[0] = 0, min_factor[1] = 1;
@@ -11,3 +12,4 @@ FOR(i, 2, m+1) {
         else mebius[j] *= -1;
     } 
 }
+// END CUT

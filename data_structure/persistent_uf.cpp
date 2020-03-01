@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<typename T, int B = 3>
 class persistentArray {
 private:
@@ -78,3 +79,4 @@ struct persistentUnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     int size(int x) { return -data[find(x)]; }
 };
+// END CUT

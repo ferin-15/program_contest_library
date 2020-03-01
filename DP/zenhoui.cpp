@@ -1,3 +1,4 @@
+// BEGIN CUT
 vector<ll> dp(n);
 function<void(ll,ll)> dfs1 = [&](ll v, ll p) {
     for(auto i: g[v]) if(i != p) {
@@ -22,3 +23,4 @@ function<void(ll,ll,ll)> dfs2 = [&](ll v, ll d_par, ll p) {
     }
 };
 dfs2(0, 0, -1);
+// END CUT

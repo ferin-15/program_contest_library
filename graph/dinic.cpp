@@ -1,3 +1,4 @@
+// BEGIN CUT
 template<class T>
 struct dinic {
     struct edge{
@@ -145,3 +146,4 @@ struct dinic_with_lowerlimit {
         return (a+b==sum_lb && a+c==sum_lb) ? b+d : -1;
     }
 };
+// END CUT

@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;
     UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
@@ -14,3 +15,4 @@ struct UnionFind {
     bool same(int x, int y) { return find(x) == find(y); }
     ll size(int x) { return s[find(x)]; }
 };
+// END CUT

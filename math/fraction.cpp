@@ -1,3 +1,4 @@
+// BEGIN CUT
 // 分数ライブラリ
 // 常に約分されているとする
 // 負のときは常にaを負にする
@@ -52,3 +53,4 @@ struct fraction {
         return os << a.a << "/" << a.b;
     }
 };
+// END CUT
