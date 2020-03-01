@@ -9,7 +9,6 @@ int main() {
     REP(i, q) {
         ll t, u, v;
         cin >> t >> u >> v;
-        u--, v--;
         if(t == 0) uf.unite(u, v);
         else cout << uf.same(u, v) << "\n";
     }
