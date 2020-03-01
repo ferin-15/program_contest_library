@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #include "../memo/macro.hpp"
-#include "../graph/HLDecomposition.cpp"
+#include "../graph/hld.cpp"
 
 signed main(void) {
     ll n;

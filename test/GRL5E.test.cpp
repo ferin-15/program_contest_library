@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_E"
 #include "../memo/macro.hpp"
-#include "../graph/HLDecomposition.cpp"
+#include "../graph/hld.cpp"
 #include "../data_structure/lazysegtree.cpp"
 
 signed main(void) {

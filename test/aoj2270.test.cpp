@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270"
 #include "../memo/macro.hpp"
 #include "../data_structure/BIT.cpp"
-#include "../data_structure/Mo_Tree_Vertex.cpp"
+#include "../data_structure/Mo_tree_vertex.cpp"
 
 signed main(void) {
     ll n, q;

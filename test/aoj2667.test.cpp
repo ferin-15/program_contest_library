@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2667"
 #include "../memo/macro.hpp"
-#include "../graph/HLDecomposition.cpp"
+#include "../graph/hld.cpp"
 #include "../data_structure/lazysegtree.cpp"
 
 signed main(void) {

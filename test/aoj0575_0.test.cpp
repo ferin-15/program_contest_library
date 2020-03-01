@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0575"
 #include "../memo/macro.hpp"
-#include "../data_structure/partialPersistentUF.cpp"
+#include "../data_structure/partial_persistent_uf.cpp"
 
 signed main(void) {
     ll n, m, k, q;
