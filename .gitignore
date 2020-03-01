@@ -2,3 +2,4 @@
 /.verify-helper/cache/
 /.verify-helper/markdown/
 /.verify-helper/timestamps.local.json
+/make_snippets.py
