@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/DSL1A.test.cpp.html">test/DSL1A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL2A.test.cpp.html">test/GRL2A.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 
 
 ## Code

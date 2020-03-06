@@ -60,7 +60,7 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
-* :x: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/partial_persistent_uf.cpp.html">data_structure/partial_persistent_uf.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/persistent_uf.cpp.html">data_structure/persistent_uf.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/rbst.cpp.html">data_structure/rbst.cpp</a>
@@ -103,15 +103,16 @@ layout: default
 * :warning: <a href="library/graph/auxiliary_tree_based_lca.cpp.html">graph/auxiliary_tree_based_lca.cpp</a>
 * :warning: <a href="library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
 * :heavy_check_mark: <a href="library/graph/boruvka.cpp.html">graph/boruvka.cpp</a>
+* :warning: <a href="library/graph/centroid_decomposition.cpp.html">graph/centroid_decomposition.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dinic.cpp.html">graph/dinic.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dinic_with_cost_scalling.cpp.html">graph/dinic_with_cost_scalling.cpp</a>
 * :heavy_check_mark: <a href="library/graph/ford_fulkerson.cpp.html">graph/ford_fulkerson.cpp</a>
 * :heavy_check_mark: <a href="library/graph/hld.cpp.html">graph/hld.cpp</a>
-* :x: <a href="library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
+* :heavy_check_mark: <a href="library/graph/max_independent_set.cpp.html">graph/max_independent_set.cpp</a>
 * :heavy_check_mark: <a href="library/graph/max_matching.cpp.html">graph/max_matching.cpp</a>
 * :heavy_check_mark: <a href="library/graph/min_cost_flow_dijkstra.cpp.html">graph/min_cost_flow_dijkstra.cpp</a>
 * :warning: <a href="library/graph/topological.cpp.html">graph/topological.cpp</a>
-* :x: <a href="library/graph/twosat.cpp.html">graph/twosat.cpp</a>
+* :heavy_check_mark: <a href="library/graph/twosat.cpp.html">graph/twosat.cpp</a>
 * :warning: <a href="library/graph/voronoi_mst.cpp.html">graph/voronoi_mst.cpp</a>
 
 
@@ -120,7 +121,7 @@ layout: default
 ### math
 
 * :heavy_check_mark: <a href="library/math/CRT.cpp.html">math/CRT.cpp</a>
-* :x: <a href="library/math/FFT.cpp.html">math/FFT.cpp</a>
+* :heavy_check_mark: <a href="library/math/FFT.cpp.html">math/FFT.cpp</a>
 * :warning: <a href="library/math/FPS.cpp.html">math/FPS.cpp</a>
 * :heavy_check_mark: <a href="library/math/NTT.cpp.html">math/NTT.cpp</a>
 * :heavy_check_mark: <a href="library/math/binary_matrix.cpp.html">math/binary_matrix.cpp</a>
@@ -179,7 +180,6 @@ layout: default
 * :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
 * :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-* :warning: <a href="library/test/yosupo-staticrmq.cpp.html">test/yosupo-staticrmq.cpp</a>
 
 
 ## Verify Files
@@ -237,11 +237,11 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
-* :x: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
-* :x: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
-* :x: <a href="verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
-* :x: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
-* :x: <a href="verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
-* :x: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 
 

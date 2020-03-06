@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="../test/yosupo-staticrmq.cpp.html">test/yosupo-staticrmq.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/DSL2A_1.test.cpp.html">test/DSL2A_1.test.cpp</a>
