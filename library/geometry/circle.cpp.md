@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed7daeb157cd9b31e53896ad3c771a26">geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/circle.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-07-14 12:12:28+09:00
+    - Last commit date: 2020-03-15 22:13:38+09:00
 
 
 
@@ -170,6 +170,25 @@ vector<L> common_tangent(C c1, C c2) {
     return vl;
 }
 
+// 2円の共通面積を求める
+// https://ferin-tech.hatenablog.com/entry/2020/03/15/220024
+R common_area(C c1, C c2) {
+    ll type = intersect(c1, c2);
+    if(type >= 3) return 0;
+    if(type <= 1) {
+        ll r = min(c1.r, c2.r);
+        return PI*r*r;
+    }
+    if(c1.r > c2.r) swap(c1, c2);
+    vector<P> ps = crosspoint(c1, c2);
+    R ang1 = acosl(dot(ps[0]-c1.c, ps[1]-c1.c) / (c1.r * c1.r));
+    R ang2 = acosl(dot(ps[0]-c2.c, ps[1]-c2.c) / (c2.r * c2.r));
+    if(ccw(ps[0], ps[1], c1.c) == ccw(ps[0], ps[1], c2.c)) ang1 = max(ang1, 2*PI - ang1);
+    else ang1 = min(ang1, 2*PI - ang1);
+    ang2 = min(ang2, 2*PI-ang2);
+    return c1.r*c1.r*0.5*(ang1-sinl(ang1)) + c2.r*c2.r*0.5*(ang2-sinl(ang2));
+}
+
 ```
 {% endraw %}
 
@@ -304,6 +323,25 @@ vector<L> common_tangent(C c1, C c2) {
         vl.push_back(tangent(c1, pp1.first).first);
     }
     return vl;
+}
+
+// 2円の共通面積を求める
+// https://ferin-tech.hatenablog.com/entry/2020/03/15/220024
+R common_area(C c1, C c2) {
+    ll type = intersect(c1, c2);
+    if(type >= 3) return 0;
+    if(type <= 1) {
+        ll r = min(c1.r, c2.r);
+        return PI*r*r;
+    }
+    if(c1.r > c2.r) swap(c1, c2);
+    vector<P> ps = crosspoint(c1, c2);
+    R ang1 = acosl(dot(ps[0]-c1.c, ps[1]-c1.c) / (c1.r * c1.r));
+    R ang2 = acosl(dot(ps[0]-c2.c, ps[1]-c2.c) / (c2.r * c2.r));
+    if(ccw(ps[0], ps[1], c1.c) == ccw(ps[0], ps[1], c2.c)) ang1 = max(ang1, 2*PI - ang1);
+    else ang1 = min(ang1, 2*PI - ang1);
+    ang2 = min(ang2, 2*PI-ang2);
+    return c1.r*c1.r*0.5*(ang1-sinl(ang1)) + c2.r*c2.r*0.5*(ang2-sinl(ang2));
 }
 
 ```
