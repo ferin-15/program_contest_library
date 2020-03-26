@@ -70,7 +70,7 @@ signed main(void) {
 ```cpp
 #line 1 "test/DPL3C.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/3/DPL_3_C"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -82,7 +82,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../DP/largest_rectangle.cpp"
+#line 1 "DP/largest_rectangle.cpp"
 // BEGIN CUT
 // i番目の高さがh[i]のヒストグラム中で最大の長方形の面積
 ll largest_rectangle_histogram(vector<ll> h) {

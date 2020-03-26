@@ -79,7 +79,7 @@ int main() {
 ```cpp
 #line 1 "test/DSL3D_1.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -91,7 +91,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../data_structure/sliding_window_aggregation.cpp"
+#line 1 "data_structure/sliding_window_aggregation.cpp"
 // BEGIN CUT
 template<class T, class S, class F>
 struct SWAG {

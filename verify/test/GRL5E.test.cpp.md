@@ -108,7 +108,7 @@ signed main(void) {
 ```cpp
 #line 1 "test/GRL5E.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_E"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -120,7 +120,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../graph/hld.cpp"
+#line 1 "graph/hld.cpp"
 // BEGIN CUT
 class HLDecomposition {
     void dfs1(ll v, ll p) {
@@ -195,7 +195,7 @@ public:
 // 部分木 頂点クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // 部分木 辺クエリ → 区間[hld.vid[u]+1, hld.vid[u] + hld.sub[u])
 // END CUT
-#line 1 "test/../data_structure/lazysegtree.cpp"
+#line 1 "data_structure/lazysegtree.cpp"
 // BEGIN CUT
 template <typename Monoid>
 struct lazysegtree {

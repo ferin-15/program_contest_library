@@ -74,7 +74,7 @@ int main() {
 ```cpp
 #line 1 "test/yosupo-unionfind.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -86,7 +86,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../data_structure/unionfind.cpp"
+#line 1 "data_structure/unionfind.cpp"
 // BEGIN CUT
 struct UnionFind {
     vector<ll> par, s;

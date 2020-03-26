@@ -81,7 +81,7 @@ signed main(void) {
 ```cpp
 #line 1 "test/GRL3C.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_C"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -93,7 +93,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../graph/SCC.cpp"
+#line 1 "graph/SCC.cpp"
 // BEGIN CUT
 struct SCC {
     int V, K;

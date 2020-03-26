@@ -76,7 +76,7 @@ signed main(void) {
 ```cpp
 #line 1 "test/ALDS1_10_A.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=jp"
-#line 1 "test/../memo/macro.hpp"
+#line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -88,7 +88,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "test/../math/runtime_modint.cpp"
+#line 1 "math/runtime_modint.cpp"
 // BEGIN CUT
 ll MOD;
 struct mint {
@@ -210,7 +210,7 @@ struct mint {
     }
 };
 // END CUT
-#line 1 "test/../math/finite_field_matrix.cpp"
+#line 1 "math/finite_field_matrix.cpp"
 // BEGIN CUT
 // 有限体の行列
 struct matrix {
