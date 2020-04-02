@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: DP/zenhoui.cpp
+# :warning: memo/zenhoui.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
-* <a href="{{ site.github.repository_url }}/blob/master/DP/zenhoui.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 12:39:31+09:00
+* category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/memo/zenhoui.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-02 23:37:35+09:00
 
 
 
@@ -73,7 +73,7 @@ dfs2(0, 0, -1);
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "DP/zenhoui.cpp"
+#line 1 "memo/zenhoui.cpp"
 // BEGIN CUT
 vector<ll> dp(n);
 function<void(ll,ll)> dfs1 = [&](ll v, ll p) {
