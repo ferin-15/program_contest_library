@@ -80,7 +80,6 @@ layout: default
 * :warning: <a href="library/geometry/circle.cpp.html">geometry/circle.cpp</a>
 * :warning: <a href="library/geometry/convex_polygon.cpp.html">geometry/convex_polygon.cpp</a>
 * :warning: <a href="library/geometry/geometry_base.cpp.html">geometry/geometry_base.cpp</a>
-* :warning: <a href="library/geometry/halfplane_intersects.cpp.html">geometry/halfplane_intersects.cpp</a>
 * :warning: <a href="library/geometry/line_segment.cpp.html">geometry/line_segment.cpp</a>
 * :warning: <a href="library/geometry/polygon.cpp.html">geometry/polygon.cpp</a>
 * :warning: <a href="library/geometry/rational_modulo.cpp.html">geometry/rational_modulo.cpp</a>
