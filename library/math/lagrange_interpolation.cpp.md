@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/lagrange_interpolation.cpp
+# :heavy_check_mark: math/lagrange_interpolation.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-03-01 12:39:31+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj2987_2.test.cpp.html">test/aoj2987_2.test.cpp</a>
 
 
 ## Code

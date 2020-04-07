@@ -127,7 +127,7 @@ layout: default
 * :warning: <a href="library/math/fraction.cpp.html">math/fraction.cpp</a>
 * :warning: <a href="library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
 * :warning: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
-* :warning: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
+* :heavy_check_mark: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
 * :heavy_check_mark: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
 * :warning: <a href="library/math/real_number_matrix.cpp.html">math/real_number_matrix.cpp</a>
@@ -236,6 +236,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2987.test.cpp.html">test/aoj2987.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2987_2.test.cpp.html">test/aoj2987_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
