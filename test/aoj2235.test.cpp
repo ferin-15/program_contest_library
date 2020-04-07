@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2235"
 #include "../memo/macro.hpp"
-#include "../data_structure/dynamic_connectivity.cpp";
+#include "../data_structure/dynamic_connectivity.cpp"
 #include "../data_structure/unionfindundo.cpp"
 
 int main(void) {
