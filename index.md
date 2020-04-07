@@ -167,7 +167,7 @@ layout: default
 * :heavy_check_mark: <a href="library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 * :warning: <a href="library/string/string_split.cpp.html">string/string_split.cpp</a>
 * :warning: <a href="library/string/trie.cpp.html">string/trie.cpp</a>
-* :warning: <a href="library/string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
+* :heavy_check_mark: <a href="library/string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
 
 
 <div id="098f6bcd4621d373cade4e832627b4f6"></div>
@@ -241,6 +241,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
 
