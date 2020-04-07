@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../library/math/finite_field_matrix.cpp.html">math/finite_field_matrix.cpp</a>
 * :heavy_check_mark: <a href="../../library/math/runtime_modint.cpp.html">math/runtime_modint.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

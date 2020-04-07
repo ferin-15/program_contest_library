@@ -144,7 +144,7 @@ layout: default
 * :warning: <a href="library/memo/cumsum.cpp.html">memo/cumsum.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
 * :warning: <a href="library/memo/int128.cpp.html">memo/int128.cpp</a>
-* :question: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="library/memo/rand.cpp.html">memo/rand.cpp</a>
 * :warning: <a href="library/memo/suffix_array.cpp.html">memo/suffix_array.cpp</a>
 * :warning: <a href="library/memo/template.cpp.html">memo/template.cpp</a>
@@ -241,6 +241,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
-* :x: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
 

@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../graph/topological.cpp.html">graph/topological.cpp</a>
-* :question: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

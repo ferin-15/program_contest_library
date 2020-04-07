@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: memo/macro.hpp
+# :heavy_check_mark: memo/macro.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -105,7 +105,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
-* :x: <a href="../../verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
 
 ## Code
