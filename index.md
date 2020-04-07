@@ -97,7 +97,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/LCA_tarjan_offline.cpp.html">graph/LCA_tarjan_offline.cpp</a>
 * :heavy_check_mark: <a href="library/graph/SCC.cpp.html">graph/SCC.cpp</a>
 * :heavy_check_mark: <a href="library/graph/articulation.cpp.html">graph/articulation.cpp</a>
-* :warning: <a href="library/graph/auxiliary_tree_based_lca.cpp.html">graph/auxiliary_tree_based_lca.cpp</a>
+* :heavy_check_mark: <a href="library/graph/auxiliary_tree_based_lca.cpp.html">graph/auxiliary_tree_based_lca.cpp</a>
 * :heavy_check_mark: <a href="library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
 * :heavy_check_mark: <a href="library/graph/boruvka.cpp.html">graph/boruvka.cpp</a>
 * :warning: <a href="library/graph/centroid_decomposition.cpp.html">graph/centroid_decomposition.cpp</a>
@@ -249,6 +249,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yuki42_3.test.cpp.html">test/yuki42_3.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki899.test.cpp.html">test/yuki899.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki901.test.cpp.html">test/yuki901.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki983.test.cpp.html">test/yuki983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
