@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="library/DP/largest_rectangle.cpp.html">DP/largest_rectangle.cpp</a>
 * :heavy_check_mark: <a href="library/DP/li_chao_segment_tree.cpp.html">DP/li_chao_segment_tree.cpp</a>
 * :heavy_check_mark: <a href="library/DP/monotone_minima.cpp.html">DP/monotone_minima.cpp</a>
-* :warning: <a href="library/DP/rerooting.cpp.html">DP/rerooting.cpp</a>
+* :heavy_check_mark: <a href="library/DP/rerooting.cpp.html">DP/rerooting.cpp</a>
 
 
 <div id="c8f6850ec2ec3fb32f203c1f4e3c2fd2"></div>
@@ -140,15 +140,11 @@ layout: default
 ### memo
 
 * :warning: <a href="library/memo/Dice.cpp.html">memo/Dice.cpp</a>
-* :warning: <a href="library/memo/LISLDS.cpp.html">memo/LISLDS.cpp</a>
-* :warning: <a href="library/memo/cumsum.cpp.html">memo/cumsum.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
 * :warning: <a href="library/memo/int128.cpp.html">memo/int128.cpp</a>
 * :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="library/memo/rand.cpp.html">memo/rand.cpp</a>
-* :warning: <a href="library/memo/suffix_array.cpp.html">memo/suffix_array.cpp</a>
 * :warning: <a href="library/memo/template.cpp.html">memo/template.cpp</a>
-* :warning: <a href="library/memo/zenhoui.cpp.html">memo/zenhoui.cpp</a>
 
 
 <div id="afa89dc4856c832f73813c3922fede93"></div>
@@ -221,6 +217,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1508.test.cpp.html">test/aoj1508.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1549.test.cpp.html">test/aoj1549.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj1595.test.cpp.html">test/aoj1595.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1617.test.cpp.html">test/aoj1617.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
