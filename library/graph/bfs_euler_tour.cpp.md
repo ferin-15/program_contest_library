@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/bfs_euler_tour.cpp
+# :x: graph/bfs_euler_tour.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-03-01 12:39:31+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/yuki899.test.cpp.html">test/yuki899.test.cpp</a>
 
 
 ## Code

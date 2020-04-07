@@ -56,7 +56,7 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/Mo_tree_vertex.cpp.html">data_structure/Mo_tree_vertex.cpp</a>
 * :warning: <a href="library/data_structure/binary_trie.cpp.html">data_structure/binary_trie.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
-* :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
+* :question: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/partial_persistent_uf.cpp.html">data_structure/partial_persistent_uf.cpp</a>
@@ -98,7 +98,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/SCC.cpp.html">graph/SCC.cpp</a>
 * :heavy_check_mark: <a href="library/graph/articulation.cpp.html">graph/articulation.cpp</a>
 * :warning: <a href="library/graph/auxiliary_tree_based_lca.cpp.html">graph/auxiliary_tree_based_lca.cpp</a>
-* :warning: <a href="library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
+* :x: <a href="library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
 * :heavy_check_mark: <a href="library/graph/boruvka.cpp.html">graph/boruvka.cpp</a>
 * :warning: <a href="library/graph/centroid_decomposition.cpp.html">graph/centroid_decomposition.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dinic.cpp.html">graph/dinic.cpp</a>
@@ -144,7 +144,7 @@ layout: default
 * :warning: <a href="library/memo/cumsum.cpp.html">memo/cumsum.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
 * :warning: <a href="library/memo/int128.cpp.html">memo/int128.cpp</a>
-* :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="library/memo/rand.cpp.html">memo/rand.cpp</a>
 * :warning: <a href="library/memo/suffix_array.cpp.html">memo/suffix_array.cpp</a>
 * :warning: <a href="library/memo/template.cpp.html">memo/template.cpp</a>
@@ -248,6 +248,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yuki42_2.test.cpp.html">test/yuki42_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki42_3.test.cpp.html">test/yuki42_3.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
+* :x: <a href="verify/test/yuki899.test.cpp.html">test/yuki899.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki983.test.cpp.html">test/yuki983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
