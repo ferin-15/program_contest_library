@@ -25,21 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DSL1A.test.cpp
+# :x: test/yuki998.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DSL1A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 12:39:31+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/yuki998.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-07 21:51:26+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
+* see: <a href="https://yukicoder.me/problems/no/998">https://yukicoder.me/problems/no/998</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/unionfind.cpp.html">data_structure/unionfind.cpp</a>
 * :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
@@ -48,27 +47,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#define PROBLEM "https://yukicoder.me/problems/no/998"
 #include "../memo/macro.hpp"
-#include "../data_structure/unionfind.cpp"
 
 signed main(void) {
-    ll n, q;
-    cin >> n >> q;
-    UnionFind uf(n);
-    while(q--) {
-        ll type;
-        cin >> type;
-        if(type == 0) {
-            ll x, y;
-            cin >> x >> y;
-            uf.unite(x, y);
-        } else {
-            ll x, y;
-            cin >> x >> y;
-            cout << uf.same(x, y) << endl;
-        }
-    }
+    vector<ll> v(4);
+    REP(i, 4) cin >> v[i];
+    sort(ALL(v));
+
+    bool flag = true;
+    FOR(i, 1, 4) if(v[i] != v[i-1]+1) flag = false;
+    if(flag) cout << "Yes" << endl;
+    else cout << "No" << endl;
 
     return 0;
 }
@@ -78,8 +68,8 @@ signed main(void) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DSL1A.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#line 1 "test/yuki998.test.cpp"
+#define PROBLEM "https://yukicoder.me/problems/no/998"
 #line 1 "memo/macro.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -92,44 +82,17 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
-#line 1 "data_structure/unionfind.cpp"
-// BEGIN CUT
-struct UnionFind {
-    vector<ll> par, s;
-    UnionFind(ll n) : par(n), s(n, 1) { iota(ALL(par), 0); }
-    ll find(ll x) {
-        if(par[x] == x) return x;
-        return par[x] = find(par[x]);
-    }
-    void unite(ll x, ll y) {
-        x = find(x), y = find(y);
-        if(x == y) return;
-        if(s[x] < s[y]) par[x] = y, s[y] += s[x];
-        else par[y] = x, s[x] += s[y];
-    }
-    bool same(int x, int y) { return find(x) == find(y); }
-    ll size(int x) { return s[find(x)]; }
-};
-// END CUT
-#line 4 "test/DSL1A.test.cpp"
+#line 3 "test/yuki998.test.cpp"
 
 signed main(void) {
-    ll n, q;
-    cin >> n >> q;
-    UnionFind uf(n);
-    while(q--) {
-        ll type;
-        cin >> type;
-        if(type == 0) {
-            ll x, y;
-            cin >> x >> y;
-            uf.unite(x, y);
-        } else {
-            ll x, y;
-            cin >> x >> y;
-            cout << uf.same(x, y) << endl;
-        }
-    }
+    vector<ll> v(4);
+    REP(i, 4) cin >> v[i];
+    sort(ALL(v));
+
+    bool flag = true;
+    FOR(i, 1, 4) if(v[i] != v[i-1]+1) flag = false;
+    if(flag) cout << "Yes" << endl;
+    else cout << "No" << endl;
 
     return 0;
 }
