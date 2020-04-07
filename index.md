@@ -125,7 +125,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="library/math/finite_field_matrix.cpp.html">math/finite_field_matrix.cpp</a>
 * :warning: <a href="library/math/fraction.cpp.html">math/fraction.cpp</a>
-* :warning: <a href="library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
+* :heavy_check_mark: <a href="library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
 * :warning: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
@@ -248,6 +248,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yuki42_2.test.cpp.html">test/yuki42_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki42_3.test.cpp.html">test/yuki42_3.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki983.test.cpp.html">test/yuki983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
 

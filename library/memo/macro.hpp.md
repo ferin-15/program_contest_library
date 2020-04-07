@@ -112,6 +112,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yuki42_2.test.cpp.html">test/yuki42_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki42_3.test.cpp.html">test/yuki42_3.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki983.test.cpp.html">test/yuki983.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
 
