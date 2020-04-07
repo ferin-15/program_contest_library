@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="../../library/graph/hld.cpp.html">graph/hld.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

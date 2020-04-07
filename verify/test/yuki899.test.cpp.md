@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/yuki899.test.cpp
+# :heavy_check_mark: test/yuki899.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yuki899.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-08 00:40:57+09:00
+    - Last commit date: 2020-04-08 00:46:34+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/899">https://yukicoder.me/problems/no/899</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
-* :x: <a href="../../library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/bfs_euler_tour.cpp.html">graph/bfs_euler_tour.cpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
@@ -53,37 +53,6 @@ layout: default
 #include "../memo/macro.hpp"
 #include "../graph/bfs_euler_tour.cpp"
 #include "../data_structure/lazysegtree.cpp"
-
-struct node {
-    ll sum, max, min, len;
-    node() : sum(0), max(-INF), min(INF), len(0) {}
-    node(ll a, ll b, ll c, ll d) : sum(a), max(b), min(c), len(d) {}
-};
-struct linear_exp {
-    using T = node;
-    using E = PII;
-    static T dt() { return node(); }
-    static constexpr E de() { return PII(1, 0); }
-    static T f(const T &a, const T &b) {
-        node ret;
-        ret.sum = a.sum + b.sum;
-        ret.min = min(a.min, b.min);
-        ret.max = max(a.max, b.max);
-        ret.len = a.len + b.len;
-        return ret;
-    }
-    static T g(const T &a, const E &b) {
-        node ret;
-        ret.sum = b.first*a.sum+b.second*a.len;
-        ret.min = b.first*a.min+b.second;
-        ret.max = b.first*a.max+b.second;
-        ret.len = a.len;
-        return ret;
-    }
-    static E h(const E &a, const E &b) {
-        return PII(b.first*a.first, b.first*a.second+b.second);
-    }
-};
 
 int main() {
     ll n;
@@ -99,7 +68,7 @@ int main() {
     tour.build();
 
     lazysegtree<linear_exp> seg(n+2);
-    seg.build(vector<node>(n+2, node(0, 0, 0, 1)));
+    seg.build(vector<node>(n+2, node(0)));
     REP(i, n) {
         tour.for_each(i, 0, [&](ll u, ll v){
             seg.update(u, v, PII(0, a[i]));
@@ -307,37 +276,6 @@ struct linear_exp {
 // END CUT
 #line 5 "test/yuki899.test.cpp"
 
-struct node {
-    ll sum, max, min, len;
-    node() : sum(0), max(-INF), min(INF), len(0) {}
-    node(ll a, ll b, ll c, ll d) : sum(a), max(b), min(c), len(d) {}
-};
-struct linear_exp {
-    using T = node;
-    using E = PII;
-    static T dt() { return node(); }
-    static constexpr E de() { return PII(1, 0); }
-    static T f(const T &a, const T &b) {
-        node ret;
-        ret.sum = a.sum + b.sum;
-        ret.min = min(a.min, b.min);
-        ret.max = max(a.max, b.max);
-        ret.len = a.len + b.len;
-        return ret;
-    }
-    static T g(const T &a, const E &b) {
-        node ret;
-        ret.sum = b.first*a.sum+b.second*a.len;
-        ret.min = b.first*a.min+b.second;
-        ret.max = b.first*a.max+b.second;
-        ret.len = a.len;
-        return ret;
-    }
-    static E h(const E &a, const E &b) {
-        return PII(b.first*a.first, b.first*a.second+b.second);
-    }
-};
-
 int main() {
     ll n;
     cin >> n;
@@ -352,7 +290,7 @@ int main() {
     tour.build();
 
     lazysegtree<linear_exp> seg(n+2);
-    seg.build(vector<node>(n+2, node(0, 0, 0, 1)));
+    seg.build(vector<node>(n+2, node(0)));
     REP(i, n) {
         tour.for_each(i, 0, [&](ll u, ll v){
             seg.update(u, v, PII(0, a[i]));

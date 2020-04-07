@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/modint.cpp.html">math/modint.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="../../library/string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
 
 

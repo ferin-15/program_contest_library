@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: data_structure/lazysegtree.cpp
+# :heavy_check_mark: data_structure/lazysegtree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -49,7 +49,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL5D.test.cpp.html">test/GRL5D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL5E.test.cpp.html">test/GRL5E.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2667.test.cpp.html">test/aoj2667.test.cpp</a>
-* :x: <a href="../../verify/test/yuki899.test.cpp.html">test/yuki899.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki899.test.cpp.html">test/yuki899.test.cpp</a>
 
 
 ## Code

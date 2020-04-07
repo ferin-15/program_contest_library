@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../library/data_structure/sparse_table.cpp.html">data_structure/sparse_table.cpp</a>
 * :heavy_check_mark: <a href="../../library/graph/LCA_sparsetable.cpp.html">graph/LCA_sparsetable.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
