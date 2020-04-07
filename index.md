@@ -53,7 +53,6 @@ layout: default
 
 * :heavy_check_mark: <a href="library/data_structure/BIT.cpp.html">data_structure/BIT.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/Mo.cpp.html">data_structure/Mo.cpp</a>
-* :warning: <a href="library/data_structure/Mo_Tree_Vertex.cpp.html">data_structure/Mo_Tree_Vertex.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/Mo_tree_vertex.cpp.html">data_structure/Mo_tree_vertex.cpp</a>
 * :warning: <a href="library/data_structure/binary_trie.cpp.html">data_structure/binary_trie.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
