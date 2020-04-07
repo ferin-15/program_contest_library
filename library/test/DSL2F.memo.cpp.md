@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
-* :question: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
