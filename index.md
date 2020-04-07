@@ -246,6 +246,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki42_1.test.cpp.html">test/yuki42_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki42_2.test.cpp.html">test/yuki42_2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki42_3.test.cpp.html">test/yuki42_3.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki599.test.cpp.html">test/yuki599.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki998.test.cpp.html">test/yuki998.test.cpp</a>
 
