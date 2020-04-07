@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/LCA_tarjan_offline.cpp.html">graph/LCA_tarjan_offline.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

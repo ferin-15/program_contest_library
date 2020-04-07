@@ -122,17 +122,17 @@ layout: default
 * :warning: <a href="library/math/FPS.cpp.html">math/FPS.cpp</a>
 * :heavy_check_mark: <a href="library/math/NTT.cpp.html">math/NTT.cpp</a>
 * :heavy_check_mark: <a href="library/math/binary_matrix.cpp.html">math/binary_matrix.cpp</a>
-* :heavy_check_mark: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
+* :question: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="library/math/finite_field_matrix.cpp.html">math/finite_field_matrix.cpp</a>
 * :warning: <a href="library/math/fraction.cpp.html">math/fraction.cpp</a>
 * :warning: <a href="library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
 * :warning: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :warning: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
-* :heavy_check_mark: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
+* :question: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
 * :warning: <a href="library/math/real_number_matrix.cpp.html">math/real_number_matrix.cpp</a>
 * :heavy_check_mark: <a href="library/math/runtime_modint.cpp.html">math/runtime_modint.cpp</a>
-* :warning: <a href="library/math/sum_of_powers.cpp.html">math/sum_of_powers.cpp</a>
+* :x: <a href="library/math/sum_of_powers.cpp.html">math/sum_of_powers.cpp</a>
 
 
 <div id="d504a5ea65b088497578bdd812714d51"></div>
@@ -144,7 +144,7 @@ layout: default
 * :warning: <a href="library/memo/cumsum.cpp.html">memo/cumsum.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
 * :warning: <a href="library/memo/int128.cpp.html">memo/int128.cpp</a>
-* :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="library/memo/rand.cpp.html">memo/rand.cpp</a>
 * :warning: <a href="library/memo/suffix_array.cpp.html">memo/suffix_array.cpp</a>
 * :warning: <a href="library/memo/template.cpp.html">memo/template.cpp</a>
@@ -235,6 +235,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2674_1.test.cpp.html">test/aoj2674_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2873.test.cpp.html">test/aoj2873.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
+* :x: <a href="verify/test/aoj2987.test.cpp.html">test/aoj2987.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
