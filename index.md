@@ -120,7 +120,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/CRT.cpp.html">math/CRT.cpp</a>
 * :heavy_check_mark: <a href="library/math/FFT.cpp.html">math/FFT.cpp</a>
 * :warning: <a href="library/math/FPS.cpp.html">math/FPS.cpp</a>
-* :heavy_check_mark: <a href="library/math/NTT.cpp.html">math/NTT.cpp</a>
+* :x: <a href="library/math/NTT.cpp.html">math/NTT.cpp</a>
 * :heavy_check_mark: <a href="library/math/binary_matrix.cpp.html">math/binary_matrix.cpp</a>
 * :heavy_check_mark: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="library/math/finite_field_matrix.cpp.html">math/finite_field_matrix.cpp</a>
@@ -129,7 +129,7 @@ layout: default
 * :warning: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
-* :heavy_check_mark: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
+* :question: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
 * :warning: <a href="library/math/real_number_matrix.cpp.html">math/real_number_matrix.cpp</a>
 * :heavy_check_mark: <a href="library/math/runtime_modint.cpp.html">math/runtime_modint.cpp</a>
 * :heavy_check_mark: <a href="library/math/sum_of_powers.cpp.html">math/sum_of_powers.cpp</a>
@@ -142,7 +142,7 @@ layout: default
 * :warning: <a href="library/memo/Dice.cpp.html">memo/Dice.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
 * :warning: <a href="library/memo/int128.cpp.html">memo/int128.cpp</a>
-* :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="library/memo/rand.cpp.html">memo/rand.cpp</a>
 * :warning: <a href="library/memo/template.cpp.html">memo/template.cpp</a>
 
@@ -234,7 +234,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2983.test.cpp.html">test/aoj2983.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2987.test.cpp.html">test/aoj2987.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2987_2.test.cpp.html">test/aoj2987_2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :x: <a href="verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>

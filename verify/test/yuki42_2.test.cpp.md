@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yuki42_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-08 00:15:33+09:00
+    - Last commit date: 2020-04-08 16:27:33+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/42">https://yukicoder.me/problems/no/42</a>
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
-* :heavy_check_mark: <a href="../../library/math/modint.cpp.html">math/modint.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="../../library/math/modint.cpp.html">math/modint.cpp</a>
+* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code
@@ -111,9 +111,9 @@ struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "math/modint.cpp"
 // BEGIN CUT
-template<ll MOD>
+template<int MOD>
 struct modint {
-    ll x;
+    int x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }
@@ -158,9 +158,9 @@ struct modint {
     }
     modint &operator*=(modint r) {
     #if !defined(_WIN32) || defined(_WIN64)
-        x = x * r.x % MOD; return *this;
+        x = (ll)x * r.x % MOD; return *this;
     #endif
-        unsigned long long y = x * r.x;
+        unsigned long long y = (unsigned long long)x * r.x;
         unsigned xh = (unsigned) (y >> 32), xl = (unsigned) y, d, m;
         asm(
             "divl %4; \n\t"

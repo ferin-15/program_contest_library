@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

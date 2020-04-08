@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/hld.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 12:39:31+09:00
+    - Last commit date: 2020-04-08 16:27:33+09:00
 
 
 
@@ -94,7 +94,7 @@ public:
     void for_each(ll u, ll v, const function<void(ll,ll)>& f) {
         while(1){
             if(vid[u]>vid[v]) swap(u,v);
-            f(max(vid[head[v]], vid[u]), vid[v]); // 開区間!!!
+            f(max(vid[head[v]], vid[u]), vid[v]); // 閉区間!!!
             if(head[u]!=head[v]) v = par[head[v]];
             else break;
         }
@@ -104,10 +104,10 @@ public:
         while(1) {
             if(vid[u]>vid[v]) swap(u,v);
             if(head[u]!=head[v]) {
-                f(vid[head[v]], vid[v]); // 開区間!!!
+                f(vid[head[v]], vid[v]); // 閉区間!!!
                 v = par[head[v]];
             } else {
-                if(u!=v) f(vid[u]+1, vid[v]); // 開区間!!!
+                if(u!=v) f(vid[u]+1, vid[v]); // 閉区間!!!
                 break;
             }
         }
@@ -175,7 +175,7 @@ public:
     void for_each(ll u, ll v, const function<void(ll,ll)>& f) {
         while(1){
             if(vid[u]>vid[v]) swap(u,v);
-            f(max(vid[head[v]], vid[u]), vid[v]); // 開区間!!!
+            f(max(vid[head[v]], vid[u]), vid[v]); // 閉区間!!!
             if(head[u]!=head[v]) v = par[head[v]];
             else break;
         }
@@ -185,10 +185,10 @@ public:
         while(1) {
             if(vid[u]>vid[v]) swap(u,v);
             if(head[u]!=head[v]) {
-                f(vid[head[v]], vid[v]); // 開区間!!!
+                f(vid[head[v]], vid[v]); // 閉区間!!!
                 v = par[head[v]];
             } else {
-                if(u!=v) f(vid[u]+1, vid[v]); // 開区間!!!
+                if(u!=v) f(vid[u]+1, vid[v]); // 閉区間!!!
                 break;
             }
         }
