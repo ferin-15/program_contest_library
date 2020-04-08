@@ -34,6 +34,8 @@ struct Mo {
         return order[ptr++];
     }
 };
+/* 区間に対するオフラインクエリ 区間の伸縮が高速にできる場合使えるかも
+部分木クエリとか辺属性パスクエリとかでもオイラーツアーで数列にすればok */
 // END CUT
 
 namespace cf221div1d {

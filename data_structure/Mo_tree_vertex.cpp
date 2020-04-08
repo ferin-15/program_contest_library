@@ -68,6 +68,7 @@ struct Mo_Tree_Vertex {
             }
         }
     }
+    // パスx,yのクエリ
     void insert(int x, int y) {
         if(in[x] > in[y]) swap(x, y);
         left.push_back(in[x] + 1);
