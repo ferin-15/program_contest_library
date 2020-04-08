@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yuki599.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-08 16:27:33+09:00
+    - Last commit date: 2020-04-08 17:47:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/599">https://yukicoder.me/problems/no/599</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/math/modint.cpp.html">math/modint.cpp</a>
-* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/modint.cpp.html">math/modint.cpp</a>
+* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 * :heavy_check_mark: <a href="../../library/string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
 
 
@@ -95,9 +95,9 @@ struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 const ll INF = 1LL<<60;
 #line 1 "math/modint.cpp"
 // BEGIN CUT
-template<int MOD>
+template<ll MOD>
 struct modint {
-    int x;
+    ll x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo_tree_vertex.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 22:02:28+09:00
+    - Last commit date: 2020-04-08 17:56:23+09:00
 
 
 
@@ -116,6 +116,7 @@ struct Mo_Tree_Vertex {
             }
         }
     }
+    // パスx,yのクエリ
     void insert(int x, int y) {
         if(in[x] > in[y]) swap(x, y);
         left.push_back(in[x] + 1);
@@ -221,6 +222,7 @@ struct Mo_Tree_Vertex {
             }
         }
     }
+    // パスx,yのクエリ
     void insert(int x, int y) {
         if(in[x] > in[y]) swap(x, y);
         left.push_back(in[x] + 1);

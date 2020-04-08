@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: math/modint.cpp
+# :heavy_check_mark: math/modint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-08 16:27:33+09:00
+    - Last commit date: 2020-04-08 17:47:46+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj2987.test.cpp.html">test/aoj2987.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2987_2.test.cpp.html">test/aoj2987_2.test.cpp</a>
-* :x: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj2996.test.cpp.html">test/aoj2996.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_0.test.cpp.html">test/aoj2996_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki42_1.test.cpp.html">test/yuki42_1.test.cpp</a>
@@ -55,9 +55,9 @@ layout: default
 {% raw %}
 ```cpp
 // BEGIN CUT
-template<int MOD>
+template<ll MOD>
 struct modint {
-    int x;
+    ll x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }
@@ -193,9 +193,9 @@ struct modint {
 ```cpp
 #line 1 "math/modint.cpp"
 // BEGIN CUT
-template<int MOD>
+template<ll MOD>
 struct modint {
-    int x;
+    ll x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }

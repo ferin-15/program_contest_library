@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/Mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 12:39:31+09:00
+    - Last commit date: 2020-04-08 17:56:23+09:00
 
 
 
@@ -82,6 +82,8 @@ struct Mo {
         return order[ptr++];
     }
 };
+/* 区間に対するオフラインクエリ 区間の伸縮が高速にできる場合使えるかも
+部分木クエリとか辺属性パスクエリとかでもオイラーツアーで数列にすればok */
 // END CUT
 
 namespace cf221div1d {
@@ -267,6 +269,8 @@ struct Mo {
         return order[ptr++];
     }
 };
+/* 区間に対するオフラインクエリ 区間の伸縮が高速にできる場合使えるかも
+部分木クエリとか辺属性パスクエリとかでもオイラーツアーで数列にすればok */
 // END CUT
 
 namespace cf221div1d {
