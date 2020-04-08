@@ -40,7 +40,6 @@ layout: default
 
 * :heavy_check_mark: <a href="library/DP/convex_hull_trick.cpp.html">DP/convex_hull_trick.cpp</a>
 * :warning: <a href="library/DP/divide_and_conquer.cpp.html">DP/divide_and_conquer.cpp</a>
-* :warning: <a href="library/DP/largest_Rectangle.cpp.html">DP/largest_Rectangle.cpp</a>
 * :heavy_check_mark: <a href="library/DP/largest_rectangle.cpp.html">DP/largest_rectangle.cpp</a>
 * :heavy_check_mark: <a href="library/DP/li_chao_segment_tree.cpp.html">DP/li_chao_segment_tree.cpp</a>
 * :heavy_check_mark: <a href="library/DP/monotone_minima.cpp.html">DP/monotone_minima.cpp</a>
