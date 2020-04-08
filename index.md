@@ -238,6 +238,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj2996_1.test.cpp.html">test/aoj2996_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-2SAT.test.cpp.html">test/yosupo-2SAT.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-maximumIndependentSet.test.cpp.html">test/yosupo-maximumIndependentSet.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo-sqrt_mod.test.cpp.html">test/yosupo-sqrt_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-unionfind.test.cpp.html">test/yosupo-unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo-vertexaddsubtreesum.test.cpp.html">test/yosupo-vertexaddsubtreesum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki42_1.test.cpp.html">test/yuki42_1.test.cpp</a>
