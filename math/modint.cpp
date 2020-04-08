@@ -1,7 +1,7 @@
 // BEGIN CUT
-template<ll MOD>
+template<int MOD>
 struct modint {
-    ll x;
+    int x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }
@@ -46,9 +46,9 @@ struct modint {
     }
     modint &operator*=(modint r) {
     #if !defined(_WIN32) || defined(_WIN64)
-        x = x * r.x % MOD; return *this;
+        x = (ll)x * r.x % MOD; return *this;
     #endif
-        unsigned long long y = x * r.x;
+        unsigned long long y = (unsigned long long)x * r.x;
         unsigned xh = (unsigned) (y >> 32), xl = (unsigned) y, d, m;
         asm(
             "divl %4; \n\t"

@@ -43,7 +43,7 @@ public:
     void for_each(ll u, ll v, const function<void(ll,ll)>& f) {
         while(1){
             if(vid[u]>vid[v]) swap(u,v);
-            f(max(vid[head[v]], vid[u]), vid[v]); // 開区間!!!
+            f(max(vid[head[v]], vid[u]), vid[v]); // 閉区間!!!
             if(head[u]!=head[v]) v = par[head[v]];
             else break;
         }
@@ -53,10 +53,10 @@ public:
         while(1) {
             if(vid[u]>vid[v]) swap(u,v);
             if(head[u]!=head[v]) {
-                f(vid[head[v]], vid[v]); // 開区間!!!
+                f(vid[head[v]], vid[v]); // 閉区間!!!
                 v = par[head[v]];
             } else {
-                if(u!=v) f(vid[u]+1, vid[v]); // 開区間!!!
+                if(u!=v) f(vid[u]+1, vid[v]); // 閉区間!!!
                 break;
             }
         }
