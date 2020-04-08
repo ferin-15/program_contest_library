@@ -1,7 +1,7 @@
 // BEGIN CUT
-template<int MOD>
+template<ll MOD>
 struct modint {
-    int x;
+    ll x;
     modint(): x(0) {}
     modint(ll y) : x(y>=0 ? y%MOD : y%MOD+MOD) {}
     static constexpr ll mod() { return MOD; }
