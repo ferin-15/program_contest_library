@@ -60,6 +60,7 @@
 "test/aoj2996_1.test.cpp": "2020-04-08 17:47:46 +0900",
 "test/yosupo-2SAT.test.cpp": "2020-03-01 12:39:31 +0900",
 "test/yosupo-maximumIndependentSet.test.cpp": "2020-03-01 12:39:31 +0900",
+"test/yosupo-sqrt_mod.test.cpp": "2020-04-08 18:10:23 +0900",
 "test/yosupo-unionfind.test.cpp": "2020-03-01 12:39:31 +0900",
 "test/yosupo-vertexaddsubtreesum.test.cpp": "2020-03-01 12:39:31 +0900",
 "test/yuki42_1.test.cpp": "2020-04-08 17:47:46 +0900",
