@@ -1,8 +1,0 @@
-test/ALDS1_10_A.test.cpp test/DPL3B.test.cpp test/DPL3C.test.cpp test/DSL1A.test.cpp test/DSL2A_0.test.cpp test/DSL2A_1.test.cpp test/DSL2B_0.test.cpp test/DSL2B_1.test.cpp
-DSL2B_2.test.cpp test/DSL2F.memo.cpp test/DSL2F.test.cpp test/DSL2G_0.test.cpp test/DSL2G_1.test.cpp test/DSL2H_0.test.cpp test/DSL2H_1.test.cpp test/DSL2I_0.test.cpp
-DSL2I_1.test.cpp test/DSL3D.test.cpp test/DSL3D_1.test.cpp test/GRL2A.test.cpp test/GRL3A.test.cpp test/GRL3B.test.cpp test/GRL3C.test.cpp test/GRL4B.memo.cpp
-GRL5C_0.test.cpp test/GRL5C_1.test.cpp test/GRL5C_2.test.cpp test/GRL5C_3.test.cpp test/GRL5D.test.cpp test/GRL5E.test.cpp test/GRL6A_0.test.cpp test/GRL6A_1.test.cpp
-GRL6A_2.test.cpp test/GRL6B.test.cpp test/aoj0425.test.cpp test/aoj0575_0.test.cpp test/aoj0575_1.test.cpp test/aoj1308.test.cpp test/aoj1501.test.cpp test/aoj1508.test.cpp
-aoj1549.test.cpp test/aoj2235.test.cpp test/aoj2270.test.cpp test/aoj2444.test.cpp test/aoj2450.test.cpp test/aoj2580_0.test.cpp test/aoj2580_1.test.cpp test/aoj2603.test.cpp
-aoj2659.test.cpp test/aoj2667.test.cpp test/aoj2674.test.cpp test/aoj2674_1.test.cpp test/aoj2873.test.cpp test/aoj2983.test.cpp test/aoj2991.memo.cpp test/aoj2996.test.cpp
-aoj2996_0.test.cpp test/aoj2996_1.test.cpp test/sqrt_mod.memo.cpp test/yosupo-2SAT.test.cpp test/yosupo-maximumIndependentSet.test.cpp test/yosupo-vertexaddsubtreesum.test.cpp
