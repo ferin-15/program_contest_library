@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/memo/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-16 19:25:39+09:00
+    - Last commit date: 2020-04-12 17:37:10+09:00
 
 
 
@@ -51,7 +51,7 @@ using PII = pair<ll, ll>;
 template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
-#ifdef DEBUG_ 
+#ifdef DEBUG
 #include "../program_contest_library/memo/dump.hpp"
 #else
 #define dump(...)

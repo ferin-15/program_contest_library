@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="../test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_10_A.test.cpp.html">test/ALDS1_10_A.test.cpp</a>

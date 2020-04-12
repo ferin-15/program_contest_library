@@ -172,7 +172,6 @@ layout: default
 * :warning: <a href="library/test/DSL2F.memo.cpp.html">test/DSL2F.memo.cpp</a>
 * :warning: <a href="library/test/GRL4B.memo.cpp.html">test/GRL4B.memo.cpp</a>
 * :warning: <a href="library/test/aoj2991.memo.cpp.html">test/aoj2991.memo.cpp</a>
-* :warning: <a href="library/test/sqrt_mod.memo.cpp.html">test/sqrt_mod.memo.cpp</a>
 
 
 ## Verify Files
