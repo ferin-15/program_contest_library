@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/memo/dump.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 02:13:07+09:00
+    - Last commit date: 2020-04-13 00:08:42+09:00
 
 
 
@@ -47,6 +47,10 @@ ostream &operator <<(ostream& out, const pair<S,T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const vector<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '['; 
     REP(i, a.size()) {
         out << a[i];
@@ -57,6 +61,10 @@ ostream &operator <<(ostream& out, const vector<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const deque<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '['; 
     REP(i, a.size()) {
         out << a[i];
@@ -67,6 +75,10 @@ ostream &operator <<(ostream& out, const deque<T>& a){
 }
 template<>
 ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << endl;
     REP(i, a.size()) {
         out << "i=" << i << " " << a[i];
@@ -76,6 +88,10 @@ ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
 }
 template<>
 ostream &operator<< <vector<PII>>(ostream& out, const vector<vector<PII>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << endl;
     REP(i, a.size()) {
         out << "i=" << i << " " << a[i];
@@ -85,6 +101,10 @@ ostream &operator<< <vector<PII>>(ostream& out, const vector<vector<PII>>& a){
 }
 template<class T, class S>
 ostream &operator <<(ostream& out, const map<T,S>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -95,6 +115,10 @@ ostream &operator <<(ostream& out, const map<T,S>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const set<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -105,6 +129,10 @@ ostream &operator <<(ostream& out, const set<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const multiset<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -115,6 +143,10 @@ ostream &operator <<(ostream& out, const multiset<T>& a){
 }
 template<class T, class S>
 ostream &operator <<(ostream& out, const unordered_map<T,S>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -125,6 +157,10 @@ ostream &operator <<(ostream& out, const unordered_map<T,S>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const unordered_set<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -135,6 +171,10 @@ ostream &operator <<(ostream& out, const unordered_set<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const queue<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -146,6 +186,10 @@ ostream &operator <<(ostream& out, const queue<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const stack<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -157,6 +201,10 @@ ostream &operator <<(ostream& out, const stack<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const priority_queue<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -168,6 +216,10 @@ ostream &operator <<(ostream& out, const priority_queue<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -204,6 +256,10 @@ ostream &operator <<(ostream& out, const pair<S,T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const vector<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '['; 
     REP(i, a.size()) {
         out << a[i];
@@ -214,6 +270,10 @@ ostream &operator <<(ostream& out, const vector<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const deque<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '['; 
     REP(i, a.size()) {
         out << a[i];
@@ -224,6 +284,10 @@ ostream &operator <<(ostream& out, const deque<T>& a){
 }
 template<>
 ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << endl;
     REP(i, a.size()) {
         out << "i=" << i << " " << a[i];
@@ -233,6 +297,10 @@ ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
 }
 template<>
 ostream &operator<< <vector<PII>>(ostream& out, const vector<vector<PII>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << endl;
     REP(i, a.size()) {
         out << "i=" << i << " " << a[i];
@@ -242,6 +310,10 @@ ostream &operator<< <vector<PII>>(ostream& out, const vector<vector<PII>>& a){
 }
 template<class T, class S>
 ostream &operator <<(ostream& out, const map<T,S>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -252,6 +324,10 @@ ostream &operator <<(ostream& out, const map<T,S>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const set<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -262,6 +338,10 @@ ostream &operator <<(ostream& out, const set<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const multiset<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -272,6 +352,10 @@ ostream &operator <<(ostream& out, const multiset<T>& a){
 }
 template<class T, class S>
 ostream &operator <<(ostream& out, const unordered_map<T,S>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -282,6 +366,10 @@ ostream &operator <<(ostream& out, const unordered_map<T,S>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const unordered_set<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     out << '{'; 
     for(auto itr=a.begin(); itr!=a.end(); ++itr) {
         out << *itr;
@@ -292,6 +380,10 @@ ostream &operator <<(ostream& out, const unordered_set<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const queue<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -303,6 +395,10 @@ ostream &operator <<(ostream& out, const queue<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const stack<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -314,6 +410,10 @@ ostream &operator <<(ostream& out, const stack<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const priority_queue<T>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
@@ -325,6 +425,10 @@ ostream &operator <<(ostream& out, const priority_queue<T>& a){
 }
 template<class T>
 ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
     auto b(a);
     out << "[";
     while(b.size()) {
