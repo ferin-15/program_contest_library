@@ -54,6 +54,7 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/Mo.cpp.html">data_structure/Mo.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/Mo_tree_vertex.cpp.html">data_structure/Mo_tree_vertex.cpp</a>
 * :warning: <a href="library/data_structure/binary_trie.cpp.html">data_structure/binary_trie.cpp</a>
+* :warning: <a href="library/data_structure/csum2d.cpp.html">data_structure/csum2d.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/dynamic_connectivity.cpp.html">data_structure/dynamic_connectivity.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
