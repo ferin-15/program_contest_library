@@ -121,6 +121,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/FFT.cpp.html">math/FFT.cpp</a>
 * :warning: <a href="library/math/FPS.cpp.html">math/FPS.cpp</a>
 * :heavy_check_mark: <a href="library/math/NTT.cpp.html">math/NTT.cpp</a>
+* :warning: <a href="library/math/baby_step_giant_step.cpp.html">math/baby_step_giant_step.cpp</a>
 * :heavy_check_mark: <a href="library/math/binary_matrix.cpp.html">math/binary_matrix.cpp</a>
 * :heavy_check_mark: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="library/math/finite_field_matrix.cpp.html">math/finite_field_matrix.cpp</a>
@@ -130,6 +131,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
 * :heavy_check_mark: <a href="library/math/modint.cpp.html">math/modint.cpp</a>
+* :warning: <a href="library/math/modpow.cpp.html">math/modpow.cpp</a>
 * :warning: <a href="library/math/real_number_matrix.cpp.html">math/real_number_matrix.cpp</a>
 * :heavy_check_mark: <a href="library/math/runtime_modint.cpp.html">math/runtime_modint.cpp</a>
 * :heavy_check_mark: <a href="library/math/sum_of_powers.cpp.html">math/sum_of_powers.cpp</a>
