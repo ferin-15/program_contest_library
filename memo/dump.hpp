@@ -213,11 +213,17 @@ ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>
     return out;
 }
 
+ll debug_dump_cnt = 0;
 void dump_func() {
-    cerr << endl;
+    debug_dump_cnt++;
+    cerr << "\n";
 }
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
+    if(debug_dump_cnt > 1000) {
+        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        return;
+    } 
     cerr << head;
     if (sizeof...(Tail) > 0) {
         cerr << ", ";
