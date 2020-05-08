@@ -31,6 +31,32 @@ ostream &operator <<(ostream& out, const deque<T>& a){
     return out;
 }
 template<>
+ostream &operator<< <string>(ostream& out, const vector<string>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
+    return out;
+}
+template<>
+ostream &operator<< <vector<int>>(ostream& out, const vector<vector<int>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
+    return out;
+}
+template<>
 ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
     if(a.size() >= 1000) {
         out << "many elements";
