@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/memo/dump.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-13 00:08:42+09:00
+    - Last commit date: 2020-05-08 16:02:10+09:00
 
 
 
@@ -71,6 +71,32 @@ ostream &operator <<(ostream& out, const deque<T>& a){
         if(i+1!=(ll)a.size()) out << ",";
     }
     out << ']';
+    return out;
+}
+template<>
+ostream &operator<< <string>(ostream& out, const vector<string>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
+    return out;
+}
+template<>
+ostream &operator<< <vector<int>>(ostream& out, const vector<vector<int>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
     return out;
 }
 template<>
@@ -230,11 +256,17 @@ ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>
     return out;
 }
 
+ll debug_dump_cnt = 0;
 void dump_func() {
-    cerr << endl;
+    debug_dump_cnt++;
+    cerr << "\n";
 }
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
+    if(debug_dump_cnt > 1000) {
+        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        return;
+    } 
     cerr << head;
     if (sizeof...(Tail) > 0) {
         cerr << ", ";
@@ -283,6 +315,32 @@ ostream &operator <<(ostream& out, const deque<T>& a){
     return out;
 }
 template<>
+ostream &operator<< <string>(ostream& out, const vector<string>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
+    return out;
+}
+template<>
+ostream &operator<< <vector<int>>(ostream& out, const vector<vector<int>>& a){
+    if(a.size() >= 1000) {
+        out << "many elements";
+        return out;
+    }
+    out << endl;
+    REP(i, a.size()) {
+        out << "i=" << i << " " << a[i];
+        if(i+1!=(ll)a.size()) out << endl;
+    }
+    return out;
+}
+template<>
 ostream &operator<< <vector<ll>>(ostream& out, const vector<vector<ll>>& a){
     if(a.size() >= 1000) {
         out << "many elements";
@@ -439,11 +497,17 @@ ostream &operator <<(ostream& out, const priority_queue<T, vector<T>, greater<T>
     return out;
 }
 
+ll debug_dump_cnt = 0;
 void dump_func() {
-    cerr << endl;
+    debug_dump_cnt++;
+    cerr << "\n";
 }
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
+    if(debug_dump_cnt > 1000) {
+        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        return;
+    } 
     cerr << head;
     if (sizeof...(Tail) > 0) {
         cerr << ", ";
