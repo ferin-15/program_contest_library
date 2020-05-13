@@ -221,7 +221,10 @@ void dump_func() {
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
     if(debug_dump_cnt > 1000) {
-        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        if(debug_dump_cnt == 1001) {
+            cerr << "many dump\n";
+            debug_dump_cnt++;
+        }
         return;
     } 
     cerr << head;
