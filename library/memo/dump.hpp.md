@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d504a5ea65b088497578bdd812714d51">memo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/memo/dump.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-08 16:02:10+09:00
+    - Last commit date: 2020-05-13 12:20:59+09:00
 
 
 
@@ -264,7 +264,10 @@ void dump_func() {
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
     if(debug_dump_cnt > 1000) {
-        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        if(debug_dump_cnt == 1001) {
+            cerr << "many dump\n";
+            debug_dump_cnt++;
+        }
         return;
     } 
     cerr << head;
@@ -505,7 +508,10 @@ void dump_func() {
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&... tail) {
     if(debug_dump_cnt > 1000) {
-        if(debug_dump_cnt == 1001) cerr << "many dump\n";
+        if(debug_dump_cnt == 1001) {
+            cerr << "many dump\n";
+            debug_dump_cnt++;
+        }
         return;
     } 
     cerr << head;

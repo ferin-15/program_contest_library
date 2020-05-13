@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/rolling_hash.cpp
+# :warning: string/rolling_hash.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/rolling_hash.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-26 21:21:51+09:00
+    - Last commit date: 2020-05-13 12:24:02+09:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 
 
 ## Code
@@ -50,7 +45,7 @@ layout: default
 class rollingHash {
 private:
     static constexpr ll mod = (1LL<<61) - 1;
-    const ll base;
+    static ll base;
     vector<ll> hash, p;
 
     ll mul(ll a, ll b) {
@@ -66,7 +61,8 @@ private:
     }
 
 public:
-    rollingHash(const string &s) : base(rnd(2, 100000)), hash(s.size()+1), p(s.size()+1,1) {
+    rollingHash(const string &s) : hash(s.size()+1), p(s.size()+1, 1) {
+        if(base == -1) base = rnd(2, 100000);
         REP(i, s.size()) {
             hash[i+1] = calcmod(mul(hash[i], base)+s[i]);
             p[i+1] = calcmod(mul(p[i], base));
@@ -80,6 +76,7 @@ public:
         return calcmod(mul(h1, p[h2len]) + h2);
     }
 };
+ll rollingHash::base = -1;
 // END CUT
 ```
 {% endraw %}
@@ -92,7 +89,7 @@ public:
 class rollingHash {
 private:
     static constexpr ll mod = (1LL<<61) - 1;
-    const ll base;
+    static ll base;
     vector<ll> hash, p;
 
     ll mul(ll a, ll b) {
@@ -108,7 +105,8 @@ private:
     }
 
 public:
-    rollingHash(const string &s) : base(rnd(2, 100000)), hash(s.size()+1), p(s.size()+1,1) {
+    rollingHash(const string &s) : hash(s.size()+1), p(s.size()+1, 1) {
+        if(base == -1) base = rnd(2, 100000);
         REP(i, s.size()) {
             hash[i+1] = calcmod(mul(hash[i], base)+s[i]);
             p[i+1] = calcmod(mul(p[i], base));
@@ -122,6 +120,7 @@ public:
         return calcmod(mul(h1, p[h2len]) + h2);
     }
 };
+ll rollingHash::base = -1;
 // END CUT
 
 ```
