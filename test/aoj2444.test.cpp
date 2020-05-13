@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2444"
 #include "../memo/macro.hpp"
-#include "../memo/rand.cpp"
+#include "../tools/rand.cpp"
 #include "../string/rolling_hash.cpp"
 
 signed main(void) {
