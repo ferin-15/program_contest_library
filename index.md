@@ -170,7 +170,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/string/aho_corasick.cpp.html">string/aho_corasick.cpp</a>
 * :warning: <a href="library/string/parse_tree.cpp.html">string/parse_tree.cpp</a>
-* :warning: <a href="library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 * :heavy_check_mark: <a href="library/string/string_split.cpp.html">string/string_split.cpp</a>
 * :warning: <a href="library/string/trie.cpp.html">string/trie.cpp</a>
 * :heavy_check_mark: <a href="library/string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
@@ -190,7 +190,7 @@ layout: default
 ### tools
 
 * :warning: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
-* :warning: <a href="library/tools/rand.cpp.html">tools/rand.cpp</a>
+* :heavy_check_mark: <a href="library/tools/rand.cpp.html">tools/rand.cpp</a>
 * :warning: <a href="library/tools/template.cpp.html">tools/template.cpp</a>
 
 
@@ -239,7 +239,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj1617.test.cpp.html">test/aoj1617.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2235.test.cpp.html">test/aoj2235.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2270.test.cpp.html">test/aoj2270.test.cpp</a>
-* :x: <a href="verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2450.test.cpp.html">test/aoj2450.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_0.test.cpp.html">test/aoj2580_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj2580_1.test.cpp.html">test/aoj2580_1.test.cpp</a>

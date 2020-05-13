@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/rand.cpp
+# :heavy_check_mark: tools/rand.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-05-13 12:24:02+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj2444.test.cpp.html">test/aoj2444.test.cpp</a>
 
 
 ## Code
