@@ -48,7 +48,7 @@ signed main(void) {
 
     // i番目の距離の辺まで追加した
     vector<ll> trans(xs.size());
-    partialPersistentUF uf(n);
+    partial_persistent_uf uf(n);
     for(ll i=(ll)xs.size()-1; i>=0; --i) {
         trans[i] = (i+1==(ll)xs.size()?0:trans[i+1]) + v[i].size();
         for(auto j: v[i]) uf.unite(a[j], b[j]);
