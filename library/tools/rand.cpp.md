@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/rand.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 12:24:02+09:00
+    - Last commit date: 2020-05-20 15:44:25+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BEGIN CUT
 struct dice {
     mt19937 mt;
     dice() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
@@ -55,7 +56,7 @@ struct dice {
         return dist(mt);
     }
 } rnd;
-
+// END CUT
 ```
 {% endraw %}
 
@@ -63,6 +64,7 @@ struct dice {
 {% raw %}
 ```cpp
 #line 1 "tools/rand.cpp"
+// BEGIN CUT
 struct dice {
     mt19937 mt;
     dice() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
@@ -72,6 +74,7 @@ struct dice {
         return dist(mt);
     }
 } rnd;
+// END CUT
 
 ```
 {% endraw %}

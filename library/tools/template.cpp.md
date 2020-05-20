@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 12:24:02+09:00
+    - Last commit date: 2020-05-20 15:44:25+09:00
 
 
 
@@ -52,7 +52,7 @@ template<typename T> void chmin(T &a, const T &b) { a = min(a, b); }
 template<typename T> void chmax(T &a, const T &b) { a = max(a, b); }
 struct FastIO {FastIO() { cin.tie(0); ios::sync_with_stdio(0); }}fastiofastio;
 #ifdef DEBUG
-#include "../program_contest_library/memo/dump.hpp"
+#include "../../program_contest_library/memo/dump.hpp"
 #else
 #define dump(...)
 #endif
