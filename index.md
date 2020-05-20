@@ -60,7 +60,7 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/lazysegtree.cpp.html">data_structure/lazysegtree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree.cpp.html">data_structure/linkcuttree.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/linkcuttree_subtree.cpp.html">data_structure/linkcuttree_subtree.cpp</a>
-* :heavy_check_mark: <a href="library/data_structure/partial_persistent_uf.cpp.html">data_structure/partial_persistent_uf.cpp</a>
+* :x: <a href="library/data_structure/partial_persistent_uf.cpp.html">data_structure/partial_persistent_uf.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/persistent_uf.cpp.html">data_structure/persistent_uf.cpp</a>
 * :heavy_check_mark: <a href="library/data_structure/rbst.cpp.html">data_structure/rbst.cpp</a>
 * :warning: <a href="library/data_structure/segment_tree_beats.cpp.html">data_structure/segment_tree_beats.cpp</a>
@@ -138,6 +138,7 @@ layout: default
 * :warning: <a href="library/math/floyd_cycle_find.cpp.html">math/floyd_cycle_find.cpp</a>
 * :warning: <a href="library/math/fraction.cpp.html">math/fraction.cpp</a>
 * :heavy_check_mark: <a href="library/math/fzt_fmt.cpp.html">math/fzt_fmt.cpp</a>
+* :warning: <a href="library/math/gcd_conv.cpp.html">math/gcd_conv.cpp</a>
 * :warning: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/lagrange_interpolation.cpp.html">math/lagrange_interpolation.cpp</a>
 * :warning: <a href="library/math/mebius_function.cpp.html">math/mebius_function.cpp</a>
@@ -154,7 +155,7 @@ layout: default
 
 * :warning: <a href="library/memo/Dice.cpp.html">memo/Dice.cpp</a>
 * :warning: <a href="library/memo/dump.hpp.html">memo/dump.hpp</a>
-* :heavy_check_mark: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 <div id="afa89dc4856c832f73813c3922fede93"></div>
@@ -229,7 +230,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/GRL6A_2.test.cpp.html">test/GRL6A_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
+* :x: <a href="verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>

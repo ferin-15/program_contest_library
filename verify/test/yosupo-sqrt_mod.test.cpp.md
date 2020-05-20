@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/runtime_modint.cpp.html">math/runtime_modint.cpp</a>
-* :heavy_check_mark: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
+* :question: <a href="../../library/memo/macro.hpp.html">memo/macro.hpp</a>
 
 
 ## Code

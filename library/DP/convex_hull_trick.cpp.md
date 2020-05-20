@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e2fca8135c2fadca093abd79a6b1c0d2">DP</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DP/convex_hull_trick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-01 12:39:31+09:00
+    - Last commit date: 2020-05-20 15:31:47+09:00
 
 
 
@@ -59,7 +59,7 @@ struct ConvexHullTrick {
     }
     ll f(const PII &p, ll x) { return p.first * x + p.second; }
 
-    // ax + b を追加
+    // ax+bを追加 (aについて降順にすること)
     void insert(ll a, ll b) {
         PII p(a, b);
         while(que.size() >= 2 && check(que[que.size()-2], que.back(), p)) {
@@ -107,7 +107,7 @@ struct ConvexHullTrick {
     }
     ll f(const PII &p, ll x) { return p.first * x + p.second; }
 
-    // ax + b を追加
+    // ax+bを追加 (aについて降順にすること)
     void insert(ll a, ll b) {
         PII p(a, b);
         while(que.size() >= 2 && check(que[que.size()-2], que.back(), p)) {
