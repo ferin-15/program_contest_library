@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: memo/macro.hpp
+# :heavy_check_mark: memo/macro.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -78,7 +78,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL6A_2.test.cpp.html">test/GRL6A_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL6B.test.cpp.html">test/GRL6B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0425.test.cpp.html">test/aoj0425.test.cpp</a>
-* :x: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj0575_0.test.cpp.html">test/aoj0575_0.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj0575_1.test.cpp.html">test/aoj0575_1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj1308.test.cpp.html">test/aoj1308.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj1501.test.cpp.html">test/aoj1501.test.cpp</a>
