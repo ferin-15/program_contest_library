@@ -11,7 +11,7 @@ struct ConvexHullTrick {
     }
     ll f(const PII &p, ll x) { return p.first * x + p.second; }
 
-    // ax + b を追加
+    // ax+bを追加 (aについて降順にすること)
     void insert(ll a, ll b) {
         PII p(a, b);
         while(que.size() >= 2 && check(que[que.size()-2], que.back(), p)) {
