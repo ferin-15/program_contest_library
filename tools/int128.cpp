@@ -1,3 +1,4 @@
+// BEGIN CUT
 using int128 = __int128_t;
 using uint128 = __uint128_t;
 ostream &operator<<(ostream &os, int128 value) {
@@ -27,3 +28,4 @@ istream &operator>>(istream &is, int128 &val) {
     }
     return is;
 }
+// END CUT

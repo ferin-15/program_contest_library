@@ -1,3 +1,4 @@
+// BEGIN CUT
 struct dice {
     mt19937 mt;
     dice() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
@@ -7,3 +8,4 @@ struct dice {
         return dist(mt);
     }
 } rnd;
+// END CUT
